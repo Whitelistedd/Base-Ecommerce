@@ -1,0 +1,25 @@
+#payment {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    min-width: 100vw;
+    position: fixed;
+    z-index: 10;
+    bottom: 50%;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+iframe {
+    width: 100%;
+    border: 0px;
+    display: block;
+    overflow: hidden;
+    position: fixed;
+}
+
+h1,h2,h3,h4,h5,h6,p {
+    margin: 0px;
+}
