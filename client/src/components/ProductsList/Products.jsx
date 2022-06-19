@@ -46,17 +46,17 @@ export const Products = ({ className, setCart, filters, cat, gender }) => {
     return <ProductsLoading />;
   }
 
+  console.log(products?.slice(0, 4));
+
   return (
     <Container className={className}>
       {cat
         ? filteredProducts.map((item) => (
             <Product cart={setCart} item={item} key={item._id} />
           ))
-        : products
-            ?.slice(0, 4)
-            ?.map((item) => (
-              <Product cart={setCart} item={item} key={item._id} />
-            ))}
+        : products?.map((item) => (
+            <Product cart={setCart} item={item} key={item._id} />
+          ))}
     </Container>
   );
 };
