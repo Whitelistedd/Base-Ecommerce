@@ -1,24 +1,30 @@
-import 'aos/dist/aos.css';
+import "aos/dist/aos.css";
 
-import { Close } from '@mui/icons-material';
-import { Drawer, List } from '@mui/material';
-import AOS from 'aos';
-import React, { useState } from 'react';
-import { useEffect } from 'react';
-import { useLocation } from 'react-router-dom';
-import styled from 'styled-components';
+import { Close } from "@mui/icons-material";
+import { Drawer, List } from "@mui/material";
+import AOS from "aos";
+import React, { useState } from "react";
+import { useEffect } from "react";
+import { useLocation } from "react-router-dom";
+import styled from "styled-components";
 
-import { Announcement } from '../components/Announcement';
-import { Footer } from '../components/Footer';
-import { Navbar } from '../components/Navbar';
-import { ProductsListFilters } from '../components/ProductsList/Filters';
-import { Products } from '../components/ProductsList/Products';
-import { devices } from '../data';
+import { Announcement } from "../components/Announcement";
+import { Footer } from "../components/Footer";
+import { Navbar } from "../components/Navbar";
+import { Filters } from "../components/ProductsList/Filters";
+import { Products } from "../components/ProductsList/Products";
+import { devices } from "../data";
 
 export const ProductsList = () => {
   const location = useLocation();
   const categoryType = location.pathname.split("/")[2];
-  const [filters, setFilters] = useState({});
+  const [filters, setFilters] = useState({
+    color: "",
+    size: "",
+    gender: "",
+    categories: "",
+  });
+
   const [open, setOpen] = useState(false);
 
   const handleFilterChange = (e) => {
@@ -31,7 +37,12 @@ export const ProductsList = () => {
   };
 
   const handleClear = () => {
-    window.location.reload();
+    setFilters({
+      color: "",
+      size: "",
+      gender: "",
+      categories: "",
+    });
   };
 
   const toggleDrawer = () => {
@@ -41,7 +52,12 @@ export const ProductsList = () => {
   useEffect(() => {
     AOS.init();
     AOS.refresh();
-  }, []);
+    if (categoryType === "men") {
+      setFilters((prev) => ({ ...prev, gender: "men" }));
+    } else if (categoryType === "women") {
+      setFilters((prev) => ({ ...prev, gender: "women" }));
+    }
+  }, [categoryType]);
 
   return (
     <>
@@ -69,18 +85,20 @@ export const ProductsList = () => {
               <List sx={{ ml: 3, mt: 1.5, mr: 3 }}>
                 <Close onClick={toggleDrawer} sx={{ cursor: "pointer" }} />
                 <FilterContainerMobile>
-                  <ProductsListFilters
+                  {/* <Filters
                     handleFilterChange={handleFilterChange}
                     handleClear={handleClear}
-                  />
+                    filters={filters}
+                  /> */}
                 </FilterContainerMobile>
               </List>
             </Drawer>
           </MobileFilter>
           <FilterContainer>
-            <ProductsListFilters
+            <Filters
               handleFilterChange={handleFilterChange}
               handleClear={handleClear}
+              filters={filters}
             />
           </FilterContainer>
           <ProductsContainer>

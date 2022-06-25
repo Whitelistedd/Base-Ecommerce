@@ -1,10 +1,10 @@
-import axios from 'axios';
-import React, { useEffect, useState } from 'react';
-import styled from 'styled-components';
+import axios from "axios";
+import React, { useEffect, useState } from "react";
+import styled from "styled-components";
 
-import { Loading } from '../../pages/Loading';
-import { BASE_URL } from '../../requests';
-import { Product } from './Product';
+import { Loading } from "../../pages/Loading";
+import { BASE_URL } from "../../requests";
+import { Product } from "./Product";
 
 /* import { Link } from 'react-router-dom' */
 export const Products = ({ className, setCart, filters, cat, gender }) => {
@@ -12,14 +12,13 @@ export const Products = ({ className, setCart, filters, cat, gender }) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [LoadingStatus, setLoadingStatus] = useState();
 
+  /* ${cat === "all" ? "" : cat} */
   useEffect(() => {
     const getProducts = async () => {
       setLoadingStatus(true);
       try {
         const res = await axios.get(
-          cat
-            ? `${BASE_URL}products?category=${cat === "all" ? "" : cat}`
-            : `${BASE_URL}products`
+          cat ? `${BASE_URL}products?category=` : `${BASE_URL}products`
         );
         setProducts(res.data);
         setLoadingStatus(false);
@@ -35,18 +34,18 @@ export const Products = ({ className, setCart, filters, cat, gender }) => {
       setFilteredProducts(
         products.filter((item) =>
           Object.entries(filters).every(([key, value]) =>
-            item[key].includes(value)
+            value !== "" ? item[key].includes(value) : item[key].includes
           )
         )
       );
     } catch (err) {}
   }, [products, cat, filters, gender]);
 
+  console.log(filteredProducts);
+
   if (LoadingStatus) {
     return <ProductsLoading />;
   }
-
-  console.log(products?.slice(0, 4));
 
   return (
     <Container className={className}>

@@ -1,11 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 export const ProductsFilterButton = ({
   inputValue,
   title,
   inputName,
   handleFilterChange,
+  filters,
 }) => {
   return (
     <SizeRadioLabel>
@@ -14,6 +15,7 @@ export const ProductsFilterButton = ({
         onChange={(event) => handleFilterChange(event)}
         type="radio"
         name={inputName}
+        checked={filters[inputName] === inputValue}
       />
       <SizeButton>
         <OptionSelect>

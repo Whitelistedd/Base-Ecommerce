@@ -1,6 +1,6 @@
-import Alert from '@mui/material/Alert';
-import React, { useState } from 'react';
-import styled from 'styled-components';
+import Alert from "@mui/material/Alert";
+import React, { useState } from "react";
+import styled from "styled-components";
 
 const Container = styled.div`
   display: flex;
@@ -28,13 +28,5 @@ export const Announcement = ({ show }) => {
     setDisplayError(displayError ? false : true);
   };
 
-  return (
-    <Alert
-      sx={{ display: displayError ? "flex" : "none" }}
-      onClose={() => handleClose()}
-      severity="warning"
-    >
-      сайт может быть немного медленным из-за хостинга
-    </Alert>
-  );
+  return <></>;
 };

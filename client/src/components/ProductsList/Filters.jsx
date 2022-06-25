@@ -1,12 +1,13 @@
-import { Chip } from '@mui/material';
-import React from 'react';
-import styled from 'styled-components';
+import { Chip } from "@mui/material";
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
-import { AllCategories, AllColors, AllGenders, AllSizes } from '../../data';
-import { ColorRadioButton } from '../ColorButton';
-import { ProductsFilterButton } from './FilterButton';
+import { AllCategories, AllColors, AllGenders, AllSizes } from "../../data";
+import { ColorRadioButton } from "../ColorButton";
+import { ProductsFilterButton } from "./FilterButton";
 
-export const ProductsListFilters = ({ handleFilterChange, handleClear }) => {
+export const Filters = ({ filters, handleFilterChange, handleClear }) => {
   return (
     <FilterWrap>
       <FilterTitleWrap>
@@ -32,6 +33,7 @@ export const ProductsListFilters = ({ handleFilterChange, handleClear }) => {
             key={color.id}
             colorName={color.colorName}
             HexColor={color.HexColor}
+            filters={filters}
             handleFilterChange={handleFilterChange}
           />
         ))}
@@ -46,6 +48,7 @@ export const ProductsListFilters = ({ handleFilterChange, handleClear }) => {
             title={size.title}
             inputValue={size.SizeName}
             inputName={"size"}
+            filters={filters}
             handleFilterChange={handleFilterChange}
           />
         ))}
@@ -60,6 +63,7 @@ export const ProductsListFilters = ({ handleFilterChange, handleClear }) => {
             title={gender.title}
             inputValue={gender.GenderName}
             inputName={"gender"}
+            filters={filters}
             handleFilterChange={handleFilterChange}
           />
         ))}
@@ -74,6 +78,7 @@ export const ProductsListFilters = ({ handleFilterChange, handleClear }) => {
             title={gender.title}
             inputValue={gender.CategoryName}
             inputName={"categories"}
+            filters={filters}
             handleFilterChange={handleFilterChange}
           />
         ))}

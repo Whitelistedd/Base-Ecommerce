@@ -1,11 +1,12 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
 export const ColorRadioButton = ({
   colorName,
   HexColor,
   handleFilterChange,
   className,
+  filters,
 }) => {
   return (
     <CustomColorRadio className={className}>
@@ -14,6 +15,7 @@ export const ColorRadioButton = ({
         onChange={(event) => handleFilterChange(event)}
         type="radio"
         name="color"
+        checked={filters.color === colorName}
       />
       <ColorButton HexColor={HexColor}>
         <OptionSelect>

@@ -1,16 +1,16 @@
-import 'aos/dist/aos.css';
+import "aos/dist/aos.css";
 
-import AOS from 'aos';
-import React, { useEffect } from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import AOS from "aos";
+import React, { useEffect } from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
-import { Announcement } from '../components/Announcement';
-import { Footer } from '../components/Footer';
-import { Navbar } from '../components/Navbar';
-import { Products } from '../components/ProductsList/Products';
-import { devices } from '../data';
-import backgroundImage from '../images/background.webp';
+import { Announcement } from "../components/Announcement";
+import { Footer } from "../components/Footer";
+import { Navbar } from "../components/Navbar";
+import { Products } from "../components/ProductsList/Products";
+import { devices } from "../data";
+import backgroundImage from "../images/background.webp";
 
 export const HomePage = () => {
   useEffect(() => {
@@ -23,8 +23,11 @@ export const HomePage = () => {
       <Announcement />
       <Navbar />
       <HeaderWrap>
-        <Link to={"/products/all"}>
-          <HeaderButton>Посмотреть продукты</HeaderButton>
+        <Link to={"/products/men"}>
+          <HeaderButton>Мужчины</HeaderButton>
+        </Link>
+        <Link to={"/products/women"}>
+          <HeaderButton>Женщины</HeaderButton>
         </Link>
       </HeaderWrap>
       <Container
@@ -58,9 +61,8 @@ const HeaderButton = styled.button`
   padding: 0.8em;
   transition: 400ms;
   cursor: pointer;
-  border-radius: 10px;
   &:hover {
-    background-color: #282828e8;
+    background-color: #1d1c1c;
   }
 `;
 
@@ -75,6 +77,8 @@ const HeaderWrap = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  gap: 1em;
+  flex-wrap: wrap;
 `;
 
 const HomeProducts = styled(Products)`
