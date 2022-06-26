@@ -1,13 +1,13 @@
-import React from 'react';
-import { useForm } from 'react-hook-form';
-import { useDispatch } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
-import { v4 as uuidv4 } from 'uuid';
+import React from "react";
+import { useForm } from "react-hook-form";
+import { useDispatch } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
+import { v4 as uuidv4 } from "uuid";
 
-import { devices } from '../data';
-import { newCheckout } from '../redux/apiCalls';
-import { clearCart } from '../redux/cartRedux';
+import { devices } from "../data";
+import { newCheckout } from "../redux/apiCalls";
+import { clearCart } from "../redux/cartRedux";
 
 export const Form = ({ cart, setShipping }) => {
   const {
@@ -46,7 +46,7 @@ export const Form = ({ cart, setShipping }) => {
       phoneNumber,
       shippingMethod,
     });
-    renderCheckout(res1);
+    window.location.href = res1;
   };
 
   const renderCheckout = (confirm) => {

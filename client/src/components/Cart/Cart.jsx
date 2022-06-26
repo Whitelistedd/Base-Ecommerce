@@ -1,14 +1,18 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useDispatch, useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
+import React from "react";
+import { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
-import { devices } from '../../data';
-import { FetchMany } from '../../redux/apiCalls';
-import { addQuantity, removeProduct, removeQuantity } from '../../redux/cartRedux';
-import { CartProduct } from './CartProduct';
-import { EmptyCart } from './EmptyCart';
+import { devices } from "../../data";
+import { FetchMany } from "../../redux/apiCalls";
+import {
+  addQuantity,
+  removeProduct,
+  removeQuantity,
+} from "../../redux/cartRedux";
+import { CartProduct } from "./CartProduct";
+import { EmptyCart } from "./EmptyCart";
 
 export const Cart = () => {
   const cart = useSelector((state) => state.cart);

@@ -8,7 +8,6 @@ export const ColorRadioButton = ({
   className,
   filters,
 }) => {
-  console.log(filters);
   return (
     <CustomColorRadio className={className}>
       {filters ? (

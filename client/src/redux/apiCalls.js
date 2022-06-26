@@ -5,10 +5,11 @@ import { confirmOrder } from './userRedux';
 export const newCheckout = async (dispatch, idemp, order) => {
     try {
         const key = idemp
-        const request = { key, order }
+        const request = { key, ...order }
         const res = await publicRequest.post("/orders/", request)
-        dispatch(confirmOrder(res.data.confirmation["confirmation_token"]))
-        return res.data.confirmation["confirmation_token"]
+        console.log(res);
+        dispatch(confirmOrder(res.data.confirmation.confirmation_url))
+        return res.data.confirmation.confirmation_url
     } catch (error) {
     }
 }
@@ -18,7 +19,7 @@ export const FetchMany = async (dispatch, products) => {
         let UpdatedProducts = []
         let i = 0
         for await (const product of products) {
-            const res = await publicRequest.get("/products/find/" + product.id);
+            const res = await publicRequest.get("/products/find/" + product._id);
             dispatch(UpdateProduct({ index: i, oldproduct: product, newproduct: res.data }))
             UpdatedProducts.push({ ...res.data, ...product })
             i += 1

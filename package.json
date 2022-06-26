@@ -4,14 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "node index.js",
+    "start": "nodemon index.js",
     "heroku-postbuild": "cd client && npm install && npm run build"
   },
   "keywords": [],
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "@a2seven/yoo-checkout": "^1.1.2",
     "@mui/icons-material": "^5.6.2",
     "cors": "^2.8.5",
     "crypto-js": "^4.1.1",

@@ -1,14 +1,14 @@
-import React, { useEffect, useState } from 'react';
-import { useDispatch } from 'react-redux';
-import { useLocation } from 'react-router-dom';
-import styled from 'styled-components';
+import React, { useEffect, useState } from "react";
+import { useDispatch } from "react-redux";
+import { useLocation } from "react-router-dom";
+import styled from "styled-components";
 
-import { AllColors, AllSizes, devices } from '../../data';
-import { addProduct } from '../../redux/cartRedux';
-import { publicRequest } from '../../requests';
-import { ImageSwipe } from './ImageSwipe';
-import { ProductForm } from './ProductForm';
-import { ProductImages } from './ProductImages';
+import { AllColors, AllSizes, devices } from "../../data";
+import { addProduct } from "../../redux/cartRedux";
+import { publicRequest } from "../../requests";
+import { ImageSwipe } from "./ImageSwipe";
+import { ProductForm } from "./ProductForm";
+import { ProductImages } from "./ProductImages";
 
 export const Product = () => {
   const location = useLocation();
@@ -37,7 +37,7 @@ export const Product = () => {
     } else {
       dispatch(
         addProduct({
-          id: productInfo._id,
+          _id: productInfo._id,
           price: productInfo.price,
           quantity,
           ...productType,

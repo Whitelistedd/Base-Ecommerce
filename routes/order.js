@@ -1,15 +1,15 @@
 const router = require("express").Router();
 const Order = require("../models/Order");
 const Product = require("../models/Product")
-const { YooCheckout } = require('@a2seven/yoo-checkout');
-const { verifyToken, verifyTokenAndAuthorization, verifyAdminToken } = require("./verifyToken")
+const axios = require('axios');
+const { verifyToken, verifyTokenAndAuthorization, verifyAdminToken } = require("./verifyToken");
+const { response } = require("express");
 
 // CREATE ORDER
-const checkout = new YooCheckout({ shopId: process.env.shopID, secretKey: process.env.kassaPASS });
 
 router.post('/', async (req, res) => {
 
-    const newOrder = await new Order(req.body.order)
+    const newOrder = await new Order(req.body)
 
     const productIDS = newOrder.products.map(item => {
         return {
@@ -21,34 +21,48 @@ router.post('/', async (req, res) => {
 
     let price = 0
 
-    for (let i = 0; i < productIDS.length; i++) {
-        const confirmedOrders = await Product.findOne({ _id: productIDS[i].id })
-        price += confirmedOrders.price * productIDS[i].qty
-    }
+    const confirmedProducts = await Promise.all(productIDS.map(async (product) => { return await Product.findOne({ _id: product.id }) })).catch((err) => console.log(err))
 
     let total = 0
+
+    confirmedProducts.forEach(product => total += product.price)
 
     if (newOrder.shippingMethod === "Cdek") {
         total += price + 700
     } else if (newOrder.shippingMethod === "PochtaRussia") {
         total += price + 500
     } else {
+        console.log(newOrder)
         return res.status(500)
     }
 
-    const createPayload = {
-        amount: {
-            value: `${total}`,
-            currency: 'RUB'
-        },
-        confirmation: {
-            type: 'embedded'
-        }
-    };
-
     try {
-        const payment = await checkout.createPayment(createPayload, req.body.key);
-        res.status(200).json(payment)
+        const response = await axios.post(
+            'https://api.yookassa.ru/v3/payments',
+            {
+                'amount': {
+                    'value': `${total}`,
+                    'currency': 'RUB'
+                },
+                'capture': true,
+                'confirmation': {
+                    'type': 'redirect',
+                    'return_url': `${process.env.BASEURL}/order/success`
+                }
+            },
+            {
+                headers: {
+                    'Idempotence-Key': `${newOrder.key}`,
+                    'Content-Type': 'application/json'
+                },
+                auth: {
+                    username: process.env.shopID,
+                    password: process.env.kassaPASS
+                }
+            }
+        );
+        console.log(response.data)
+        res.status(200).json(response.data)
         const ConfirmedOrder = await newOrder.save()
     } catch (error) {
         res.status(500)
