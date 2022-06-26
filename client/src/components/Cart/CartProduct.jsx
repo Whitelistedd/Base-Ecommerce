@@ -2,7 +2,7 @@ import { Add, Remove } from "@mui/icons-material";
 import React from "react";
 import styled from "styled-components";
 
-import { AllColors, devices } from "../../data";
+import { devices } from "../../data";
 
 export const CartProduct = ({
   productsList,

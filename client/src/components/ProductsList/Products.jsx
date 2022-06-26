@@ -20,9 +20,7 @@ export const Products = ({ className, setCart, filters, cat, gender }) => {
         );
         setProducts(res.data);
         setLoadingStatus(false);
-      } catch (err) {
-        console.log(err);
-      }
+      } catch (err) {}
     };
     getProducts();
   }, [cat]);

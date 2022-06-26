@@ -28,7 +28,6 @@ export const Checkout = () => {
     if (Error) {
       setSnackBarStatus(true);
     }
-    console.log(Error);
   }, [Error]);
 
   useEffect(() => {
