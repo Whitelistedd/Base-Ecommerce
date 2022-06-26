@@ -6,13 +6,11 @@ import { Loading } from "../../pages/Loading";
 import { BASE_URL } from "../../requests";
 import { Product } from "./Product";
 
-/* import { Link } from 'react-router-dom' */
 export const Products = ({ className, setCart, filters, cat, gender }) => {
   const [products, setProducts] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [LoadingStatus, setLoadingStatus] = useState();
 
-  /* ${cat === "all" ? "" : cat} */
   useEffect(() => {
     const getProducts = async () => {
       setLoadingStatus(true);
@@ -41,8 +39,6 @@ export const Products = ({ className, setCart, filters, cat, gender }) => {
     } catch (err) {}
   }, [products, cat, filters, gender]);
 
-  console.log(filteredProducts);
-
   if (LoadingStatus) {
     return <ProductsLoading />;
   }
@@ -53,9 +49,11 @@ export const Products = ({ className, setCart, filters, cat, gender }) => {
         ? filteredProducts.map((item) => (
             <Product cart={setCart} item={item} key={item._id} />
           ))
-        : products?.map((item) => (
-            <Product cart={setCart} item={item} key={item._id} />
-          ))}
+        : products
+            ?.slice(0, 4)
+            .map((item) => (
+              <Product cart={setCart} item={item} key={item._id} />
+            ))}
     </Container>
   );
 };

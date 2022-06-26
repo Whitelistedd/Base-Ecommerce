@@ -1,16 +1,17 @@
 import "aos/dist/aos.css";
 
 import AOS from "aos";
-import React, { useEffect } from "react";
+import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
-
+import Spline from "@splinetool/react-spline";
 import { Announcement } from "../components/Announcement";
 import { Footer } from "../components/Footer";
 import { Navbar } from "../components/Navbar";
 import { Products } from "../components/ProductsList/Products";
 import { devices } from "../data";
 import backgroundImage from "../images/background.webp";
+import { Parallax } from "react-parallax";
 
 export const HomePage = () => {
   useEffect(() => {
@@ -22,14 +23,16 @@ export const HomePage = () => {
     <>
       <Announcement />
       <Navbar />
-      <HeaderWrap>
-        <Link to={"/products/men"}>
-          <HeaderButton>Мужчины</HeaderButton>
-        </Link>
-        <Link to={"/products/women"}>
-          <HeaderButton>Женщины</HeaderButton>
-        </Link>
-      </HeaderWrap>
+      <Parallax bgImage={backgroundImage} strength={400}>
+        <HeaderWrap>
+          <Link to={"/products/men"}>
+            <HeaderButton>Мужчины</HeaderButton>
+          </Link>
+          <Link to={"/products/women"}>
+            <HeaderButton>Женщины</HeaderButton>
+          </Link>
+        </HeaderWrap>
+      </Parallax>
       <Container
         data-aos="fade-up"
         data-aos-offset="0"
@@ -60,6 +63,7 @@ const HeaderButton = styled.button`
   font-size: 1.5rem;
   padding: 0.8em;
   transition: 400ms;
+  z-index: 2;
   cursor: pointer;
   &:hover {
     background-color: #1d1c1c;
@@ -68,8 +72,7 @@ const HeaderButton = styled.button`
 
 const HeaderWrap = styled.div`
   width: 100%;
-  min-height: 90vh;
-  background-image: url(${backgroundImage});
+  min-height: 100vh;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
@@ -89,6 +92,7 @@ const HomeProducts = styled(Products)`
   width: 100%;
   height: 100%;
 `;
+
 const Container = styled.div`
   display: flex;
   flex-direction: column;

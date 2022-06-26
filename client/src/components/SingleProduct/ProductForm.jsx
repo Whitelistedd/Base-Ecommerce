@@ -1,11 +1,11 @@
-import { Add, Remove } from '@mui/icons-material';
-import { Alert } from '@mui/material';
-import React from 'react';
-import styled from 'styled-components';
+import { Add, Remove } from "@mui/icons-material";
+import { Alert } from "@mui/material";
+import React from "react";
+import styled from "styled-components";
 
-import { devices } from '../../data';
-import Undo from '../../images/undo.svg';
-import { SingleProductFilters } from './Filters';
+import { devices } from "../../data";
+import Undo from "../../images/undo.svg";
+import { SingleProductFilters } from "./Filters";
 
 export const ProductForm = ({
   productInfo,
@@ -37,7 +37,11 @@ export const ProductForm = ({
           <Amount>{quantity}</Amount>
           <Add onClick={() => handleQuantity("add")} />
         </QuantityContainer>
-        <StyledButton onClick={() => handleCart()}>ADD TO CART</StyledButton>
+        {productInfo.inStock ? (
+          <StyledButton onClick={() => handleCart()}>ADD TO CART</StyledButton>
+        ) : (
+          <OutOfStockButton>Out Of Stock</OutOfStockButton>
+        )}
       </QuantityInfo>
       <BenifitsContainer>
         <Benifits>
@@ -98,6 +102,13 @@ const StyledButton = styled.button`
   color: white;
   &:hover {
     cursor: pointer;
+  }
+`;
+
+const OutOfStockButton = styled(StyledButton)`
+  background-color: grey;
+  &:hover {
+    cursor: not-allowed;
   }
 `;
 

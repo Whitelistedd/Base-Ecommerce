@@ -8,15 +8,25 @@ export const ColorRadioButton = ({
   className,
   filters,
 }) => {
+  console.log(filters);
   return (
     <CustomColorRadio className={className}>
-      <StyledInput
-        value={colorName}
-        onChange={(event) => handleFilterChange(event)}
-        type="radio"
-        name="color"
-        checked={filters.color === colorName}
-      />
+      {filters ? (
+        <StyledInput
+          value={colorName}
+          onChange={(event) => handleFilterChange(event)}
+          type="radio"
+          name="color"
+          checked={filters.color === colorName}
+        />
+      ) : (
+        <StyledInput
+          value={colorName}
+          onChange={(event) => handleFilterChange(event)}
+          type="radio"
+          name="color"
+        />
+      )}
       <ColorButton HexColor={HexColor}>
         <OptionSelect>
           <StyledH3></StyledH3>
