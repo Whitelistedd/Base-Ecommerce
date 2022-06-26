@@ -1,13 +1,11 @@
 import React from "react";
 import { useForm } from "react-hook-form";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 import { v4 as uuidv4 } from "uuid";
 
 import { devices } from "../data";
 import { newCheckout } from "../redux/apiCalls";
-import { clearCart } from "../redux/cartRedux";
 
 export const Form = ({ cart, setShipping }) => {
   const {
@@ -16,7 +14,6 @@ export const Form = ({ cart, setShipping }) => {
     formState: { errors },
   } = useForm();
   let dispatch = useDispatch();
-  let navigate = useNavigate();
 
   const handleShipping = (e) => {
     const value = e.target.value;

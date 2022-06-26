@@ -1,6 +1,5 @@
 import { publicRequest } from '../requests';
 import { setError, UpdateProduct } from './cartRedux';
-import { confirmOrder } from './userRedux';
 
 export const newCheckout = async (dispatch, idemp, order) => {
     try {
