@@ -1,5 +1,5 @@
 import { publicRequest } from '../requests';
-import { UpdateProduct } from './cartRedux';
+import { setError, UpdateProduct } from './cartRedux';
 import { confirmOrder } from './userRedux';
 
 export const newCheckout = async (dispatch, idemp, order) => {
@@ -7,8 +7,8 @@ export const newCheckout = async (dispatch, idemp, order) => {
         const key = idemp
         const request = { key, ...order }
         const res = await publicRequest.post("/orders/", request)
-        console.log(res);
-        dispatch(confirmOrder(res.data.confirmation.confirmation_url))
+            .then(response => response)
+            .catch(err => dispatch(setError(err.response.data.message)))
         return res.data.confirmation.confirmation_url
     } catch (error) {
     }

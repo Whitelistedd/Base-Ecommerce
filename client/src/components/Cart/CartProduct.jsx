@@ -1,8 +1,8 @@
-import { Add, Remove } from '@mui/icons-material';
-import React from 'react';
-import styled from 'styled-components';
+import { Add, Remove } from "@mui/icons-material";
+import React from "react";
+import styled from "styled-components";
 
-import { AllColors, devices } from '../../data';
+import { AllColors, devices } from "../../data";
 
 export const CartProduct = ({
   productsList,
@@ -18,12 +18,7 @@ export const CartProduct = ({
             <ProductDetails>
               <ProductName>{item.title}</ProductName>
               <ProductSizeAndColor>
-                {item.size} /{" "}
-                {
-                  AllColors?.find(
-                    (color) => color?.colorName === productsList[0].color[0]
-                  )?.RussianName
-                }
+                {item.size} / {item.color}
               </ProductSizeAndColor>
               <ProductPrice>₽{item.price}</ProductPrice>
             </ProductDetails>

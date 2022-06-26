@@ -6,6 +6,7 @@ const cartSlice = createSlice({
         products: [],
         quantity: 0,
         total: 0,
+        OrderError: "",
     },
     reducers: {
         addProduct: (state, action) => {
@@ -55,9 +56,12 @@ const cartSlice = createSlice({
             let newproduct = action.payload.newproduct;
             newproduct = { title: newproduct.title, img: newproduct.img, price: newproduct.price };
             state.products[action.payload.index] = { ...action.payload.oldproduct, ...newproduct };
-        }
+        },
+        setError: (state, action) => {
+            state.OrderError = action.payload
+        },
     },
 })
 
-export const { UpdateProduct, addProduct, removeQuantity, addQuantity, removeProduct, clearCart } = cartSlice.actions;
+export const { UpdateProduct, addProduct, removeQuantity, addQuantity, setError, removeProduct, clearCart } = cartSlice.actions;
 export default cartSlice.reducer;

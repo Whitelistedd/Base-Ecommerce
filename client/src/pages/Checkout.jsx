@@ -1,18 +1,35 @@
-import { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
+import { Alert, Snackbar } from "@mui/material";
+import { useEffect, useState } from "react";
+import { useDispatch, useSelector } from "react-redux";
+import { useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
-import { CheckOutCart } from '../components/Cart/CheckOutCart';
-import { Form } from '../components/Form';
-import { devices } from '../data';
+import { CheckOutCart } from "../components/Cart/CheckOutCart";
+import { Form } from "../components/Form";
+import { devices } from "../data";
+import { setError } from "../redux/cartRedux";
 
 export const Checkout = () => {
   const cart = useSelector((state) => state.cart);
   const [shipping, setShipping] = useState(500);
+  const [snackBarStatus, setSnackBarStatus] = useState(false);
+  const dispatch = useDispatch();
   const cartquantity = cart.quantity;
+  const Error = cart.OrderError;
 
   let navigate = useNavigate();
+
+  const handleSnackBarClose = () => {
+    setSnackBarStatus(false);
+    dispatch(setError(""));
+  };
+
+  useEffect(() => {
+    if (Error) {
+      setSnackBarStatus(true);
+    }
+    console.log(Error);
+  }, [Error]);
 
   useEffect(() => {
     if (cartquantity === 0) {
@@ -22,6 +39,19 @@ export const Checkout = () => {
 
   return (
     <Container>
+      <Snackbar
+        open={snackBarStatus}
+        autoHideDuration={6000}
+        onClose={handleSnackBarClose}
+      >
+        <Alert
+          onClose={handleSnackBarClose}
+          severity="error"
+          sx={{ width: "100%" }}
+        >
+          {Error}
+        </Alert>
+      </Snackbar>
       <Left>
         <Form setShipping={setShipping} cart={cart} />
       </Left>

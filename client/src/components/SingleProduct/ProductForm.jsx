@@ -37,12 +37,11 @@ export const ProductForm = ({
           <Amount>{quantity}</Amount>
           <Add onClick={() => handleQuantity("add")} />
         </QuantityContainer>
-        <StyledButton onClick={() => handleCart()}>ADD TO CART</StyledButton>
-        {/*         {productInfo.inStock ? (
+        {productInfo.inStock ? (
           <StyledButton onClick={() => handleCart()}>ADD TO CART</StyledButton>
         ) : (
           <OutOfStockButton>Out Of Stock</OutOfStockButton>
-        )} */}
+        )}
       </QuantityInfo>
       <BenifitsContainer>
         <Benifits>

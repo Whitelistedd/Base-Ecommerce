@@ -46,32 +46,7 @@ export const Form = ({ cart, setShipping }) => {
       phoneNumber,
       shippingMethod,
     });
-    window.location.href = res1;
-  };
-
-  const renderCheckout = (confirm) => {
-    const checkout = new window.YooMoneyCheckoutWidget({
-      confirmation_token: `${confirm}`,
-
-      error_callback: function (error) {},
-    });
-
-    checkout.on("complete", () => {
-      checkout.destroy();
-    });
-
-    checkout.on("success", () => {
-      navigate("/order/success", { replace: true });
-      dispatch(clearCart());
-      checkout.destroy();
-    });
-
-    checkout.on("fail", () => {
-      navigate("/order/fail", { replace: true });
-      checkout.destroy();
-    });
-
-    checkout.render("payment");
+    res1 !== undefined && (window.location.href = res1);
   };
 
   return (

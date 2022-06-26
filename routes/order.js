@@ -19,20 +19,19 @@ router.post('/', async (req, res) => {
     }
     )
 
-    let price = 0
+    const confirmedProducts = await Promise.all(productIDS.map(async (product) => { return { qty: product.qty, product: await Product.findOne({ _id: product.id }) } })).catch((err) => console.log(err))
 
-    const confirmedProducts = await Promise.all(productIDS.map(async (product) => { return await Product.findOne({ _id: product.id }) })).catch((err) => console.log(err))
+    confirmedProducts.forEach(Info => Info.product.inStock === false && res.status(400).json({ message: "one of the products are not inStock, please go to your cart and delete the item" }))
 
     let total = 0
 
-    confirmedProducts.forEach(product => total += product.price)
+    confirmedProducts.forEach(Info => total += Info.product.price * Info.qty)
 
     if (newOrder.shippingMethod === "Cdek") {
-        total += price + 700
+        total += 700
     } else if (newOrder.shippingMethod === "PochtaRussia") {
-        total += price + 500
+        total += 500
     } else {
-        console.log(newOrder)
         return res.status(500)
     }
 
@@ -61,7 +60,6 @@ router.post('/', async (req, res) => {
                 }
             }
         );
-        console.log(response.data)
         res.status(200).json(response.data)
         const ConfirmedOrder = await newOrder.save()
     } catch (error) {
