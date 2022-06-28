@@ -53,6 +53,7 @@ const OrderSchema = new mongoose.Schema(
         phoneNumber: { type: String, required: true },
         shippingMethod: { type: String, required: true },
         status: { type: String, default: "pending" },
+        total: { type: Number, required: false },
     },
     { timestamps: true }
 );

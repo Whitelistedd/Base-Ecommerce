@@ -9,7 +9,7 @@ const { response } = require("express");
 
 router.post('/', async (req, res) => {
 
-    const newOrder = await new Order(req.body)
+    let newOrder = await new Order(req.body)
 
     const productIDS = newOrder.products.map(item => {
         return {
@@ -34,6 +34,8 @@ router.post('/', async (req, res) => {
     } else {
         return res.status(500)
     }
+
+    newOrder = await new Order({ ...newOrder._doc, total: total })
 
     try {
         const response = await axios.post(
@@ -62,7 +64,9 @@ router.post('/', async (req, res) => {
         );
         res.status(200).json(response.data)
         const ConfirmedOrder = await newOrder.save()
+        console.log("w")
     } catch (error) {
+        console.log(error)
         res.status(500)
     }
 });
@@ -133,7 +137,7 @@ router.get("/income", verifyAdminToken, async (req, res) => {
             {
                 $project: {
                     month: { $month: "$createdAt" },
-                    sales: "$amount"
+                    sales: "$total"
                 },
             },
             {
