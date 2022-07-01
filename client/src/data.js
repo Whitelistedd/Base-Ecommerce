@@ -129,3 +129,11 @@ export const devices = {
     Laptop: 1000,
     Desktop: 1200,
 }
+
+export const FooterPages = [
+    "FAQ",
+    "Возвраты",
+    "Инструкция по уходу",
+    "Поддержка",
+    "Условия",
+]

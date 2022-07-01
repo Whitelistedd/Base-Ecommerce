@@ -28,6 +28,7 @@ export const ProductForm = ({
         AvailableSizes={productInfo.size}
         handleProductType={handleProductType}
       />
+      {/* если цвет или размер не выбраны, будет отображаться ошибка */}
       {error && (
         <Alert severity="error">Пожалуйста, выберите нужный цвет/размер.</Alert>
       )}
@@ -37,6 +38,7 @@ export const ProductForm = ({
           <Amount>{quantity}</Amount>
           <Add onClick={() => handleQuantity("add")} />
         </QuantityContainer>
+        {/* если товара нет в наличии, пользователь не сможет добавить его в корзину */}
         {productInfo.inStock ? (
           <StyledButton onClick={() => handleCart()}>ADD TO CART</StyledButton>
         ) : (

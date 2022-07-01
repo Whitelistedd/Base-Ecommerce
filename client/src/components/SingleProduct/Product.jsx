@@ -19,18 +19,21 @@ export const Product = () => {
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
 
+  /* функция добавления фильтров по клику пользователя */
   const handleProductType = (e) => {
     const value = e.target.value;
     const name = e.target.name;
     setProductType((prev) => ({ ...prev, [name]: value }));
   };
 
+  /* функция изменения количества продукта */
   const handleQuantity = (type) => {
     setQuantity((prev) => {
       return type === "add" ? prev + 1 : prev > 1 ? prev - 1 : prev;
     });
   };
 
+  /* если пользователь выбрал товар с цветом и размером, он будет добавлен в корзину */
   const handleCart = () => {
     if (productType.color === undefined || productType.size === undefined) {
       SetError(true);
@@ -46,6 +49,7 @@ export const Product = () => {
     }
   };
 
+  /* функция, чтобы получить выбранный продукт и получить все доступные размеры и цвета */
   useEffect(() => {
     const getProduct = async () => {
       try {

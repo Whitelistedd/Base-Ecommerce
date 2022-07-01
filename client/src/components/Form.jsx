@@ -15,6 +15,7 @@ export const Form = ({ cart, setShipping }) => {
   } = useForm();
   let dispatch = useDispatch();
 
+  /* расчет доставки, чтобы показать пользователю сумму */
   const handleShipping = (e) => {
     const value = e.target.value;
     if (value === "PochtaRussia") {
@@ -24,6 +25,7 @@ export const Form = ({ cart, setShipping }) => {
     }
   };
 
+  /* отправит запрос с ключом idemp и получит URL-адрес из бэкэнда, чтобы перенаправить пользователя на страницу покупки */
   const onSubmit = async ({
     address,
     firstName,

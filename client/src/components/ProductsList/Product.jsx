@@ -13,6 +13,7 @@ export const Product = ({ item }) => {
       images={item.img}
       to={`/product/${item._id}`}
     >
+      {/* если пользователь наводит курсор на изображение, он покажет второе изображение продукта, а если нет, то покажет первое */}
       {!hoveredStatus && (
         <Image
           className="Image"
@@ -25,6 +26,7 @@ export const Product = ({ item }) => {
         <Image className="Image" src={item.img[1]} inStock={item.inStock} />
       )}
       <Title>{item.title}</Title>
+      {/* если товар распродан, появится это сообщение */}
       {!item.inStock && <SoldOut>Sold Out</SoldOut>}
     </StyledLink>
   );

@@ -1,14 +1,21 @@
-import { Close, PersonOutlineOutlined } from '@mui/icons-material';
-import MenuIcon from '@mui/icons-material/Menu';
-import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined';
-import { Badge, Drawer, List, ListItem, ListItemText, Typography, useMediaQuery } from '@mui/material';
-import React, { useEffect, useState } from 'react';
-import { useSelector } from 'react-redux';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { Close, PersonOutlineOutlined } from "@mui/icons-material";
+import MenuIcon from "@mui/icons-material/Menu";
+import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
+import {
+  Badge,
+  Drawer,
+  List,
+  ListItem,
+  ListItemText,
+  Typography,
+} from "@mui/material";
+import React, { useEffect, useState } from "react";
+import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
 
-import { MenuItems } from '../data';
-import Base from '../images/basealpha.png';
+import { MenuItems } from "../data";
+import Base from "../images/basealpha.png";
 
 const drawerWidth = "330px";
 
@@ -16,25 +23,23 @@ export const Navbar = () => {
   const [open, setOpen] = useState(false);
   const cartquantity = useSelector((state) => state.cart.quantity);
 
+  /* будет переключать мобильное меню при нажатии на значок */
   const toggleDrawer = () => {
     setOpen(open ? false : true);
   };
 
-  const [show, setShow] = useState();
+  const [show, setShow] = useState(false);
 
-  let Phones = useMediaQuery("(min-width: 415px)");
-
-  useEffect(() => {
-    if (Phones) {
-      window.addEventListener("scroll", handleScroll);
-    }
-
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [Phones]);
-
+  /* если окно на 42 пикселя ниже, панель навигации будет {position: fixed} */
   const handleScroll = () => {
     setShow(window.pageYOffset > 42);
   };
+
+  useEffect(() => {
+    window.addEventListener("scroll", handleScroll);
+
+    return () => window.removeEventListener("scroll", handleScroll);
+  }, []);
 
   return (
     <Container className={`Nav ${show && "Nav__black"}`}>
@@ -66,10 +71,10 @@ export const Navbar = () => {
                   <ListItem
                     button
                     sx={{
-                      mt: 2,
+                      marginTop: 2,
                       borderBottom: "1px solid black",
-                      pl: 0,
-                      pb: 1.6,
+                      paddingLeft: 0,
+                      paddingBottom: 1.6,
                       textDecoration: "none",
                     }}
                   >

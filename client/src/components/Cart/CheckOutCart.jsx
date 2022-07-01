@@ -1,34 +1,16 @@
-import Badge from '@mui/material/Badge';
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { devices } from '../../data';
+import { devices } from "../../data";
+import { CheckoutProduct } from "./CheckoutProduct";
 
 export const CheckOutCart = ({ cart, shipping }) => {
   return (
     <CheckOut>
       <CheckoutWrap>
+        {/* покажет все товары, которые выбрал пользователь */}
         {cart.products.map((item, index) => (
-          <CartItems key={index}>
-            <Item>
-              <Badge
-                badgeContent={item.quantity}
-                color="primary"
-                sx={{
-                  ".MuiBadge-colorPrimary": { backgroundColor: "#808080" },
-                }}
-              >
-                <Image src={item.img} />
-              </Badge>
-              <ItemInfo>
-                <ItemName>{item.title}</ItemName>
-                <ItemExtraInfo>
-                  {item.size} / {item.color}
-                </ItemExtraInfo>
-              </ItemInfo>
-            </Item>
-            <Price>₽{item.price * item.quantity}</Price>
-          </CartItems>
+          <CheckoutProduct key={index} item={item} />
         ))}
         <CostWrap>
           <CostItem>
@@ -69,38 +51,6 @@ const CostItem = styled.div`
   justify-content: space-between;
 `;
 
-const CartItems = styled.div`
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-`;
-
-const Item = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 0.5em;
-`;
-
-const ItemInfo = styled.div`
-  display: flex;
-  flex-direction: column;
-  gap: 0.5em;
-`;
-
-const ItemName = styled.p`
-  font-weight: 700;
-  font-size: 14px;
-`;
-
-const Image = styled.img`
-  width: 4vw;
-`;
-
-const ItemExtraInfo = styled.p`
-  font-size: 12px;
-  color: grey;
-`;
-
 const CostTitle = styled.p`
   font-size: 14px;
   margin: 0px;
@@ -136,18 +86,12 @@ const CheckOut = styled.div`
     ${CheckoutWrap} {
       width: 90%;
     }
-    ${Image} {
-      width: 6vw;
-    }
   }
   @media only screen and (max-width: ${devices.Tablet}px) {
     padding: 4em 0em 0em 0em;
     height: 50vh;
     background-color: white;
     align-items: center;
-    ${Image} {
-      width: 8vw;
-    }
     ${CheckoutWrap} {
       width: 80%;
     }

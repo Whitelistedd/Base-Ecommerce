@@ -21,6 +21,8 @@ const Title = styled.div`
   height: 44px;
 `;
 
+/* компонент для размещения объявлений в верхней части страницы */
+
 export const Announcement = ({ show }) => {
   const [displayError, setDisplayError] = useState(true);
 

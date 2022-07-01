@@ -20,6 +20,7 @@ export const Cart = () => {
   const dispatch = useDispatch();
   const navigate = useNavigate();
 
+  /* функция изменения количества продуктов */
   const handlequantity = (index, changer) => {
     if (changer === "rem" && cart.products[index].quantity >= 2) {
       dispatch(removeQuantity(index));
@@ -28,16 +29,19 @@ export const Cart = () => {
     }
   };
 
+  /* функция удаления товара */
   const handleRemoveProduct = (item) => {
     dispatch(removeProduct(item));
   };
 
+  /* отправит пользователя на страницу оформления заказа по клику, если в корзине есть товары */
   const handleCheckout = () => {
     if (cart.quantity > 0) {
       navigate("/checkout");
     }
   };
 
+  /* функция для получения всех продуктов и обновления цен и изображений продуктов в корзине */
   useEffect(() => {
     const getProduct = async () => {
       try {
@@ -51,6 +55,7 @@ export const Cart = () => {
 
   return (
     <Container>
+      {/* если у пользователя нет товаров в корзине, покажет компонент пустой корзины */}
       {cart.quantity === 0 ? (
         <EmptyCart />
       ) : (
@@ -61,18 +66,20 @@ export const Cart = () => {
             <ProductsTotal>ОБЩИЙ</ProductsTotal>
           </Top>
           <Info>
-            <CartProduct
-              productsList={cart.products}
-              handlequantity={handlequantity}
-              handleRemoveProduct={handleRemoveProduct}
-            />
+            {cart.products?.map((item, index) => (
+              <CartProduct
+                item={item}
+                index={index}
+                handlequantity={handlequantity}
+                handleRemoveProduct={handleRemoveProduct}
+              />
+            ))}
           </Info>
           <Bottom>
             <Total>₽{cart.total}</Total>
             <Shipping>
               Доставка и налоги рассчитываются при оформлении заказа
             </Shipping>
-            <StyledDiv id="payment-form"></StyledDiv>
             <Button onClick={handleCheckout} disabled={isFetching}>
               Перейти к оформлению
             </Button>

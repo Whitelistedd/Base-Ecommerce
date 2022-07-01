@@ -11,6 +11,7 @@ export const Products = ({ className, setCart, filters, cat, gender }) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   const [LoadingStatus, setLoadingStatus] = useState();
 
+  /* useEffect для получения всех продуктов */
   useEffect(() => {
     const getProducts = async () => {
       setLoadingStatus(true);
@@ -25,10 +26,12 @@ export const Products = ({ className, setCart, filters, cat, gender }) => {
     getProducts();
   }, [cat]);
 
+  /* useEffect для фильтрации продуктов */
   useEffect(() => {
     try {
       setFilteredProducts(
         products.filter((item) =>
+          /* если фильтр соответствует категории в объекте продукта, будет показан продукт */
           Object.entries(filters).every(([key, value]) =>
             value !== "" ? item[key].includes(value) : item[key].includes
           )
@@ -37,12 +40,14 @@ export const Products = ({ className, setCart, filters, cat, gender }) => {
     } catch (err) {}
   }, [products, cat, filters, gender]);
 
+  /* если продукты все еще загружаются, тогда он покажет этот компонент загрузки */
   if (LoadingStatus) {
     return <ProductsLoading />;
   }
 
   return (
     <Container className={className}>
+      {/* если страница не является домашней страницей, будут показаны все продукты, если это домашняя страница, будут показаны только первые 4 */}
       {cat
         ? filteredProducts.map((item) => (
             <Product cart={setCart} item={item} key={item._id} />

@@ -17,6 +17,7 @@ export const SingleProductFilters = ({
       <FilterContainer>
         <FilterTitle>Размер : {SelectedSize}</FilterTitle>
         <Filter>
+          {/* покажет все доступные размеры товара */}
           {AvailableSizes?.map((size) => (
             <SizeButton
               key={size.id}
@@ -35,6 +36,7 @@ export const SingleProductFilters = ({
           </Typography>
         </FilterTitle>
         <Filter>
+          {/* покажет все доступные цвета товара */}
           {AvailableColors?.map((color) => (
             <StyledColorRadioButton
               key={color.id}

@@ -5,43 +5,37 @@ import styled from "styled-components";
 import { devices } from "../../data";
 
 export const CartProduct = ({
-  productsList,
+  item,
+  index,
   handlequantity,
   handleRemoveProduct,
 }) => {
   return (
-    <>
-      {productsList?.map((item, index) => (
-        <Product key={index}>
-          <ProductWrap>
-            <Image src={item.img} />
-            <ProductDetails>
-              <ProductName>{item.title}</ProductName>
-              <ProductSizeAndColor>
-                {item.size} / {item.color}
-              </ProductSizeAndColor>
-              <ProductPrice>₽{item.price}</ProductPrice>
-            </ProductDetails>
-          </ProductWrap>
-          <QuantityWrap>
-            <QuantityContainer>
-              <Remove
-                onClick={() => handlequantity(index, "rem")}
-                data={index}
-              />
-              <Amount>{item.quantity}</Amount>
-              <Add onClick={() => handlequantity(index, "add")} data={index} />
-            </QuantityContainer>
-            <RemoveProducts>
-              <RemoveButton onClick={() => handleRemoveProduct(item)}>
-                Удалять
-              </RemoveButton>
-            </RemoveProducts>
-          </QuantityWrap>
-          <Price>₽{item.quantity * item.price}</Price>
-        </Product>
-      ))}
-    </>
+    <Product>
+      <ProductWrap>
+        <Image src={item.img} />
+        <ProductDetails>
+          <ProductName>{item.title}</ProductName>
+          <ProductSizeAndColor>
+            {item.size} / {item.color}
+          </ProductSizeAndColor>
+          <ProductPrice>₽{item.price}</ProductPrice>
+        </ProductDetails>
+      </ProductWrap>
+      <QuantityWrap>
+        <QuantityContainer>
+          <Remove onClick={() => handlequantity(index, "rem")} data={index} />
+          <Amount>{item.quantity}</Amount>
+          <Add onClick={() => handlequantity(index, "add")} data={index} />
+        </QuantityContainer>
+        <RemoveProducts>
+          <RemoveButton onClick={() => handleRemoveProduct(item)}>
+            Удалять
+          </RemoveButton>
+        </RemoveProducts>
+      </QuantityWrap>
+      <Price>₽{item.quantity * item.price}</Price>
+    </Product>
   );
 };
 

@@ -11,6 +11,7 @@ export const Filters = ({ filters, handleFilterChange, handleClear }) => {
     <FilterWrap>
       <FilterTitleWrap>
         <FilterTitle>Фильтры</FilterTitle>
+        {/* по клику очистит все фильтры */}
         <Chip
           onClick={handleClear}
           sx={{

@@ -1,16 +1,17 @@
-import React from 'react';
-import { useState } from 'react';
-import { useEffect } from 'react';
-import { createRef } from 'react';
-import styled, { keyframes } from 'styled-components';
+import React from "react";
+import { useState } from "react";
+import { useEffect } from "react";
+import { createRef } from "react";
+import styled, { keyframes } from "styled-components";
 
-import { devices } from '../../data';
-import { ProductImage } from './ProductImage';
+import { devices } from "../../data";
+import { ProductImage } from "./ProductImage";
 
 export const ProductImages = ({ productInfo }) => {
   const [imgSelections, setImgSelections] = useState([true, false, false]);
   const [mainImage, setMainImage] = useState(productInfo?.img?.[0]);
 
+  /* изменить основное изображение на изображение, по которому щелкнул пользователь */
   const handleImageSelection = (img, selectionNumber) => {
     setMainImage(img);
     setImgSelections((prev) => {
@@ -33,10 +34,7 @@ export const ProductImages = ({ productInfo }) => {
           />
         ))}
       </ImageGroup>
-      <Image
-        alt={"MEN'S QUARTER ZIP HOODIE"}
-        src={mainImage || productInfo?.img?.[0]}
-      />
+      <Image alt={productInfo.title} src={mainImage || productInfo?.img?.[0]} />
     </ImageContainer>
   );
 };

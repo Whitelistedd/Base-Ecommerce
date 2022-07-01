@@ -30,6 +30,7 @@ function App() {
         <Routes>
           <Route path="/product/:id" element={<SingleProduct />} />
           <Route path="/login" element={<Login />} />
+          {/* все страницы внутри PrivateRoute потребуют входа пользователя */}
           <Route element={<PrivateRoute />} >
             <Route path="profile" element={<Profile />} />
           </Route>

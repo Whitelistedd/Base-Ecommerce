@@ -10,6 +10,7 @@ export const ColorRadioButton = ({
 }) => {
   return (
     <CustomColorRadio className={className}>
+      {/* если компонент, который генерируется, является компонентом фильтра, тогда он будет отображать первый, если нет, он будет отображать второй */}
       {filters ? (
         <StyledInput
           value={colorName}

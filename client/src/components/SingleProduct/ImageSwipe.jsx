@@ -1,14 +1,16 @@
-import 'swiper/css';
-import 'swiper/css/effect-fade';
-import 'swiper/css/navigation';
+import "swiper/css";
+import "swiper/css/effect-fade";
+import "swiper/css/navigation";
 
-import React from 'react';
-import styled from 'styled-components';
-import { EffectFade, Navigation } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import React from "react";
+import styled from "styled-components";
+import { EffectFade, Navigation } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import { devices } from '../../data';
-import { ProductImage } from './ProductImage';
+import { devices } from "../../data";
+import { ProductImage } from "./ProductImage";
+
+/* компонент для пролистывания изображений для мобильных устройств */
 
 export const ImageSwipe = ({ productInfo }) => {
   return (

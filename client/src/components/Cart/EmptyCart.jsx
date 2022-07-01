@@ -1,7 +1,9 @@
-import { Typography } from '@mui/material';
-import React from 'react';
-import { Link } from 'react-router-dom';
-import styled from 'styled-components';
+import { Typography } from "@mui/material";
+import React from "react";
+import { Link } from "react-router-dom";
+import styled from "styled-components";
+
+/* компонент, чтобы показать, когда корзина пуста */
 
 export const EmptyCart = () => {
   return (
