@@ -19,6 +19,7 @@ export const Checkout = () => {
 
   let navigate = useNavigate();
 
+  /* функция для отображения сообщения об ошибке оформления заказа */
   const handleSnackBarClose = () => {
     setSnackBarStatus(false);
     dispatch(setError(""));
@@ -30,6 +31,7 @@ export const Checkout = () => {
     }
   }, [Error]);
 
+  /* если у пользователя нет товаров, он будет перенаправлен на домашнюю страницу */
   useEffect(() => {
     if (cartquantity === 0) {
       navigate("/", { replace: true });
@@ -38,6 +40,7 @@ export const Checkout = () => {
 
   return (
     <Container>
+      {/* сообщение об ошибке автоматически закроется через 6 секунд */}
       <Snackbar
         open={snackBarStatus}
         autoHideDuration={6000}

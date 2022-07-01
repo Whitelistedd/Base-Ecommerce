@@ -1,26 +1,21 @@
-import { useAuth0 } from '@auth0/auth0-react';
-import React from 'react';
-import styled from 'styled-components';
+import { useAuth0 } from "@auth0/auth0-react";
+import React from "react";
+import styled from "styled-components";
 
-import { Announcement } from '../components/Announcement';
-import { Footer } from '../components/Footer';
-import { Navbar } from '../components/Navbar';
-import { devices } from '../data';
+import { Layout } from "../components/Layout/Layout";
+import { devices } from "../data";
 
 export const Profile = () => {
   const { logout } = useAuth0();
 
   return (
-    <>
-      <Announcement />
-      <Navbar />
+    <Layout>
       <Container>
         <RegisterContainer>
           <Button onClick={() => logout()}>logout</Button>
         </RegisterContainer>
       </Container>
-      <Footer />
-    </>
+    </Layout>
   );
 };
 

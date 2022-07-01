@@ -8,12 +8,10 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
-import { Announcement } from "../components/Announcement";
-import { Footer } from "../components/Footer";
-import { Navbar } from "../components/Navbar";
 import { Filters } from "../components/ProductsList/Filters";
 import { Products } from "../components/ProductsList/Products";
 import { devices } from "../data";
+import { Layout } from "../components/Layout/Layout";
 
 export const ProductsList = () => {
   const location = useLocation();
@@ -27,6 +25,7 @@ export const ProductsList = () => {
 
   const [open, setOpen] = useState(false);
 
+  /* обрабатывать фильтры для страницы продуктов */
   const handleFilterChange = (e) => {
     const value = e.target.value;
     const name = e.target.name;
@@ -36,6 +35,7 @@ export const ProductsList = () => {
     });
   };
 
+  /* функция очистки всех фильтров */
   const handleClear = () => {
     setFilters({
       color: "",
@@ -45,10 +45,12 @@ export const ProductsList = () => {
     });
   };
 
+  /* функция переключения мобильного меню */
   const toggleDrawer = () => {
     setOpen(open ? false : true);
   };
 
+  /* изменить фильтр, если URL-адрес имеет категории */
   useEffect(() => {
     AOS.init();
     AOS.refresh();
@@ -60,9 +62,7 @@ export const ProductsList = () => {
   }, [categoryType]);
 
   return (
-    <>
-      <Announcement />
-      <Navbar />
+    <Layout>
       <Container>
         <ProductsWrap
           data-aos="fade-up"
@@ -78,18 +78,18 @@ export const ProductsList = () => {
             <Drawer
               onClose={toggleDrawer}
               open={open}
-              sx={{ width: "430px", ".MuiDrawer-paper": { width: "430px" } }}
+              sx={{ width: "80%", ".MuiDrawer-paper": { width: "80%" } }}
               variant="temporary"
               anchor="right"
             >
               <List sx={{ ml: 3, mt: 1.5, mr: 3 }}>
                 <Close onClick={toggleDrawer} sx={{ cursor: "pointer" }} />
                 <FilterContainerMobile>
-                  {/* <Filters
+                  <Filters
                     handleFilterChange={handleFilterChange}
                     handleClear={handleClear}
                     filters={filters}
-                  /> */}
+                  />
                 </FilterContainerMobile>
               </List>
             </Drawer>
@@ -106,8 +106,7 @@ export const ProductsList = () => {
           </ProductsContainer>
         </ProductsWrap>
       </Container>
-      <Footer />
-    </>
+    </Layout>
   );
 };
 

@@ -1,13 +1,11 @@
-import { useAuth0 } from '@auth0/auth0-react';
-import React from 'react';
-import { Navigate } from 'react-router-dom';
-import styled from 'styled-components';
+import { useAuth0 } from "@auth0/auth0-react";
+import React from "react";
+import { Navigate } from "react-router-dom";
+import styled from "styled-components";
 
-import { Announcement } from '../components/Announcement';
-import { Footer } from '../components/Footer';
-import { Navbar } from '../components/Navbar';
-import { devices } from '../data';
-import { Loading } from './Loading';
+import { Layout } from "../components/Layout/Layout";
+import { devices } from "../data";
+import { Loading } from "./Loading";
 
 export const Login = () => {
   const { loginWithRedirect, isAuthenticated, isLoading } = useAuth0();
@@ -17,16 +15,13 @@ export const Login = () => {
   }
 
   return (
-    <>
-      <Announcement />
-      <Navbar />
+    <Layout>
       <Container>
         <LoginContainer>
           {!isAuthenticated ? loginWithRedirect() : <Navigate to="/profile" />}
         </LoginContainer>
       </Container>
-      <Footer />
-    </>
+    </Layout>
   );
 };
 

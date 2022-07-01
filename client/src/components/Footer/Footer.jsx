@@ -6,7 +6,7 @@ import { Left } from "./Left/Left";
 import { Center } from "./Center/Center";
 import { Right } from "./Right/Right";
 import { devices } from "../../data";
-import Payments from "../images/payments.svg";
+import Payments from "../../images/payments.svg";
 
 export const Footer = () => {
   return (

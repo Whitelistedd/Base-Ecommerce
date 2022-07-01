@@ -1,17 +1,11 @@
-import React from 'react';
-
-import { Announcement } from '../components/Announcement';
-import { Cart } from '../components/Cart/Cart';
-import { Footer } from '../components/Footer';
-import { Navbar } from '../components/Navbar';
+import React from "react";
+import { Cart } from "../components/Cart/Cart";
+import { Layout } from "../components/Layout/Layout";
 
 export const CartPage = () => {
   return (
-    <>
-      <Announcement />
-      <Navbar />
+    <Layout>
       <Cart />
-      <Footer />
-    </>
+    </Layout>
   );
 };

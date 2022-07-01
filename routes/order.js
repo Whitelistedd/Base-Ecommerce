@@ -11,6 +11,7 @@ router.post('/', async (req, res) => {
 
     let newOrder = await new Order(req.body)
 
+    /* взять все идентификаторы продуктов и количества */
     const productIDS = newOrder.products.map(item => {
         return {
             id: item._id,
@@ -19,12 +20,19 @@ router.post('/', async (req, res) => {
     }
     )
 
-    const confirmedProducts = await Promise.all(productIDS.map(async (product) => { return { qty: product.qty, product: await Product.findOne({ _id: product.id }) } })).catch((err) => console.log(err))
+    /* функция для получения всех сведений о продукте из базы данных */
+    const confirmedProducts = await Promise.all(productIDS.map(async (product) => {
+        return { qty: product.qty, product: await Product.findOne({ _id: product.id }) }
+    }))
 
+        .catch((err) => console.log(err))
+
+    /* функция проверки наличия всех товаров на складе из базы данных */
     confirmedProducts.forEach(Info => Info.product.inStock === false && res.status(400).json({ message: "one of the products are not inStock, please go to your cart and delete the item" }))
 
     let total = 0
 
+    /* рассчитать цену */
     confirmedProducts.forEach(Info => total += Info.product.price * Info.qty)
 
     if (newOrder.shippingMethod === "Cdek") {
@@ -35,9 +43,11 @@ router.post('/', async (req, res) => {
         return res.status(500)
     }
 
+    /* получить новую схему с ценой заказа */
     newOrder = await new Order({ ...newOrder._doc, total: total })
 
     try {
+        /* получить адрес платежа от yandex kassa */
         const response = await axios.post(
             'https://api.yookassa.ru/v3/payments',
             {
@@ -64,7 +74,6 @@ router.post('/', async (req, res) => {
         );
         res.status(200).json(response.data)
         const ConfirmedOrder = await newOrder.save()
-        console.log("w")
     } catch (error) {
         console.log(error)
         res.status(500)

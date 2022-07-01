@@ -1,13 +1,10 @@
 import "aos/dist/aos.css";
 
 import AOS from "aos";
-import React, { useEffect, useRef } from "react";
+import React, { useEffect } from "react";
 import { Link } from "react-router-dom";
+import { Layout } from "../components/Layout/Layout";
 import styled from "styled-components";
-import Spline from "@splinetool/react-spline";
-import { Announcement } from "../components/Announcement";
-import { Footer } from "../components/Footer";
-import { Navbar } from "../components/Navbar";
 import { Products } from "../components/ProductsList/Products";
 import { devices } from "../data";
 import backgroundImage from "../images/background.webp";
@@ -20,9 +17,7 @@ export const HomePage = () => {
   }, []);
 
   return (
-    <>
-      <Announcement />
-      <Navbar />
+    <Layout>
       <Parallax bgImage={backgroundImage} strength={400}>
         <HeaderWrap>
           <Link to={"/products/men"}>
@@ -47,8 +42,7 @@ export const HomePage = () => {
           <HeaderButton>Посмотреть продукты</HeaderButton>
         </Link>
       </Container>
-      <Footer />
-    </>
+    </Layout>
   );
 };
 

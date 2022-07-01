@@ -1,17 +1,11 @@
-import React from 'react';
-
-import { Announcement } from '../components/Announcement';
-import { Footer } from '../components/Footer';
-import { Navbar } from '../components/Navbar';
-import { Product } from '../components/SingleProduct/Product';
+import React from "react";
+import { Layout } from "../components/Layout/Layout";
+import { Product } from "../components/SingleProduct/Product";
 
 export const SingleProduct = () => {
   return (
-    <>
-      <Announcement />
-      <Navbar />
+    <Layout>
       <Product />
-      <Footer />
-    </>
+    </Layout>
   );
 };

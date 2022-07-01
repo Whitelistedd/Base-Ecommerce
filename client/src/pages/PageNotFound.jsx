@@ -1,20 +1,17 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from "react";
+import styled from "styled-components";
 
-import { Footer } from '../components/Footer';
-import { Navbar } from '../components/Navbar';
+import { Layout } from "../components/Layout/Layout";
 
 export const PageNotFound = () => {
   return (
-    <>
-      <Navbar />
+    <Layout>
       <Container>
         <Title>404</Title>
         <Desc>The page you are looking for cannot be found.</Desc>
         <Button>BACK TO HOMEPAGE</Button>
       </Container>
-      <Footer />
-    </>
+    </Layout>
   );
 };
 
