@@ -100,6 +100,9 @@ const Container = styled.div`
   @media only screen and (max-width: ${devices.Phone}px) {
     ${HeaderButton} {
       font-size: 1em;
+      flex-direction: column;
+      justify-content: center;
+      ali
     }
   }
 `;

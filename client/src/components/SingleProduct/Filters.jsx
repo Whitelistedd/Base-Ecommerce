@@ -1,4 +1,3 @@
-import { Typography } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 
@@ -29,12 +28,7 @@ export const SingleProductFilters = ({
         </Filter>
       </FilterContainer>
       <FilterContainer>
-        <FilterTitle>
-          Цвета :{" "}
-          <Typography variant="span" sx={{ fontWeight: 500 }}>
-            {SelectedColor}
-          </Typography>
-        </FilterTitle>
+        <FilterTitle>Цвета : {SelectedColor}</FilterTitle>
         <Filter>
           {/* покажет все доступные цвета товара */}
           {AvailableColors?.map((color) => (

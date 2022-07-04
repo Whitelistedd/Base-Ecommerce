@@ -1,36 +1,30 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
+import { useQuery } from "react-query";
 import styled from "styled-components";
-
+import { Failed } from "../../pages/Failed";
 import { Loading } from "../../pages/Loading";
-import { BASE_URL } from "../../requests";
+import { publicRequest } from "../../requests";
 import { Product } from "./Product";
 
-export const Products = ({ className, setCart, filters, cat, gender }) => {
-  const [products, setProducts] = useState([]);
+export const Products = ({ className, setCart, filters, category, gender }) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
-  const [LoadingStatus, setLoadingStatus] = useState();
-
   /* useEffect для получения всех продуктов */
-  useEffect(() => {
-    const getProducts = async () => {
-      setLoadingStatus(true);
-      try {
-        const res = await axios.get(
-          cat ? `${BASE_URL}products?category=` : `${BASE_URL}products`
-        );
-        setProducts(res.data);
-        setLoadingStatus(false);
-      } catch (err) {}
-    };
-    getProducts();
-  }, [cat]);
+
+  const getProducts = async ({ queryKey }) => {
+    const Category = queryKey[1];
+    const response = await publicRequest.get(
+      Category ? `products?category=` : `products`
+    );
+    return response;
+  };
+
+  const { data, status } = useQuery(["products", category], getProducts);
 
   /* useEffect для фильтрации продуктов */
   useEffect(() => {
     try {
       setFilteredProducts(
-        products.filter((item) =>
+        data.data.filter((item) =>
           /* если фильтр соответствует категории в объекте продукта, будет показан продукт */
           Object.entries(filters).every(([key, value]) =>
             value !== "" ? item[key].includes(value) : item[key].includes
@@ -38,21 +32,25 @@ export const Products = ({ className, setCart, filters, cat, gender }) => {
         )
       );
     } catch (err) {}
-  }, [products, cat, filters, gender]);
+  }, [data, category, filters, gender]);
 
   /* если продукты все еще загружаются, тогда он покажет этот компонент загрузки */
-  if (LoadingStatus) {
+  if (status === "loading") {
     return <ProductsLoading />;
+  }
+
+  if (status === "error") {
+    return <Failed />;
   }
 
   return (
     <Container className={className}>
       {/* если страница не является домашней страницей, будут показаны все продукты, если это домашняя страница, будут показаны только первые 4 */}
-      {cat
+      {category
         ? filteredProducts.map((item) => (
             <Product cart={setCart} item={item} key={item._id} />
           ))
-        : products
+        : data.data
             ?.slice(0, 4)
             .map((item) => (
               <Product cart={setCart} item={item} key={item._id} />

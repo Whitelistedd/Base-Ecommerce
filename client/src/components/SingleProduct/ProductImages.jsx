@@ -1,7 +1,5 @@
 import React from "react";
 import { useState } from "react";
-import { useEffect } from "react";
-import { createRef } from "react";
 import styled, { keyframes } from "styled-components";
 
 import { devices } from "../../data";

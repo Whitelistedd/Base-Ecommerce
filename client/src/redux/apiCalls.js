@@ -1,6 +1,8 @@
 import { publicRequest } from '../requests';
 import { setError, UpdateProduct } from './cartRedux';
 
+/* функция для оформления заказа и получения URL-адреса покупки */
+
 export const newCheckout = async (dispatch, idemp, order) => {
     try {
         const key = idemp
@@ -13,30 +15,24 @@ export const newCheckout = async (dispatch, idemp, order) => {
     }
 }
 
-export const FetchMany = async (dispatch, products) => {
+/* извлечение всех продуктов из базы данных по идентификаторам продуктов, чтобы обновить сведения о продукте */
+
+export const UpdateProducts = async (dispatch, products) => {
     try {
-        let UpdatedProducts = []
-        let i = 0
-        for await (const product of products) {
-            const res = await publicRequest.get("/products/find/" + product._id);
-            dispatch(UpdateProduct({ index: i, oldproduct: product, newproduct: res.data }))
-            UpdatedProducts.push({ ...res.data, ...product })
-            i += 1
-        }
-        return UpdatedProducts
+        await Promise.all(products.map(
+            async (product, index) => {
+                const res = await publicRequest.get("/products/find/" + product._id);
+                dispatch(
+                    UpdateProduct({
+                        index: index,
+                        oldproduct: product,
+                        newproduct: res.data,
+                    })
+                );
+            }
+        )
+        )
     } catch (err) {
         console.log(err);
     }
 }
-
-/* export const checkoutAgain = async(dispatch,idemp,order) => {
-    try {
-        const key = idemp
-        const request = {key,order}
-        const res = await publicRequest.post("/orders/",request)
-        dispatch(confirmOrder(res.data.payment.confirmation["confirmation_token"]))
-        return res.data.payment.confirmation["confirmation_token"]
-    } catch (error) {
-        console.log(error)
-    }
-} */

@@ -15,7 +15,7 @@ import { Layout } from "../components/Layout/Layout";
 
 export const ProductsList = () => {
   const location = useLocation();
-  const categoryType = location.pathname.split("/")[2];
+  const category = location.pathname.split("/")[2];
   const [filters, setFilters] = useState({
     color: "",
     size: "",
@@ -54,12 +54,12 @@ export const ProductsList = () => {
   useEffect(() => {
     AOS.init();
     AOS.refresh();
-    if (categoryType === "men") {
+    if (category === "men") {
       setFilters((prev) => ({ ...prev, gender: "men" }));
-    } else if (categoryType === "women") {
+    } else if (category === "women") {
       setFilters((prev) => ({ ...prev, gender: "women" }));
     }
-  }, [categoryType]);
+  }, [category]);
 
   return (
     <Layout>
@@ -102,7 +102,7 @@ export const ProductsList = () => {
             />
           </FilterContainer>
           <ProductsContainer>
-            <StyledProducts cat={categoryType} filters={filters} />
+            <StyledProducts category={category} filters={filters} />
           </ProductsContainer>
         </ProductsWrap>
       </Container>
