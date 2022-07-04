@@ -23,8 +23,9 @@ export const Left = () => {
       <SocialContainer>
         <A
           aria-label="вконтакт"
-          href="наша страница вконтакте"
+          href="https://www.vk.ru/"
           target={"#blank"}
+          alt="наша страница вконтакте"
         >
           <Icon src={vkIcon} />
         </A>
@@ -33,7 +34,11 @@ export const Left = () => {
           href="https://www.instagram.com"
           target={"#blank"}
         >
-          <Icon href={"наша страница в инстаграмм"} src={instagramIcon} />
+          <Icon
+            href={"https://www.instagram.com/"}
+            alt="наша страница в инстаграмм"
+            src={instagramIcon}
+          />
         </A>
       </SocialContainer>
     </Container>

@@ -74,7 +74,7 @@ export const Navbar = () => {
               }}
             />
           </Link>
-          <Link to={"/cart"}>
+          <Link aria-label="кнопка перехода на страницу корзины" to={"/cart"}>
             <Badge
               badgeContent={cartquantity}
               color="primary"
