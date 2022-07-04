@@ -13,7 +13,7 @@ export const Left = () => {
         variant="p"
         letterSpacing={"normal"}
         fontSize={15}
-        sx={{ color: "rgb(157, 157, 157)", mb: 1, mt: 1 }}
+        sx={{ color: "rgb(109, 109, 109)", mb: 1, mt: 1 }}
       >
         После того, как мы были разочарованы тем, что не смогли найти подходящие
         высококачественные предметы первой необходимости по разумной цене, мы
@@ -21,11 +21,19 @@ export const Left = () => {
       </Typography>
       <Typography>Подписывайтесь на нас</Typography>
       <SocialContainer>
-        <A href="https://vk.com" target={"#blank"}>
+        <A
+          aria-label="вконтакт"
+          href="наша страница вконтакте"
+          target={"#blank"}
+        >
           <Icon src={vkIcon} />
         </A>
-        <A href="https://www.instagram.com" target={"#blank"}>
-          <Icon src={instagramIcon} />
+        <A
+          aria-label="инстаграмм"
+          href="https://www.instagram.com"
+          target={"#blank"}
+        >
+          <Icon href={"наша страница в инстаграмм"} src={instagramIcon} />
         </A>
       </SocialContainer>
     </Container>

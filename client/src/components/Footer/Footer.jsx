@@ -24,7 +24,10 @@ export const Footer = () => {
           </Typography>
         </CopyrightLeft>
         <CopyrightRight>
-          <Image src={Payments} />
+          <Image
+            alt="способы оплаты: Visa, MasterCard, МИР, СБП"
+            src={Payments}
+          />
         </CopyrightRight>
       </Copyright>
     </Container>

@@ -1,23 +1,14 @@
-import { Close, PersonOutlineOutlined } from "@mui/icons-material";
+import { PersonOutlineOutlined } from "@mui/icons-material";
 import MenuIcon from "@mui/icons-material/Menu";
 import ShoppingBagOutlinedIcon from "@mui/icons-material/ShoppingBagOutlined";
-import {
-  Badge,
-  Drawer,
-  List,
-  ListItem,
-  ListItemText,
-  Typography,
-} from "@mui/material";
+import { Badge } from "@mui/material";
 import React, { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Link } from "react-router-dom";
 import styled from "styled-components";
 
-import { MenuItems } from "../data";
-import Base from "../images/basealpha.png";
-
-const drawerWidth = "330px";
+import Base from "../../images/basealpha.png";
+import { NavMenu } from "./NavMenu/NavMenu";
 
 export const Navbar = () => {
   const [open, setOpen] = useState(false);
@@ -25,14 +16,15 @@ export const Navbar = () => {
 
   /* будет переключать мобильное меню при нажатии на значок */
   const toggleDrawer = () => {
+    console.log("Toggle drawerWidth");
     setOpen(open ? false : true);
   };
 
-  const [show, setShow] = useState(false);
+  const [displayFixed, setDisplayFixed] = useState(false);
 
   /* если окно на 42 пикселя ниже, панель навигации будет {position: fixed} */
   const handleScroll = () => {
-    setShow(window.pageYOffset > 42);
+    setDisplayFixed(window.pageYOffset > 42);
   };
 
   useEffect(() => {
@@ -42,8 +34,8 @@ export const Navbar = () => {
   }, []);
 
   return (
-    <Container className={`Nav ${show && "Nav__black"}`}>
-      <Wrapper className={`Nav ${show && "Nav__black"}`}>
+    <Container displayFixed={displayFixed}>
+      <Wrapper displayFixed={displayFixed}>
         <Left>
           <MenuIcon
             onClick={toggleDrawer}
@@ -54,58 +46,22 @@ export const Navbar = () => {
               ":hover": { opacity: 0.7, transition: "700ms ease" },
             }}
           />
-          <Drawer
-            onClose={toggleDrawer}
-            open={open}
-            sx={{
-              width: drawerWidth,
-              ".MuiDrawer-paper": { width: drawerWidth },
-            }}
-            variant="temporary"
-            anchor="left"
-          >
-            <List sx={{ ml: 3, mt: 1.5, mr: 3 }}>
-              <Close onClick={toggleDrawer} sx={{ cursor: "pointer" }} />
-              {MenuItems.map((item) => (
-                <StyledLink key={item.id} to={item.path}>
-                  <ListItem
-                    button
-                    sx={{
-                      marginTop: 2,
-                      borderBottom: "1px solid black",
-                      paddingLeft: 0,
-                      paddingBottom: 1.6,
-                      textDecoration: "none",
-                    }}
-                  >
-                    <ListItemText>
-                      <Typography
-                        sx={{ color: "black", ml: 0.5 }}
-                        variant="strong"
-                        fontWeight={700}
-                        fontSize={15}
-                        letterSpacing={".1rem"}
-                      >
-                        {item.text}
-                      </Typography>
-                    </ListItemText>
-                  </ListItem>
-                </StyledLink>
-              ))}
-            </List>
-          </Drawer>
+          <NavMenu toggleDrawer={toggleDrawer} open={open} />
         </Left>
         <Center>
-          <Link to={"/"}>
+          <Link aria-label="кнопка вернуться домой" to={"/"}>
             <Image
               style={{ height: 30, cursor: "pointer" }}
               src={Base}
-              alt=""
+              alt="Logo"
             />
           </Link>
         </Center>
         <Right>
-          <Link to={"/profile"}>
+          <Link
+            aria-label="кнопка для перехода на страницу профиля"
+            to={"/profile"}
+          >
             <PersonOutlineOutlined
               sx={{
                 color: "black",
@@ -141,18 +97,17 @@ export const Navbar = () => {
 };
 
 const Container = styled.div`
-  & .Nav {
-    z-index: 2;
-    background-color: white;
-  }
+  z-index: 2;
+  background-color: white;
 
-  & .Nav__black {
-    top: 0;
-    width: 100%;
-    position: fixed;
-    box-sizing: border-box;
-    z-index: 4;
-  }
+  /* если true, будет добавлять эти стили */
+  ${(props) =>
+    props.displayFixed &&
+    `top: 0;
+  width: 100%;
+  position: fixed;
+  box-sizing: border-box;
+  z-index: 4;`}
 
   height: 60px;
   width: 100%;
@@ -165,6 +120,17 @@ const Wrapper = styled.div`
   padding: 13px 30px;
   align-items: center;
   border-bottom: 1px solid #dcdcdc;
+  z-index: 2;
+  background-color: white;
+
+  /* если true, будет добавлять эти стили */
+  ${(props) =>
+    props.displayFixed &&
+    `top: 0;
+  width: 100%;
+  position: fixed;
+  box-sizing: border-box;
+  z-index: 4;`}
 `;
 
 const Left = styled.div`
@@ -189,8 +155,4 @@ const Right = styled.div`
   align-items: center;
   justify-content: flex-end;
   gap: 30px;
-`;
-
-const StyledLink = styled(Link)`
-  text-decoration: none;
 `;

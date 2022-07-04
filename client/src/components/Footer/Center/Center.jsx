@@ -1,6 +1,6 @@
 import React from "react";
 import styled from "styled-components";
-import { List, ListItemText } from "@mui/material";
+import { List } from "@mui/material";
 import { FooterPages } from "../../../data";
 
 export const Center = () => {
@@ -23,6 +23,10 @@ export const Center = () => {
     </Container>
   );
 };
+
+const ListItemText = styled.li`
+  color: rgb(109, 109, 109);
+`;
 
 const Title = styled.div`
   font-size: 16px;

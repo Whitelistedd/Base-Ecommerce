@@ -41,7 +41,7 @@ const Title = styled.p`
 `;
 
 const SoldOut = styled(Title)`
-  color: red;
+  color: #ff0000;
 `;
 
 const unFade = keyframes`

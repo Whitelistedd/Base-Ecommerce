@@ -13,7 +13,7 @@ export const Right = () => {
           fontSize: "15px",
           fontStyle: "normal",
           fontWeight: 400,
-          color: "rgb(157, 157, 157)",
+          color: "rgb(109, 109, 109)",
         }}
       >
         Подпишитесь, чтобы получать обновления, доступ к
