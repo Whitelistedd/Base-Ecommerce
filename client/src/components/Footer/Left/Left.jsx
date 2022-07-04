@@ -18,10 +18,10 @@ export const Left = () => {
       </Typography>
       <Typography>Подписывайтесь на нас</Typography>
       <SocialContainer>
-        <A href="https://vk.com/wear_base" target={"#blank"}>
+        <A href="https://vk.com" target={"#blank"}>
           <i className="fa-brands fa-lg fa-vk"></i>
         </A>
-        <A href="https://www.instagram.com/wear_base/" target={"#blank"}>
+        <A href="https://www.instagram.com" target={"#blank"}>
           <i className="fa-brands fa-lg fa-instagram"></i>
         </A>
       </SocialContainer>

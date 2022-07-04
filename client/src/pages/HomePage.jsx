@@ -102,7 +102,6 @@ const Container = styled.div`
       font-size: 1em;
       flex-direction: column;
       justify-content: center;
-      ali
     }
   }
 `;
