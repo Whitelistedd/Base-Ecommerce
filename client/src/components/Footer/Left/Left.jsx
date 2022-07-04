@@ -21,24 +21,15 @@ export const Left = () => {
       </Typography>
       <Typography>Подписывайтесь на нас</Typography>
       <SocialContainer>
-        <A
-          aria-label="вконтакт"
-          href="https://www.vk.ru/"
-          target={"#blank"}
-          alt="наша страница вконтакте"
-        >
-          <Icon src={vkIcon} />
+        <A aria-label="вконтакт" href="https://www.vk.ru/" target={"#blank"}>
+          <Icon alt="наша страница в инстаграмм" src={vkIcon} />
         </A>
         <A
           aria-label="инстаграмм"
           href="https://www.instagram.com"
           target={"#blank"}
         >
-          <Icon
-            href={"https://www.instagram.com/"}
-            alt="наша страница в инстаграмм"
-            src={instagramIcon}
-          />
+          <Icon alt="наша страница в инстаграмм" src={instagramIcon} />
         </A>
       </SocialContainer>
     </Container>
