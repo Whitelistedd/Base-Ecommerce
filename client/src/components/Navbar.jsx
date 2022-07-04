@@ -97,7 +97,11 @@ export const Navbar = () => {
         </Left>
         <Center>
           <Link to={"/"}>
-            <img style={{ height: 30, cursor: "pointer" }} src={Base} alt="" />
+            <Image
+              style={{ height: 30, cursor: "pointer" }}
+              src={Base}
+              alt=""
+            />
           </Link>
         </Center>
         <Right>
@@ -165,6 +169,11 @@ const Wrapper = styled.div`
 
 const Left = styled.div`
   flex: 1;
+`;
+
+const Image = styled.img`
+  width: 100%;
+  height: 100%;
 `;
 
 const Center = styled.div`

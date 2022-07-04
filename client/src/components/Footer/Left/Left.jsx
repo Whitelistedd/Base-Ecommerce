@@ -2,6 +2,9 @@ import { Typography } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 
+import vkIcon from "../../../images/vk.svg";
+import instagramIcon from "../../../images/instagram.svg";
+
 export const Left = () => {
   return (
     <Container>
@@ -19,15 +22,20 @@ export const Left = () => {
       <Typography>Подписывайтесь на нас</Typography>
       <SocialContainer>
         <A href="https://vk.com" target={"#blank"}>
-          <i className="fa-brands fa-lg fa-vk"></i>
+          <Icon src={vkIcon} />
         </A>
         <A href="https://www.instagram.com" target={"#blank"}>
-          <i className="fa-brands fa-lg fa-instagram"></i>
+          <Icon src={instagramIcon} />
         </A>
       </SocialContainer>
     </Container>
   );
 };
+
+const Icon = styled.img`
+  width: 25px;
+  height: 25px;
+`;
 
 const Title = styled.div`
   font-size: 16px;
