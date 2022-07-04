@@ -5,7 +5,7 @@ import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import { devices } from "../../data";
-import { FetchMany } from "../../redux/apiCalls";
+import { UpdateProducts } from "../../redux/apiCalls";
 import {
   addQuantity,
   removeProduct,
@@ -43,14 +43,7 @@ export const Cart = () => {
 
   /* функция для получения всех продуктов и обновления цен и изображений продуктов в корзине */
   useEffect(() => {
-    const getProduct = async () => {
-      try {
-        FetchMany(dispatch, cart.products);
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getProduct();
+    UpdateProducts(dispatch, cart.products);
   }, []);
 
   return (
@@ -68,6 +61,7 @@ export const Cart = () => {
           <Info>
             {cart.products?.map((item, index) => (
               <CartProduct
+                key={item.id}
                 item={item}
                 index={index}
                 handlequantity={handlequantity}
@@ -174,13 +168,6 @@ const Button = styled.button`
     cursor: not-allowed;
     background-color: rgb(244, 112, 38);
   }
-`;
-
-const StyledDiv = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  color: red;
 `;
 
 const Container = styled.div`

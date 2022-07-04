@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
+import { useQuery } from "react-query";
 import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
-
+import { Failed } from "../../pages/Failed";
 import { AllColors, AllSizes, devices } from "../../data";
+import { Loading } from "../../pages/Loading";
 import { addProduct } from "../../redux/cartRedux";
 import { publicRequest } from "../../requests";
 import { ImageSwipe } from "./ImageSwipe";
@@ -13,11 +15,27 @@ import { ProductImages } from "./ProductImages";
 export const Product = () => {
   const location = useLocation();
   const productID = location.pathname.split("/")[2];
-  const [productInfo, setProductInfo] = useState({});
   const [productType, setProductType] = useState({});
-  const [error, SetError] = useState(false);
+  const [displayError, SetDisplayError] = useState(false);
   const dispatch = useDispatch();
   const [quantity, setQuantity] = useState(1);
+
+  /* функция, чтобы получить выбранный продукт и получить все доступные размеры и цвета */
+  const getProduct = async ({ queryKey }) => {
+    const Id = queryKey[1];
+    const res = await publicRequest.get("/products/find/" + Id);
+
+    const getAvailableColors = await AllColors.filter((color) =>
+      res.data.color.includes(color.colorName)
+    );
+    const getAvailableSizes = await AllSizes.filter((size) =>
+      res.data.size.includes(size.SizeName)
+    );
+
+    return { ...res.data, size: getAvailableSizes, color: getAvailableColors };
+  };
+
+  const { data, status } = useQuery(["singleProduct", productID], getProduct);
 
   /* функция добавления фильтров по клику пользователя */
   const handleProductType = (e) => {
@@ -35,13 +53,13 @@ export const Product = () => {
 
   /* если пользователь выбрал товар с цветом и размером, он будет добавлен в корзину */
   const handleCart = () => {
-    if (productType.color === undefined || productType.size === undefined) {
-      SetError(true);
+    if (!productType.color || !productType.size) {
+      SetDisplayError(true);
     } else {
       dispatch(
         addProduct({
-          _id: productInfo._id,
-          price: productInfo.price,
+          _id: data._id,
+          price: data.price,
           quantity,
           ...productType,
         })
@@ -49,41 +67,26 @@ export const Product = () => {
     }
   };
 
-  /* функция, чтобы получить выбранный продукт и получить все доступные размеры и цвета */
-  useEffect(() => {
-    const getProduct = async () => {
-      try {
-        const res = await publicRequest.get("/products/find/" + productID);
-        const getAvailableColors = await AllColors.filter((color) =>
-          res.data.color.includes(color.colorName)
-        );
-        const getAvailableSizes = await AllSizes.filter((size) =>
-          res.data.size.includes(size.SizeName)
-        );
-        setProductInfo({
-          ...res.data,
-          size: getAvailableSizes,
-          color: getAvailableColors,
-        });
-      } catch (err) {
-        console.log(err);
-      }
-    };
-    getProduct();
-  }, [productID]);
+  if (status === "loading") {
+    return <Loading />;
+  }
+
+  if (status === "error") {
+    return <Failed />;
+  }
 
   return (
     <Container>
-      <ImageSwipe productInfo={productInfo} />
-      <ProductImages productInfo={productInfo} />
+      <ImageSwipe productInfo={data} />
+      <ProductImages productInfo={data} />
       <ProductForm
         handleCart={handleCart}
         handleProductType={handleProductType}
         quantity={quantity}
         handleQuantity={handleQuantity}
-        error={error}
+        error={displayError}
         productType={productType}
-        productInfo={productInfo}
+        productInfo={data}
       />
     </Container>
   );
