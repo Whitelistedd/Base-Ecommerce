@@ -18,7 +18,7 @@ export const HomePage = () => {
 
   return (
     <Layout>
-      <Parallax bgImage={backgroundImage} strength={400}>
+      <StyledParallax bgImage={backgroundImage} strength={400}>
         <HeaderWrap>
           <Link to={"/products/men"}>
             <HeaderButton>Мужчины</HeaderButton>
@@ -27,7 +27,7 @@ export const HomePage = () => {
             <HeaderButton>Женщины</HeaderButton>
           </Link>
         </HeaderWrap>
-      </Parallax>
+      </StyledParallax>
       <Container
         data-aos="fade-up"
         data-aos-offset="0"
@@ -66,7 +66,7 @@ const HeaderButton = styled.button`
 
 const HeaderWrap = styled.div`
   width: 100%;
-  min-height: 100vh;
+  height: 800px;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: top;
@@ -85,6 +85,10 @@ const HomeProducts = styled(Products)`
   justify-content: space-around;
   width: 100%;
   height: 100%;
+`;
+
+const StyledParallax = styled(Parallax)`
+  height: 800px;
 `;
 
 const Container = styled.div`

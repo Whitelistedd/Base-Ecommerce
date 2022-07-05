@@ -1,6 +1,4 @@
 import React from "react";
-import { useEffect } from "react";
-import { useLocation, useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
 import multiply from "../images/multiply.svg";

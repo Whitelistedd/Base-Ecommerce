@@ -62,6 +62,7 @@ const Image = styled.img`
 const Copyright = styled.div`
   display: flex;
   justify-content: space-between;
+  gap: 10px;
   flex-direction: row;
   align-items: center;
   margin-top: 80px;

@@ -100,15 +100,6 @@ const Container = styled.div`
   z-index: 2;
   background-color: white;
 
-  /* если true, будет добавлять эти стили */
-  ${(props) =>
-    props.displayFixed &&
-    `top: 0;
-  width: 100%;
-  position: fixed;
-  box-sizing: border-box;
-  z-index: 4;`}
-
   height: 60px;
   width: 100%;
   background-color: white;
@@ -122,15 +113,7 @@ const Wrapper = styled.div`
   border-bottom: 1px solid #dcdcdc;
   z-index: 2;
   background-color: white;
-
-  /* если true, будет добавлять эти стили */
-  ${(props) =>
-    props.displayFixed &&
-    `top: 0;
   width: 100%;
-  position: fixed;
-  box-sizing: border-box;
-  z-index: 4;`}
 `;
 
 const Left = styled.div`
