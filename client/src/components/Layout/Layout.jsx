@@ -18,11 +18,11 @@ export const Layout = ({ children }) => {
 };
 
 const Wrap = styled.div`
-  width: 1920px;
+  max-width: 1920px;
 `;
 
 const Container = styled.div`
-  width: 100vw;
+  max-width: 100vw;
   display: flex;
   justify-content: center;
   align-items: center;
