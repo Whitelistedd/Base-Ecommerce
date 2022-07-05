@@ -22,7 +22,7 @@ export const Left = () => {
       <Typography>Подписывайтесь на нас</Typography>
       <SocialContainer>
         <A aria-label="вконтакт" href="https://www.vk.ru/" target={"#blank"}>
-          <Icon alt="наша страница в инстаграмм" src={vkIcon} />
+          <Icon alt="наша страница вконтакт" src={vkIcon} />
         </A>
         <A
           aria-label="инстаграмм"

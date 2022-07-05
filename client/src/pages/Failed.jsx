@@ -1,24 +1,11 @@
-import React from 'react';
-import { useEffect } from 'react';
-import { useNavigate } from 'react-router-dom';
-import styled from 'styled-components';
+import React from "react";
+import { useEffect } from "react";
+import { useLocation, useNavigate } from "react-router-dom";
+import styled from "styled-components";
 
-import multiply from '../images/multiply.svg';
+import multiply from "../images/multiply.svg";
 
 export const Failed = () => {
-  let navigate = useNavigate();
-
-  useEffect(() => {
-    const Redirect = () => {
-      navigate("/", { replace: true });
-    };
-    const interval = setInterval(Redirect, 5000);
-
-    return () => {
-      clearInterval(interval);
-    };
-  });
-
   return (
     <>
       <Container>
