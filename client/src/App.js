@@ -1,4 +1,5 @@
 import { useAuth0 } from '@auth0/auth0-react';
+import Chatra from '@chatra/chatra';
 import { BrowserRouter as Router, Route, Routes } from 'react-router-dom';
 import {
   QueryClient,
@@ -19,11 +20,17 @@ import { Profile } from './pages/Profile';
 import { SingleProduct } from './pages/SingleProduct';
 import { Success } from './pages/Success';
 
+let ChatraConfig = {
+  ID: "iB5hukYTSofAHKpRR"
+}
+
 const queryClient = new QueryClient()
 
 function App() {
 
   const { isLoading } = useAuth0();
+
+  Chatra('init', ChatraConfig)
 
 
   if (isLoading) {
