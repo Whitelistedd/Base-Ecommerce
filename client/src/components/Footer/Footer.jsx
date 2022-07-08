@@ -34,26 +34,6 @@ export const Footer = () => {
   );
 };
 
-const Container = styled.div`
-  display: flex;
-  justify-content: space-between;
-  letter-spacing: 0.12em;
-  margin-top: 50px;
-  padding: 75px 0 42px;
-  flex-direction: column;
-  border: solid 1px #efefef;
-`;
-
-const Info = styled.div`
-  display: flex;
-  justify-content: space-between;
-  letter-spacing: 0.12em;
-  padding: 0 80px;
-  @media (max-width: 1134px) {
-    flex-direction: column;
-  }
-`;
-
 const Image = styled.img`
   width: 180px;
   height: 35px;
@@ -82,4 +62,34 @@ const CopyrightLeft = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+`;
+
+const Info = styled.div`
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 0.12em;
+  padding: 0 80px;
+  @media (max-width: 1134px) {
+    flex-direction: column;
+  }
+`;
+
+const Container = styled.div`
+  display: flex;
+  justify-content: space-between;
+  letter-spacing: 0.12em;
+  margin-top: 50px;
+  padding: 75px 0 42px;
+  flex-direction: column;
+  border: solid 1px #efefef;
+
+  @media only screen and (max-width: ${devices.Tablet}px) {
+    ${Info} {
+      padding: 0 30px;
+      gap: 2em;
+    }
+    ${Copyright} {
+      padding: 0 30px;
+    }
+  }
 `;
