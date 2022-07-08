@@ -96,26 +96,6 @@ export const Navbar = () => {
   );
 };
 
-const Container = styled.div`
-  z-index: 2;
-  background-color: white;
-
-  height: 60px;
-  width: 100%;
-  background-color: white;
-`;
-
-const Wrapper = styled.div`
-  display: flex;
-  justify-content: space-between;
-  padding: 13px 30px;
-  align-items: center;
-  border-bottom: 1px solid #dcdcdc;
-  z-index: 2;
-  background-color: white;
-  width: 100%;
-`;
-
 const Left = styled.div`
   flex: 1;
 `;
@@ -138,4 +118,33 @@ const Right = styled.div`
   align-items: center;
   justify-content: flex-end;
   gap: 30px;
+`;
+
+const Wrapper = styled.div`
+  display: flex;
+  justify-content: space-between;
+  padding: 13px 30px;
+  align-items: center;
+  border-bottom: 1px solid #dcdcdc;
+  z-index: 2;
+  background-color: white;
+  width: 100%;
+  position: ${(props) => (props.displayFixed ? "fixed" : "")};
+`;
+
+const Container = styled.div`
+  z-index: 2;
+  background-color: white;
+
+  height: 60px;
+  width: 100%;
+  background-color: white;
+  position: ${(props) => (props.displayFixed ? "fixed" : "")};
+
+  @media only screen and (min-width: 1920px) {
+    width: 1920px;
+    ${Wrapper} {
+      width: 1920px;
+    }
+  }
 `;
