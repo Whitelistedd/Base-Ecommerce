@@ -63,6 +63,7 @@ const ImageContainer = styled.div`
   display: flex;
   flex-direction: row;
   gap: 1em;
+  height: 100%;
   @media only screen and (max-width: ${devices.Desktop}px) {
     width: 50%;
     ${Image} {

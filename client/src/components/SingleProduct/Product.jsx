@@ -77,37 +77,54 @@ export const Product = () => {
 
   return (
     <Container>
-      <ImageSwipe productInfo={data} />
-      <ProductImages productInfo={data} />
-      <ProductForm
-        handleCart={handleCart}
-        handleProductType={handleProductType}
-        quantity={quantity}
-        handleQuantity={handleQuantity}
-        error={displayError}
-        productType={productType}
-        productInfo={data}
-      />
+      <ProductsWrap>
+        <ImageSwipe productInfo={data} />
+        <ProductImages productInfo={data} />
+        <ProductForm
+          handleCart={handleCart}
+          handleProductType={handleProductType}
+          quantity={quantity}
+          handleQuantity={handleQuantity}
+          error={displayError}
+          productType={productType}
+          productInfo={data}
+        />
+      </ProductsWrap>
     </Container>
   );
 };
 
 const Fontcolor = "#9d9d9d";
 
+const ProductsWrap = styled.div`
+  display: flex;
+  gap: 10em;
+  align-items: flex-start;
+  justify-content: center;
+  width: 100%;
+`;
+
 const Container = styled.div`
   display: flex;
   justify-content: center;
   width: 100%;
   min-height: 90vh;
-  gap: 10em;
   margin-bottom: 9em;
   align-items: center;
   color: ${Fontcolor};
   @media only screen and (max-width: ${devices.Desktop}px) {
-    gap: 0em;
+    ${ProductsWrap} {
+      gap: 0em;
+    }
   }
   @media only screen and (max-width: ${devices.Tablet}px) {
-    flex-direction: column;
-    margin-bottom: 100px;
+    ${ProductsWrap} {
+      flex-direction: column;
+      width: 100vw;
+      align-items: center;
+      min-height: 100vh;
+    }
+    min-height: 100vh;
+    margin-bottom: 0px;
   }
 `;

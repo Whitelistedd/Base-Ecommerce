@@ -61,7 +61,7 @@ const Title = styled.h1`
   font-family: "FuturaLight";
   font-weight: 600;
   letter-spacing: 1px;
-  font-size: 25px;
+  font-size: 1.5em;
   color: black;
   margin-bottom: 0px;
 `;
@@ -69,7 +69,7 @@ const Title = styled.h1`
 const Price = styled.span`
   font-family: ${Font};
   font-weight: 500;
-  font-size: 20px;
+  font-size: 1.2em;
   margin-top: -45px;
   margin-bottom: 10px;
 `;
@@ -87,7 +87,7 @@ const Benifits = styled.div`
 `;
 
 const Perks = styled.span`
-  font-size: 13px;
+  font-size: 1em;
 `;
 
 const BeiniftsIMG = styled.img`
@@ -96,7 +96,7 @@ const BeiniftsIMG = styled.img`
 
 const StyledButton = styled.button`
   padding: 1em;
-  font-size: 16px;
+  font-size: 1em;
   font-weight: 700;
   border: 0px;
   width: 100%;
@@ -127,7 +127,7 @@ const QuantityContainer = styled.div`
   flex: 1;
   height: 100%;
   color: #282828;
-  font-size: 16px;
+  font-size: 1em;
   svg {
     width: 1.7em;
     height: 1.7em;
@@ -144,13 +144,15 @@ const Amount = styled.span`
 
 const InfoContainer = styled.div`
   display: flex;
-  height: 65vh;
+  height: 60vh;
   width: 22vw;
+  min-width: 400px;
   gap: 3em;
   color: #282828;
   flex-direction: column;
   @media only screen and (max-width: ${devices.Desktop}px) {
     width: 30vw;
+    height: 49vh;
     ${QuantityContainer} {
       font-size: 13px;
     }
@@ -159,9 +161,17 @@ const InfoContainer = styled.div`
     }
   }
   @media only screen and (max-width: ${devices.Tablet}px) {
-    width: 80%;
+    width: 70%;
+    min-width: 600px;
     flex-direction: column;
+    padding: 2em;
     margin-bottom: 100px;
+    ${QuantityContainer} {
+      width: 105px;
+    }
+    ${QuantityInfo} {
+      flex-direction: column;
+    }
     ${Benifits} {
       margin-top: 15px;
     }
@@ -175,5 +185,18 @@ const InfoContainer = styled.div`
       margin: 1em 0em;
       align-items: center;
     }
+    ${Title} {
+      text-align: center;
+    }
+    ${Price} {
+      text-align: center;
+    }
+  }
+  @media only screen and (max-width: ${devices.Tablet}px) {
+    font-size: 15px;
+    min-width: 350px;
+    padding: 2em;
+    height: 100%;
+    margin-bottom: 0px;
   }
 `;

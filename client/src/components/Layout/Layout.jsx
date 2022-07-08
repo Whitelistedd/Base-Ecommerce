@@ -19,6 +19,7 @@ export const Layout = ({ children }) => {
 
 const Wrap = styled.div`
   max-width: 1920px;
+  width: 100vw;
 `;
 
 const Container = styled.div`
