@@ -1,9 +1,13 @@
-import React from 'react';
-import styled from 'styled-components';
+import React from 'react'
+import styled from 'styled-components'
 
-import { SizeButtonProps } from './SingleProduct.model';
+import { SizeButtonProps } from './SingleProduct.model'
 
-export const SizeButton : React.FC<SizeButtonProps> = ({ handleProductType, value, title }) => {
+export const SizeButton: React.FC<SizeButtonProps> = ({
+  handleProductType,
+  value,
+  title,
+}) => {
   return (
     <SizeRadioLabel>
       <StyledInput
@@ -18,14 +22,14 @@ export const SizeButton : React.FC<SizeButtonProps> = ({ handleProductType, valu
         </OptionSelect>
       </SizesButton>
     </SizeRadioLabel>
-  );
-};
+  )
+}
 
-const OptionSelect = styled.div``;
+const OptionSelect = styled.div``
 
-const StyledInput = styled.input``;
+const StyledInput = styled.input``
 
-const StyledH3 = styled.h3``;
+const StyledH3 = styled.h3``
 
 const SizesButton = styled.span`
   margin: 10px;
@@ -46,7 +50,7 @@ const SizesButton = styled.span`
     font-weight: 100;
     font-size: 13px;
   }
-`;
+`
 
 const SizeRadioLabel = styled.label`
   width: 53px;
@@ -63,4 +67,4 @@ const SizeRadioLabel = styled.label`
     background-color: black;
     color: white;
   }
-`;
+`

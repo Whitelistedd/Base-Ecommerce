@@ -1,81 +1,91 @@
-import React, { useState } from "react";
-import { useQuery } from "react-query";
-import styled from "styled-components";
-import { useRouter } from "next/router";
+import React, { useState } from 'react'
+import { useQuery } from 'react-query'
+import styled from 'styled-components'
+import { useRouter } from 'next/router'
 
-import { Failed } from "../Failed/Failed";
-import { AllColors, AllSizes, devices } from "../../data";
-import { Loading } from "../Loading/Loading";
-import { publicRequest } from "../../requests";
-import { ImageSwipe } from "./ImageSwipe";
-import { ProductForm } from "./ProductForm";
-import { ProductImages } from "./ProductImages";
-import { handleProductTypeType, handleQuantityType, ProductTypeState } from "./SingleProduct.model";
-import { queryKeyType } from "../GlobalTypes.model";
+import { Failed } from '../Failed/Failed'
+import { AllColors, AllSizes, devices } from '../../data'
+import { Loading } from '../Loading/Loading'
+import { publicRequest } from '../../requests'
+import { ImageSwipe } from './ImageSwipe'
+import { ProductForm } from './ProductForm'
+import { ProductImages } from './ProductImages'
+import {
+  handleProductTypeType,
+  handleQuantityType,
+  ProductTypeState,
+} from './SingleProduct.model'
+import { queryKeyType } from '../GlobalTypes.model'
 
-export const Product = () => {
-  const location = useRouter();
-  const productID = location.pathname.split("/")[2];
-  const [productType, setProductType] = useState<ProductTypeState>({color: "", size: ""});
-  const [displayError, SetDisplayError] = useState(false);
-  const [quantity, setQuantity] = useState(1);
+export const Product: React.FC = () => {
+  const location = useRouter()
+  const productID = location.pathname.split('/')[2]
+  const [productType, setProductType] = useState<ProductTypeState>({
+    color: '',
+    size: '',
+  })
+  const [displayError, SetDisplayError] = useState(false)
+  const [quantity, setQuantity] = useState(1)
 
   /* функция, чтобы получить выбранный продукт и получить все доступные размеры и цвета */
-  const getProduct = async ({ queryKey } : {queryKey: queryKeyType}) => {
-    const Id = queryKey[1];
-    const res = await publicRequest.get("/products/find/" + Id);
+  const getProduct = async ({ queryKey }: { queryKey: queryKeyType }) => {
+    const Id = queryKey[1]
+    const res = await publicRequest.get('/products/find/' + Id)
 
     const getAvailableColors = await AllColors.filter((color) =>
       res.data.color.includes(color.colorName)
-    );
+    )
     const getAvailableSizes = await AllSizes.filter((size) =>
       res.data.size.includes(size.SizeName)
-    );
+    )
 
-    return { ...res.data, size: getAvailableSizes, color: getAvailableColors };
-  };
+    return { ...res.data, size: getAvailableSizes, color: getAvailableColors }
+  }
 
-  const { data, status } = useQuery(["singleProduct", productID], getProduct);
+  const { data, status } = useQuery(['singleProduct', productID], getProduct)
 
   /* функция добавления фильтров по клику пользователя */
-  const handleProductType = (e : handleProductTypeType) => {
-    const value = e.target.value;
-    const name = e.target.name;
-    setProductType((prev) => ({ ...prev, [name]: value }));
-  };
+  const handleProductType = (e: handleProductTypeType) => {
+    const value = e.target.value
+    const name = e.target.name
+    setProductType((prev) => ({ ...prev, [name]: value }))
+  }
 
   /* функция изменения количества продукта */
-  const handleQuantity = (type : handleQuantityType) => {
+  const handleQuantity = (type: handleQuantityType) => {
     setQuantity((prev) => {
-      return type === "add" ? prev + 1 : prev > 1 ? prev - 1 : prev;
-    });
-  };
+      return type === 'add' ? prev + 1 : prev > 1 ? prev - 1 : prev
+    })
+  }
 
   /* если пользователь выбрал товар с цветом и размером, он будет добавлен в корзину */
   const handleCart = () => {
     if (!productType.color || !productType.size) {
-      SetDisplayError(true);
+      SetDisplayError(true)
     } else {
-      if (typeof window !== "undefined") {
+      if (typeof window !== 'undefined') {
         const product_id = JSON.stringify(productID)
         const OLDproductsJSON = localStorage.getItem('products')
         const OLDproducts = OLDproductsJSON && JSON.parse(OLDproductsJSON)
-        if(OLDproducts) {
-          OLDproducts.push({product_id,quantity:quantity})
+        if (OLDproducts) {
+          OLDproducts.push({ product_id, quantity: quantity })
           localStorage.setItem('products', JSON.stringify(OLDproducts))
         } else {
-          localStorage.setItem('products', JSON.stringify([{product_id,quantity:quantity}]))
+          localStorage.setItem(
+            'products',
+            JSON.stringify([{ product_id, quantity: quantity }])
+          )
         }
       }
     }
-  };
-
-  if (status === "loading") {
-    return <Loading />;
   }
 
-  if (status === "error") {
-    return <Failed />;
+  if (status === 'loading') {
+    return <Loading />
+  }
+
+  if (status === 'error') {
+    return <Failed />
   }
 
   return (
@@ -94,10 +104,10 @@ export const Product = () => {
         />
       </ProductsWrap>
     </Container>
-  );
-};
+  )
+}
 
-const Fontcolor = "#9d9d9d";
+const Fontcolor = '#9d9d9d'
 
 const ProductsWrap = styled.div`
   display: flex;
@@ -105,7 +115,7 @@ const ProductsWrap = styled.div`
   align-items: flex-start;
   justify-content: center;
   width: 100%;
-`;
+`
 
 const Container = styled.div`
   display: flex;
@@ -130,4 +140,4 @@ const Container = styled.div`
     min-height: 100vh;
     margin-bottom: 0px;
   }
-`;
+`

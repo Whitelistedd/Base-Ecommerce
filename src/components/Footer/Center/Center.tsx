@@ -1,20 +1,20 @@
-import React from "react";
-import styled from "styled-components";
-import { List } from "@mui/material";
+import React from 'react'
+import styled from 'styled-components'
+import { List } from '@mui/material'
 
-import { FooterPages } from "../../../data";
+import { FooterPages } from '../../../data'
 
-export const Center : React.FC = () => {
+export const Center: React.FC = () => {
   return (
     <Container>
       <Title>Помощь</Title>
       <List
         sx={{
           mt: 1,
-          color: "#9d9d9d",
-          display: "flex",
+          color: '#9d9d9d',
+          display: 'flex',
           gap: 1,
-          flexDirection: "column",
+          flexDirection: 'column',
         }}
       >
         {FooterPages.map((page) => (
@@ -22,12 +22,12 @@ export const Center : React.FC = () => {
         ))}
       </List>
     </Container>
-  );
-};
+  )
+}
 
 const ListItemText = styled.li`
   color: rgb(109, 109, 109);
-`;
+`
 
 const Title = styled.div`
   font-size: 16px;
@@ -37,7 +37,7 @@ const Title = styled.div`
   letter-spacing: 2.6px;
   line-height: 21.45px;
   color: rgb(69, 69, 69);
-`;
+`
 
 const Container = styled.div`
   display: flex;
@@ -47,4 +47,4 @@ const Container = styled.div`
   @media (max-width: 1134px) {
     margin-bottom: 5em;
   }
-`;
+`

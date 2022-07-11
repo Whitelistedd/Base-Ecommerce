@@ -1,11 +1,11 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
-import { ColorRadioButton } from "../ColorButton/ColorButton";
-import { FiltersProps } from "./SingleProduct.model";
-import { SizeButton } from "./SizeButton";
+import { ColorRadioButton } from '../ColorButton/ColorButton'
+import { FiltersProps } from './SingleProduct.model'
+import { SizeButton } from './SizeButton'
 
-export const SingleProductFilters : React.FC<FiltersProps> = ({
+export const SingleProductFilters: React.FC<FiltersProps> = ({
   AvailableColors,
   AvailableSizes,
   SelectedColor,
@@ -43,25 +43,25 @@ export const SingleProductFilters : React.FC<FiltersProps> = ({
         </Filter>
       </FilterContainer>
     </>
-  );
-};
+  )
+}
 
 const FilterContainer = styled.div`
   display: flex;
   flex-direction: column;
   margin-top: -5px;
   margin-bottom: -25px;
-`;
+`
 
 const Filter = styled.div`
   display: flex;
-`;
+`
 
 const FilterTitle = styled.h4`
   font-weight: 700;
   margin-top: 0;
   margin-bottom: 8px;
-`;
+`
 
 const StyledColorRadioButton = styled(ColorRadioButton)`
   width: 53px;
@@ -70,4 +70,4 @@ const StyledColorRadioButton = styled(ColorRadioButton)`
     max-width: 40px;
     max-height: 40px;
   }
-`;
+`

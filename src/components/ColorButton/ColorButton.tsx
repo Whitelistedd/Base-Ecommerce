@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { ColorButtonProps } from "./ColorButton.model";
+import React from 'react'
+import styled from 'styled-components'
+import { ColorButtonProps } from './ColorButton.model'
 
-export const ColorRadioButton : React.FC<ColorButtonProps> = ({
+export const ColorRadioButton: React.FC<ColorButtonProps> = ({
   colorName,
   HexColor,
   handleFilterChange,
@@ -34,19 +34,19 @@ export const ColorRadioButton : React.FC<ColorButtonProps> = ({
         </OptionSelect>
       </ColorButton>
     </CustomColorRadio>
-  );
-};
+  )
+}
 
-const OptionSelect = styled.div``;
+const OptionSelect = styled.div``
 
-const StyledInput = styled.input``;
+const StyledInput = styled.input``
 
 const StyledH3 = styled.h3`
   padding: 0px;
   margin: 0px;
-`;
+`
 
-const ColorButton = styled.span<{HexColor: string}>`
+const ColorButton = styled.span<{ HexColor: string }>`
   margin-top: 5px;
   max-width: 25px;
   max-height: 25px;
@@ -66,7 +66,7 @@ const ColorButton = styled.span<{HexColor: string}>`
     font-weight: 100;
     font-size: 13px;
   }
-`;
+`
 
 const CustomColorRadio = styled.label`
   width: 30px;
@@ -84,4 +84,4 @@ const CustomColorRadio = styled.label`
     transition: 300ms ease;
   }
   border-radius: 50px;
-`;
+`

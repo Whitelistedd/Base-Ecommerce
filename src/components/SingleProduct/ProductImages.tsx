@@ -1,25 +1,33 @@
-import React from "react";
-import { useState } from "react";
-import styled, { keyframes } from "styled-components";
+import React from 'react'
+import { useState } from 'react'
+import styled, { keyframes } from 'styled-components'
 
-import { devices } from "../../data";
-import { ProductImage } from "./ProductImage";
-import { handleImageSelectionType, ProductImagesProps } from "./SingleProduct.model";
+import { devices } from '../../data'
+import { ProductImage } from './ProductImage'
+import {
+  handleImageSelectionType,
+  ProductImagesProps,
+} from './SingleProduct.model'
 
-export const ProductImages : React.FC<ProductImagesProps> = ({ productInfo }) => {
-  const [imgSelections, setImgSelections] = useState([true, false, false]);
-  const [mainImage, setMainImage] = useState(productInfo?.img?.[0]);
+export const ProductImages: React.FC<ProductImagesProps> = ({
+  productInfo,
+}) => {
+  const [imgSelections, setImgSelections] = useState([true, false, false])
+  const [mainImage, setMainImage] = useState(productInfo?.img?.[0])
 
   /* изменить основное изображение на изображение, по которому щелкнул пользователь */
-  const handleImageSelection : handleImageSelectionType = (img, selectionNumber) => {
-    setMainImage(img);
+  const handleImageSelection: handleImageSelectionType = (
+    img,
+    selectionNumber
+  ) => {
+    setMainImage(img)
     setImgSelections((prev) => {
       const newState = prev.map(
         (selection, index) => (selection = index === selectionNumber)
-      );
-      return newState;
-    });
-  };
+      )
+      return newState
+    })
+  }
   return (
     <ImageContainer>
       <ImageGroup>
@@ -35,13 +43,13 @@ export const ProductImages : React.FC<ProductImagesProps> = ({ productInfo }) =>
       </ImageGroup>
       <Image alt={productInfo.title} src={mainImage || productInfo?.img?.[0]} />
     </ImageContainer>
-  );
-};
+  )
+}
 
 const fadein = keyframes`
 0% { opacity: 0; }
 25% { opacity: 1; }
-`;
+`
 
 const Image = styled.img`
   width: 100%;
@@ -52,13 +60,13 @@ const Image = styled.img`
   animation-name: ${fadein};
   animation-duration: 8s;
   animation-iteration-count: 1;
-`;
+`
 
 const ImageGroup = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1em;
-`;
+`
 
 const ImageContainer = styled.div`
   display: flex;
@@ -87,4 +95,4 @@ const ImageContainer = styled.div`
       max-height: 60vh;
     }
   }
-`;
+`

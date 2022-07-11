@@ -1,14 +1,14 @@
-import { Add, Remove } from "@mui/icons-material";
-import { Alert } from "@mui/material";
-import React from "react";
-import styled from "styled-components";
+import { Add, Remove } from '@mui/icons-material'
+import { Alert } from '@mui/material'
+import React from 'react'
+import styled from 'styled-components'
 
-import { devices } from "../../data";
-import Undo from "../../images/undo.svg";
-import { SingleProductFilters } from "./Filters";
-import { ProductFormProps } from "./SingleProduct.model";
+import { devices } from '../../data'
+import Undo from '../../images/undo.svg'
+import { SingleProductFilters } from './Filters'
+import { ProductFormProps } from './SingleProduct.model'
 
-export const ProductForm : React.FC<ProductFormProps> = ({
+export const ProductForm: React.FC<ProductFormProps> = ({
   productInfo,
   productType,
   handleCart,
@@ -35,9 +35,9 @@ export const ProductForm : React.FC<ProductFormProps> = ({
       )}
       <QuantityInfo>
         <QuantityContainer>
-          <Remove onClick={() => handleQuantity("remove")} />
+          <Remove onClick={() => handleQuantity('remove')} />
           <Amount>{quantity}</Amount>
-          <Add onClick={() => handleQuantity("add")} />
+          <Add onClick={() => handleQuantity('add')} />
         </QuantityContainer>
         {/* если товара нет в наличии, пользователь не сможет добавить его в корзину */}
         {productInfo.inStock ? (
@@ -53,19 +53,19 @@ export const ProductForm : React.FC<ProductFormProps> = ({
         </Benifits>
       </BenifitsContainer>
     </InfoContainer>
-  );
-};
+  )
+}
 
-const Font = "Barlow";
+const Font = 'Barlow'
 
 const Title = styled.h1`
-  font-family: "FuturaLight";
+  font-family: 'FuturaLight';
   font-weight: 600;
   letter-spacing: 1px;
   font-size: 1.5em;
   color: black;
   margin-bottom: 0px;
-`;
+`
 
 const Price = styled.span`
   font-family: ${Font};
@@ -73,27 +73,27 @@ const Price = styled.span`
   font-size: 1.2em;
   margin-top: -45px;
   margin-bottom: 10px;
-`;
+`
 
 const BenifitsContainer = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1em;
-`;
+`
 
 const Benifits = styled.div`
   display: flex;
   align-items: center;
   gap: 1em;
-`;
+`
 
 const Perks = styled.span`
   font-size: 1em;
-`;
+`
 
 const BeiniftsIMG = styled.img`
   width: 1vw;
-`;
+`
 
 const StyledButton = styled.button`
   padding: 1em;
@@ -106,19 +106,19 @@ const StyledButton = styled.button`
   &:hover {
     cursor: pointer;
   }
-`;
+`
 
 const OutOfStockButton = styled(StyledButton)`
   background-color: grey;
   &:hover {
     cursor: not-allowed;
   }
-`;
+`
 
 const QuantityInfo = styled.div`
   display: flex;
   gap: 10px;
-`;
+`
 
 const QuantityContainer = styled.div`
   display: flex;
@@ -137,11 +137,11 @@ const QuantityContainer = styled.div`
       cursor: pointer;
     }
   }
-`;
+`
 
 const Amount = styled.span`
   font-size: 1.1em;
-`;
+`
 
 const InfoContainer = styled.div`
   display: flex;
@@ -200,4 +200,4 @@ const InfoContainer = styled.div`
     height: 100%;
     margin-bottom: 0px;
   }
-`;
+`

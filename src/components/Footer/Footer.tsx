@@ -1,14 +1,14 @@
-import { CopyrightOutlined } from "@mui/icons-material";
-import { Typography } from "@mui/material";
-import React from "react";
-import styled from "styled-components";
-import Image from "next/image"
+import { CopyrightOutlined } from '@mui/icons-material'
+import { Typography } from '@mui/material'
+import React from 'react'
+import styled from 'styled-components'
+import Image from 'next/image'
 
-import { Left } from "./Left/Left";
-import { Center } from "./Center/Center";
-import { Right } from "./Right/Right";
-import { devices } from "../../data";
-import Payments from "../../images/payments.svg";
+import { Left } from './Left/Left'
+import { Center } from './Center/Center'
+import { Right } from './Right/Right'
+import { devices } from '../../data'
+import Payments from '../../images/payments.svg'
 
 export const Footer: React.FC = () => {
   return (
@@ -21,25 +21,24 @@ export const Footer: React.FC = () => {
       <Copyright>
         <CopyrightLeft>
           <CopyrightOutlined sx={{ fontSize: 15 }} />
-          <Typography sx={{ fontSize: 13 }}>
-            Volxen
-          </Typography>
+          <Typography sx={{ fontSize: 13 }}>Volxen</Typography>
         </CopyrightLeft>
         <CopyrightRight>
           <StyledImage
+            width={200}
             alt="способы оплаты: Visa, MasterCard, МИР, СБП"
             src={Payments}
           />
         </CopyrightRight>
       </Copyright>
     </Container>
-  );
-};
+  )
+}
 
 const StyledImage = styled(Image)`
   width: 180px;
   height: 35px;
-`;
+`
 
 const Copyright = styled.div`
   display: flex;
@@ -52,19 +51,19 @@ const Copyright = styled.div`
   @media only screen and (max-width: ${devices.Phone}px) {
     flex-direction: column;
   }
-`;
+`
 
 const CopyrightRight = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
+`
 
 const CopyrightLeft = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
-`;
+`
 
 const Info = styled.div`
   display: flex;
@@ -74,7 +73,7 @@ const Info = styled.div`
   @media (max-width: 1134px) {
     flex-direction: column;
   }
-`;
+`
 
 const Container = styled.div`
   display: flex;
@@ -94,4 +93,4 @@ const Container = styled.div`
       padding: 0 30px;
     }
   }
-`;
+`

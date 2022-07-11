@@ -1,8 +1,8 @@
-import React from "react";
-import styled from "styled-components";
-import { Typography } from "@mui/material";
+import React from 'react'
+import styled from 'styled-components'
+import { Typography } from '@mui/material'
 
-export const Right : React.FC = () => {
+export const Right: React.FC = () => {
   return (
     <Container>
       <Title>Новостная рассылка</Title>
@@ -10,10 +10,10 @@ export const Right : React.FC = () => {
         sx={{
           mt: 3,
           mb: 2,
-          fontSize: "15px",
-          fontStyle: "normal",
+          fontSize: '15px',
+          fontStyle: 'normal',
           fontWeight: 400,
-          color: "rgb(109, 109, 109)",
+          color: 'rgb(109, 109, 109)',
         }}
       >
         Подпишитесь, чтобы получать обновления, доступ к
@@ -22,8 +22,8 @@ export const Right : React.FC = () => {
       </Typography>
       <Input placeholder="Введите ваш адрес электронной почты" />
     </Container>
-  );
-};
+  )
+}
 
 const Title = styled.div`
   font-size: 16px;
@@ -33,7 +33,7 @@ const Title = styled.div`
   letter-spacing: 2.6px;
   line-height: 21.45px;
   color: rgb(69, 69, 69);
-`;
+`
 
 const Input = styled.input`
   display: block;
@@ -44,10 +44,10 @@ const Input = styled.input`
   &:focus {
     border: 1px solid rgba(0, 0, 0, 0.5);
   }
-`;
+`
 
 const Container = styled.div`
   display: flex;
   flex-direction: column;
   flex-basis: 300px;
-`;
+`

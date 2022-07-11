@@ -1,26 +1,31 @@
-import React from 'react';
-import styled, { keyframes } from 'styled-components';
-import Image from "next/image"
+import React from 'react'
+import styled, { keyframes } from 'styled-components'
+import Image from 'next/image'
 
-import { devices } from '../../data';
-import { ProductImageProps } from './SingleProduct.model';
+import { devices } from '../../data'
+import { ProductImageProps } from './SingleProduct.model'
 
-const ProductImage : React.FC<ProductImageProps> = ({ img, active, selectionNumber, handleClick }) => {
+const ProductImage: React.FC<ProductImageProps> = ({
+  img,
+  active,
+  selectionNumber,
+  handleClick,
+}) => {
   return (
     <ImageSelect
-      className={active ? "active" : ""}
+      className={active ? 'active' : ''}
       onClick={() => {
-        handleClick && handleClick(img, selectionNumber);
+        handleClick && handleClick(img, selectionNumber)
       }}
       src={img}
     />
-  );
-};
+  )
+}
 
 const fadein = keyframes`
 0% { opacity: 0; }
 25% { opacity: 1; }
-`;
+`
 
 const ImageSelect = styled(Image)`
   width: 4vw;
@@ -47,6 +52,6 @@ const ImageSelect = styled(Image)`
       box-shadow: 0px 0px 0px 0px transparent;
     }
   }
-`;
+`
 
-export { ProductImage };
+export { ProductImage }

@@ -1,13 +1,17 @@
-import { Chip } from "@mui/material";
-import React from "react";
-import styled from "styled-components";
+import { Chip } from '@mui/material'
+import React from 'react'
+import styled from 'styled-components'
 
-import { AllCategories, AllColors, AllGenders, AllSizes } from "../../data";
-import { ColorRadioButton } from "../ColorButton/ColorButton";
-import { ProductsFilterButton } from "./FilterButton";
-import { FiltersProps } from "./ProductsList.model";
+import { AllCategories, AllColors, AllGenders, AllSizes } from '../../data'
+import { ColorRadioButton } from '../ColorButton/ColorButton'
+import { ProductsFilterButton } from './FilterButton'
+import { FiltersProps } from './ProductsList.model'
 
-export const Filters : React.FC<FiltersProps> = ({ filters, handleFilterChange, handleClear }) => {
+export const Filters: React.FC<FiltersProps> = ({
+  filters,
+  handleFilterChange,
+  handleClear,
+}) => {
   return (
     <FilterWrap>
       <FilterTitleWrap>
@@ -19,7 +23,7 @@ export const Filters : React.FC<FiltersProps> = ({ filters, handleFilterChange, 
             MaxWidth: 50,
             height: 18,
             fontSize: 10,
-            "&:hover": { cursor: "pointer" },
+            '&:hover': { cursor: 'pointer' },
           }}
           label="Очистить"
           variant="outlined"
@@ -48,7 +52,7 @@ export const Filters : React.FC<FiltersProps> = ({ filters, handleFilterChange, 
             key={size.id}
             title={size.title}
             inputValue={size.SizeName}
-            inputName={"size"}
+            inputName={'size'}
             filters={filters}
             handleFilterChange={handleFilterChange}
           />
@@ -63,7 +67,7 @@ export const Filters : React.FC<FiltersProps> = ({ filters, handleFilterChange, 
             key={gender.id}
             title={gender.title}
             inputValue={gender.GenderName}
-            inputName={"gender"}
+            inputName={'gender'}
             filters={filters}
             handleFilterChange={handleFilterChange}
           />
@@ -78,22 +82,22 @@ export const Filters : React.FC<FiltersProps> = ({ filters, handleFilterChange, 
             key={gender.id}
             title={gender.title}
             inputValue={gender.CategoryName}
-            inputName={"categories"}
+            inputName={'categories'}
             filters={filters}
             handleFilterChange={handleFilterChange}
           />
         ))}
       </Filter>
     </FilterWrap>
-  );
-};
+  )
+}
 
 const FilterTitleWrap = styled.div`
   display: flex;
   gap: 10px;
   align-items: flex-start;
   justify-content: space-between;
-`;
+`
 
 const FilterWrap = styled.div`
   display: flex;
@@ -105,7 +109,7 @@ const FilterWrap = styled.div`
   ${FilterTitleWrap}:not(:first-child) {
     border-bottom: 1px grey solid;
   }
-`;
+`
 
 const Filter = styled.div`
   display: flex;
@@ -114,7 +118,7 @@ const Filter = styled.div`
   flex-wrap: wrap;
   gap: 0.5em;
   margin-bottom: 20px;
-`;
+`
 
 const FilterTitle = styled.h4`
   font-weight: 700;
@@ -122,4 +126,4 @@ const FilterTitle = styled.h4`
   font-size: 20px;
   font-style: normal;
   font-weight: 700;
-`;
+`

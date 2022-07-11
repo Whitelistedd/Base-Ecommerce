@@ -1,28 +1,27 @@
-import "aos/dist/aos.css";
+import 'aos/dist/aos.css'
 
-import AOS from "aos";
-import { useEffect } from "react";
-import Link from "next/link";
-import { Layout } from "../src/components/Layout/Layout";
-import styled from "styled-components";
-import { Products } from "../src/components/ProductsList/Products";
-import { devices } from "../src/data";
-import { Parallax } from "react-parallax";
+import AOS from 'aos'
+import { useEffect } from 'react'
+import Link from 'next/link'
+import styled from 'styled-components'
+import { Products } from '../src/components/ProductsList/Products'
+import { devices } from '../src/data'
+import { Parallax } from 'react-parallax'
 
 const HomePage = () => {
   useEffect(() => {
-    AOS.init();
-    AOS.refresh();
-  }, []);
+    AOS.init()
+    AOS.refresh()
+  }, [])
 
   return (
     <>
-      <StyledParallax bgImage={"../src/images/background.webp"} strength={400}>
+      <StyledParallax bgImage={'../src/images/background.webp'} strength={400}>
         <HeaderWrap>
-          <Link href={"/products/men"}>
+          <Link href={'/products/men'}>
             <HeaderButton>Мужчины</HeaderButton>
           </Link>
-          <Link href={"/products/women"}>
+          <Link href={'/products/women'}>
             <HeaderButton>Женщины</HeaderButton>
           </Link>
         </HeaderWrap>
@@ -37,16 +36,16 @@ const HomePage = () => {
         data-aos-once="true"
       >
         <HomeProducts />
-        <Link href={"/products/all"}>
+        <Link href={'/products/all'}>
           <HeaderButton>Посмотреть продукты</HeaderButton>
         </Link>
       </Container>
     </>
-  );
-};
+  )
+}
 
 const HeaderButton = styled.button`
-  font-family: "Montserra", sans-serif;
+  font-family: 'Montserra', sans-serif;
   background-color: transparent;
   border: 0px;
   color: white;
@@ -61,7 +60,7 @@ const HeaderButton = styled.button`
   &:hover {
     background-color: #1d1c1c;
   }
-`;
+`
 
 const HeaderWrap = styled.div`
   width: 100%;
@@ -75,7 +74,7 @@ const HeaderWrap = styled.div`
   align-items: center;
   gap: 1em;
   flex-wrap: wrap;
-`;
+`
 
 const HomeProducts = styled(Products)`
   display: flex;
@@ -84,11 +83,11 @@ const HomeProducts = styled(Products)`
   justify-content: space-around;
   width: 100%;
   height: 100%;
-`;
+`
 
 const StyledParallax = styled(Parallax)`
   height: 800px;
-`;
+`
 
 const Container = styled.div`
   display: flex;
@@ -107,6 +106,6 @@ const Container = styled.div`
       justify-content: center;
     }
   }
-`;
+`
 
 export default HomePage

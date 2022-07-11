@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
-import {ProductsFilterButtonProps} from "./ProductsList.model"
+import { ProductsFilterButtonProps } from './ProductsList.model'
 
-export const ProductsFilterButton : React.FC<ProductsFilterButtonProps> = ({
+export const ProductsFilterButton: React.FC<ProductsFilterButtonProps> = ({
   inputValue,
   title,
   inputName,
@@ -25,17 +25,17 @@ export const ProductsFilterButton : React.FC<ProductsFilterButtonProps> = ({
         </OptionSelect>
       </SizeButton>
     </SizeRadioLabel>
-  );
-};
+  )
+}
 
-const OptionSelect = styled.div``;
+const OptionSelect = styled.div``
 
-const StyledInput = styled.input``;
+const StyledInput = styled.input``
 
 const StyledH3 = styled.h3`
   padding: 0em 0.3em;
   margin: 0px;
-`;
+`
 
 const SizeButton = styled.span`
   margin-top: 5px;
@@ -63,7 +63,7 @@ const SizeButton = styled.span`
     background-color: rgb(0, 165, 253);
     color: white;
   }
-`;
+`
 
 const SizeRadioLabel = styled.label`
   min-width: 53px;
@@ -80,4 +80,4 @@ const SizeRadioLabel = styled.label`
     background-color: rgb(0, 165, 253);
     color: white;
   }
-`;
+`

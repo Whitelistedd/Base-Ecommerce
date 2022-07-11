@@ -1,20 +1,23 @@
-import React from 'react';
-import styled from 'styled-components';
-import Image from "next/image"
+import React from 'react'
+import styled from 'styled-components'
+import Image from 'next/image'
+import LoadingImage from '../../images/332-loader-3.webp'
 
-import { LoadingProps } from './Loading.model';
+import { LoadingProps } from './Loading.model'
 
-export const Loading : React.FC<LoadingProps> = ({ className }) => {
+export const Loading: React.FC<LoadingProps> = ({ className }) => {
   return (
     <>
       <Container className={className}>
         <Wrap>
-          <StyledImage src={'../images/332-loader-3.webp'} />
+          <ImageWrap>
+            <StyledImage layout="responsive" src={LoadingImage} />
+          </ImageWrap>
         </Wrap>
       </Container>
     </>
-  );
-};
+  )
+}
 
 const Container = styled.div`
   display: flex;
@@ -22,7 +25,11 @@ const Container = styled.div`
   align-items: center;
   height: 100vh;
   width: 100vw;
-`;
+`
+
+const ImageWrap = styled.div`
+  width: 15vw;
+`
 
 const Wrap = styled.div`
   display: flex;
@@ -31,8 +38,6 @@ const Wrap = styled.div`
   justify-content: center;
   gap: 1.2em;
   width: 100%;
-`;
+`
 
-const StyledImage = styled(Image)`
-  width: 15vw;
-`;
+const StyledImage = styled(Image)``

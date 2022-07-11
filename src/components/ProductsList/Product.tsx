@@ -1,13 +1,13 @@
-import React, { useState } from "react";
-import Link from "next/link";
-import styled, { keyframes } from "styled-components";
-import Image from "next/image";
+import React, { useState } from 'react'
+import Link from 'next/link'
+import styled, { keyframes } from 'styled-components'
+import Image from 'next/image'
 
-import { devices } from "../../data";
-import { ProductProps } from "./ProductsList.model";
+import { devices } from '../../data'
+import { ProductProps } from './ProductsList.model'
 
-export const Product : React.FC<ProductProps> = ({ item }) => {
-  const [hoveredStatus, setHoveredStatus] = useState(false);
+export const Product: React.FC<ProductProps> = ({ item }) => {
+  const [hoveredStatus, setHoveredStatus] = useState(false)
   return (
     <StyledLink
       onMouseEnter={() => setHoveredStatus(true)}
@@ -25,14 +25,18 @@ export const Product : React.FC<ProductProps> = ({ item }) => {
         />
       )}
       {hoveredStatus && (
-        <StyledImage className="Image" src={item.img[1]} inStock={item.inStock} />
+        <StyledImage
+          className="Image"
+          src={item.img[1]}
+          inStock={item.inStock}
+        />
       )}
       <Title>{item.title}</Title>
       {/* если товар распродан, появится это сообщение */}
       {!item.inStock && <SoldOut>Sold Out</SoldOut>}
     </StyledLink>
-  );
-};
+  )
+}
 
 const Title = styled.p`
   font-size: 16px;
@@ -40,11 +44,11 @@ const Title = styled.p`
   font-weight: 700;
   letter-spacing: 1px;
   text-align: center;
-`;
+`
 
 const SoldOut = styled(Title)`
   color: #ff0000;
-`;
+`
 
 const unFade = keyframes`
   0% {
@@ -53,9 +57,9 @@ const unFade = keyframes`
   100% {
     opacity: 100%
   }
-`;
+`
 
-const StyledImage = styled(Image)<{inStock: boolean}>`
+const StyledImage = styled(Image)<{ inStock: boolean }>`
   min-width: 300px;
   max-width: 300px;
   width: 100%;
@@ -68,9 +72,9 @@ const StyledImage = styled(Image)<{inStock: boolean}>`
   filter: grayscale(0.5) brightness(60%); 
   `
       : ``}
-`;
+`
 
-const StyledLink = styled(Link)<{images: Array<string>}>`
+const StyledLink = styled(Link)<{ images: Array<string> }>`
   color: black;
   display: flex;
   gap: 0.5em;
@@ -86,4 +90,4 @@ const StyledLink = styled(Link)<{images: Array<string>}>`
   @media only screen and (max-width: ${devices.Phone}px) {
     min-width: 300px;
   }
-`;
+`

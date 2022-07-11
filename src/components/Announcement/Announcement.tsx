@@ -1,8 +1,8 @@
-import Alert from "@mui/material/Alert";
-import React, { useState } from "react";
-import styled from "styled-components";
+import Alert from '@mui/material/Alert'
+import React, { useState } from 'react'
+import styled from 'styled-components'
 
-import { AnnouncementProps } from "./Announcement.model";
+import { AnnouncementProps } from './Announcement.model'
 
 const Container = styled.div`
   display: flex;
@@ -12,7 +12,7 @@ const Container = styled.div`
   flex-direction: column;
   background-color: #f2f2f3;
   min-height: 44px;
-`;
+`
 
 const Title = styled.div`
   display: flex;
@@ -21,16 +21,16 @@ const Title = styled.div`
   font-size: 14px;
   letter-spacing: 2px;
   height: 44px;
-`;
+`
 
 /* компонент для размещения объявлений в верхней части страницы */
 
-export const Announcement : React.FC<AnnouncementProps> = ({ show }) => {
-  const [displayError, setDisplayError] = useState(true);
+export const Announcement: React.FC<AnnouncementProps> = ({ show }) => {
+  const [displayError, setDisplayError] = useState(true)
 
   const handleClose = () => {
-    setDisplayError(displayError ? false : true);
-  };
+    setDisplayError(displayError ? false : true)
+  }
 
-  return <></>;
-};
+  return <></>
+}

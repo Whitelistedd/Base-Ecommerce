@@ -1,22 +1,22 @@
-import React from "react";
-import styled from "styled-components";
-import CloseIcon from "@mui/icons-material/Close";
-import Image from "next/image"
+import React from 'react'
+import styled from 'styled-components'
+import CloseIcon from '@mui/icons-material/Close'
+import Image from 'next/image'
 
-import imageSRC from "../../images/background.webp";
-import { devices } from "../../data";
-import { PopupProps } from "./Popup.model";
+import imageSRC from '../../images/background.webp'
+import { devices } from '../../data'
+import { PopupProps } from './Popup.model'
 
-export const Popup : React.FC<PopupProps> = ({ ClosePopup }) => {
+export const Popup: React.FC<PopupProps> = ({ ClosePopup }) => {
   return (
     <Container>
       <CloseIcon
         onClick={() => ClosePopup()}
         sx={{
-          bgcolor: "white",
-          borderRadius: "50%",
-          fontSize: "2em",
-          "&:hover": { cursor: "pointer", opacity: 0.8 },
+          bgcolor: 'white',
+          borderRadius: '50%',
+          fontSize: '2em',
+          '&:hover': { cursor: 'pointer', opacity: 0.8 },
         }}
       />
       <PopupWrap>
@@ -34,8 +34,8 @@ export const Popup : React.FC<PopupProps> = ({ ClosePopup }) => {
         </Info>
       </PopupWrap>
     </Container>
-  );
-};
+  )
+}
 
 const Button = styled.button`
   width: 200px;
@@ -46,28 +46,28 @@ const Button = styled.button`
   font-weight: 700;
   letter-spacing: 1px;
   background-color: #282828;
-`;
+`
 
 const Input = styled.input`
   padding: 1em;
   border: 1px solid #cccccc;
   border-radius: 10px;
   font-size: 0.9em;
-`;
+`
 
 const NewsLetterWrap = styled.form`
   display: flex;
   flex-direction: column;
   gap: 1em;
-`;
+`
 
 const Desc = styled.p`
   font-size: 1em;
-`;
+`
 
 const Title = styled.h1`
   font-size: 2em;
-`;
+`
 
 const Info = styled.div`
   display: flex;
@@ -76,7 +76,7 @@ const Info = styled.div`
   gap: 2em;
   padding: 1em;
   flex: 2;
-`;
+`
 
 const StyledImage = styled(Image)`
   width: 50%;
@@ -84,7 +84,7 @@ const StyledImage = styled(Image)`
   flex: 1;
   object-fit: cover;
   border-radius: 10px 0px 0px 10px;
-`;
+`
 
 const PopupWrap = styled.div`
   background-color: white;
@@ -92,10 +92,10 @@ const PopupWrap = styled.div`
   min-width: 960px;
   height: 50%;
   display: flex;
-  font-family: "Golos";
+  font-family: 'Golos';
   box-shadow: 5px 5px 30px black;
   border-radius: 10px;
-`;
+`
 
 const Container = styled.div`
   position: fixed;
@@ -136,4 +136,4 @@ const Container = styled.div`
       width: 100%;
     }
   }
-`;
+`

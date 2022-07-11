@@ -1,3 +1,3 @@
 export interface PopupProps {
-    ClosePopup: () => void,
+  ClosePopup: () => void
 }
