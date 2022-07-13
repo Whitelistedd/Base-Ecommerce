@@ -1,6 +1,6 @@
 import axios from 'axios'
 
-const baseURL = process.env.REACT_APP_BASEURL
+const baseURL = process.env.NEXT_PUBLIC_APP_BASEURL
 
 export const BASE_URL = baseURL
 

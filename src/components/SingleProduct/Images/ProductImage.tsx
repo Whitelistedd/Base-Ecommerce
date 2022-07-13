@@ -2,23 +2,25 @@ import React from 'react'
 import styled, { keyframes } from 'styled-components'
 import Image from 'next/image'
 
-import { devices } from '../../data'
-import { ProductImageProps } from './SingleProduct.model'
+import { devices } from '../../../data'
+import { ProductImageProps } from './ProductImages.model'
 
 const ProductImage: React.FC<ProductImageProps> = ({
   img,
   active,
   selectionNumber,
   handleClick,
+  className,
 }) => {
   return (
-    <ImageSelect
-      className={active ? 'active' : ''}
+    <Container
+      className={`${active ? 'active' : ''} ${className ? className : ''}`}
       onClick={() => {
         handleClick && handleClick(img, selectionNumber)
       }}
-      src={img}
-    />
+    >
+      <ImageSelect layout="responsive" width={46} height={61} src={img} />
+    </Container>
   )
 }
 
@@ -27,7 +29,11 @@ const fadein = keyframes`
 25% { opacity: 1; }
 `
 
-const ImageSelect = styled(Image)`
+const ImageSelect = styled(Image)``
+
+const Container = styled.div`
+  min-width: 80px;
+  min-height: 80px;
   width: 4vw;
   object-fit: contain;
   background-color: #f4fbfd;
@@ -45,6 +51,7 @@ const ImageSelect = styled(Image)`
   @media only screen and (max-width: ${devices.Desktop}px) {
     width: 6vw;
   }
+
   @media only screen and (max-width: ${devices.Tablet}px) {
     height: 100%;
     object-fit: contain;

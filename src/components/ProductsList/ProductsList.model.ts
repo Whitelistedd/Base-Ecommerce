@@ -1,32 +1,16 @@
-import { ProductDataType } from '../GlobalTypes.model'
+import { ProductDataType, ProductsArrayType } from '../GlobalTypes.model'
 
 export type filtersType = {
   [key: string]: string
-}
-
-type handleFilterChangeType = (
-  event: React.ChangeEvent<HTMLInputElement>
-) => void
-
-export interface ProductsFilterButtonProps {
-  inputValue: string
-  title: string
-  inputName: string
-  handleFilterChange: handleFilterChangeType
-  filters: filtersType
-}
-
-export interface FiltersProps {
-  filters: filtersType
-  handleFilterChange: handleFilterChangeType
-  handleClear: () => void
 }
 
 export interface ProductsProps {
   className?: string
   filters?: filtersType
   category?: string
-  products?: Array<ProductDataType>
+  products: ProductsArrayType
+  HomePage: boolean
+  status: string
 }
 
 export type itemFilterType = {

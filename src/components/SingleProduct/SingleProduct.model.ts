@@ -1,34 +1,8 @@
-import { AllColors, AllSizes, ProductDataType } from '../GlobalTypes.model'
+import { ProductDataType } from '../GlobalTypes.model'
 
 export type handleQuantityType = string
 
 export type handleProductTypeType = React.ChangeEvent<HTMLInputElement>
-
-export type handleImageSelectionType = (
-  img: string,
-  selectionNumber: number
-) => void
-
-export interface FiltersProps {
-  AvailableColors: Array<AllColors>
-  AvailableSizes: Array<AllSizes>
-  SelectedColor: string
-  SelectedSize: string
-  handleProductType: (event: handleProductTypeType) => void
-}
-
-export interface ImageSwipeProps {
-  productInfo: {
-    img: Array<string>
-  }
-}
-
-export interface ProductImageProps {
-  img: string
-  active?: boolean
-  selectionNumber: number
-  handleClick?: handleImageSelectionType
-}
 
 export interface ProductTypeState {
   color: string
@@ -45,12 +19,11 @@ export interface ProductFormProps {
   quantity: number
 }
 
-export interface ProductImagesProps {
-  productInfo: ProductDataType
+export interface ProductProps {
+  product: ProductDataType
+  productID: number
 }
 
-export interface SizeButtonProps {
-  handleProductType: (event: handleProductTypeType) => void
-  value: string
-  title: string
+export interface ProductQueryResult {
+  product: ProductDataType
 }

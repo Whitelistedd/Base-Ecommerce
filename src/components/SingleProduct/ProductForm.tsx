@@ -2,10 +2,10 @@ import { Add, Remove } from '@mui/icons-material'
 import { Alert } from '@mui/material'
 import React from 'react'
 import styled from 'styled-components'
+import Image from 'next/image'
 
 import { devices } from '../../data'
-import Undo from '../../images/undo.svg'
-import { SingleProductFilters } from './Filters'
+import { SingleProductFilters } from './Filters/Filters'
 import { ProductFormProps } from './SingleProduct.model'
 
 export const ProductForm: React.FC<ProductFormProps> = ({
@@ -19,14 +19,14 @@ export const ProductForm: React.FC<ProductFormProps> = ({
 }) => {
   return (
     <InfoContainer>
-      <Title>{productInfo.title}</Title>
-      <Price>₽{productInfo.price}</Price>
+      <Title>{productInfo?.title}</Title>
+      <Price>₽{productInfo?.price}</Price>
 
       <SingleProductFilters
-        SelectedColor={productType.color}
-        selectedSize={productType.size}
-        AvailableColors={productInfo.color}
-        AvailableSizes={productInfo.size}
+        SelectedColor={productType?.color}
+        SelectedSize={productType?.size}
+        AvailableColors={productInfo?.color}
+        AvailableSizes={productInfo?.size}
         handleProductType={handleProductType}
       />
       {/* если цвет или размер не выбраны, будет отображаться ошибка */}
@@ -48,7 +48,12 @@ export const ProductForm: React.FC<ProductFormProps> = ({
       </QuantityInfo>
       <BenifitsContainer>
         <Benifits>
-          <BeiniftsIMG src={Undo} />
+          <BeiniftsIMG
+            src={'/images/undo.svg'}
+            width={1}
+            height={1}
+            layout={'responsive'}
+          />
           <Perks>Бесплатный возврат всех заказов из России</Perks>
         </Benifits>
       </BenifitsContainer>
@@ -91,7 +96,7 @@ const Perks = styled.span`
   font-size: 1em;
 `
 
-const BeiniftsIMG = styled.img`
+const BeiniftsIMG = styled(Image)`
   width: 1vw;
 `
 

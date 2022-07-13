@@ -1,8 +1,8 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { ColorRadioButton } from '../ColorButton/ColorButton'
-import { FiltersProps } from './SingleProduct.model'
+import { ColorRadioButton } from '../../ColorButton/ColorButton'
+import { FiltersProps } from './Filters.model'
 import { SizeButton } from './SizeButton'
 
 export const SingleProductFilters: React.FC<FiltersProps> = ({

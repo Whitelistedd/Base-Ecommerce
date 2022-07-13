@@ -1,43 +1,41 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 import React, { useEffect, useState } from 'react'
-import { useQuery } from 'react-query'
 import styled from 'styled-components'
-import { GetServerSideProps } from 'next'
 
 import { Failed } from '../Failed/Failed'
 import { Loading } from '../Loading/Loading'
-import { publicRequest } from '../../requests'
 import { Product } from './Product'
-import { itemFilterType, ProductsProps } from './ProductsList.model'
-import { ProductDataType, queryKeyType } from '../GlobalTypes.model'
-import { useRouter } from 'next/router'
-import { getProducts } from '../../apiCalls/apiCalls'
+import { ProductsProps } from './ProductsList.model'
+import { ProductDataType } from '../GlobalTypes.model'
 
 export const Products: React.FC<ProductsProps> = ({
   className,
   filters,
-  category,
+  HomePage,
   products,
+  status,
 }) => {
-  const [filteredProducts, setFilteredProducts] = useState([])
-
-  const { data, status } = useQuery(['products'], getProducts, {
-    initialData: products,
-  })
+  const [filteredProducts, setFilteredProducts] = useState<
+    Array<ProductDataType>
+  >([])
 
   /* useEffect для фильтрации продуктов */
   useEffect(() => {
+    if (!filters) return
+    if (!Array.isArray(products) || products.length === 0) return
     try {
-      data &&
-        setFilteredProducts(
-          data.data.filter((item: itemFilterType) =>
-            /* если фильтр соответствует категории в объекте продукта, будет показан продукт */
-            Object.entries(filters).every(([key, value]) =>
-              value !== '' ? item[key].includes(value) : item[key].includes
-            )
+      const filteredProducts = () => {
+        /* если фильтр соответствует категории в объекте продукта, будет показан продукт */
+        console.log(products)
+        return products?.filter((item: ProductDataType) =>
+          Object.entries(filters).every(([key, value]) =>
+            value !== '' ? item[key].includes(value) : item[key].includes
           )
         )
+      }
+      setFilteredProducts(filteredProducts)
     } catch (err) {}
-  }, [data, category, filters])
+  }, [products, HomePage, filters])
 
   /* если продукты все еще загружаются, тогда он покажет этот компонент загрузки */
   if (status === 'loading') {
@@ -51,24 +49,18 @@ export const Products: React.FC<ProductsProps> = ({
   return (
     <Container className={className}>
       {/* если страница не является домашней страницей, будут показаны все продукты, если это домашняя страница, будут показаны только первые 4 */}
-      {category
+      {!HomePage
         ? filteredProducts.map((item: ProductDataType) => (
             <Product item={item} key={item._id} />
           ))
-        : data &&
-          data.data
+        : products &&
+          products
             ?.slice(0, 4)
             .map((item: ProductDataType) => (
               <Product item={item} key={item._id} />
             ))}
     </Container>
   )
-}
-
-export const getServerSideProps: GetServerSideProps = async () => {
-  const router = useRouter()
-
-  return 'w'
 }
 
 const ProductsLoading = styled(Loading)`

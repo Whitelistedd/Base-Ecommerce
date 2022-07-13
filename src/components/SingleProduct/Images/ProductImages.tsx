@@ -2,12 +2,12 @@ import React from 'react'
 import { useState } from 'react'
 import styled, { keyframes } from 'styled-components'
 
-import { devices } from '../../data'
+import { devices } from '../../../data'
 import { ProductImage } from './ProductImage'
 import {
   handleImageSelectionType,
   ProductImagesProps,
-} from './SingleProduct.model'
+} from './ProductImages.model'
 
 export const ProductImages: React.FC<ProductImagesProps> = ({
   productInfo,
@@ -31,7 +31,7 @@ export const ProductImages: React.FC<ProductImagesProps> = ({
   return (
     <ImageContainer>
       <ImageGroup>
-        {productInfo?.img?.map((image, index) => (
+        {productInfo?.img?.map((image: string, index: number) => (
           <ProductImage
             key={image}
             img={image}
@@ -41,7 +41,10 @@ export const ProductImages: React.FC<ProductImagesProps> = ({
           />
         ))}
       </ImageGroup>
-      <Image alt={productInfo.title} src={mainImage || productInfo?.img?.[0]} />
+      <Image
+        alt={productInfo?.title}
+        src={mainImage || productInfo?.img?.[0]}
+      />
     </ImageContainer>
   )
 }

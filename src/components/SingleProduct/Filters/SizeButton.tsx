@@ -1,7 +1,7 @@
 import React from 'react'
 import styled from 'styled-components'
 
-import { SizeButtonProps } from './SingleProduct.model'
+import { SizeButtonProps } from './Filters.model'
 
 export const SizeButton: React.FC<SizeButtonProps> = ({
   handleProductType,

@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
-import LoadingImage from '../../images/332-loader-3.webp'
 
 import { LoadingProps } from './Loading.model'
 
@@ -11,7 +10,12 @@ export const Loading: React.FC<LoadingProps> = ({ className }) => {
       <Container className={className}>
         <Wrap>
           <ImageWrap>
-            <StyledImage layout="responsive" src={LoadingImage} />
+            <StyledImage
+              layout="responsive"
+              width={100}
+              height={100}
+              src={'/images/loading.webp'}
+            />
           </ImageWrap>
         </Wrap>
       </Container>

@@ -7,9 +7,9 @@ import styled from 'styled-components'
 import { EffectFade, Navigation } from 'swiper'
 import { Swiper, SwiperSlide } from 'swiper/react'
 
-import { devices } from '../../data'
+import { devices } from '../../../data'
 import { ProductImage } from './ProductImage'
-import { ImageSwipeProps } from './SingleProduct.model'
+import { ImageSwipeProps } from './ProductImages.model'
 
 /* компонент для пролистывания изображений для мобильных устройств */
 
@@ -18,24 +18,32 @@ export const ImageSwipe: React.FC<ImageSwipeProps> = ({ productInfo }) => {
     <StyledSwiper
       modules={[Navigation, EffectFade]}
       navigation
-      effect={'fade'}
       speed={800}
       slidesPerView={1}
       loop
     >
       {productInfo?.img?.map((images, index) => (
         <SwiperSlide key={index}>
-          <ProductImage img={images} selectionNumber={index} />
+          <StyledProductImage img={images} selectionNumber={index} />
         </SwiperSlide>
       ))}
     </StyledSwiper>
   )
 }
 
+const StyledProductImage = styled(ProductImage)`
+  width: 100%;
+  span,
+  img {
+    object-fit: contain;
+    height: 502px !important;
+  }
+`
+
 const StyledSwiper = styled(Swiper)`
   display: none;
   width: 100%;
-  height: 60vh;
+  height: 502px;
 
   .swiper-button-prev,
   .swiper-button-next {

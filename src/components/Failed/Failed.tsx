@@ -1,7 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
-import FailedIMG from '../../images/multiply.svg'
 
 export const Failed: React.FC = () => {
   return (
@@ -9,7 +8,12 @@ export const Failed: React.FC = () => {
       <Container>
         <Wrap>
           <ImageWrap>
-            <StyledImage layout="responsive" src={FailedIMG} />
+            <StyledImage
+              layout="responsive"
+              width={100}
+              height={100}
+              src={'/images/multiply.svg'}
+            />
           </ImageWrap>
           <Title>Упс! Что-то пошло не так</Title>
         </Wrap>
@@ -43,5 +47,6 @@ const Container = styled.div`
   display: flex;
   justify-content: center;
   align-items: center;
+  width: 100%;
   height: 100vh;
 `

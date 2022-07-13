@@ -9,32 +9,37 @@ import { ProductProps } from './ProductsList.model'
 export const Product: React.FC<ProductProps> = ({ item }) => {
   const [hoveredStatus, setHoveredStatus] = useState(false)
   return (
-    <StyledLink
+    <Container
       onMouseEnter={() => setHoveredStatus(true)}
       onMouseLeave={() => setHoveredStatus(false)}
-      images={item.img}
-      href={`/product/${item._id}`}
     >
-      {/* если пользователь наводит курсор на изображение, он покажет второе изображение продукта, а если нет, то покажет первое */}
-      {!hoveredStatus && (
-        <StyledImage
-          className="Image"
-          src={item.img[0]}
-          alt={item.title}
-          inStock={item.inStock}
-        />
-      )}
-      {hoveredStatus && (
-        <StyledImage
-          className="Image"
-          src={item.img[1]}
-          inStock={item.inStock}
-        />
-      )}
-      <Title>{item.title}</Title>
-      {/* если товар распродан, появится это сообщение */}
-      {!item.inStock && <SoldOut>Sold Out</SoldOut>}
-    </StyledLink>
+      <StyledLink images={item.img} href={`/product/${item._id}`}>
+        <InfoContainer inStock={item.inStock}>
+          {/* если пользователь наводит курсор на изображение, он покажет второе изображение продукта, а если нет, то покажет первое */}
+          {!hoveredStatus ? (
+            <StyledImage
+              className="Image"
+              src={item.img[0]}
+              layout="responsive"
+              width={300}
+              height={400}
+              alt={item.title}
+            />
+          ) : (
+            <StyledImage
+              className="Image"
+              src={item.img[1]}
+              layout="responsive"
+              width={300}
+              height={400}
+            />
+          )}
+          <Title>{item.title}</Title>
+          {/* если товар распродан, появится это сообщение */}
+          {!item.inStock && <SoldOut>Sold Out</SoldOut>}
+        </InfoContainer>
+      </StyledLink>
+    </Container>
   )
 }
 
@@ -59,22 +64,29 @@ const unFade = keyframes`
   }
 `
 
-const StyledImage = styled(Image)<{ inStock: boolean }>`
+const StyledImage = styled(Image)``
+
+const InfoContainer = styled.div<{ inStock: boolean }>`
   min-width: 300px;
   max-width: 300px;
-  width: 100%;
   height: 100%;
+  width: 100%;
   object-fit: cover;
   animation: ${unFade} 200ms linear;
-  ${(props) =>
-    !props.inStock
-      ? `
+
+  span {
+    ${(props) =>
+      !props.inStock
+        ? `
   filter: grayscale(0.5) brightness(60%); 
   `
-      : ``}
+        : ``}
+  }
 `
 
-const StyledLink = styled(Link)<{ images: Array<string> }>`
+const StyledLink = styled(Link)<{ images: Array<string> }>``
+
+const Container = styled.div`
   color: black;
   display: flex;
   gap: 0.5em;
@@ -87,6 +99,11 @@ const StyledLink = styled(Link)<{ images: Array<string> }>`
   box-shadow: 0px 0px 0px black;
   border-radius: 10px;
   height: 100%;
+
+  &:hover {
+    cursor: pointer;
+  }
+
   @media only screen and (max-width: ${devices.Phone}px) {
     min-width: 300px;
   }

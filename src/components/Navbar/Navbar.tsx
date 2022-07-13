@@ -7,7 +7,6 @@ import Link from 'next/link'
 import styled from 'styled-components'
 import Image from 'next/image'
 
-import Base from '../../images/basealpha.png'
 import { NavMenu } from './NavMenu/NavMenu'
 import { displayFixedType } from './Navbar.model'
 
@@ -23,7 +22,7 @@ export const Navbar: React.FC = () => {
 
   /* если окно на 42 пикселя ниже, панель навигации будет {position: fixed} */
   const handleScroll = () => {
-    setDisplayFixed(window.pageYOffset > 42)
+    setDisplayFixed(window.pageYOffset > 5)
   }
 
   useEffect(() => {
@@ -48,18 +47,17 @@ export const Navbar: React.FC = () => {
           <NavMenu toggleDrawer={toggleDrawer} open={open} />
         </Left>
         <Center>
-          <Link aria-label="кнопка вернуться домой" href={'/'}>
+          <StyledLink aria-label="кнопка вернуться домой" href={'/'}>
             <StyledImage
-              style={{ height: 30, cursor: 'pointer' }}
-              src={Base}
-              height={40}
+              src={'/images/basealpha.png'}
+              height={35}
               width={80}
               alt="Logo"
             />
-          </Link>
+          </StyledLink>
         </Center>
         <Right>
-          <Link
+          <StyledLink
             aria-label="кнопка для перехода на страницу профиля"
             href={'/profile'}
           >
@@ -74,8 +72,11 @@ export const Navbar: React.FC = () => {
                 },
               }}
             />
-          </Link>
-          <Link aria-label="кнопка перехода на страницу корзины" href={'/cart'}>
+          </StyledLink>
+          <StyledLink
+            aria-label="кнопка перехода на страницу корзины"
+            href={'/cart'}
+          >
             <Badge
               badgeContent={0}
               color="primary"
@@ -90,7 +91,7 @@ export const Navbar: React.FC = () => {
                 sx={{ color: 'black', cursor: 'pointer', fontSize: 25 }}
               />
             </Badge>
-          </Link>
+          </StyledLink>
         </Right>
       </Wrapper>
     </Container>
@@ -104,6 +105,9 @@ const Left = styled.div`
 const StyledImage = styled(Image)`
   width: 100px;
   height: 100px;
+  &:hover {
+    cursor: pointer;
+  }
 `
 
 const Center = styled.div`
@@ -121,26 +125,26 @@ const Right = styled.div`
   gap: 30px;
 `
 
+const StyledLink = styled(Link)``
+
 const Wrapper = styled.div<{ displayFixed: displayFixedType }>`
   display: flex;
   justify-content: space-between;
   padding: 13px 30px;
   align-items: center;
   border-bottom: 1px solid #dcdcdc;
-  z-index: 2;
+  z-index: 4;
   background-color: white;
   width: 100%;
   position: ${(props) => (props.displayFixed ? 'fixed' : '')};
 `
 
 const Container = styled.div<{ displayFixed: displayFixedType }>`
-  z-index: 2;
   background-color: white;
 
   height: 60px;
   width: 100%;
   background-color: white;
-  position: ${(props) => (props.displayFixed ? 'fixed' : '')};
 
   @media only screen and (min-width: 1920px) {
     width: 1920px;

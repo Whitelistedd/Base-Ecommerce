@@ -8,7 +8,6 @@ import { Left } from './Left/Left'
 import { Center } from './Center/Center'
 import { Right } from './Right/Right'
 import { devices } from '../../data'
-import Payments from '../../images/payments.svg'
 
 export const Footer: React.FC = () => {
   return (
@@ -26,8 +25,9 @@ export const Footer: React.FC = () => {
         <CopyrightRight>
           <StyledImage
             width={200}
+            height={100}
             alt="способы оплаты: Visa, MasterCard, МИР, СБП"
-            src={Payments}
+            src={'/images/payments.svg'}
           />
         </CopyrightRight>
       </Copyright>

@@ -1,9 +1,7 @@
 import { Typography } from '@mui/material'
 import React from 'react'
 import styled from 'styled-components'
-
-import vkIcon from '../../../images/vk.svg'
-import instagramIcon from '../../../images/instagram.svg'
+import Image from 'next/image'
 
 export const Left: React.FC = () => {
   return (
@@ -21,24 +19,33 @@ export const Left: React.FC = () => {
       <Typography>Подписывайтесь на нас</Typography>
       <SocialContainer>
         <A aria-label="вконтакт" href="https://www.vk.ru/" target={'#blank'}>
-          <Icon alt="наша страница вконтакт" src={vkIcon} />
+          <Icon
+            alt="наша страница вконтакт"
+            layout="responsive"
+            width={30}
+            height={30}
+            src={'/images/vk.svg'}
+          />
         </A>
         <A
           aria-label="инстаграмм"
           href="https://www.instagram.com"
           target={'#blank'}
         >
-          <Icon alt="наша страница в инстаграмм" src={instagramIcon} />
+          <Icon
+            alt="наша страница в инстаграмм"
+            src={'/images/instagram.svg'}
+            width={30}
+            height={30}
+            layout="responsive"
+          />
         </A>
       </SocialContainer>
     </Container>
   )
 }
 
-const Icon = styled.img`
-  width: 25px;
-  height: 25px;
-`
+const Icon = styled(Image)``
 
 const Title = styled.div`
   font-size: 16px;
@@ -57,6 +64,8 @@ const SocialContainer = styled.div`
 
 const A = styled.a`
   color: black;
+  width: 25px;
+  height: 25px;
 `
 
 const Container = styled.div`

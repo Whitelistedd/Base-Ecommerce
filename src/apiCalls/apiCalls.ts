@@ -1,3 +1,5 @@
+import { ProductDataType, queryKeyType } from '../components/GlobalTypes.model'
+import { AllColors, AllSizes } from '../data'
 import { publicRequest } from '../requests'
 import { newCheckoutType, UpdateProductsType } from './apiCalls.model'
 
@@ -22,7 +24,7 @@ export const newCheckout: newCheckoutType = async (idemp, order) => {
 export const UpdateProducts: UpdateProductsType = async (products) => {
   try {
     return await Promise.all(
-      products.map(async (product: any, index: number) => {
+      products.map(async (product: ProductDataType, index: number) => {
         const res = await publicRequest.get('/products/find/' + product._id)
         return {
           index: index,
@@ -36,10 +38,36 @@ export const UpdateProducts: UpdateProductsType = async (products) => {
   }
 }
 
-/* для получения всех продуктов */
-export const getProducts = async (NotHomePage?: boolean) => {
-  const response = await publicRequest.get(
-    NotHomePage ? `products?category=` : `products`
+/* функция, чтобы получить выбранный продукт и получить все доступные размеры и цвета */
+export const getProduct = async ({ queryKey }: { queryKey: queryKeyType }) => {
+  const Id = queryKey[1]
+  const res = await publicRequest.get('/products/find/' + Id)
+
+  const getAvailableColors = await AllColors.filter((color) =>
+    res.data.color.includes(color.colorName)
   )
-  return response
+  const getAvailableSizes = await AllSizes.filter((size) =>
+    res.data.size.includes(size.SizeName)
+  )
+
+  return { ...res.data, size: getAvailableSizes, color: getAvailableColors }
+}
+
+/* для получения всех продуктов */
+export const getAllProducts = async () => {
+  try {
+    const response = await publicRequest.get(`/products?category=`)
+    return response.data
+  } catch (err) {
+    return []
+  }
+}
+
+export const getLimitedProducts = async () => {
+  try {
+    const response = await publicRequest.get(`/products`)
+    return response.data
+  } catch (err) {
+    return []
+  }
 }

@@ -1,48 +1,24 @@
 import React, { useState } from 'react'
-import { useQuery } from 'react-query'
 import styled from 'styled-components'
-import { useRouter } from 'next/router'
 
-import { Failed } from '../Failed/Failed'
-import { AllColors, AllSizes, devices } from '../../data'
-import { Loading } from '../Loading/Loading'
-import { publicRequest } from '../../requests'
-import { ImageSwipe } from './ImageSwipe'
+import { devices } from '../../data'
+import { ImageSwipe } from './Images/ImageSwipe'
 import { ProductForm } from './ProductForm'
-import { ProductImages } from './ProductImages'
+import { ProductImages } from './Images/ProductImages'
 import {
   handleProductTypeType,
   handleQuantityType,
   ProductTypeState,
+  ProductProps,
 } from './SingleProduct.model'
-import { queryKeyType } from '../GlobalTypes.model'
 
-export const Product: React.FC = () => {
-  const location = useRouter()
-  const productID = location.pathname.split('/')[2]
+export const Product: React.FC<ProductProps> = ({ product, productID }) => {
   const [productType, setProductType] = useState<ProductTypeState>({
     color: '',
     size: '',
   })
   const [displayError, SetDisplayError] = useState(false)
   const [quantity, setQuantity] = useState(1)
-
-  /* функция, чтобы получить выбранный продукт и получить все доступные размеры и цвета */
-  const getProduct = async ({ queryKey }: { queryKey: queryKeyType }) => {
-    const Id = queryKey[1]
-    const res = await publicRequest.get('/products/find/' + Id)
-
-    const getAvailableColors = await AllColors.filter((color) =>
-      res.data.color.includes(color.colorName)
-    )
-    const getAvailableSizes = await AllSizes.filter((size) =>
-      res.data.size.includes(size.SizeName)
-    )
-
-    return { ...res.data, size: getAvailableSizes, color: getAvailableColors }
-  }
-
-  const { data, status } = useQuery(['singleProduct', productID], getProduct)
 
   /* функция добавления фильтров по клику пользователя */
   const handleProductType = (e: handleProductTypeType) => {
@@ -80,19 +56,11 @@ export const Product: React.FC = () => {
     }
   }
 
-  if (status === 'loading') {
-    return <Loading />
-  }
-
-  if (status === 'error') {
-    return <Failed />
-  }
-
   return (
     <Container>
       <ProductsWrap>
-        <ImageSwipe productInfo={data} />
-        <ProductImages productInfo={data} />
+        <ImageSwipe productInfo={product} />
+        <ProductImages productInfo={product} />
         <ProductForm
           handleCart={handleCart}
           handleProductType={handleProductType}
@@ -100,7 +68,7 @@ export const Product: React.FC = () => {
           handleQuantity={handleQuantity}
           error={displayError}
           productType={productType}
-          productInfo={data}
+          productInfo={product}
         />
       </ProductsWrap>
     </Container>

@@ -28,3 +28,5 @@ export type ProductDataType = {
   title: string
   updatedAt: string
 }
+
+export type ProductsArrayType = Array<ProductDataType>

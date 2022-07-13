@@ -7,21 +7,46 @@ import styled from 'styled-components'
 import { Products } from '../src/components/ProductsList/Products'
 import { devices } from '../src/data'
 import { Parallax } from 'react-parallax'
+import { GetServerSideProps, NextPage } from 'next'
+import { getAllProducts } from '../src/apiCalls/apiCalls'
+import { useQuery, UseQueryResult } from 'react-query'
+import { ProductsArrayType } from '../src/components/GlobalTypes.model'
+import { Loading } from '../src/components/Loading/Loading'
+import { Failed } from '../src/components/Failed/Failed'
 
-const HomePage = () => {
+interface HomePageProps {
+  products: ProductsArrayType
+}
+
+const HomePage: NextPage<HomePageProps> = ({ products }) => {
   useEffect(() => {
     AOS.init()
     AOS.refresh()
   }, [])
 
+  const { data, status }: UseQueryResult<ProductsArrayType, Error> = useQuery<
+    ProductsArrayType,
+    Error
+  >(['products'], getAllProducts, {
+    initialData: products.length === 0 ? undefined : products,
+  })
+
+  if (status === 'loading') {
+    return <Loading />
+  }
+
+  if (status === 'error') {
+    return <Failed />
+  }
+
   return (
     <>
-      <StyledParallax bgImage={'../src/images/background.webp'} strength={400}>
+      <StyledParallax bgImage={'/images/background.webp'} strength={400}>
         <HeaderWrap>
-          <Link href={'/products/men'}>
+          <Link href={'/products?filter=men'}>
             <HeaderButton>Мужчины</HeaderButton>
           </Link>
-          <Link href={'/products/women'}>
+          <Link href={'/products?filter=women'}>
             <HeaderButton>Женщины</HeaderButton>
           </Link>
         </HeaderWrap>
@@ -35,13 +60,27 @@ const HomePage = () => {
         data-aos-mirror="false"
         data-aos-once="true"
       >
-        <HomeProducts />
-        <Link href={'/products/all'}>
+        <HomeProducts
+          status={status}
+          HomePage={true}
+          products={data ? data : []}
+        />
+        <Link href={'/products/'}>
           <HeaderButton>Посмотреть продукты</HeaderButton>
         </Link>
       </Container>
     </>
   )
+}
+
+export const getServerSideProps: GetServerSideProps = async () => {
+  const products = await getAllProducts()
+
+  return {
+    props: {
+      products,
+    },
+  }
 }
 
 const HeaderButton = styled.button`
