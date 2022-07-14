@@ -1,24 +1,7 @@
-import { AllColors, AllSizes } from '../../components/GlobalTypes.model'
-
-type CartProductDataType = {
-  _v: number
-  _id: string
-  categories: Array<string>
-  color: Array<AllColors>
-  createdAt: string
-  desc: string
-  gender: Array<string>
-  img: Array<string>
-  inStock: boolean
-  price: number
-  size: Array<AllSizes>
-  title: string
-  updatedAt: string
-  quantity: number
-}
+import { CartProductType } from '../../components/Cart/Cart.model'
 
 export interface CartInitialState {
-  products: CartProductDataType[]
+  products: CartProductType[]
   quantity: number
   total: number
   OrderError: string

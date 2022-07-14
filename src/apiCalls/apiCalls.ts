@@ -1,18 +1,20 @@
-import { ProductDataType, queryKeyType } from '../components/GlobalTypes.model'
+import { CartProductType } from '../components/Cart/Cart.model'
+import { queryKeyType } from '../components/GlobalTypes.model'
 import { AllColors, AllSizes } from '../data'
+import { setError, UpdateProduct } from '../redux/slices/cart'
 import { publicRequest } from '../requests'
 import { newCheckoutType, UpdateProductsType } from './apiCalls.model'
 
 /* функция для оформления заказа и получения URL-адреса покупки */
 
-export const newCheckout: newCheckoutType = async (idemp, order) => {
+export const newCheckout: newCheckoutType = async (idemp, dispatch, order) => {
   try {
     const key = idemp
     const request = { key, ...order }
     const res = await publicRequest
       .post('/orders/', request)
       .then((response) => response)
-      .catch((err) => err.response.data.message)
+      .catch((err) => dispatch(setError(err.response.data.message)))
     return res.data.confirmation.confirmation_url
       ? res.data.confirmation.confirmation_url
       : res
@@ -21,16 +23,21 @@ export const newCheckout: newCheckoutType = async (idemp, order) => {
 
 /* извлечение всех продуктов из базы данных по идентификаторам продуктов, чтобы обновить сведения о продукте */
 
-export const UpdateProducts: UpdateProductsType = async (products) => {
+export const UpdateProducts: UpdateProductsType = async (
+  products,
+  dispatch
+) => {
   try {
-    return await Promise.all(
-      products.map(async (product: ProductDataType, index: number) => {
+    await Promise.all(
+      products.map(async (product: CartProductType, index: number) => {
         const res = await publicRequest.get('/products/find/' + product._id)
-        return {
-          index: index,
-          oldproduct: product,
-          newproduct: res.data,
-        }
+        dispatch(
+          UpdateProduct({
+            index: index,
+            oldproduct: product,
+            newproduct: res.data,
+          })
+        )
       })
     )
   } catch (err) {

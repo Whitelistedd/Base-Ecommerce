@@ -9,9 +9,11 @@ import Image from 'next/image'
 
 import { NavMenu } from './NavMenu/NavMenu'
 import { displayFixedType } from './Navbar.model'
+import { useSelector } from 'react-redux'
 
 export const Navbar: React.FC = () => {
   const [open, setOpen] = useState(false)
+  const cart = useSelector((state) => state.cart)
 
   /* будет переключать мобильное меню при нажатии на значок */
   const toggleDrawer = () => {
@@ -78,7 +80,7 @@ export const Navbar: React.FC = () => {
             href={'/cart'}
           >
             <Badge
-              badgeContent={0}
+              badgeContent={cart.quantity}
               color="primary"
               sx={{
                 color: 'black',

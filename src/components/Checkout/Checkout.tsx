@@ -1,10 +1,11 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react'
+import styled from 'styled-components'
 
-import { devices } from "../../data";
-import { CheckoutProduct } from "./CheckoutProduct";
+import { devices } from '../../data'
+import { CheckoutProps } from './Checkout.model'
+import { CheckoutProduct } from './CheckoutProduct'
 
-export const CheckOutCart = ({ cart, shipping }) => {
+export const Checkout: React.FC<CheckoutProps> = ({ cart, shipping }) => {
   return (
     <CheckOut>
       <CheckoutWrap>
@@ -28,15 +29,15 @@ export const CheckOutCart = ({ cart, shipping }) => {
         </CostItem>
       </CheckoutWrap>
     </CheckOut>
-  );
-};
+  )
+}
 
 const CheckoutWrap = styled.div`
   display: flex;
   flex-direction: column;
   width: 45%;
   gap: 2em;
-`;
+`
 
 const CostWrap = styled.div`
   display: flex;
@@ -45,35 +46,35 @@ const CostWrap = styled.div`
   border-bottom: 1px solid #e1e1e1;
   padding: 1em 0em;
   gap: 0.5em;
-`;
+`
 const CostItem = styled.div`
   display: flex;
   justify-content: space-between;
-`;
+`
 
 const CostTitle = styled.p`
   font-size: 14px;
   margin: 0px;
   color: rgb(83, 83, 83);
-`;
+`
 
 const Price = styled.p`
   color: rgb(50, 50, 50);
   font-weight: 600;
   margin: 0px;
   font-size: 15px;
-`;
+`
 
 const TotalTitle = styled.p`
   color: rgb(83, 83, 83);
   margin: 0px;
-`;
+`
 
 const TotalCost = styled.p`
   font-weight: 500;
   margin: 0px;
   font-size: 20px;
-`;
+`
 
 const CheckOut = styled.div`
   display: flex;
@@ -96,4 +97,4 @@ const CheckOut = styled.div`
       width: 80%;
     }
   }
-`;
+`

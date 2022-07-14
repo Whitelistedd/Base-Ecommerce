@@ -26,7 +26,6 @@ export const Products: React.FC<ProductsProps> = ({
     try {
       const filteredProducts = () => {
         /* если фильтр соответствует категории в объекте продукта, будет показан продукт */
-        console.log(products)
         return products?.filter((item: ProductDataType) =>
           Object.entries(filters).every(([key, value]) =>
             value !== '' ? item[key].includes(value) : item[key].includes

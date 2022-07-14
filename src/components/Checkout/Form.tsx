@@ -1,59 +1,53 @@
-import React from "react";
-import { useForm } from "react-hook-form";
-import { useDispatch } from "react-redux";
-import styled from "styled-components";
-import { v4 as uuidv4 } from "uuid";
+import React from 'react'
+import { useForm, SubmitHandler } from 'react-hook-form'
+import styled from 'styled-components'
+import { v4 as uuidv4 } from 'uuid'
+import { newCheckout } from '../../apiCalls/apiCalls'
 
-import { devices } from "../data";
-import { newCheckout } from "../redux/apiCalls";
+import { devices } from '../../data'
+import { setError } from '../../redux/slices/cart'
+import { AppDispatch } from '../../redux/store/store'
+import { FormProps, InfoType } from './Checkout.model'
 
-export const Form = ({ cart, setShipping }) => {
+export const Form: React.FC<FormProps> = ({ cart, setShipping }) => {
   const {
     register,
     handleSubmit,
     formState: { errors },
-  } = useForm();
-  let dispatch = useDispatch();
+  } = useForm<InfoType>()
+
+  const dispatch = AppDispatch()
 
   /* расчет доставки, чтобы показать пользователю сумму */
   const handleShipping = (e) => {
-    const value = e.target.value;
-    if (value === "PochtaRussia") {
-      setShipping(500);
-    } else if (value === "Cdek") {
-      setShipping(700);
+    const value = e.target.value
+    if (value === 'PochtaRussia') {
+      setShipping(500)
+    } else if (value === 'Cdek') {
+      setShipping(700)
     }
-  };
+  }
 
   /* отправит запрос с ключом idemp и получит URL-адрес из бэкэнда, чтобы перенаправить пользователя на страницу покупки */
-  const onSubmit = async ({
-    address,
-    firstName,
-    lastName,
-    email,
-    phoneNumber,
-    shippingMethod,
-  }) => {
-    const products = cart.products;
-    const key = uuidv4();
-    var res1 = await newCheckout(dispatch, key, {
+  const onSubmit: SubmitHandler<InfoType> = async (Info) => {
+    if (cart.products.length <= 0) {
+      dispatch(setError('you dont have any products'))
+    }
+    const products = cart.products
+    const key = uuidv4()
+    const res1 = await newCheckout(key, dispatch, {
       products,
-      address,
-      firstName,
-      lastName,
-      email,
-      phoneNumber,
-      shippingMethod,
-    });
-    res1 !== undefined && (window.location.href = res1);
-  };
+      ...Info,
+    })
+    res1 !== undefined && (window.location.href = res1)
+  }
 
   return (
     <Information onSubmit={handleSubmit(onSubmit)}>
       <Title>Контакты</Title>
       <Input
-        {...register("email", {
-          required: "Пожалуйста, введите свой адрес Эл. адрес",
+        {...register('email', {
+          required: 'Пожалуйста, введите свой адрес Эл. адрес',
         })}
         type="email"
         placeholder="Эл. адрес"
@@ -61,65 +55,62 @@ export const Form = ({ cart, setShipping }) => {
       <Title>Адреса доставки</Title>
       <GatheredInput>
         <Input
-          {...register("firstName", {
-            required: "Пожалуйста, введите свое Имя",
+          {...register('firstName', {
+            required: 'Пожалуйста, введите свое Имя',
           })}
           type="text"
           placeholder="Имя"
         />
         <Input
-          {...register("lastName", {
-            required: "Пожалуйста, введите свою фамилию",
+          {...register('lastName', {
+            required: 'Пожалуйста, введите свою фамилию',
           })}
           type="text"
           placeholder="Фамилия"
         />
       </GatheredInput>
       <Input
-        {...register("address.address", {
-          required: "Пожалуйста, введите свой адрес",
+        {...register('address.address', {
+          required: 'Пожалуйста, введите свой адрес',
         })}
         type="text"
         placeholder="Адрес"
       />
       <Input
-        {...register("address.apartment")}
+        {...register('address.apartment')}
         type="text"
         placeholder="Квартира, люкс и т. д. (по желанию)"
       />
       <Input
-        {...register("address.city", {
-          required: "Пожалуйста, введите свой город",
+        {...register('address.city', {
+          required: 'Пожалуйста, введите свой город',
         })}
         type="text"
         placeholder="Город"
       />
       <GatheredInput>
         <Input
-          {...register("address.country", { required: true })}
+          {...register('address.country', { required: true })}
           type="text"
           placeholder="Страна/регион"
         />
         <Input
-          {...register("address.zipCode", {
-            required: "Пожалуйста, введите ваш почтовый индекс",
+          {...register('address.zipCode', {
+            required: 'Пожалуйста, введите ваш почтовый индекс',
           })}
           type="text"
           placeholder="почтовый индекс"
         />
       </GatheredInput>
       <InputPhone
-        {...register(
-          "phoneNumber",
-          {
-            required: "Пожалуйста введите ваш номер телефона",
-            pattern: {
-              value: /^((\+7|7|8)+([0-9]){10})$/gm,
-              message: "invalid phone number",
-            },
+        {...register('phoneNumber', {
+          required: 'Пожалуйста введите ваш номер телефона',
+          pattern: {
+            value: /^((\+7|7|8)+([0-9]){10})$/gm,
+            message: 'invalid phone number',
           },
-          { valueAsNumber: true }
-        )}
+          valueAsNumber: true,
+        })}
         type="tel"
         placeholder="Телефон — получайте SMS-поддержку, обновления и предложения от нашей команды "
       />
@@ -130,7 +121,7 @@ export const Form = ({ cart, setShipping }) => {
           <ShippingWrap>
             <ShippingMethod>
               <InputRadio
-                {...register("shippingMethod", { required: true })}
+                {...register('shippingMethod', { required: true })}
                 value="PochtaRussia"
                 id="PochtaRussia"
                 type="radio"
@@ -142,7 +133,7 @@ export const Form = ({ cart, setShipping }) => {
             </ShippingMethod>
             <ShippingMethod>
               <InputRadio
-                {...register("shippingMethod", { required: true })}
+                {...register('shippingMethod', { required: true })}
                 value="Cdek"
                 id="Ozon"
                 type="radio"
@@ -156,23 +147,23 @@ export const Form = ({ cart, setShipping }) => {
       </Container>
       {errors && (
         <ErrorMessage>
-          {errors.email?.message ||
-            errors.lastName?.message ||
-            errors.address?.address?.message ||
-            errors.address?.city?.message ||
-            errors.address?.zipCode?.message ||
-            errors.phoneNumber?.message}
+          {errors?.email?.message ||
+            errors?.lastName?.message ||
+            errors?.address?.address?.message ||
+            errors?.address?.city?.message ||
+            errors?.address?.zipCode?.message ||
+            errors?.phoneNumber?.message}
         </ErrorMessage>
       )}
       <Button type="submit">Checkout</Button>
     </Information>
-  );
-};
+  )
+}
 
 const Title = styled.h1`
   font-size: 17px;
   font-weight: 500;
-`;
+`
 
 const Input = styled.input`
   padding: 1em;
@@ -183,11 +174,11 @@ const Input = styled.input`
   &:focus {
     border: 2px solid #b69f8d;
   }
-`;
+`
 
 const InputPhone = styled(Input)`
   font-size: 12px;
-`;
+`
 
 const Button = styled.button`
   align-self: flex-end;
@@ -205,7 +196,7 @@ const Button = styled.button`
     background: rgba(0, 0, 0, 0.8);
   }
   min-width: 30%;
-`;
+`
 
 const GatheredInput = styled.div`
   width: 100%;
@@ -215,7 +206,7 @@ const GatheredInput = styled.div`
   input {
     width: 100%;
   }
-`;
+`
 
 const Container = styled.div`
   display: flex;
@@ -223,18 +214,18 @@ const Container = styled.div`
   width: 100%;
   height: 70%;
   gap: 1em;
-`;
+`
 
 const ShippingForm = styled.div`
   display: flex;
   flex-direction: column;
   gap: 1em;
-`;
+`
 
 const ShippingWrap = styled.div`
   border: 1px solid #d9d9d9;
   border-radius: 5px;
-`;
+`
 
 const ShippingMethod = styled.div`
   color: rgb(84, 84, 84);
@@ -242,21 +233,22 @@ const ShippingMethod = styled.div`
   padding: 1em;
   gap: 1em;
   border-bottom: 1px solid #d9d9d9;
-`;
+  align-items: center;
+`
 
 const InputRadio = styled.input`
   transform: scale(1.5);
   &:checked {
     accent-color: brown;
   }
-`;
+`
 
 const Label = styled.label`
   flex: 2;
   &:hover {
     cursor: pointer;
   }
-`;
+`
 
 const ErrorMessage = styled.p`
   color: red;
@@ -264,9 +256,11 @@ const ErrorMessage = styled.p`
   padding: 1em 0em;
   font-size: 17px;
   align-self: flex-end;
-`;
+`
 
-const Price = styled.p``;
+const Price = styled.p`
+  margin: 0px;
+`
 
 const Information = styled.form`
   display: flex;
@@ -274,6 +268,7 @@ const Information = styled.form`
   width: 70%;
   min-height: 60%;
   gap: 1em;
+  padding: 0.5em;
   @media only screen and (max-width: ${devices.Laptop}px) {
     width: 90%;
   }
@@ -281,4 +276,4 @@ const Information = styled.form`
     width: 80%;
     justify-content: center;
   }
-`;
+`

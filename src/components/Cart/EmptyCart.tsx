@@ -1,29 +1,29 @@
-import { Typography } from "@mui/material";
-import React from "react";
-import { Link } from "react-router-dom";
-import styled from "styled-components";
+import { Typography } from '@mui/material'
+import React from 'react'
+import Link from 'next/link'
+import styled from 'styled-components'
 
 /* компонент, чтобы показать, когда корзина пуста */
 
-export const EmptyCart = () => {
+export const EmptyCart: React.FC = () => {
   return (
     <EmptyContainer>
       <Typography
         sx={{
           fontSize: 15,
-          color: "#979696",
-          letterSpacing: ".2em",
-          fontWeight: "700",
+          color: '#979696',
+          letterSpacing: '.2em',
+          fontWeight: '700',
         }}
       >
         ВАША КОРЗИНА ПУСТА
       </Typography>
-      <Link to={"/products/all"}>
+      <Link href={'/products'}>
         <StyledButton>ДОБАВИТЬ ПРОДУКТЫ</StyledButton>
       </Link>
     </EmptyContainer>
-  );
-};
+  )
+}
 
 const StyledButton = styled.button`
   padding: 0.7em 1.7em;
@@ -43,11 +43,11 @@ const StyledButton = styled.button`
     transition: 400ms ease;
     cursor: pointer;
   }
-`;
+`
 
 const EmptyContainer = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: 2em;
-`;
+`

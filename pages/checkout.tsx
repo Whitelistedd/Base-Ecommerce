@@ -1,0 +1,93 @@
+import { Alert, Snackbar } from '@mui/material'
+import { useRouter } from 'next/router'
+import { useEffect, useState } from 'react'
+import styled from 'styled-components'
+
+import { Checkout } from '../src/components/Checkout/Checkout'
+import { Form } from '../src/components/Checkout/Form'
+import { devices } from '../src/data'
+import { setError } from '../src/redux/slices/cart'
+import { AppDispatch, useAppSelector } from '../src/redux/store/store'
+import { NextPage } from 'next'
+
+const CheckoutPage: NextPage = () => {
+  const cart = useAppSelector((state) => state.cart)
+  const [shipping, setShipping] = useState(500)
+  const [snackBarStatus, setSnackBarStatus] = useState(false)
+  const dispatch = AppDispatch()
+  const cartquantity = cart.quantity
+  const Error = cart.OrderError
+
+  const navigate = useRouter()
+
+  /* функция для отображения сообщения об ошибке оформления заказа */
+  const handleSnackBarClose = () => {
+    setSnackBarStatus(false)
+    dispatch(setError(''))
+  }
+
+  useEffect(() => {
+    if (Error) {
+      setSnackBarStatus(true)
+    }
+  }, [Error])
+
+  /* если у пользователя нет товаров, он будет перенаправлен на домашнюю страницу */
+  /* useEffect(() => {
+    if (cartquantity === 0) {
+      navigate.replace('/')
+    }
+  }, [cartquantity]) */
+
+  return (
+    <Container>
+      {/* сообщение об ошибке автоматически закроется через 6 секунд */}
+      <Snackbar
+        open={snackBarStatus}
+        autoHideDuration={6000}
+        onClose={handleSnackBarClose}
+      >
+        <Alert
+          onClose={handleSnackBarClose}
+          severity="error"
+          sx={{ width: '100%' }}
+        >
+          {Error}
+        </Alert>
+      </Snackbar>
+      <Left>
+        <Form setShipping={setShipping} cart={cart} />
+      </Left>
+      <Checkout shipping={shipping} cart={cart} />
+    </Container>
+  )
+}
+
+const Left = styled.div`
+  display: flex;
+  padding-top: 4em;
+  padding-right: 4em;
+  width: 100%;
+  height: 100%;
+  flex-direction: column;
+  flex: 1;
+  align-items: flex-end;
+  border-right: 1px solid #e1e1e1;
+`
+
+const Container = styled.div`
+  display: flex;
+  width: 100vw;
+  min-height: 100vh;
+  margin-bottom: -50px;
+  @media only screen and (max-width: ${devices.Tablet}px) {
+    flex-direction: column-reverse;
+    gap: 2em;
+    ${Left} {
+      align-items: center;
+      padding-right: 0em;
+    }
+  }
+`
+
+export default CheckoutPage

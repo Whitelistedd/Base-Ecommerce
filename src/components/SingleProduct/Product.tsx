@@ -5,7 +5,6 @@ import { devices } from '../../data'
 import { ImageSwipe } from './Images/ImageSwipe'
 import { ProductForm } from './ProductForm'
 import { ProductImages } from './Images/ProductImages'
-import { useDispatch } from 'react-redux'
 import {
   handleProductTypeType,
   handleQuantityType,
@@ -13,6 +12,7 @@ import {
   ProductProps,
 } from './SingleProduct.model'
 import { addProduct } from '../../redux/slices/cart'
+import { AppDispatch } from '../../redux/store/store'
 
 export const Product: React.FC<ProductProps> = ({ product }) => {
   const [productType, setProductType] = useState<ProductTypeState>({
@@ -21,7 +21,7 @@ export const Product: React.FC<ProductProps> = ({ product }) => {
   })
   const [displayError, SetDisplayError] = useState(false)
   const [quantity, setQuantity] = useState(1)
-  const dispatch = useDispatch()
+  const dispatch = AppDispatch()
 
   /* функция добавления фильтров по клику пользователя */
   const handleProductType = (e: handleProductTypeType) => {
@@ -44,8 +44,7 @@ export const Product: React.FC<ProductProps> = ({ product }) => {
     } else {
       dispatch(
         addProduct({
-          _id: product._id,
-          price: product.price,
+          ...product,
           quantity,
           ...productType,
         })
