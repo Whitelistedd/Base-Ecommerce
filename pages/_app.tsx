@@ -8,6 +8,7 @@ import theme from '../src/theme'
 import createEmotionCache from '../src/createEmotionCache'
 import { Layout } from '../Layout/Layout'
 import { QueryClient, QueryClientProvider } from 'react-query'
+import { wrapper } from '../src/redux/store/store'
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache()
@@ -16,7 +17,7 @@ interface MyAppProps extends AppProps {
   emotionCache?: EmotionCache
 }
 
-export default function MyApp(props: MyAppProps) {
+function MyApp(props: MyAppProps) {
   const { Component, emotionCache = clientSideEmotionCache, pageProps } = props
 
   const [queryClient] = React.useState(() => new QueryClient())
@@ -38,3 +39,5 @@ export default function MyApp(props: MyAppProps) {
     </CacheProvider>
   )
 }
+
+export default wrapper.withRedux(MyApp)

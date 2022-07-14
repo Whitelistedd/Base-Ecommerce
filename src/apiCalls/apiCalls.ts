@@ -39,7 +39,13 @@ export const UpdateProducts: UpdateProductsType = async (products) => {
 }
 
 /* функция, чтобы получить выбранный продукт и получить все доступные размеры и цвета */
-export const getProduct = async ({ queryKey }: { queryKey: queryKeyType }) => {
+export const getProduct = async ({ queryKey }: { queryKey?: queryKeyType }) => {
+  if (!queryKey) {
+    return null
+  }
+  if (queryKey.length === 0) {
+    return null
+  }
   const Id = queryKey[1]
   const res = await publicRequest.get('/products/find/' + Id)
 

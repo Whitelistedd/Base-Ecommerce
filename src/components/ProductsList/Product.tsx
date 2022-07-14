@@ -14,11 +14,30 @@ export const Product: React.FC<ProductProps> = ({ item }) => {
       onMouseLeave={() => setHoveredStatus(false)}
     >
       <StyledLink images={item.img} href={`/product/${item._id}`}>
-        <InfoContainer inStock={item.inStock}>
-          {/* если пользователь наводит курсор на изображение, он покажет второе изображение продукта, а если нет, то покажет первое */}
-          {!hoveredStatus ? (
+        <InfoContainer hoveredStatus={hoveredStatus} inStock={item.inStock}>
+          <Image1>
             <StyledImage
-              className="Image"
+              className="Image1"
+              src={item.img[0]}
+              layout="responsive"
+              width={300}
+              height={400}
+              alt={item.title}
+            />
+          </Image1>
+          <Image2>
+            <StyledImage
+              className="Image2"
+              src={item.img[1]}
+              layout="responsive"
+              width={300}
+              height={400}
+            />
+          </Image2>
+          {/* если пользователь наводит курсор на изображение, он покажет второе изображение продукта, а если нет, то покажет первое */}
+          {/* {!hoveredStatus ? (
+            <StyledImage
+              className="Image1"
               src={item.img[0]}
               layout="responsive"
               width={300}
@@ -27,13 +46,13 @@ export const Product: React.FC<ProductProps> = ({ item }) => {
             />
           ) : (
             <StyledImage
-              className="Image"
+              className="Image2"
               src={item.img[1]}
               layout="responsive"
               width={300}
               height={400}
             />
-          )}
+          )} */}
           <Title>{item.title}</Title>
           {/* если товар распродан, появится это сообщение */}
           {!item.inStock && <SoldOut>Sold Out</SoldOut>}
@@ -56,23 +75,41 @@ const SoldOut = styled(Title)`
 `
 
 const unFade = keyframes`
-  0% {
-    opacity: 0%
-  }
-  100% {
-    opacity: 100%
-  }
+ 0% {
+  opacity: 0;
+ }
+ 100% {
+  opacity: 1;
+ }
+`
+
+const Image1 = styled.div`
+  animation: 500ms ${unFade};
+  filter: brightness(95%);
+`
+
+const Image2 = styled(Image1)`
+  display: none;
 `
 
 const StyledImage = styled(Image)``
 
-const InfoContainer = styled.div<{ inStock: boolean }>`
+const InfoContainer = styled.div<{ inStock: boolean; hoveredStatus: boolean }>`
   min-width: 300px;
   max-width: 300px;
   height: 100%;
   width: 100%;
   object-fit: cover;
-  animation: ${unFade} 200ms linear;
+
+  &:hover {
+    ${Image1} {
+      display: none;
+    }
+    ${Image2} {
+      display: block;
+    }
+    cursor: pointer;
+  }
 
   span {
     ${(props) =>
@@ -99,10 +136,6 @@ const Container = styled.div`
   box-shadow: 0px 0px 0px black;
   border-radius: 10px;
   height: 100%;
-
-  &:hover {
-    cursor: pointer;
-  }
 
   @media only screen and (max-width: ${devices.Phone}px) {
     min-width: 300px;

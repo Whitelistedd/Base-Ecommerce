@@ -5,20 +5,23 @@ import { devices } from '../../data'
 import { ImageSwipe } from './Images/ImageSwipe'
 import { ProductForm } from './ProductForm'
 import { ProductImages } from './Images/ProductImages'
+import { useDispatch } from 'react-redux'
 import {
   handleProductTypeType,
   handleQuantityType,
   ProductTypeState,
   ProductProps,
 } from './SingleProduct.model'
+import { addProduct } from '../../redux/slices/cart'
 
-export const Product: React.FC<ProductProps> = ({ product, productID }) => {
+export const Product: React.FC<ProductProps> = ({ product }) => {
   const [productType, setProductType] = useState<ProductTypeState>({
     color: '',
     size: '',
   })
   const [displayError, SetDisplayError] = useState(false)
   const [quantity, setQuantity] = useState(1)
+  const dispatch = useDispatch()
 
   /* функция добавления фильтров по клику пользователя */
   const handleProductType = (e: handleProductTypeType) => {
@@ -39,20 +42,14 @@ export const Product: React.FC<ProductProps> = ({ product, productID }) => {
     if (!productType.color || !productType.size) {
       SetDisplayError(true)
     } else {
-      if (typeof window !== 'undefined') {
-        const product_id = JSON.stringify(productID)
-        const OLDproductsJSON = localStorage.getItem('products')
-        const OLDproducts = OLDproductsJSON && JSON.parse(OLDproductsJSON)
-        if (OLDproducts) {
-          OLDproducts.push({ product_id, quantity: quantity })
-          localStorage.setItem('products', JSON.stringify(OLDproducts))
-        } else {
-          localStorage.setItem(
-            'products',
-            JSON.stringify([{ product_id, quantity: quantity }])
-          )
-        }
-      }
+      dispatch(
+        addProduct({
+          _id: product._id,
+          price: product.price,
+          quantity,
+          ...productType,
+        })
+      )
     }
   }
 

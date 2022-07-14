@@ -21,7 +21,6 @@ export interface ProductFormProps {
 
 export interface ProductProps {
   product: ProductDataType
-  productID: number
 }
 
 export interface ProductQueryResult {
