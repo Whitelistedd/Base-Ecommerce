@@ -15,7 +15,7 @@ export const Failed: React.FC = () => {
               src={'/images/multiply.svg'}
             />
           </ImageWrap>
-          <Title>Упс! Что-то пошло не так</Title>
+          <Title>Упс! Что-то пошло не так.</Title>
         </Wrap>
       </Container>
     </>
