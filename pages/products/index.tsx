@@ -9,7 +9,7 @@ import { GetServerSideProps, NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { getAllProducts } from '../../src/apiCalls/apiCalls'
 import { useQuery, UseQueryResult } from 'react-query'
-import { ProductsListPageProps } from './products.model'
+import { filtersState, ProductsListPageProps } from './products.model'
 import { ProductsArrayType } from '../../src/components/GlobalTypes.model'
 import MobileFilter from '../../src/components/ProductsList/Filters/MobileFilter'
 import Head from 'next/head'
@@ -19,7 +19,7 @@ export const ProductsListPage: NextPage<ProductsListPageProps> = ({
 }) => {
   const { query } = useRouter()
 
-  const [filters, setFilters] = useState({
+  const [filters, setFilters] = useState<filtersState>({
     color: '',
     size: '',
     gender: '',

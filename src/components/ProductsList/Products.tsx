@@ -7,6 +7,7 @@ import { Loading } from '../Loading/Loading'
 import { Product } from './Product'
 import { ProductsProps } from './ProductsList.model'
 import { ProductDataType } from '../GlobalTypes.model'
+import { filtersState } from '../../../pages/products/products.model'
 
 export const Products: React.FC<ProductsProps> = ({
   className,
@@ -28,7 +29,9 @@ export const Products: React.FC<ProductsProps> = ({
         /* если фильтр соответствует категории в объекте продукта, будет показан продукт */
         return products?.filter((item: ProductDataType) =>
           Object.entries(filters).every(([key, value]) =>
-            value !== '' ? item[key].includes(value) : item[key].includes
+            value !== ''
+              ? item[key as keyof filtersState]?.includes(value as any)
+              : item[key as keyof filtersState]?.includes
           )
         )
       }

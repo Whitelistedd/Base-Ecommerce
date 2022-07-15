@@ -17,14 +17,14 @@ export type ProductDataType = {
   _v: number
   _id: string
   categories: Array<string>
-  color: Array<AllColors>
+  color: Array<AllColors> | string
   createdAt: string
   desc: string
   gender: Array<string>
   img: Array<string>
   inStock: boolean
   price: number
-  size: Array<AllSizes>
+  size: Array<AllSizes> | string
   title: string
   updatedAt: string
 }
