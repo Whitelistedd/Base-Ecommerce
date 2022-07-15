@@ -1,11 +1,12 @@
 import { GetServerSideProps, NextPage } from 'next'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
-import { useQuery, UseQueryResult } from 'react-query'
+import { useQuery } from 'react-query'
 import { getProduct } from '../../src/apiCalls/apiCalls'
 import { ProductDataType } from '../../src/components/GlobalTypes.model'
 import { Loading } from '../../src/components/Loading/Loading'
 import { Product } from '../../src/components/SingleProduct/Product'
+import { fakeProduct } from '../../src/data'
 
 interface SingleProductProps {
   product: ProductDataType
@@ -15,12 +16,13 @@ const SingleProduct: NextPage<SingleProductProps> = ({ product }) => {
   const location = useRouter()
   const productID = location.query.id
 
-  const { data, status }: UseQueryResult<ProductDataType, Error> = useQuery<
-    ProductDataType,
-    Error
-  >(['product', productID], getProduct, {
-    initialData: !product ? (product = undefined) : product,
-  })
+  const { data, status } = useQuery<ProductDataType, Error>(
+    ['product', productID],
+    getProduct,
+    {
+      initialData: !product ? undefined : product,
+    }
+  )
 
   if (status === 'loading') {
     return <Loading />
@@ -35,7 +37,7 @@ const SingleProduct: NextPage<SingleProductProps> = ({ product }) => {
           content={`Base | ${data ? data.title : 'Product'} Page`}
         />
       </Head>
-      <Product product={data} />
+      <Product product={data ? data : fakeProduct} />
     </>
   )
 }

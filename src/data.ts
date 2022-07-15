@@ -1,4 +1,5 @@
 import { keyframes } from 'styled-components'
+import { ProductDataType } from './components/GlobalTypes.model'
 
 export const AllColors = [
   {
@@ -151,3 +152,32 @@ export const unFade = keyframes`
     opacity: 1;
   }
 `
+
+export const fakeProduct: ProductDataType = {
+  _v: 1,
+  _id: '',
+  categories: [''],
+  color: [
+    {
+      id: '',
+      colorName: '',
+      RussianName: '',
+      HexColor: '',
+    },
+  ],
+  createdAt: '',
+  desc: '',
+  gender: [''],
+  img: [''],
+  inStock: false,
+  price: 0,
+  size: [
+    {
+      id: '',
+      SizeName: '',
+      title: '',
+    },
+  ],
+  title: '',
+  updatedAt: '',
+}

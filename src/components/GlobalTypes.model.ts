@@ -1,4 +1,4 @@
-export type queryKeyType = Array<string>
+export type queryKeyType = readonly unknown[]
 
 export type AllSizes = {
   id: string

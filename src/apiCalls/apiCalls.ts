@@ -14,7 +14,10 @@ export const newCheckout: newCheckoutType = async (idemp, dispatch, order) => {
     const res = await publicRequest
       .post('/orders/', request)
       .then((response) => response)
-      .catch((err) => dispatch(setError(err.response.data.message)))
+      .catch((err) => {
+        dispatch(setError(err.response.data.message))
+        return err
+      })
     return res.data.confirmation.confirmation_url
       ? res.data.confirmation.confirmation_url
       : res
