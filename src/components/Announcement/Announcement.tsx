@@ -2,10 +2,10 @@ import Alert from '@mui/material/Alert'
 import React, { useState } from 'react'
 import styled from 'styled-components'
 
-import { AnnouncementProps } from './Announcement.model'
+import { displayAnnouncementType } from './Announcement.model'
 
-const Container = styled.div`
-  display: flex;
+const Container = styled.div<{ displayAnnouncement: displayAnnouncementType }>`
+  display: ${(props) => (props.displayAnnouncement ? 'flex' : 'none')};
   align-items: center;
   justify-content: center;
   padding: 0em 1em;
@@ -25,12 +25,19 @@ const Title = styled.div`
 
 /* компонент для размещения объявлений в верхней части страницы */
 
-export const Announcement: React.FC<AnnouncementProps> = ({ show }) => {
-  const [displayError, setDisplayError] = useState(true)
+export const Announcement: React.FC = () => {
+  const [displayAnnouncement, setDisplayAnnouncement] =
+    useState<displayAnnouncementType>(false)
 
   const handleClose = () => {
-    setDisplayError(displayError ? false : true)
+    setDisplayAnnouncement((prev) => (prev ? false : true))
   }
 
-  return <></>
+  return (
+    <Container displayAnnouncement={displayAnnouncement}>
+      <Alert onClose={() => handleClose()} severity="warning">
+        <Title>w</Title>
+      </Alert>
+    </Container>
+  )
 }

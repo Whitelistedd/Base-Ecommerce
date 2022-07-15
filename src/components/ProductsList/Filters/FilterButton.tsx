@@ -1,5 +1,6 @@
 import React from 'react'
 import styled from 'styled-components'
+import { filtersType } from '../ProductsList.model'
 
 import { ProductsFilterButtonProps } from './Filters.model'
 
@@ -17,7 +18,7 @@ export const ProductsFilterButton: React.FC<ProductsFilterButtonProps> = ({
         onChange={(event) => handleFilterChange(event)}
         type="radio"
         name={inputName}
-        checked={filters[inputName] === inputValue}
+        checked={filters[inputName as keyof filtersType] === inputValue}
       />
       <SizeButton>
         <OptionSelect>

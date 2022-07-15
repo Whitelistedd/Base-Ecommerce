@@ -1,3 +1,1 @@
-export interface AnnouncementProps {
-  show?: boolean
-}
+export type displayAnnouncementType = boolean
