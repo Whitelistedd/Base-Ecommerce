@@ -1,3 +1,4 @@
+import { AxiosResponse } from 'axios'
 import { CartProductType } from '../components/Cart/Cart.model'
 import { queryKeyType } from '../components/GlobalTypes.model'
 import { AllColors, AllSizes } from '../data'
@@ -13,7 +14,7 @@ export const newCheckout: newCheckoutType = async (idemp, dispatch, order) => {
     const request = { key, ...order }
     const res = await publicRequest
       .post('/orders/', request)
-      .then((response) => response)
+      .then((response: AxiosResponse<string>) => response)
       .catch((err) => {
         dispatch(setError(err.response.data.message))
         return err
