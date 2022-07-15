@@ -3,16 +3,15 @@
 /* eslint-disable react/display-name */
 import { useRouter } from 'next/router'
 import { useAuth0 } from '@auth0/auth0-react'
+import { NextPage } from 'next'
 
-const withAuth: React.FC = (WrappedComponent: any) => {
+const withAuth = (WrappedComponent: NextPage) => {
   const { isAuthenticated } = useAuth0()
 
   return (props: any) => {
     // checks whether we are on client / browser or server.
     if (typeof window !== 'undefined') {
       const Router = useRouter()
-
-      const accessToken = localStorage.getItem('accessToken')
 
       // If there is no access token we redirect to "/" page.
       if (!isAuthenticated) {
