@@ -1,3 +1,4 @@
+import { useRouter } from 'next/router'
 import React from 'react'
 import { useForm, SubmitHandler } from 'react-hook-form'
 import styled from 'styled-components'
@@ -17,13 +18,16 @@ export const Form: React.FC<FormProps> = ({ cart, setShipping }) => {
   } = useForm<InfoType>()
 
   const dispatch = AppDispatch()
+  const router = useRouter()
 
   /* расчет доставки, чтобы показать пользователю сумму */
-  const handleShipping = (e) => {
-    const value = e.target.value
-    if (value === 'PochtaRussia') {
+  const handleShipping = (
+    e: React.MouseEvent<HTMLInputElement, MouseEvent>
+  ) => {
+    const target = e.target as HTMLInputElement
+    if (target.value === 'PochtaRussia') {
       setShipping(500)
-    } else if (value === 'Cdek') {
+    } else if (target.value === 'Cdek') {
       setShipping(700)
     }
   }
@@ -39,7 +43,7 @@ export const Form: React.FC<FormProps> = ({ cart, setShipping }) => {
       products,
       ...Info,
     })
-    res1 !== undefined && (window.location.href = res1)
+    res1 !== undefined && router.push(res1 as string)
   }
 
   return (

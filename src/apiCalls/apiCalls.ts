@@ -21,7 +21,7 @@ export const newCheckout: newCheckoutType = async (idemp, dispatch, order) => {
       })
     return res.data.confirmation.confirmation_url
       ? res.data.confirmation.confirmation_url
-      : res
+      : res.response.data.message
   } catch (error) {}
 }
 
