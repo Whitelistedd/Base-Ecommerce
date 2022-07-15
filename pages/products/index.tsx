@@ -9,10 +9,23 @@ import { GetServerSideProps, NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { getAllProducts } from '../../src/apiCalls/apiCalls'
 import { useQuery, UseQueryResult } from 'react-query'
-import { filtersState, ProductsListPageProps } from './products.model'
-import { ProductsArrayType } from '../../src/components/GlobalTypes.model'
+import {
+  ProductDataType,
+  ProductsArrayType,
+} from '../../src/components/GlobalTypes.model'
 import MobileFilter from '../../src/components/ProductsList/Filters/MobileFilter'
 import Head from 'next/head'
+
+export interface ProductsListPageProps {
+  products: ProductDataType[]
+}
+
+export type filtersState = {
+  color: string
+  size: string
+  gender: string
+  categories: string
+}
 
 export const ProductsListPage: NextPage<ProductsListPageProps> = ({
   products,
