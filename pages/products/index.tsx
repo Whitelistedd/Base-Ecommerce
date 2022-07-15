@@ -15,16 +15,10 @@ import {
 } from '../../src/components/GlobalTypes.model'
 import MobileFilter from '../../src/components/ProductsList/Filters/MobileFilter'
 import Head from 'next/head'
+import { filtersType } from '../../src/components/ProductsList/ProductsList.model'
 
 export interface ProductsListPageProps {
   products: ProductDataType[]
-}
-
-export type filtersState = {
-  color: string
-  size: string
-  gender: string
-  categories: string
 }
 
 export const ProductsListPage: NextPage<ProductsListPageProps> = ({
@@ -32,7 +26,7 @@ export const ProductsListPage: NextPage<ProductsListPageProps> = ({
 }) => {
   const { query } = useRouter()
 
-  const [filters, setFilters] = useState<filtersState>({
+  const [filters, setFilters] = useState<filtersType>({
     color: '',
     size: '',
     gender: '',

@@ -1,7 +1,10 @@
 import { ProductDataType, ProductsArrayType } from '../GlobalTypes.model'
 
 export type filtersType = {
-  [key: string]: string
+  color: string
+  size: string
+  gender: string
+  categories: string
 }
 
 export interface ProductsProps {

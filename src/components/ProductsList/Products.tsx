@@ -5,9 +5,8 @@ import styled from 'styled-components'
 import { Failed } from '../Failed/Failed'
 import { Loading } from '../Loading/Loading'
 import { Product } from './Product'
-import { ProductsProps } from './ProductsList.model'
+import { filtersType, ProductsProps } from './ProductsList.model'
 import { ProductDataType } from '../GlobalTypes.model'
-import { filtersState } from '../../../pages/products/products.model'
 
 export const Products: React.FC<ProductsProps> = ({
   className,
@@ -30,8 +29,8 @@ export const Products: React.FC<ProductsProps> = ({
         return products?.filter((item: ProductDataType) =>
           Object.entries(filters).every(([key, value]) =>
             value !== ''
-              ? item[key as keyof filtersState]?.includes(value as any)
-              : item[key as keyof filtersState]?.includes
+              ? item[key as keyof filtersType]?.includes(value as any)
+              : item[key as keyof filtersType]?.includes
           )
         )
       }
