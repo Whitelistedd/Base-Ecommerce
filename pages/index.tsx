@@ -1,11 +1,7 @@
-import 'aos/dist/aos.css'
-
-import AOS from 'aos'
-import { useEffect } from 'react'
 import Link from 'next/link'
 import styled from 'styled-components'
 import { Products } from '../src/components/ProductsList/Products'
-import { devices } from '../src/data'
+import { devices, unFade } from '../src/data'
 import { Parallax } from 'react-parallax'
 import { GetServerSideProps, NextPage } from 'next'
 import { getAllProducts } from '../src/apiCalls/apiCalls'
@@ -13,17 +9,13 @@ import { useQuery, UseQueryResult } from 'react-query'
 import { ProductsArrayType } from '../src/components/GlobalTypes.model'
 import { Loading } from '../src/components/Loading/Loading'
 import { Failed } from '../src/components/Failed/Failed'
+import Head from 'next/head'
 
 interface HomePageProps {
   products: ProductsArrayType
 }
 
 const HomePage: NextPage<HomePageProps> = ({ products }) => {
-  useEffect(() => {
-    AOS.init()
-    AOS.refresh()
-  }, [])
-
   const { data, status }: UseQueryResult<ProductsArrayType, Error> = useQuery<
     ProductsArrayType,
     Error
@@ -41,6 +33,10 @@ const HomePage: NextPage<HomePageProps> = ({ products }) => {
 
   return (
     <>
+      <Head>
+        <title>Base | Home</title>
+        <meta name="description" content="Base | Home Page" />
+      </Head>
       <StyledParallax bgImage={'/images/background.webp'} strength={400}>
         <HeaderWrap>
           <Link href={'/products?filter=men'}>
@@ -51,15 +47,7 @@ const HomePage: NextPage<HomePageProps> = ({ products }) => {
           </Link>
         </HeaderWrap>
       </StyledParallax>
-      <Container
-        data-aos="fade-up"
-        data-aos-offset="0"
-        data-aos-delay="0"
-        data-aos-duration="1000"
-        data-aos-easing="ease-in-out"
-        data-aos-mirror="false"
-        data-aos-once="true"
-      >
+      <Container>
         <HomeProducts
           status={status}
           HomePage={true}
@@ -132,6 +120,7 @@ const Container = styled.div`
   display: flex;
   flex-direction: column;
   align-items: center;
+  animation: 500ms ${unFade} ease;
   @media only screen and (max-width: ${devices.Laptop}px) {
     ${HeaderButton} {
       font-size: 1.2em;

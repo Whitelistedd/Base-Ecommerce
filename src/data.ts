@@ -1,3 +1,5 @@
+import { keyframes } from 'styled-components'
+
 export const AllColors = [
   {
     id: 'ub7ET',
@@ -104,17 +106,17 @@ export const MenuItems = [
   {
     id: 'bnJ5w',
     text: 'Мужчины',
-    path: '/products/men',
+    path: '/products?filter=men',
   },
   {
     id: 'znJZz',
     text: 'Женщины',
-    path: '/products/women',
+    path: '/products?filter=women',
   },
   {
     id: 'nn534',
     text: 'Наборы',
-    path: '/products/sets',
+    path: '/products?filter=sets',
   },
   {
     id: 'gdJZw',
@@ -137,3 +139,15 @@ export const FooterPages = [
   'Поддержка',
   'Условия',
 ]
+
+export const unFade = keyframes`
+  0% {
+    opacity: 0;
+  }
+  50% {
+    opacity: 0.5;
+  }
+  100% {
+    opacity: 1;
+  }
+`

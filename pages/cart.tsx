@@ -3,9 +3,18 @@ import { Cart } from '../src/components/Cart/Cart'
 import { NextPage } from 'next'
 import { UpdateProducts } from '../src/apiCalls/apiCalls'
 import { wrapper } from '../src/redux/store/store'
+import Head from 'next/head'
 
 const CartPage: NextPage = () => {
-  return <Cart />
+  return (
+    <>
+      <Head>
+        <title>Base | Cart</title>
+        <meta name="description" content="Base | Cart Page" />
+      </Head>
+      <Cart />
+    </>
+  )
 }
 
 export const getServerSideProps = wrapper.getServerSideProps(

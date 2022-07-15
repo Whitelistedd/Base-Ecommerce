@@ -1,4 +1,5 @@
 import { GetServerSideProps, NextPage } from 'next'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
 import { useQuery, UseQueryResult } from 'react-query'
 import { getProduct } from '../../src/apiCalls/apiCalls'
@@ -25,7 +26,18 @@ const SingleProduct: NextPage<SingleProductProps> = ({ product }) => {
     return <Loading />
   }
 
-  return <Product product={data} />
+  return (
+    <>
+      <Head>
+        <title>Base | {data ? data.title : 'Product'}</title>
+        <meta
+          name="description"
+          content={`Base | ${data ? data.title : 'Product'} Page`}
+        />
+      </Head>
+      <Product product={data} />
+    </>
+  )
 }
 
 export const getServerSideProps: GetServerSideProps = async (context) => {

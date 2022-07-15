@@ -3,7 +3,6 @@ import styled from 'styled-components'
 import CloseIcon from '@mui/icons-material/Close'
 import Image from 'next/image'
 
-import imageSRC from '../../images/background.webp'
 import { devices } from '../../data'
 import { PopupProps } from './Popup.model'
 
@@ -20,7 +19,14 @@ export const Popup: React.FC<PopupProps> = ({ ClosePopup }) => {
         }}
       />
       <PopupWrap>
-        <StyledImage src={imageSRC} />
+        <ImageWrap>
+          <StyledImage
+            layout="responsive"
+            width={480}
+            height={427}
+            src={'/images/background.webp'}
+          />
+        </ImageWrap>
         <Info>
           <Title>НОВОСТНАЯ РАССЫЛКА</Title>
           <Desc>
@@ -78,10 +84,18 @@ const Info = styled.div`
   flex: 2;
 `
 
-const StyledImage = styled(Image)`
+const ImageWrap = styled.div`
   width: 50%;
   height: 100%;
-  flex: 1;
+  flex: 2;
+  object-fit: cover;
+  border-radius: 10px 0px 0px 10px;
+  span {
+    height: 100% !important;
+  }
+`
+
+const StyledImage = styled(Image)`
   object-fit: cover;
   border-radius: 10px 0px 0px 10px;
 `

@@ -9,6 +9,8 @@ import createEmotionCache from '../src/createEmotionCache'
 import { Layout } from '../Layout/Layout'
 import { QueryClient, QueryClientProvider } from 'react-query'
 import { wrapper } from '../src/redux/store/store'
+import Router from 'next/router'
+import { Loading } from '../src/components/Loading/Loading'
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache()
@@ -22,6 +24,16 @@ function MyApp(props: MyAppProps) {
 
   const [queryClient] = React.useState(() => new QueryClient())
 
+  const [loading, setLoading] = React.useState(false)
+
+  Router.events.on('routeChangeStart', () => {
+    setLoading(true)
+  })
+
+  Router.events.on('routeChangeComplete', () => {
+    setLoading(false)
+  })
+
   return (
     <CacheProvider value={emotionCache}>
       <Head>
@@ -32,6 +44,7 @@ function MyApp(props: MyAppProps) {
         <CssBaseline />
         <QueryClientProvider client={queryClient}>
           <Layout>
+            {loading && <Loading />}
             <Component {...pageProps} />
           </Layout>
         </QueryClientProvider>

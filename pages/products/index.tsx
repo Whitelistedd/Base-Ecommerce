@@ -1,13 +1,10 @@
-import 'aos/dist/aos.css'
-
-import AOS from 'aos'
 import React, { useState } from 'react'
 import { useEffect } from 'react'
 import styled from 'styled-components'
 
 import { Filters } from '../../src/components/ProductsList/Filters/Filters'
 import { Products } from '../../src/components/ProductsList/Products'
-import { devices } from '../../src/data'
+import { devices, unFade } from '../../src/data'
 import { GetServerSideProps, NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { getAllProducts } from '../../src/apiCalls/apiCalls'
@@ -15,6 +12,7 @@ import { useQuery, UseQueryResult } from 'react-query'
 import { ProductsListPageProps } from './products.model'
 import { ProductsArrayType } from '../../src/components/GlobalTypes.model'
 import MobileFilter from '../../src/components/ProductsList/Filters/MobileFilter'
+import Head from 'next/head'
 
 export const ProductsListPage: NextPage<ProductsListPageProps> = ({
   products,
@@ -56,10 +54,6 @@ export const ProductsListPage: NextPage<ProductsListPageProps> = ({
   }
 
   /* изменить фильтр, если URL-адрес имеет категории */
-  useEffect(() => {
-    AOS.init()
-    AOS.refresh()
-  }, [])
 
   useEffect(() => {
     if (query.filter === 'men') {
@@ -71,15 +65,11 @@ export const ProductsListPage: NextPage<ProductsListPageProps> = ({
 
   return (
     <Container>
-      <ProductsWrap
-        data-aos="fade-up"
-        data-aos-offset="0"
-        data-aos-delay="0"
-        data-aos-duration="1000"
-        data-aos-easing="ease-in-out"
-        data-aos-mirror="false"
-        data-aos-once="true"
-      >
+      <Head>
+        <title>Base | Products</title>
+        <meta name="description" content="Base | Products Page" />
+      </Head>
+      <ProductsWrap>
         <MobileFilter
           handleClear={handleClear}
           handleFilterChange={handleFilterChange}
@@ -120,6 +110,7 @@ const ProductsWrap = styled.div`
   width: 100%;
   margin-top: 100px;
   align-items: flex-start;
+  animation: 500ms ease ${unFade};
 `
 
 const ProductsContainer = styled.div`

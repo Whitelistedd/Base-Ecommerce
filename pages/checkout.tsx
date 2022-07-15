@@ -9,6 +9,7 @@ import { devices } from '../src/data'
 import { setError } from '../src/redux/slices/cart'
 import { AppDispatch, useAppSelector } from '../src/redux/store/store'
 import { NextPage } from 'next'
+import Head from 'next/head'
 
 const CheckoutPage: NextPage = () => {
   const cart = useAppSelector((state) => state.cart)
@@ -33,14 +34,18 @@ const CheckoutPage: NextPage = () => {
   }, [Error])
 
   /* если у пользователя нет товаров, он будет перенаправлен на домашнюю страницу */
-  /* useEffect(() => {
+  useEffect(() => {
     if (cartquantity === 0) {
       navigate.replace('/')
     }
-  }, [cartquantity]) */
+  }, [cartquantity])
 
   return (
     <Container>
+      <Head>
+        <title>Base | Checkout</title>
+        <meta name="description" content="Base | Checkout Page" />
+      </Head>
       {/* сообщение об ошибке автоматически закроется через 6 секунд */}
       <Snackbar
         open={snackBarStatus}
