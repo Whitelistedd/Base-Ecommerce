@@ -43,8 +43,8 @@ function MyApp(props: MyAppProps) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <QueryClientProvider client={queryClient}>
+          {loading && <Loading />}
           <Layout>
-            {loading && <Loading />}
             <Component {...pageProps} />
           </Layout>
         </QueryClientProvider>

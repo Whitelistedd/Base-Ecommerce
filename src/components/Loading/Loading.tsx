@@ -33,6 +33,12 @@ const Container = styled.div`
 
 const ImageWrap = styled.div`
   width: 15vw;
+  span {
+    display: flex !important;
+    align-items: center !important;
+    width: 100%;
+    height: 100%;
+  }
 `
 
 const Wrap = styled.div`
