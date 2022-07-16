@@ -2,7 +2,9 @@
 
 # https://base-shop.vercel.app/
 
+
 версия NEXTJS: https://github.com/Whitelistedd/Base-Ecommerce/tree/nextjs-version
+
 
 В этом проекте я создал веб-сайт MERN REACT, который использует
 Yandex Kassa для приема платежей (тестовые платежи), Redux Toolkit,
