@@ -4,17 +4,28 @@ import { Navbar } from '../src/components/Navbar/Navbar'
 import { Footer } from '../src/components/Footer/Footer'
 import styled from 'styled-components'
 import { Popup } from '../src/components/Popup/Popup'
+import VersionChoice from '../src/components/VersionChoice/VersionChoice'
+import { useRouter } from 'next/router'
 
 export const Layout: React.FC<any> = ({ children }) => {
   const [showPopup, setShowPopup] = useState(true)
+  const [showVersionChoice, setShowVersionChoice] = useState(true)
+  const router = useRouter()
 
   const ClosePopup = () => {
     setShowPopup(false)
   }
 
+  const CloseVersionChoice = () => {
+    setShowVersionChoice(false)
+  }
+
   return (
     <Container>
       <Wrap>
+        {showVersionChoice && router.pathname === '/' && (
+          <VersionChoice CloseVersionChoice={CloseVersionChoice} />
+        )}
         {showPopup && <Popup ClosePopup={ClosePopup} />}
         <Announcement />
         <Navbar />

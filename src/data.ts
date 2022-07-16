@@ -181,3 +181,14 @@ export const fakeProduct: ProductDataType = {
   title: '',
   updatedAt: '',
 }
+
+export const VersionCards = [
+  {
+    Image: '/images/Nextjs-logo.svg',
+    title: 'NextJS',
+  },
+  {
+    Image: '/images/React-icon.svg',
+    title: 'ReactJS',
+  },
+]
