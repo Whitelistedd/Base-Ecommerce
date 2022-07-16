@@ -1,23 +1,15 @@
 import styled from 'styled-components'
 import { devices, VersionCards } from '../../data'
 import Card from './Card'
-import { VersionChoiceProps } from './VersionChoice.model'
 
-const VersionChoice: React.FC<VersionChoiceProps> = ({
-  CloseVersionChoice,
-}) => {
+const VersionChoice: React.FC = () => {
   return (
     <Container>
       <Wrap>
         <Title>Выберите версию</Title>
         <Cards>
           {VersionCards.map((card) => (
-            <Card
-              CloseVersionChoice={CloseVersionChoice}
-              key={card.title}
-              title={card.title}
-              ImageSRC={card.Image}
-            />
+            <Card key={card.title} title={card.title} ImageSRC={card.Image} />
           ))}
         </Cards>
       </Wrap>
@@ -46,9 +38,8 @@ const Wrap = styled.div`
 `
 
 const Container = styled.div`
-  position: fixed;
-  min-height: 600px;
-  height: 100%;
+  min-height: 800px;
+  height: 100vh;
   width: 100vw;
   max-width: 1920px;
   background-color: #dfd7d7;

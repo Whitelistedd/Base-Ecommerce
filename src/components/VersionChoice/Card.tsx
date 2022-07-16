@@ -3,14 +3,10 @@ import styled from 'styled-components'
 import { CardProps } from './VersionChoice.model'
 import Link from 'next/link'
 
-const Card: React.FC<CardProps> = ({ title, ImageSRC, CloseVersionChoice }) => {
+const Card: React.FC<CardProps> = ({ title, ImageSRC }) => {
   return (
-    <Link href={title === 'ReactJS' ? 'https://base-shop.vercel.app/' : ''}>
-      <Container
-        onClick={() => {
-          title === 'NextJS' && CloseVersionChoice()
-        }}
-      >
+    <Link href={title === 'ReactJS' ? 'https://base-shop.vercel.app/' : '/'}>
+      <Container>
         <ImageWrap>
           <StyledImage
             layout="responsive"
