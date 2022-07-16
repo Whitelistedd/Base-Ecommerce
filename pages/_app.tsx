@@ -39,6 +39,7 @@ function MyApp(props: MyAppProps) {
     <CacheProvider value={emotionCache}>
       <Head>
         <meta name="viewport" content="initial-scale=1, width=device-width" />
+        <script src="//code.jivo.ru/widget/9fumZ1Wizq" async></script>
       </Head>
       <ThemeProvider theme={theme}>
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
