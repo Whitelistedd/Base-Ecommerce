@@ -25,11 +25,13 @@ https://github.com/Whitelistedd/Base-Ecommerce.git
 npm install
 ```
 
-Для запуска сайта
+Для запуска сервер
 
 ```
 npm run start
 ```
+
+Для запуска сайта
 
 ```
 npm cd client
