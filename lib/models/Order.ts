@@ -53,10 +53,35 @@ const order = new mongoose.Schema(
     phoneNumber: { type: String, required: true },
     shippingMethod: { type: String, required: true },
     status: { type: String, default: 'pending' },
-    total: { type: Number, required: false },
   },
   { timestamps: true }
 )
+
+export type orderProductType = {
+  _id: string
+  color: string
+  size: string
+  quantity: number
+}
+export interface orderType {
+  key: string
+  products: orderProductType[]
+  address: {
+    address: string
+    apartment: string
+    city: string
+    country: string
+    zipCode: string
+  }
+  firstName: string
+  lastName: string
+  email: string
+  phoneNumber: string
+  shippingMethod: string
+  status: string
+  createdAt: string
+  updatedAt: string
+}
 
 const OrderSchema = mongoose.model('Order', order)
 
