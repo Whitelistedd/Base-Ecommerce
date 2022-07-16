@@ -11,6 +11,7 @@ import { QueryClient, QueryClientProvider } from 'react-query'
 import { wrapper } from '../src/redux/store/store'
 import Router from 'next/router'
 import { Loading } from '../src/components/Loading/Loading'
+import { YMInitializer } from 'react-yandex-metrika'
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache()
@@ -43,6 +44,7 @@ function MyApp(props: MyAppProps) {
         {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
         <CssBaseline />
         <QueryClientProvider client={queryClient}>
+          <YMInitializer accounts={[89340709]} />
           {loading && <Loading />}
           <Layout>
             <Component {...pageProps} />
