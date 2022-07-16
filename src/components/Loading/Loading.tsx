@@ -23,14 +23,6 @@ export const Loading: React.FC<LoadingProps> = ({ className }) => {
   )
 }
 
-const Container = styled.div`
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-`
-
 const ImageWrap = styled.div`
   width: 15vw;
   span {
@@ -48,6 +40,21 @@ const Wrap = styled.div`
   justify-content: center;
   gap: 1.2em;
   width: 100%;
+  height: 100%;
+  z-index: 10;
+`
+
+const Container = styled.div`
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  width: 100vw;
+  max-width: 1920px;
+  position: fixed;
+  height: 100vh;
+  z-index: 10;
+  background: white;
 `
 
 const StyledImage = styled(Image)``

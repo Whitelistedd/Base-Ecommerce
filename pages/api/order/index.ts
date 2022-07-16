@@ -3,6 +3,7 @@ import axios from 'axios'
 import { Model } from 'mongoose'
 import type { NextApiRequest, NextApiResponse } from 'next'
 import { connect } from '../../../lib/connection'
+import { orderProductType } from '../../../lib/models/Order'
 import { ProductDataType } from '../../../src/components/GlobalTypes.model'
 
 export default async function handler(
@@ -30,7 +31,7 @@ export default async function handler(
     }
 
     /* взять все идентификаторы продуктов и количества */
-    const productIDS = newOrder.products.map((item) => {
+    const productIDS = newOrder.products.map((item: orderProductType) => {
       return {
         id: item._id,
         qty: item.quantity,
@@ -39,7 +40,7 @@ export default async function handler(
 
     /* функция для получения всех сведений о продукте из базы данных */
     const confirmedProducts = await Promise.all(
-      productIDS.map(async (product) => {
+      productIDS.map(async (product: { id: string; qty: number }) => {
         return {
           qty: product.qty as unknown as number,
           product: (await OrderSchema.findOne({
