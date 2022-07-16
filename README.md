@@ -1,45 +1,55 @@
-# Next.js with TypeScript example
+# Base E-Commerce NextJS
 
-## How to use
+# https://base-ecommerce.vercel.app/
 
-Download the example [or clone the repo](https://github.com/mui/material-ui):
+В этом проекте я создал веб-сайт NextJS, который использует
+Yandex Kassa для приема платежей (тестовые платежи), Redux Toolkit,
+NextJS, Styled-components, Material UI,
+а для бэкэнда я сделал Rest API с ExpressJS и MongoDB для базы данных.
 
-<!-- #default-branch-switch -->
+## Установка и запуск проекта
 
-```sh
-curl https://codeload.github.com/mui/material-ui/tar.gz/master | tar -xz --strip=2  material-ui-master/examples/nextjs-with-typescript
-cd nextjs-with-typescript
+Чтобы скопировать проект git на свой компьютер с помощью Visual Studio
+
+```
+https://github.com/Whitelistedd/Base-Ecommerce.git
 ```
 
-Install it and run:
+Установить все пакеты проекта
 
-```sh
+```
 npm install
+```
+
+Для запуска сайта
+
+```
+git branch checkout nextjs-version
+```
+
+```
 npm run dev
 ```
 
-or:
+## Развертывание
 
-<!-- #default-branch-switch -->
+Чтобы развернуть это на веб-сайте, просто запустите
 
-[![Edit on StackBlitz](https://developer.stackblitz.com/img/open_in_stackblitz.svg)](https://stackblitz.com/github/mui/material-ui/tree/master/examples/nextjs-with-typescript)
+```
+npm run build
+```
 
-[![Edit on CodeSandbox](https://codesandbox.io/static/img/play-codesandbox.svg)](https://codesandbox.io/s/github/mui/material-ui/tree/master/examples/nextjs-with-typescript)
+остальная часть будет зависеть от вашего хостинга
 
-## The idea behind the example
+## Создано с помощью
 
-The project uses [Next.js](https://github.com/vercel/next.js), which is a framework for server-rendered React apps.
-It includes `@mui/material` and its peer dependencies, including `emotion`, the default style engine in MUI v5. If you prefer, you can [use styled-components instead](https://mui.com/material-ui/guides/interoperability/#styled-components).
+NextJS,
+Styled-компоненты,
+Redux Toolkit,
+Material UI,
+Rest API с ExpressJS,
+MongoDB для базы данных.
 
-## The link component
+## Авторы
 
-Next.js has [a custom Link component](https://nextjs.org/docs/api-reference/next/link).
-The example folder provides adapters for usage with MUI.
-More information [in the documentation](https://mui.com/material-ui/guides/routing/#next-js).
-
-## What's next?
-
-<!-- #default-branch-switch -->
-
-You now have a working example project.
-You can head back to the documentation, continuing browsing it from the [templates](https://mui.com/material-ui/getting-started/templates/) section.
+- **Volxen** - (https://github.com/Whitelistedd)
