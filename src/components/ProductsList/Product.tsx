@@ -16,6 +16,7 @@ export const Product: React.FC<ProductProps> = ({ item }) => {
       <StyledLink images={item.img} href={`/product/${item._id}`}>
         <InfoContainer hoveredStatus={hoveredStatus} inStock={item.inStock}>
           <Image1>
+            {/* если пользователь наводит курсор на изображение, он покажет второе изображение продукта, а если нет, то покажет первое */}
             <StyledImage
               className="Image1"
               src={item.img[0]}
@@ -34,28 +35,9 @@ export const Product: React.FC<ProductProps> = ({ item }) => {
               height={400}
             />
           </Image2>
-          {/* если пользователь наводит курсор на изображение, он покажет второе изображение продукта, а если нет, то покажет первое */}
-          {/* {!hoveredStatus ? (
-            <StyledImage
-              className="Image1"
-              src={item.img[0]}
-              layout="responsive"
-              width={300}
-              height={400}
-              alt={item.title}
-            />
-          ) : (
-            <StyledImage
-              className="Image2"
-              src={item.img[1]}
-              layout="responsive"
-              width={300}
-              height={400}
-            />
-          )} */}
           <Title>{item.title}</Title>
           {/* если товар распродан, появится это сообщение */}
-          {!item.inStock && <SoldOut>Sold Out</SoldOut>}
+          {!item.inStock && <SoldOut>Распродан</SoldOut>}
         </InfoContainer>
       </StyledLink>
     </Container>
