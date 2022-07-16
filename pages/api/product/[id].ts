@@ -11,7 +11,7 @@ export default async function handler(
 
   try {
     const { ProductSchema } = await connect()
-    const product = await ProductSchema.findById(req.body.id)
+    const product = await ProductSchema.findById(req.query.id)
 
     res.status(200).json(product)
   } catch (err) {
