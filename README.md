@@ -1,4 +1,4 @@
-# Base E-Commerce
+# Base E-Commerce NextJS
 
 # https://base-ecommerce.vercel.app/
 
