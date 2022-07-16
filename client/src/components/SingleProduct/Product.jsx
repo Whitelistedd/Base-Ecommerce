@@ -8,9 +8,9 @@ import { AllColors, AllSizes, devices } from "../../data";
 import { Loading } from "../../pages/Loading";
 import { addProduct } from "../../redux/cartRedux";
 import { publicRequest } from "../../requests";
-import { ImageSwipe } from "./ImageSwipe";
+import { ImageSwipe } from "./Images/ImageSwipe";
 import { ProductForm } from "./ProductForm";
-import { ProductImages } from "./ProductImages";
+import { ProductImages } from "./Images/ProductImages";
 
 export const Product = () => {
   const location = useLocation();

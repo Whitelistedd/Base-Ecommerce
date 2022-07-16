@@ -4,8 +4,8 @@ import { useDispatch, useSelector } from "react-redux";
 import { useNavigate } from "react-router-dom";
 import styled from "styled-components";
 
-import { CheckOutCart } from "../components/Cart/CheckOutCart";
-import { Form } from "../components/Form";
+import { CheckOutCart } from "../components/Checkout/CheckOutCart";
+import { Form } from "../components/Checkout/Form";
 import { devices } from "../data";
 import { setError } from "../redux/cartRedux";
 

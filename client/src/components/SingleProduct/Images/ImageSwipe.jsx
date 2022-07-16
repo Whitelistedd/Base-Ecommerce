@@ -7,7 +7,7 @@ import styled from "styled-components";
 import { EffectFade, Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 
-import { devices } from "../../data";
+import { devices } from "../../../data";
 import { ProductImage } from "./ProductImage";
 
 /* компонент для пролистывания изображений для мобильных устройств */

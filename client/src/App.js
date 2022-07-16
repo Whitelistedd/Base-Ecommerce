@@ -7,8 +7,8 @@ import {
 } from 'react-query'
 import { useEffect, useState } from 'react';
 
-import { PrivateRoute } from './components/private-routes';
-import ScrollToTop from './components/Scrollsave';
+import { PrivateRoute } from './components/PrivateRoutes/private-routes';
+import ScrollToTop from './components/ScrollSave/Scrollsave';
 import { CartPage } from './pages/CartPage';
 import { Checkout } from './pages/Checkout';
 import { Failed } from './pages/Failed';
@@ -21,6 +21,7 @@ import { Profile } from './pages/Profile';
 import { SingleProduct } from './pages/SingleProduct';
 import { Success } from './pages/Success';
 import { Popup } from './components/Popup/Popup';
+import { SelectVersion } from './pages/SelectVersion';
 
 let ChatraConfig = {
   ID: "iB5hukYTSofAHKpRR"
@@ -68,6 +69,7 @@ function App() {
             <Route path="/products/all" element={<ProductsList />} />
             <Route path="/products/:category" element={<ProductsList />} />
             <Route path="/" element={<HomePage />} />
+            <Route path="/version" element={<SelectVersion />} />
             <Route path="*" element={<PageNotFound />} />
           </Routes>
         </ScrollToTop>

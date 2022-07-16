@@ -20,6 +20,8 @@ export const Products = ({ className, setCart, filters, category, gender }) => {
 
   const { data, status } = useQuery(["products", category], getProducts);
 
+  console.log(data);
+
   /* useEffect для фильтрации продуктов */
   useEffect(() => {
     try {

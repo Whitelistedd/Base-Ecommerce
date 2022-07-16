@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
 
-import { ColorRadioButton } from "../ColorButton";
+import { ColorRadioButton } from "../../ColorButton/ColorButton";
 import { SizeButton } from "./SizeButton";
 
 export const SingleProductFilters = ({

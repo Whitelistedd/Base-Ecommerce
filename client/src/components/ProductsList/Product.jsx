@@ -14,15 +14,14 @@ export const Product = ({ item }) => {
       to={`/product/${item._id}`}
     >
       {/* если пользователь наводит курсор на изображение, он покажет второе изображение продукта, а если нет, то покажет первое */}
-      {!hoveredStatus && (
+      {!hoveredStatus ? (
         <Image
           className="Image"
           src={item.img[0]}
           alt={item.title}
           inStock={item.inStock}
         />
-      )}
-      {hoveredStatus && (
+      ) : (
         <Image className="Image" src={item.img[1]} inStock={item.inStock} />
       )}
       <Title>{item.title}</Title>
