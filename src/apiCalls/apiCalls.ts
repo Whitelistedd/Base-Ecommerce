@@ -34,7 +34,7 @@ export const UpdateProducts: UpdateProductsType = async (
   try {
     await Promise.all(
       products.map(async (product: CartProductType, index: number) => {
-        const res = await publicRequest.get('/products/find/' + product._id)
+        const res = await publicRequest.get('/product/' + product._id)
         dispatch(
           UpdateProduct({
             index: index,
@@ -58,7 +58,7 @@ export const getProduct = async ({ queryKey }: { queryKey?: queryKeyType }) => {
     return null
   }
   const Id = queryKey[1]
-  const res = await publicRequest.get('/products/find/' + Id)
+  const res = await publicRequest.get('/product/' + Id)
 
   const getAvailableColors = await AllColors.filter((color) =>
     res.data.color.includes(color.colorName)
