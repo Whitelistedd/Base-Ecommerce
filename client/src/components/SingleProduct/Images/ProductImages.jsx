@@ -2,7 +2,7 @@ import React from "react";
 import { useState } from "react";
 import styled, { keyframes } from "styled-components";
 
-import { devices } from "../../data";
+import { devices } from "../../../data";
 import { ProductImage } from "./ProductImage";
 
 export const ProductImages = ({ productInfo }) => {

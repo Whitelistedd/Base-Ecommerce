@@ -5,7 +5,7 @@ import styled from "styled-components";
 
 import { devices } from "../../data";
 import Undo from "../../images/undo.svg";
-import { SingleProductFilters } from "./Filters";
+import { SingleProductFilters } from "./Filters/Filters";
 
 export const ProductForm = ({
   productInfo,

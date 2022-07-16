@@ -8,7 +8,7 @@ import { useEffect } from "react";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
 
-import { Filters } from "../components/ProductsList/Filters";
+import { Filters } from "../components/ProductsList/Filters/Filters";
 import { Products } from "../components/ProductsList/Products";
 import { devices } from "../data";
 import { Layout } from "../components/Layout/Layout";

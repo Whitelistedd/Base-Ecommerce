@@ -2,8 +2,8 @@ import { Chip } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 
-import { AllCategories, AllColors, AllGenders, AllSizes } from "../../data";
-import { ColorRadioButton } from "../ColorButton";
+import { AllCategories, AllColors, AllGenders, AllSizes } from "../../../data";
+import { ColorRadioButton } from "../../ColorButton/ColorButton";
 import { ProductsFilterButton } from "./FilterButton";
 
 export const Filters = ({ filters, handleFilterChange, handleClear }) => {

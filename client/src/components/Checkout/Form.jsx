@@ -4,8 +4,8 @@ import { useDispatch } from "react-redux";
 import styled from "styled-components";
 import { v4 as uuidv4 } from "uuid";
 
-import { devices } from "../data";
-import { newCheckout } from "../redux/apiCalls";
+import { devices } from "../../data";
+import { newCheckout } from "../../redux/apiCalls";
 
 export const Form = ({ cart, setShipping }) => {
   const {

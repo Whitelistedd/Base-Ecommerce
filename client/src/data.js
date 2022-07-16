@@ -1,3 +1,6 @@
+import ReactJsImage from "./images/React-icon.svg"
+import NextJsImage from "./images/Nextjs-logo.svg"
+
 export const AllColors = [
     {
         id: "ub7ET",
@@ -136,4 +139,15 @@ export const FooterPages = [
     "Инструкция по уходу",
     "Поддержка",
     "Условия",
+]
+
+export const VersionCards = [
+    {
+        Image: NextJsImage,
+        title: 'NextJS',
+    },
+    {
+        Image: ReactJsImage,
+        title: 'ReactJS',
+    },
 ]

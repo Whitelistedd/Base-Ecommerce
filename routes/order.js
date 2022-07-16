@@ -11,6 +11,19 @@ router.post('/', async (req, res) => {
 
     let newOrder = await new Order(req.body)
 
+    if (newOrder.products.length < 1) {
+        return res.status(400).json({ message: "please add products to your cart" })
+    }
+
+
+    if (!newOrder) {
+        return res.status(400).json({ message: "something is wrong with your order" })
+    }
+
+    if (newOrder.total <= 0) {
+        return res.status(400).json({ message: "something is wrong with your order" })
+    }
+
     /* взять все идентификаторы продуктов и количества */
     const productIDS = newOrder.products.map(item => {
         return {
@@ -75,8 +88,8 @@ router.post('/', async (req, res) => {
         res.status(200).json(response.data)
         const ConfirmedOrder = await newOrder.save()
     } catch (error) {
-        console.log(error)
-        res.status(500)
+        console.log(error.Error)
+        return res.status(500).json({ message: "something went wrong" })
     }
 });
 
