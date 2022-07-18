@@ -1,6 +1,10 @@
-# Base E-Commerce
+# Base E-Commerce ReactJS
 
 # https://base-shop.vercel.app/
+
+
+версия NEXTJS: https://github.com/Whitelistedd/Base-Ecommerce/tree/nextjs-version
+
 
 В этом проекте я создал веб-сайт MERN REACT, который использует
 Yandex Kassa для приема платежей (тестовые платежи), Redux Toolkit,
@@ -21,11 +25,13 @@ https://github.com/Whitelistedd/Base-Ecommerce.git
 npm install
 ```
 
-Для запуска сайта
+Для запуска сервер
 
 ```
 npm run start
 ```
+
+Для запуска сайта
 
 ```
 npm cd client
