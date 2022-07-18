@@ -27,7 +27,7 @@ export const Announcement = ({ show }) => {
   const [displayError, setDisplayError] = useState(true);
 
   const handleClose = () => {
-    setDisplayError(displayError ? false : true);
+    setDisplayError((prev) => (prev ? false : true));
   };
 
   return <></>;

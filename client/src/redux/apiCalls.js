@@ -1,3 +1,4 @@
+import { AllColors, AllSizes } from '../data';
 import { publicRequest } from '../requests';
 import { setError, UpdateProduct } from './cartRedux';
 
@@ -36,3 +37,25 @@ export const UpdateProducts = async (dispatch, products) => {
         console.log(err);
     }
 }
+
+export const getProduct = async ({ queryKey }) => {
+    const Id = queryKey[1];
+    const res = await publicRequest.get("/products/find/" + Id);
+
+    const getAvailableColors = await AllColors.filter((color) =>
+        res.data.color.includes(color.colorName)
+    );
+    const getAvailableSizes = await AllSizes.filter((size) =>
+        res.data.size.includes(size.SizeName)
+    );
+
+    return { ...res.data, size: getAvailableSizes, color: getAvailableColors };
+};
+
+export const getProducts = async ({ queryKey }) => {
+    const Category = queryKey[1];
+    const response = await publicRequest.get(
+        Category ? `products?category=` : `products`
+    );
+    return response;
+};

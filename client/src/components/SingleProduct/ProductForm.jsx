@@ -1,21 +1,51 @@
-import { Add, Remove } from "@mui/icons-material";
 import { Alert } from "@mui/material";
-import React from "react";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
 import styled from "styled-components";
 
 import { devices } from "../../data";
 import Undo from "../../images/undo.svg";
+import { addProduct } from "../../redux/cartRedux";
+import { Benifit } from "./Benifit/Benifit";
 import { SingleProductFilters } from "./Filters/Filters";
+import { Quantity } from "./Quantity/Quantity";
 
-export const ProductForm = ({
-  productInfo,
-  productType,
-  handleCart,
-  error,
-  handleProductType,
-  handleQuantity,
-  quantity,
-}) => {
+export const ProductForm = ({ productInfo }) => {
+  const [productType, setProductType] = useState({});
+  const [displayError, SetDisplayError] = useState(false);
+  const dispatch = useDispatch();
+  const [quantity, setQuantity] = useState(1);
+
+  /* функция добавления фильтров по клику пользователя */
+  const handleProductType = (e) => {
+    const value = e.target.value;
+    const name = e.target.name;
+    setProductType((prev) => ({ ...prev, [name]: value }));
+  };
+
+  /* функция изменения количества продукта */
+  const handleQuantity = (type) => {
+    setQuantity((prev) => {
+      return type === "add" ? prev + 1 : prev > 1 ? prev - 1 : prev;
+    });
+  };
+
+  /* если пользователь выбрал товар с цветом и размером, он будет добавлен в корзину */
+  const handleCart = () => {
+    if (!productType.color || !productType.size) {
+      SetDisplayError(true);
+    } else {
+      dispatch(
+        addProduct({
+          _id: productInfo._id,
+          price: productInfo.price,
+          quantity,
+          ...productType,
+        })
+      );
+    }
+  };
+
   return (
     <InfoContainer>
       <Title>{productInfo.title}</Title>
@@ -29,15 +59,11 @@ export const ProductForm = ({
         handleProductType={handleProductType}
       />
       {/* если цвет или размер не выбраны, будет отображаться ошибка */}
-      {error && (
+      {displayError && (
         <Alert severity="error">Пожалуйста, выберите нужный цвет/размер.</Alert>
       )}
       <QuantityInfo>
-        <QuantityContainer>
-          <Remove onClick={() => handleQuantity("remove")} />
-          <Amount>{quantity}</Amount>
-          <Add onClick={() => handleQuantity("add")} />
-        </QuantityContainer>
+        <Quantity handleQuantity={handleQuantity} quantity={quantity} />
         {/* если товара нет в наличии, пользователь не сможет добавить его в корзину */}
         {productInfo.inStock ? (
           <StyledButton onClick={() => handleCart()}>ADD TO CART</StyledButton>
@@ -46,10 +72,10 @@ export const ProductForm = ({
         )}
       </QuantityInfo>
       <BenifitsContainer>
-        <Benifits>
-          <BeiniftsIMG src={Undo} />
-          <Perks>Бесплатный возврат всех заказов из России</Perks>
-        </Benifits>
+        <Benifit
+          icon={Undo}
+          title={"Бесплатный возврат всех заказов из России"}
+        />
       </BenifitsContainer>
     </InfoContainer>
   );
@@ -80,20 +106,6 @@ const BenifitsContainer = styled.div`
   gap: 1em;
 `;
 
-const Benifits = styled.div`
-  display: flex;
-  align-items: center;
-  gap: 1em;
-`;
-
-const Perks = styled.span`
-  font-size: 1em;
-`;
-
-const BeiniftsIMG = styled.img`
-  width: 1vw;
-`;
-
 const StyledButton = styled.button`
   padding: 1em;
   font-size: 1em;
@@ -119,25 +131,6 @@ const QuantityInfo = styled.div`
   gap: 10px;
 `;
 
-const QuantityContainer = styled.div`
-  display: flex;
-  gap: 0.5em;
-  align-items: center;
-  border: 1px solid #282828;
-  flex: 1;
-  height: 100%;
-  color: #282828;
-  font-size: 1em;
-  svg {
-    width: 1.7em;
-    height: 1.7em;
-    padding: 0.3em;
-    &:hover {
-      cursor: pointer;
-    }
-  }
-`;
-
 const Amount = styled.span`
   font-size: 1.1em;
 `;
@@ -153,9 +146,6 @@ const InfoContainer = styled.div`
   @media only screen and (max-width: ${devices.Desktop}px) {
     width: 30vw;
     height: 49vh;
-    ${QuantityContainer} {
-      font-size: 13px;
-    }
     ${Amount} {
       font-size: 1.3em;
     }
@@ -166,20 +156,8 @@ const InfoContainer = styled.div`
     flex-direction: column;
     padding: 2em;
     margin-bottom: 100px;
-    ${QuantityContainer} {
-      width: 105px;
-    }
     ${QuantityInfo} {
       flex-direction: column;
-    }
-    ${Benifits} {
-      margin-top: 15px;
-    }
-    ${BeiniftsIMG} {
-      width: 4vw;
-    }
-    ${Perks} {
-      font-size: 1em;
     }
     ${BenifitsContainer} {
       margin: 1em 0em;

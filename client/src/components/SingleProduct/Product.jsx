@@ -1,13 +1,12 @@
-import React, { useState } from "react";
+import React from "react";
 import { useQuery } from "react-query";
-import { useDispatch } from "react-redux";
 import { useLocation } from "react-router-dom";
 import styled from "styled-components";
+
 import { Failed } from "../../pages/Failed";
-import { AllColors, AllSizes, devices } from "../../data";
+import { devices } from "../../data";
 import { Loading } from "../../pages/Loading";
-import { addProduct } from "../../redux/cartRedux";
-import { publicRequest } from "../../requests";
+import { getProduct } from "../../redux/apiCalls";
 import { ImageSwipe } from "./Images/ImageSwipe";
 import { ProductForm } from "./ProductForm";
 import { ProductImages } from "./Images/ProductImages";
@@ -15,57 +14,10 @@ import { ProductImages } from "./Images/ProductImages";
 export const Product = () => {
   const location = useLocation();
   const productID = location.pathname.split("/")[2];
-  const [productType, setProductType] = useState({});
-  const [displayError, SetDisplayError] = useState(false);
-  const dispatch = useDispatch();
-  const [quantity, setQuantity] = useState(1);
 
   /* функция, чтобы получить выбранный продукт и получить все доступные размеры и цвета */
-  const getProduct = async ({ queryKey }) => {
-    const Id = queryKey[1];
-    const res = await publicRequest.get("/products/find/" + Id);
-
-    const getAvailableColors = await AllColors.filter((color) =>
-      res.data.color.includes(color.colorName)
-    );
-    const getAvailableSizes = await AllSizes.filter((size) =>
-      res.data.size.includes(size.SizeName)
-    );
-
-    return { ...res.data, size: getAvailableSizes, color: getAvailableColors };
-  };
 
   const { data, status } = useQuery(["singleProduct", productID], getProduct);
-
-  /* функция добавления фильтров по клику пользователя */
-  const handleProductType = (e) => {
-    const value = e.target.value;
-    const name = e.target.name;
-    setProductType((prev) => ({ ...prev, [name]: value }));
-  };
-
-  /* функция изменения количества продукта */
-  const handleQuantity = (type) => {
-    setQuantity((prev) => {
-      return type === "add" ? prev + 1 : prev > 1 ? prev - 1 : prev;
-    });
-  };
-
-  /* если пользователь выбрал товар с цветом и размером, он будет добавлен в корзину */
-  const handleCart = () => {
-    if (!productType.color || !productType.size) {
-      SetDisplayError(true);
-    } else {
-      dispatch(
-        addProduct({
-          _id: data._id,
-          price: data.price,
-          quantity,
-          ...productType,
-        })
-      );
-    }
-  };
 
   if (status === "loading") {
     return <Loading />;
@@ -80,15 +32,7 @@ export const Product = () => {
       <ProductsWrap>
         <ImageSwipe productInfo={data} />
         <ProductImages productInfo={data} />
-        <ProductForm
-          handleCart={handleCart}
-          handleProductType={handleProductType}
-          quantity={quantity}
-          handleQuantity={handleQuantity}
-          error={displayError}
-          productType={productType}
-          productInfo={data}
-        />
+        <ProductForm productInfo={data} />
       </ProductsWrap>
     </Container>
   );

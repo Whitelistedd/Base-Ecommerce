@@ -3,24 +3,14 @@ import { useQuery } from "react-query";
 import styled from "styled-components";
 import { Failed } from "../../pages/Failed";
 import { Loading } from "../../pages/Loading";
-import { publicRequest } from "../../requests";
+import { getProducts } from "../../redux/apiCalls";
 import { Product } from "./Product";
 
 export const Products = ({ className, setCart, filters, category, gender }) => {
   const [filteredProducts, setFilteredProducts] = useState([]);
   /* useEffect для получения всех продуктов */
 
-  const getProducts = async ({ queryKey }) => {
-    const Category = queryKey[1];
-    const response = await publicRequest.get(
-      Category ? `products?category=` : `products`
-    );
-    return response;
-  };
-
   const { data, status } = useQuery(["products", category], getProducts);
-
-  console.log(data);
 
   /* useEffect для фильтрации продуктов */
   useEffect(() => {

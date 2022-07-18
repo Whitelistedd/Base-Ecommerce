@@ -1,14 +1,12 @@
-import { CopyrightOutlined } from "@mui/icons-material";
-import { Typography } from "@mui/material";
 import React from "react";
 import styled from "styled-components";
 import { Left } from "./Left/Left";
 import { Center } from "./Center/Center";
 import { Right } from "./Right/Right";
 import { devices } from "../../data";
-import Payments from "../../images/payments.svg";
+import { Copyright } from "./Copyright/Copyright";
 
-export const Footer = () => {
+export const Footer = React.memo(() => {
   return (
     <Container>
       <Info>
@@ -16,53 +14,10 @@ export const Footer = () => {
         <Center />
         <Right />
       </Info>
-      <Copyright>
-        <CopyrightLeft>
-          <CopyrightOutlined sx={{ fontSize: 15 }} />
-          <Typography sx={{ fontSize: 13 }} variant="span">
-            Volxen
-          </Typography>
-        </CopyrightLeft>
-        <CopyrightRight>
-          <Image
-            alt="способы оплаты: Visa, MasterCard, МИР, СБП"
-            src={Payments}
-          />
-        </CopyrightRight>
-      </Copyright>
+      <Copyright />
     </Container>
   );
-};
-
-const Image = styled.img`
-  width: 180px;
-  height: 35px;
-`;
-
-const Copyright = styled.div`
-  display: flex;
-  justify-content: space-between;
-  gap: 10px;
-  flex-direction: row;
-  align-items: center;
-  margin-top: 80px;
-  padding: 0 80px;
-  @media only screen and (max-width: ${devices.mobile}px) {
-    flex-direction: column;
-  }
-`;
-
-const CopyrightRight = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
-
-const CopyrightLeft = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-`;
+});
 
 const Info = styled.div`
   display: flex;
@@ -87,9 +42,6 @@ const Container = styled.div`
     ${Info} {
       padding: 0 30px;
       gap: 2em;
-    }
-    ${Copyright} {
-      padding: 0 30px;
     }
   }
 `;

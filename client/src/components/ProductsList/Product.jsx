@@ -80,7 +80,7 @@ const StyledLink = styled(Link)`
   box-shadow: 0px 0px 0px black;
   border-radius: 10px;
   height: 100%;
-  @media only screen and (max-width: ${devices.mobile}px) {
+  @media only screen and (max-width: ${devices.Phone}px) {
     min-width: 300px;
   }
 `;

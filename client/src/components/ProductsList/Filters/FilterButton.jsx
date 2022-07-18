@@ -58,8 +58,7 @@ const SizeButton = styled.span`
   }
 
   &:hover {
-    background-color: rgb(0, 165, 253);
-    color: white;
+    transform: scale(1.1);
   }
 `;
 

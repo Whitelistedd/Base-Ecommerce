@@ -6,11 +6,7 @@ import styled from "styled-components";
 
 import { devices } from "../../data";
 import { UpdateProducts } from "../../redux/apiCalls";
-import {
-  addQuantity,
-  removeProduct,
-  removeQuantity,
-} from "../../redux/cartRedux";
+import { changeQuantity, removeProduct } from "../../redux/cartRedux";
 import { CartProduct } from "./CartProduct";
 import { EmptyCart } from "./EmptyCart";
 
@@ -21,17 +17,13 @@ export const Cart = () => {
   const navigate = useNavigate();
 
   /* функция изменения количества продуктов */
-  const handlequantity = (index, changer) => {
-    if (changer === "rem" && cart.products[index].quantity >= 2) {
-      dispatch(removeQuantity(index));
-    } else if (changer === "add" && cart.products[index].quantity >= 1) {
-      dispatch(addQuantity(index));
-    }
+  const handlequantity = (index, type) => {
+    dispatch(changeQuantity({ index, type }));
   };
 
   /* функция удаления товара */
-  const handleRemoveProduct = (item) => {
-    dispatch(removeProduct(item));
+  const handleRemoveProduct = (item, index) => {
+    dispatch(removeProduct({ item, index }));
   };
 
   /* отправит пользователя на страницу оформления заказа по клику, если в корзине есть товары */
@@ -61,7 +53,7 @@ export const Cart = () => {
           <Info>
             {cart.products?.map((item, index) => (
               <CartProduct
-                key={item.id}
+                key={index}
                 item={item}
                 index={index}
                 handlequantity={handlequantity}

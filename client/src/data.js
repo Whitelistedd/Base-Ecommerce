@@ -115,13 +115,8 @@ export const MenuItems = [
         path: "/products/women"
     },
     {
-        id: "nn534",
-        text: "Наборы",
-        path: "/products/sets"
-    },
-    {
         id: "gdJZw",
-        text: "ЧЗВ",
+        text: "FAQ",
         path: "/FAQ"
     },
 ]

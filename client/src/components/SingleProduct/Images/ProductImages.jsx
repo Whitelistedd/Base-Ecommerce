@@ -5,7 +5,7 @@ import styled, { keyframes } from "styled-components";
 import { devices } from "../../../data";
 import { ProductImage } from "./ProductImage";
 
-export const ProductImages = ({ productInfo }) => {
+export const ProductImages = React.memo(({ productInfo }) => {
   const [imgSelections, setImgSelections] = useState([true, false, false]);
   const [mainImage, setMainImage] = useState(productInfo?.img?.[0]);
 
@@ -35,7 +35,7 @@ export const ProductImages = ({ productInfo }) => {
       <Image alt={productInfo.title} src={mainImage || productInfo?.img?.[0]} />
     </ImageContainer>
   );
-};
+});
 
 const fadein = keyframes`
 0% { opacity: 0; }

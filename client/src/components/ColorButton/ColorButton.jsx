@@ -65,6 +65,10 @@ const ColorButton = styled.span`
     font-weight: 100;
     font-size: 13px;
   }
+
+  &:hover {
+    opacity: 0.5;
+  }
 `;
 
 const CustomColorRadio = styled.label`

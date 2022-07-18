@@ -10,13 +10,12 @@ import styled from "styled-components";
 import Base from "../../images/basealpha.png";
 import { NavMenu } from "./NavMenu/NavMenu";
 
-export const Navbar = () => {
+export const Navbar = React.memo(() => {
   const [open, setOpen] = useState(false);
   const cartquantity = useSelector((state) => state.cart.quantity);
 
   /* будет переключать мобильное меню при нажатии на значок */
   const toggleDrawer = () => {
-    console.log("Toggle drawerWidth");
     setOpen(open ? false : true);
   };
 
@@ -94,7 +93,7 @@ export const Navbar = () => {
       </Wrapper>
     </Container>
   );
-};
+});
 
 const Left = styled.div`
   flex: 1;

@@ -43,7 +43,7 @@ const Container = styled.div`
   flex-direction: column;
   flex: 0 1 auto;
   line-height: 24.75px;
-  @media (max-width: 1134px) {
+  @media only screen and (max-width: 1134px) {
     margin-bottom: 5em;
   }
 `;

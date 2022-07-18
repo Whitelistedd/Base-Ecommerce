@@ -29,7 +29,7 @@ export const CartProduct = ({
           <Add onClick={() => handlequantity(index, "add")} data={index} />
         </QuantityContainer>
         <RemoveProducts>
-          <RemoveButton onClick={() => handleRemoveProduct(item)}>
+          <RemoveButton onClick={() => handleRemoveProduct(item, index)}>
             Удалять
           </RemoveButton>
         </RemoveProducts>
