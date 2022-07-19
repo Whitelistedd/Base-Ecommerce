@@ -50,7 +50,7 @@ export const Navbar = React.memo(() => {
         <Center>
           <Link aria-label="кнопка вернуться домой" to={"/"}>
             <Image
-              style={{ height: 30, cursor: "pointer" }}
+              style={{ height: 30, width: 65, cursor: "pointer" }}
               src={Base}
               alt="Logo"
             />
