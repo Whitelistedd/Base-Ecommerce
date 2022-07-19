@@ -59,9 +59,9 @@ export const Navbar: React.FC = () => {
           </StyledLink>
         </Center>
         <Right>
-          <StyledLink
+          <a
             aria-label="кнопка для перехода на страницу профиля"
-            href={'/profile'}
+            href={'/api/auth/login'}
           >
             <PersonOutlineOutlined
               sx={{
@@ -74,7 +74,7 @@ export const Navbar: React.FC = () => {
                 },
               }}
             />
-          </StyledLink>
+          </a>
           <StyledLink
             aria-label="кнопка перехода на страницу корзины"
             href={'/cart'}

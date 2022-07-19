@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { Announcement } from '../src/components/Announcement/Announcement'
 import { Navbar } from '../src/components/Navbar/Navbar'
 import { Footer } from '../src/components/Footer/Footer'
@@ -7,12 +7,16 @@ import { Popup } from '../src/components/Popup/Popup'
 import { useRouter } from 'next/router'
 
 export const Layout: React.FC<any> = ({ children }) => {
-  const [showPopup, setShowPopup] = useState(true)
+  const [showPopup, setShowPopup] = useState(false)
   const router = useRouter()
 
   const ClosePopup = () => {
     setShowPopup(false)
   }
+
+  useEffect(() => {
+    setShowPopup(Math.random() * 10 < 5)
+  }, [])
 
   return (
     <Container>
