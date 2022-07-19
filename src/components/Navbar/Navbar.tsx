@@ -59,36 +59,17 @@ export const Navbar: React.FC = () => {
           </StyledLink>
         </Center>
         <Right>
-          <a
+          <StyledProfile
             aria-label="кнопка для перехода на страницу профиля"
             href={'/api/auth/login'}
           >
-            <PersonOutlineOutlined
-              sx={{
-                color: 'black',
-                cursor: 'pointer',
-                fontSize: 27,
-                ':hover': {
-                  opacity: 0.7,
-                  transition: '300ms ease',
-                },
-              }}
-            />
-          </a>
+            <PersonOutlineOutlined />
+          </StyledProfile>
           <StyledLink
             aria-label="кнопка перехода на страницу корзины"
             href={'/cart'}
           >
-            <Badge
-              badgeContent={cart.quantity}
-              color="primary"
-              sx={{
-                color: 'black',
-                marginBottom: 0.5,
-                transition: '700ms ease',
-                ':hover': { opacity: 0.7, transition: '700ms ease' },
-              }}
-            >
+            <Badge badgeContent={cart.quantity} color="primary">
               <ShoppingBagOutlinedIcon
                 sx={{ color: 'black', cursor: 'pointer', fontSize: 25 }}
               />
@@ -102,6 +83,8 @@ export const Navbar: React.FC = () => {
 
 const Left = styled.div`
   flex: 1;
+  display: flex;
+  align-items: center;
 `
 
 const StyledImage = styled(Image)`
@@ -124,10 +107,41 @@ const Right = styled.div`
   display: flex;
   align-items: center;
   justify-content: flex-end;
-  gap: 30px;
+  gap: 20px;
 `
 
-const StyledLink = styled(Link)``
+const StyledLink = styled(Link)`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: black;
+  transition: '700ms ease';
+  svg {
+    width: 27px;
+    height: 27px;
+  }
+  &:hover,
+  svg {
+    opacity: 0.7;
+    transition: 700ms ease;
+  }
+`
+
+const StyledProfile = styled.a`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 300ms ease;
+  svg {
+    color: black;
+    width: 27px;
+    height: 27px;
+  }
+  &:hover {
+    opacity: 0.7;
+    cursor: pointer;
+  }
+`
 
 const Wrapper = styled.div<{ displayFixed: displayFixedType }>`
   display: flex;

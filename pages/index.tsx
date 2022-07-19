@@ -1,5 +1,5 @@
 import Link from 'next/link'
-import styled from 'styled-components'
+import styled, { keyframes } from 'styled-components'
 import { Products } from '../src/components/ProductsList/Products'
 import { devices, unFade } from '../src/data'
 import { Parallax } from 'react-parallax'
@@ -71,6 +71,17 @@ export const getServerSideProps: GetServerSideProps = async () => {
   }
 }
 
+const fadeUp = keyframes`
+  0% {
+    transform: translateY(100px);
+    opacity: 0%;
+  }
+  100% {
+    transform: translateY(0);
+    opacity: 100%;
+  }
+`
+
 const HeaderButton = styled.button`
   font-family: 'Montserra', sans-serif;
   background-color: transparent;
@@ -79,14 +90,14 @@ const HeaderButton = styled.button`
   background-color: #282828;
   font-weight: 700;
   letter-spacing: 2px;
-  font-size: 1.5rem;
+  font-size: 1.3em;
   padding: 0.8em;
-  transition: 400ms;
   z-index: 2;
   cursor: pointer;
   &:hover {
     background-color: #1d1c1c;
   }
+  animation: 500ms 0s ease ${fadeUp};
 `
 
 const HeaderWrap = styled.div`
@@ -97,10 +108,16 @@ const HeaderWrap = styled.div`
   background-position: top;
   background-size: cover;
   display: flex;
-  justify-content: center;
+  padding: 0em 0em 2em 2em;
   align-items: center;
   gap: 1em;
   flex-wrap: wrap;
+  @media only screen and (max-width: ${devices.Phone}px) {
+    justify-content: center;
+    justify-content: center;
+    padding: 0em;
+    font-size: 16px;
+  }
 `
 
 const HomeProducts = styled(Products)`
@@ -130,8 +147,6 @@ const Container = styled.div`
   @media only screen and (max-width: ${devices.Phone}px) {
     ${HeaderButton} {
       font-size: 1em;
-      flex-direction: column;
-      justify-content: center;
     }
   }
 `

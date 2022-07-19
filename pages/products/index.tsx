@@ -126,9 +126,8 @@ const ProductsContainer = styled.div`
 
 const StyledProducts = styled(Products)`
   width: 100%;
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  grid-template-rows: repeat(auto-fit, 1fr);
+  display: flex;
+  flex-wrap: wrap;
   .Image {
     min-width: 130px;
     width: 100%;
@@ -146,12 +145,17 @@ const Container = styled.div`
   min-height: 100vh;
   @media only screen and (max-width: ${devices.Desktop}px) {
     ${StyledProducts} {
-      grid-template-columns: repeat(3, 1fr);
-    }
-  }
-  @media only screen and (max-width: 1200px) {
-    ${StyledProducts} {
-      grid-template-columns: repeat(2, 1fr);
+      justify-content: center;
+      .Product {
+        width: 250px;
+      }
+      .ProductInfo {
+        min-width: 250px;
+        font-size: 14px;
+      }
+      .ProductImage {
+        width: 250px;
+      }
     }
   }
   @media only screen and (max-width: ${devices.Tablet}px) {
@@ -159,17 +163,15 @@ const Container = styled.div`
       display: none;
     }
     ${StyledProducts} {
-      display: grid;
-      grid-template-columns: repeat(auto-fit, 1fr);
+      display: flex;
+      justify-content: center;
+      .Image {
+        min-width: 100px;
+        width: 100%;
+      }
     }
     ${ProductsWrap} {
       flex-direction: column;
-    }
-  }
-  @media only screen and (max-width: ${devices.Phone}px) {
-    ${StyledProducts} {
-      display: grid;
-      grid-template-columns: 1fr;
     }
   }
 `

@@ -10,12 +10,17 @@ export const Product: React.FC<ProductProps> = ({ item }) => {
   const [hoveredStatus, setHoveredStatus] = useState(false)
   return (
     <Container
+      className="Product"
       onMouseEnter={() => setHoveredStatus(true)}
       onMouseLeave={() => setHoveredStatus(false)}
     >
       <StyledLink images={item.img} href={`/product/${item._id}`}>
-        <InfoContainer hoveredStatus={hoveredStatus} inStock={item.inStock}>
-          <Image1>
+        <InfoContainer
+          className="ProductInfo"
+          hoveredStatus={hoveredStatus}
+          inStock={item.inStock}
+        >
+          <Image1 className="ProductImage">
             {/* если пользователь наводит курсор на изображение, он покажет второе изображение продукта, а если нет, то покажет первое */}
             <StyledImage
               className="Image1"
@@ -26,7 +31,7 @@ export const Product: React.FC<ProductProps> = ({ item }) => {
               alt={item.title}
             />
           </Image1>
-          <Image2>
+          <Image2 className="ProductImage">
             <StyledImage
               className="Image2"
               src={item.img[1]}
@@ -45,7 +50,7 @@ export const Product: React.FC<ProductProps> = ({ item }) => {
 }
 
 const Title = styled.p`
-  font-size: 16px;
+  font-size: 1em;
   font-style: normal;
   font-weight: 700;
   letter-spacing: 1px;
