@@ -35,7 +35,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ cart, shipping }) => {
 const CheckoutWrap = styled.div`
   display: flex;
   flex-direction: column;
-  width: 45%;
+  width: 65%;
   gap: 2em;
 `
 

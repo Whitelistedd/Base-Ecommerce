@@ -62,7 +62,7 @@ const ItemName = styled.p`
 `
 
 const ProductImage = styled.div`
-  width: 4vw;
+  width: 70px;
   min-width: 56px;
   min-height: 76px;
 `

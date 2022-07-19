@@ -82,7 +82,7 @@ const Left = styled.div`
 
 const Container = styled.div`
   display: flex;
-  width: 100vw;
+  width: 100%;
   min-height: 100vh;
   margin-bottom: -50px;
   @media only screen and (max-width: ${devices.Tablet}px) {
