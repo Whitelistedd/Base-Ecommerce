@@ -11,12 +11,6 @@ export interface ProductTypeState {
 
 export interface ProductFormProps {
   productInfo: ProductDataType
-  productType: ProductTypeState
-  handleCart: () => void
-  error: boolean
-  handleProductType: (event: handleProductTypeType) => void
-  handleQuantity: (type: string) => void
-  quantity: number
 }
 
 export interface ProductProps {

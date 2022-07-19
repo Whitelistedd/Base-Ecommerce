@@ -1,22 +1,58 @@
 import { Add, Remove } from '@mui/icons-material'
 import { Alert } from '@mui/material'
-import React from 'react'
+import React, { useState } from 'react'
 import styled from 'styled-components'
 import Image from 'next/image'
 
 import { devices } from '../../data'
 import { SingleProductFilters } from './Filters/Filters'
 import { ProductFormProps } from './SingleProduct.model'
+import {
+  handleProductTypeType,
+  handleQuantityType,
+  ProductTypeState,
+} from './SingleProduct.model'
+import { addProduct } from '../../redux/slices/cart'
+import { AppDispatch } from '../../redux/store/store'
 
-export const ProductForm: React.FC<ProductFormProps> = ({
-  productInfo,
-  productType,
-  handleCart,
-  error,
-  handleProductType,
-  handleQuantity,
-  quantity,
-}) => {
+export const ProductForm: React.FC<ProductFormProps> = ({ productInfo }) => {
+  const [productType, setProductType] = useState<ProductTypeState>({
+    color: '',
+    size: '',
+  })
+  const [displayError, SetDisplayError] = useState(false)
+  const [quantity, setQuantity] = useState(1)
+  const dispatch = AppDispatch()
+
+  /* функция добавления фильтров по клику пользователя */
+  const handleProductType = (e: handleProductTypeType) => {
+    const value = e.target.value
+    const name = e.target.name
+    setProductType((prev) => ({ ...prev, [name]: value }))
+  }
+
+  /* функция изменения количества продукта */
+  const handleQuantity = (type: handleQuantityType) => {
+    setQuantity((prev) => {
+      return type === 'add' ? prev + 1 : prev > 1 ? prev - 1 : prev
+    })
+  }
+
+  /* если пользователь выбрал товар с цветом и размером, он будет добавлен в корзину */
+  const handleCart = () => {
+    if (!productType.color || !productType.size) {
+      SetDisplayError(true)
+    } else {
+      dispatch(
+        addProduct({
+          ...productInfo,
+          quantity,
+          ...productType,
+        })
+      )
+    }
+  }
+
   return (
     <InfoContainer>
       <Title>{productInfo?.title}</Title>
@@ -30,7 +66,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({
         handleProductType={handleProductType}
       />
       {/* если цвет или размер не выбраны, будет отображаться ошибка */}
-      {error && (
+      {displayError && (
         <Alert severity="error">Пожалуйста, выберите нужный цвет/размер.</Alert>
       )}
       <QuantityInfo>
