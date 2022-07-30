@@ -24,7 +24,7 @@ export const Left: React.FC = () => {
             layout="responsive"
             width={30}
             height={30}
-            src={'/images/vk.svg'}
+            src={'/assets/images/vk.svg'}
           />
         </A>
         <A
@@ -34,7 +34,7 @@ export const Left: React.FC = () => {
         >
           <Icon
             alt="наша страница в инстаграмм"
-            src={'/images/instagram.svg'}
+            src={'/assets/images/instagram.svg'}
             width={30}
             height={30}
             layout="responsive"

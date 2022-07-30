@@ -27,7 +27,7 @@ export const Footer: React.FC = () => {
             width={200}
             height={100}
             alt="способы оплаты: Visa, MasterCard, МИР, СБП"
-            src={'/images/payments.svg'}
+            src={'/assets/images/payments.svg'}
           />
         </CopyrightRight>
       </Copyright>

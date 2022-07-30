@@ -85,7 +85,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({ productInfo }) => {
       <BenifitsContainer>
         <Benifits>
           <BeiniftsIMG
-            src={'/images/undo.svg'}
+            src={'/assets/images/undo.svg'}
             width={1}
             height={1}
             layout={'responsive'}

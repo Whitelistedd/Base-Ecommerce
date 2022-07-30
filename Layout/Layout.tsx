@@ -3,13 +3,16 @@ import { Announcement } from '../src/components/Announcement/Announcement'
 import { Navbar } from '../src/components/Navbar/Navbar'
 import { Footer } from '../src/components/Footer/Footer'
 import styled from 'styled-components'
+import { useRouter } from 'next/router'
 
-export const Layout: React.FC<any> = ({ children }) => {
+export const Layout: React.FC<{ children: JSX.Element }> = ({ children }) => {
+  const router = useRouter()
+
   return (
     <Container>
       <Wrap>
         <Announcement />
-        <Navbar />
+        <Navbar homePage={router.pathname === '/' ? true : false} />
         {children}
         <Footer />
       </Wrap>
@@ -28,4 +31,5 @@ const Container = styled.div`
   justify-content: center;
   align-items: center;
   overflow-x: hidden;
+  background: #fefeff;
 `

@@ -14,6 +14,7 @@ import { Layout } from '../Layout/Layout'
 import createEmotionCache from '../src/createEmotionCache'
 import { wrapper } from '../src/redux/store/store'
 import { Loading } from '../src/components/Loading/Loading'
+import GlobalStyles from '../src/GlobalStyles'
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache()
@@ -48,9 +49,12 @@ function MyApp(props: MyAppProps) {
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
           <QueryClientProvider client={queryClient}>
+            <GlobalStyles />
             <Layout>
-              {loading && <Loading />}
-              <Component {...pageProps} />
+              <>
+                {loading && <Loading />}
+                <Component {...pageProps} />
+              </>
             </Layout>
           </QueryClientProvider>
         </ThemeProvider>

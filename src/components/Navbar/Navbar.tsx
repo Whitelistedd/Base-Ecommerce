@@ -8,10 +8,10 @@ import styled from 'styled-components'
 import Image from 'next/image'
 
 import { NavMenu } from './NavMenu/NavMenu'
-import { displayFixedType } from './Navbar.model'
+import { displayFixedType, NavbarProps } from './Navbar.model'
 import { useAppSelector } from '../../redux/store/store'
 
-export const Navbar: React.FC = () => {
+export const Navbar: React.FC<NavbarProps> = ({ className, homePage }) => {
   const [open, setOpen] = useState(false)
   const cart = useAppSelector((state) => state.cart)
 
@@ -34,24 +34,16 @@ export const Navbar: React.FC = () => {
   }, [])
 
   return (
-    <Container displayFixed={displayFixed}>
-      <Wrapper displayFixed={displayFixed}>
+    <Container className={className} displayFixed={displayFixed}>
+      <Wrapper homePage={homePage} displayFixed={displayFixed}>
         <Left>
-          <MenuIcon
-            onClick={toggleDrawer}
-            sx={{
-              cursor: 'pointer',
-              fontSize: '32px',
-              transition: '700ms ease',
-              ':hover': { opacity: 0.7, transition: '700ms ease' },
-            }}
-          />
+          <MenuIcon onClick={toggleDrawer} />
           <NavMenu toggleDrawer={toggleDrawer} open={open} />
         </Left>
         <Center>
           <StyledLink aria-label="кнопка вернуться домой" href={'/'}>
             <StyledImage
-              src={'/images/basealpha.png'}
+              src={'/assets/images/basealpha.png'}
               height={35}
               width={80}
               alt="Logo"
@@ -59,20 +51,18 @@ export const Navbar: React.FC = () => {
           </StyledLink>
         </Center>
         <Right>
-          <StyledProfile
+          <StyledLink
             aria-label="кнопка для перехода на страницу профиля"
             href={'/api/auth/login'}
           >
             <PersonOutlineOutlined />
-          </StyledProfile>
+          </StyledLink>
           <StyledLink
             aria-label="кнопка перехода на страницу корзины"
             href={'/cart'}
           >
             <Badge badgeContent={cart.quantity} color="primary">
-              <ShoppingBagOutlinedIcon
-                sx={{ color: 'black', cursor: 'pointer', fontSize: 25 }}
-              />
+              <ShoppingBagOutlinedIcon />
             </Badge>
           </StyledLink>
         </Right>
@@ -114,54 +104,46 @@ const StyledLink = styled(Link)`
   display: flex;
   align-items: center;
   justify-content: center;
-  color: black;
-  transition: '700ms ease';
-  svg {
-    width: 27px;
-    height: 27px;
-  }
-  &:hover,
-  svg {
-    opacity: 0.7;
-    transition: 700ms ease;
-  }
+  color: inherit;
 `
 
-const StyledProfile = styled.a`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 300ms ease;
-  svg {
-    color: black;
-    width: 27px;
-    height: 27px;
-  }
-  &:hover {
-    opacity: 0.7;
-    cursor: pointer;
-  }
-`
-
-const Wrapper = styled.div<{ displayFixed: displayFixedType }>`
+const Wrapper = styled.div<{
+  displayFixed: displayFixedType
+  homePage: boolean
+}>`
   display: flex;
   justify-content: space-between;
   padding: 13px 30px;
   align-items: center;
   border-bottom: 1px solid #dcdcdc;
   z-index: 4;
-  background-color: white;
   width: 100%;
+  transition: 300ms ease;
   position: ${(props) => (props.displayFixed ? 'fixed' : '')};
+  color: ${(props) =>
+    props.homePage ? (props.displayFixed ? 'black' : 'white') : 'black'};
+  background: ${(props) =>
+    props.homePage ? (props.displayFixed ? 'white' : 'transparent') : 'white'};
+  position: fixed;
+
+  &:hover {
+    background-color: white;
+    color: black;
+  }
+  .MuiSvgIcon-fontSizeMedium {
+    width: 30px;
+    height: 30px;
+    transition: 300ms ease;
+    &:hover {
+      opacity: 0.5;
+      cursor: pointer;
+    }
+  }
 `
 
 const Container = styled.div<{ displayFixed: displayFixedType }>`
-  background-color: white;
-
   height: 60px;
   width: 100%;
-  background-color: white;
-
   @media only screen and (min-width: 1920px) {
     width: 1920px;
     ${Wrapper} {

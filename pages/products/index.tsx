@@ -5,7 +5,7 @@ import styled from 'styled-components'
 import { Filters } from '../../src/components/ProductsList/Filters/Filters'
 import { Products } from '../../src/components/ProductsList/Products'
 import { devices, unFade } from '../../src/data'
-import { GetServerSideProps, NextPage } from 'next'
+import { GetStaticProps, NextPage } from 'next'
 import { useRouter } from 'next/router'
 import { getAllProducts } from '../../src/apiCalls/apiCalls'
 import { useQuery, UseQueryResult } from 'react-query'
@@ -102,13 +102,14 @@ export const ProductsListPage: NextPage<ProductsListPageProps> = ({
   )
 }
 
-export const getServerSideProps: GetServerSideProps = async () => {
+export const getStaticProps: GetStaticProps = async () => {
   const products = await getAllProducts()
 
   return {
     props: {
       products,
     },
+    revalidate: 2000,
   }
 }
 

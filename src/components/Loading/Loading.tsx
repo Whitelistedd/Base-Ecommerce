@@ -14,7 +14,7 @@ export const Loading: React.FC<LoadingProps> = ({ className }) => {
               layout="responsive"
               width={100}
               height={100}
-              src={'/images/loading.webp'}
+              src={'/assets/images/loading.webp'}
             />
           </ImageWrap>
         </Wrap>

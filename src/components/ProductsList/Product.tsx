@@ -71,8 +71,7 @@ const unFade = keyframes`
 `
 
 const Image1 = styled.div`
-  animation: 500ms ${unFade};
-  filter: brightness(95%);
+  animation: 200ms ease ${unFade};
 `
 
 const Image2 = styled(Image1)`

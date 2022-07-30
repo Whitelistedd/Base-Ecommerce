@@ -12,7 +12,7 @@ export const Failed: React.FC = () => {
               layout="responsive"
               width={100}
               height={100}
-              src={'/images/multiply.svg'}
+              src={'/assets/images/multiply.svg'}
             />
           </ImageWrap>
           <Title>Упс! Что-то пошло не так.</Title>
