@@ -11,6 +11,7 @@ export const CartProduct: React.FC<CartProductProps> = ({
   handlequantity,
   handleRemoveProduct,
 }) => {
+  console.log(item)
   return (
     <Product>
       <ProductWrap>
@@ -19,7 +20,7 @@ export const CartProduct: React.FC<CartProductProps> = ({
             layout="responsive"
             width={120}
             height={160}
-            src={`${item.img[0]}`}
+            src={`${item.img?.[0]}`}
             alt={item.title}
           />
         </ProductImage>

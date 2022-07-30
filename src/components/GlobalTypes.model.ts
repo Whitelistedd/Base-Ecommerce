@@ -1,20 +1,16 @@
+/* eslint-disable @typescript-eslint/no-explicit-any */
 export type queryKeyType = readonly unknown[]
 
 export type AllSizes = {
-  id: string
-  SizeName: string
-  title: string
+  [key: string]: any
 }
 
 export type AllColors = {
-  id: string
-  colorName: string
-  RussianName: string
-  HexColor: string
+  [key: string]: any
 }
 
 export type ProductDataType = {
-  _v: number
+  _v: any
   _id: string
   categories: Array<string>
   color: Array<AllColors>
@@ -23,7 +19,7 @@ export type ProductDataType = {
   gender: Array<string>
   img: Array<string>
   inStock: boolean
-  price: number
+  price: any
   size: Array<AllSizes>
   title: string
   updatedAt: string

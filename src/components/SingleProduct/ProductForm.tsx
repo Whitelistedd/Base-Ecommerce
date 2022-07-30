@@ -38,7 +38,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({ productInfo }) => {
     })
   }
 
-  /* если пользователь выбрал товар с цветом и размером, он будет добавлен в корзину */
+  /* если пользователь выбрал товар с цветом и размером, товар будет добавлен в корзину */
   const handleCart = () => {
     if (!productType.color || !productType.size) {
       SetDisplayError(true)

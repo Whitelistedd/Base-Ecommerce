@@ -1,8 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 import axios from 'axios'
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { connect } from '../../../lib/connection'
-import { orderProductType } from '../../../lib/models/Order'
 import { ProductDataType } from '../../../src/components/GlobalTypes.model'
 
 export default async function handler(
