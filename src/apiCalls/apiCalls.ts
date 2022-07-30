@@ -1,7 +1,6 @@
 import { AxiosResponse } from 'axios'
 import { CartProductType } from '../components/Cart/Cart.model'
 import { queryKeyType } from '../components/GlobalTypes.model'
-import { AllColors, AllSizes } from '../data'
 import { setError, UpdateProduct } from '../redux/slices/cart'
 import { publicRequest } from '../requests'
 import { newCheckoutType, UpdateProductsType } from './apiCalls.model'
@@ -60,14 +59,9 @@ export const getProduct = async ({ queryKey }: { queryKey?: queryKeyType }) => {
   const Id = queryKey[1]
   const res = await publicRequest.get('/product/' + Id)
 
-  const getAvailableColors = await AllColors.filter((color) =>
-    res.data.color.includes(color.colorName)
-  )
-  const getAvailableSizes = await AllSizes.filter((size) =>
-    res.data.size.includes(size.SizeName)
-  )
+  console.log(res.data[0])
 
-  return { ...res.data, size: getAvailableSizes, color: getAvailableColors }
+  return res.data[0]
 }
 
 /* для получения всех продуктов */

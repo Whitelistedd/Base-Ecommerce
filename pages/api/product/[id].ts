@@ -1,5 +1,5 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { connect } from '../../../lib/connection'
+import { client } from '../../../src/sanityClient'
 
 export default async function handler(
   req: NextApiRequest,
@@ -10,10 +10,13 @@ export default async function handler(
   }
 
   try {
-    const { ProductSchema } = await connect()
-    const product = await ProductSchema.findById(req.query.id)
+    const ProductsQuery = `*[_type == "product" && _id == $id]`
+    const param = { id: req.query.id }
+    const response = await client
+      .fetch(ProductsQuery, param)
+      .then((response) => response)
 
-    res.status(200).json(product)
+    res.status(200).json(response)
   } catch (err) {
     res.status(500).json('product doesnt exist')
   }

@@ -49,7 +49,7 @@ function MyApp(props: MyAppProps) {
           <CssBaseline />
           <QueryClientProvider client={queryClient}>
             <Layout>
-              {loading && <Loading />}
+              {loading ? <Loading /> : <></>}
               <Component {...pageProps} />
             </Layout>
           </QueryClientProvider>
