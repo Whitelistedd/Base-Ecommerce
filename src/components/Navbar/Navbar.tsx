@@ -10,6 +10,7 @@ import Image from 'next/image'
 import { NavMenu } from './NavMenu/NavMenu'
 import { displayFixedType, NavbarProps } from './Navbar.model'
 import { useAppSelector } from '../../redux/store/store'
+import { MenuItems } from '../../data'
 
 export const Navbar: React.FC<NavbarProps> = ({ className, homePage }) => {
   const [open, setOpen] = useState(false)
@@ -37,8 +38,12 @@ export const Navbar: React.FC<NavbarProps> = ({ className, homePage }) => {
     <Container className={className} displayFixed={displayFixed}>
       <Wrapper homePage={homePage} displayFixed={displayFixed}>
         <Left>
-          <MenuIcon onClick={toggleDrawer} />
-          <NavMenu toggleDrawer={toggleDrawer} open={open} />
+          <StyledMenuIcon onClick={toggleDrawer} />
+          <NavMenu
+            toggleDrawer={toggleDrawer}
+            open={open}
+            NavMenuItems={MenuItems}
+          />
         </Left>
         <Center>
           <StyledLink aria-label="кнопка вернуться домой" href={'/'}>
@@ -70,6 +75,14 @@ export const Navbar: React.FC<NavbarProps> = ({ className, homePage }) => {
     </Container>
   )
 }
+
+const StyledMenuIcon = styled(MenuIcon)`
+  transform: rotate(0deg);
+
+  &:hover {
+    transform: rotate(720deg);
+  }
+`
 
 const Left = styled.div`
   flex: 1;
@@ -133,7 +146,8 @@ const Wrapper = styled.div<{
   .MuiSvgIcon-fontSizeMedium {
     width: 30px;
     height: 30px;
-    transition: 300ms ease;
+    opacity: 1;
+    transition: opacity 300ms ease, transform 1s ease;
     &:hover {
       opacity: 0.5;
       cursor: pointer;
