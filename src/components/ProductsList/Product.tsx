@@ -78,7 +78,9 @@ const Image2 = styled(Image1)`
   display: none;
 `
 
-const StyledImage = styled(Image)``
+const StyledImage = styled(Image)`
+  object-fit: cover;
+`
 
 const InfoContainer = styled.div<{ inStock: boolean; hoveredStatus: boolean }>`
   min-width: 300px;
