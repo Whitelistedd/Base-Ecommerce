@@ -83,7 +83,7 @@ const ImageContainer = styled.div`
       width: 70%;
     }
   }
-  @media only screen and (max-width: ${devices.Tablet}px) {
+  @media only screen and (max-width: ${devices.Laptop}px) {
     flex-direction: column;
     gap: 0.2em;
     margin-top: 4em;

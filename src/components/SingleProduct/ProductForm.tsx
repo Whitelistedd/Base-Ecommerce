@@ -202,7 +202,7 @@ const InfoContainer = styled.div`
       font-size: 1.3em;
     }
   }
-  @media only screen and (max-width: ${devices.Tablet}px) {
+  @media only screen and (max-width: ${devices.Laptop}px) {
     width: 70%;
     min-width: 600px;
     flex-direction: column;

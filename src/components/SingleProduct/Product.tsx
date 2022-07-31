@@ -42,7 +42,7 @@ const Container = styled.div`
       gap: 0em;
     }
   }
-  @media only screen and (max-width: ${devices.Tablet}px) {
+  @media only screen and (max-width: ${devices.Laptop}px) {
     ${ProductsWrap} {
       flex-direction: column;
       width: 100vw;

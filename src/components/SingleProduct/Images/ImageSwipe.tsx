@@ -33,17 +33,19 @@ export const ImageSwipe: React.FC<ImageSwipeProps> = ({ productInfo }) => {
 
 const StyledProductImage = styled(ProductImage)`
   width: 100%;
+  height: 100%;
   span,
   img {
     object-fit: contain;
-    height: 502px !important;
+    height: 100% !important;
   }
 `
 
 const StyledSwiper = styled(Swiper)`
   display: none;
   width: 100%;
-  height: 502px;
+  height: 70vw;
+  min-height: 560px;
 
   .swiper-button-prev,
   .swiper-button-next {
@@ -54,7 +56,7 @@ const StyledSwiper = styled(Swiper)`
     width: 100%;
   }
 
-  @media only screen and (max-width: ${devices.Tablet}px) {
+  @media only screen and (max-width: ${devices.Laptop}px) {
     display: flex;
   }
 `
