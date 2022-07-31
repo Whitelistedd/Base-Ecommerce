@@ -41,6 +41,7 @@ export const Product: React.FC<ProductProps> = ({ item }) => {
             />
           </Image2>
           <Title>{item.title}</Title>
+          {item.inStock && <Price>₽{item.price}</Price>}
           {/* если товар распродан, появится это сообщение */}
           {!item.inStock && <SoldOut>Распродан</SoldOut>}
         </InfoContainer>
@@ -55,6 +56,14 @@ const Title = styled.p`
   font-weight: 700;
   letter-spacing: 1px;
   text-align: center;
+  margin: 1em 0em 0.3em 0em;
+`
+
+const Price = styled(Title)`
+  transform: translateY(50%);
+  opacity: 0;
+  transition: 300ms ease;
+  margin: 0em;
 `
 
 const SoldOut = styled(Title)`
@@ -95,6 +104,10 @@ const InfoContainer = styled.div<{ inStock: boolean; hoveredStatus: boolean }>`
     }
     ${Image2} {
       display: block;
+    }
+    ${Price} {
+      transform: translateY(0);
+      opacity: 1;
     }
     cursor: pointer;
   }
