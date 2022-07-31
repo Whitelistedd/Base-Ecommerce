@@ -36,7 +36,7 @@ const Container = styled.div`
   min-height: 80px;
   width: 4vw;
   object-fit: contain;
-  background-color: #f4fbfd;
+  transition: 300ms ease;
   padding: 5px;
   animation-name: ${fadein};
   animation-duration: 8s;

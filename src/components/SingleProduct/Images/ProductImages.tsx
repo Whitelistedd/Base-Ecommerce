@@ -41,7 +41,7 @@ export const ProductImages: React.FC<ProductImagesProps> = ({
           />
         ))}
       </ImageGroup>
-      <Image
+      <MainImage
         alt={productInfo?.title}
         src={mainImage || productInfo?.img?.[0]}
       />
@@ -54,15 +54,14 @@ const fadein = keyframes`
 25% { opacity: 1; }
 `
 
-const Image = styled.img`
-  width: 100%;
+const MainImage = styled.img`
+  width: 430px;
   height: 60vh;
   object-fit: cover;
-  background-color: #f4fbfd;
   padding: 5px;
+  transition: 300ms;
   animation-name: ${fadein};
   animation-duration: 8s;
-  animation-iteration-count: 1;
 `
 
 const ImageGroup = styled.div`
@@ -78,7 +77,7 @@ const ImageContainer = styled.div`
   height: 100%;
   @media only screen and (max-width: ${devices.Desktop}px) {
     width: 50%;
-    ${Image} {
+    ${MainImage} {
       height: 70%;
       width: 70%;
     }
@@ -93,7 +92,7 @@ const ImageContainer = styled.div`
       flex-direction: row;
       justify-content: space-between;
     }
-    ${Image} {
+    ${MainImage} {
       max-width: 98%;
       max-height: 60vh;
     }

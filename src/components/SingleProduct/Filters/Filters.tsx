@@ -15,7 +15,7 @@ export const SingleProductFilters: React.FC<FiltersProps> = ({
   return (
     <>
       <FilterContainer>
-        <FilterTitle>Размер : {SelectedSize}</FilterTitle>
+        <FilterTitle>Размер :</FilterTitle>
         <Filter>
           {/* покажет все доступные размеры товара */}
           {AvailableSizes?.map((size) => (
@@ -29,7 +29,9 @@ export const SingleProductFilters: React.FC<FiltersProps> = ({
         </Filter>
       </FilterContainer>
       <FilterContainer>
-        <FilterTitle>Цвета : {SelectedColor}</FilterTitle>
+        <FilterTitle>
+          Цвета : <SelectedFilter>{SelectedColor}</SelectedFilter>{' '}
+        </FilterTitle>
         <Filter>
           {/* покажет все доступные цвета товара */}
           {AvailableColors?.map((color) => (
@@ -55,6 +57,11 @@ const FilterContainer = styled.div`
 
 const Filter = styled.div`
   display: flex;
+`
+
+const SelectedFilter = styled.span`
+  font-weight: 400;
+  font-size: 14px;
 `
 
 const FilterTitle = styled.h4`
