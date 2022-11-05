@@ -50,7 +50,7 @@ export const CheckOut = styled.div`
   flex-direction: column;
   flex: 1;
   padding-top: 4em;
-  padding-left: 4em;
+  padding-left: 2em;
   background: #fafafa;
 
   @media only screen and (max-width: ${devices.Laptop}px) {

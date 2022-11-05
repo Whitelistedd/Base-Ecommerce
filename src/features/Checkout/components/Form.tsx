@@ -4,7 +4,6 @@ import {
   ErrorMessage,
   GatheredInput,
   Information,
-  Input,
   InputPhone,
   InputRadio,
   Label,
@@ -18,6 +17,7 @@ import { FormProps, InfoType } from '../types/Checkout.model'
 import { SubmitHandler, useForm } from 'react-hook-form'
 
 import { AppDispatch } from 'redux/store/store'
+import { Input } from 'components/Input/Input'
 import React from 'react'
 import { handleShipping } from '../utils/handleShippingCost'
 import { newCheckout } from '../api/newCheckout'
@@ -51,67 +51,75 @@ export const Form: React.FC<FormProps> = ({ cart, setShipping }) => {
 
   return (
     <Information onSubmit={handleSubmit(onSubmit)}>
-      <Title>Контакты</Title>
+      <Title>Contact information</Title>
       <Input
         {...register('email', {
-          required: 'Пожалуйста, введите свой адрес Эл. адрес',
+          required: 'Enter a valid email',
         })}
         type="email"
-        placeholder="Эл. адрес"
+        placeholder="Email"
+        error={errors?.email?.message}
       />
-      <Title>Адреса доставки</Title>
+      <Title>Shipping address</Title>
       <GatheredInput>
         <Input
           {...register('firstName', {
-            required: 'Пожалуйста, введите свое Имя',
+            required: 'Enter a First name',
           })}
           type="text"
-          placeholder="Имя"
+          placeholder="First name"
+          error={errors?.firstName?.message}
         />
         <Input
           {...register('lastName', {
-            required: 'Пожалуйста, введите свою фамилию',
+            required: 'Enter a Last name',
           })}
           type="text"
-          placeholder="Фамилия"
+          placeholder="Last name"
+          error={errors?.lastName?.message}
         />
       </GatheredInput>
       <Input
         {...register('address.address', {
-          required: 'Пожалуйста, введите свой адрес',
+          required: 'Enter an address',
         })}
         type="text"
-        placeholder="Адрес"
+        placeholder="Address"
+        error={errors?.address?.address?.message}
       />
       <Input
         {...register('address.apartment')}
         type="text"
-        placeholder="Квартира, люкс и т. д. (по желанию)"
+        placeholder="Appartment, suite, etc. (optional)"
+        error={errors?.address?.apartment?.message}
       />
       <Input
         {...register('address.city', {
-          required: 'Пожалуйста, введите свой город',
+          required: 'Enter a City',
         })}
         type="text"
-        placeholder="Город"
+        placeholder="City"
+        error={errors?.address?.city?.message}
       />
       <GatheredInput>
         <Input
           {...register('address.country', { required: true })}
           type="text"
-          placeholder="Страна/регион"
+          placeholder="Country/Region"
+          error={errors?.address?.country?.message}
         />
         <Input
           {...register('address.zipCode', {
-            required: 'Пожалуйста, введите ваш почтовый индекс',
+            required: 'Enter a postal code',
           })}
           type="text"
-          placeholder="почтовый индекс"
+          placeholder="Postal code"
+          error={errors?.address?.zipCode?.message}
         />
       </GatheredInput>
-      <InputPhone
+      <Input
         {...register('phoneNumber', {
-          required: 'Пожалуйста введите ваш номер телефона',
+          required: 'Enter a phone number',
           pattern: {
             value: /^((\+7|7|8)+([0-9]){10})$/gm,
             message: 'invalid phone number',
@@ -119,10 +127,11 @@ export const Form: React.FC<FormProps> = ({ cart, setShipping }) => {
           valueAsNumber: true,
         })}
         type="tel"
-        placeholder="Телефон — получайте SMS-поддержку, обновления и предложения от нашей команды "
+        placeholder="Phone — recieve SMS-support, updates and offers from our team "
+        error={errors?.phoneNumber?.message}
       />
       <Container>
-        <Title>Способ доставки</Title>
+        <Title>Shipping Methods</Title>
 
         <ShippingForm>
           <ShippingWrap>
@@ -152,16 +161,6 @@ export const Form: React.FC<FormProps> = ({ cart, setShipping }) => {
           </ShippingWrap>
         </ShippingForm>
       </Container>
-      {errors && (
-        <ErrorMessage>
-          {errors?.email?.message ||
-            errors?.lastName?.message ||
-            errors?.address?.address?.message ||
-            errors?.address?.city?.message ||
-            errors?.address?.zipCode?.message ||
-            errors?.phoneNumber?.message}
-        </ErrorMessage>
-      )}
       <Button type="submit">Checkout</Button>
     </Information>
   )

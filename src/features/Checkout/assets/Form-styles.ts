@@ -43,9 +43,8 @@ export const GatheredInput = styled.div`
   width: 100%;
   display: flex;
   gap: 1em;
-  justify-content: space-between;
-  input {
-    width: 100%;
+  div {
+    flex: 1;
   }
 `
 
@@ -106,12 +105,11 @@ export const Price = styled.p`
 export const Information = styled.form`
   display: flex;
   flex-direction: column;
-  width: 80%;
+  width: 90%;
   min-height: 60%;
   gap: 1em;
-  padding: 0.5em;
+  padding: 0.5em 0em 3em 0em;
   @media only screen and (max-width: ${devices.Laptop}px) {
-    width: 90%;
     justify-content: center;
   }
 `

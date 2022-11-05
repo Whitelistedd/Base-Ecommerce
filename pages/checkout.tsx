@@ -73,7 +73,6 @@ const Left = styled.div`
   padding-top: 4em;
   padding-right: 4em;
   width: 100%;
-  height: 100%;
   flex-direction: column;
   flex: 1.3;
   align-items: flex-end;
