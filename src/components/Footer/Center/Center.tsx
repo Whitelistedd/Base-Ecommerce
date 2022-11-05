@@ -1,13 +1,12 @@
+import { FooterPages } from 'data/footerPages'
+import { List } from '@mui/material'
 import React from 'react'
 import styled from 'styled-components'
-import { List } from '@mui/material'
-
-import { FooterPages } from '../../../data'
 
 export const Center: React.FC = () => {
   return (
     <Container>
-      <Title>Помощь</Title>
+      <Title>HELP</Title>
       <List
         sx={{
           mt: 1,
@@ -26,11 +25,12 @@ export const Center: React.FC = () => {
 }
 
 const ListItemText = styled.li`
-  color: rgb(109, 109, 109);
+  letter-spacing: 0.5px;
+  font-size: 0.95em;
 `
 
 const Title = styled.div`
-  font-size: 16px;
+  font-size: 0.8em;
   font-style: normal;
   font-weight: 700;
   height: 21.4375px;

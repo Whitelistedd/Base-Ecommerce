@@ -1,4 +1,4 @@
-import { filtersType } from '../ProductsList/ProductsList.model'
+import { filtersType } from 'GlobalTypes/GlobalTypes.model'
 
 export interface ColorButtonProps {
   colorName: string

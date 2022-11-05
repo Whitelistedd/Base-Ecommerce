@@ -1,11 +1,11 @@
 import React from 'react'
-import styled from 'styled-components'
 import { Typography } from '@mui/material'
+import styled from 'styled-components'
 
 export const Right: React.FC = () => {
   return (
     <Container>
-      <Title>Новостная рассылка</Title>
+      <Title>NEWSLETTER</Title>
       <Typography
         sx={{
           mt: 3,
@@ -13,20 +13,18 @@ export const Right: React.FC = () => {
           fontSize: '15px',
           fontStyle: 'normal',
           fontWeight: 400,
-          color: 'rgb(109, 109, 109)',
+          color: '#9d9d9d',
         }}
       >
-        Подпишитесь, чтобы получать обновления, доступ к
-        <br />
-        эксклюзивные предложения и многое другое.
+        Subscribe to receive updates, access to exclusive deals, and more.
       </Typography>
-      <Input placeholder="Введите ваш адрес электронной почты" />
+      <Input placeholder="Enter your email address" />
     </Container>
   )
 }
 
 const Title = styled.div`
-  font-size: 16px;
+  font-size: 0.8em;
   font-style: normal;
   font-weight: 700;
   height: 21.4375px;

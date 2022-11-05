@@ -1,0 +1,5 @@
+export * from './components/Products'
+export * from './components/Product'
+export * from './assets/Products-styles'
+export * from './hooks/useProductsList'
+export { getAllProducts } from './api/getProductsList'

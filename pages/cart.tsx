@@ -1,9 +1,8 @@
-import React from 'react'
-import { Cart } from '../src/components/Cart/Cart'
-import { NextPage } from 'next'
-import { UpdateProducts } from '../src/apiCalls/apiCalls'
-import { wrapper } from '../src/redux/store/store'
+import { Cart, UpdateProducts } from 'features/Cart'
+
 import Head from 'next/head'
+import { NextPage } from 'next'
+import { wrapper } from 'redux/store/store'
 
 const CartPage: NextPage = () => {
   return (

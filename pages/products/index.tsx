@@ -1,21 +1,22 @@
-import React, { useState } from 'react'
-import { useEffect } from 'react'
-import styled from 'styled-components'
-
-import { Filters } from '../../src/components/ProductsList/Filters/Filters'
-import { Products } from '../../src/components/ProductsList/Products'
-import { devices, unFade } from '../../src/data'
 import { GetStaticProps, NextPage } from 'next'
-import { useRouter } from 'next/router'
-import { getAllProducts } from '../../src/apiCalls/apiCalls'
-import { useQuery, UseQueryResult } from 'react-query'
 import {
   ProductDataType,
   ProductsArrayType,
-} from '../../src/components/GlobalTypes.model'
-import MobileFilter from '../../src/components/ProductsList/Filters/MobileFilter'
+  filtersType,
+} from 'GlobalTypes/GlobalTypes.model'
+import React, { useState } from 'react'
+import { UseQueryResult, useQuery } from 'react-query'
+import { getAllProducts, useProductsList } from 'features/Products'
+
+import { Filters } from 'components/Filters/Filters'
 import Head from 'next/head'
-import { filtersType } from '../../src/components/ProductsList/ProductsList.model'
+import MobileFilter from 'components/Filters/MobileFilter'
+import { Products } from 'features/Products/components/Products'
+import { devices } from 'data/MediaQueries'
+import styled from 'styled-components'
+import { unFade } from 'data/Animations'
+import { useEffect } from 'react'
+import { useRouter } from 'next/router'
 
 export interface ProductsListPageProps {
   products: ProductDataType[]
@@ -33,12 +34,8 @@ export const ProductsListPage: NextPage<ProductsListPageProps> = ({
     categories: '',
   })
 
-  const { data, status }: UseQueryResult<ProductsArrayType, Error> = useQuery<
-    ProductsArrayType,
-    Error
-  >(['products'], getAllProducts, {
-    initialData: products.length === 0 ? undefined : products,
-  })
+  const { data, status }: UseQueryResult<ProductsArrayType, Error> =
+    useProductsList(products ? products : [])
 
   /* обрабатывать фильтры для страницы продуктов */
   const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {

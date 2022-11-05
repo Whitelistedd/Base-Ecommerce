@@ -1,4 +1,4 @@
-import { CartProductType } from '../../components/Cart/Cart.model'
+import { CartProductType } from 'features/Cart/types/Cart.model'
 
 export interface CartInitialState {
   products: CartProductType[]

@@ -1,28 +1,27 @@
-import Link from 'next/link'
-import styled, { keyframes } from 'styled-components'
-import { Products } from '../src/components/ProductsList/Products'
-import { devices, unFade } from '../src/data'
 import { Background, Parallax } from 'react-parallax'
 import { GetStaticProps, NextPage } from 'next'
-import { getAllProducts } from '../src/apiCalls/apiCalls'
-import { useQuery, UseQueryResult } from 'react-query'
-import { ProductsArrayType } from '../src/components/GlobalTypes.model'
-import { Loading } from '../src/components/Loading/Loading'
-import { Failed } from '../src/components/Failed/Failed'
+import { UseQueryResult, useQuery } from 'react-query'
+import { fadeUp, unFade } from 'data/Animations'
+import { getAllProducts, useProductsList } from 'features/Products'
+import styled, { keyframes } from 'styled-components'
+
+import { Button } from 'components/Button/Button'
+import { Failed } from 'components/Failed/Failed'
 import Head from 'next/head'
 import Image from 'next/image'
+import Link from 'next/link'
+import { Loading } from 'components/Loading/Loading'
+import { Products } from 'features/Products/components/Products'
+import { ProductsArrayType } from 'GlobalTypes/GlobalTypes.model'
+import { devices } from 'data/MediaQueries'
 
 interface HomePageProps {
   products: ProductsArrayType
 }
 
 const HomePage: NextPage<HomePageProps> = ({ products }) => {
-  const { data, status }: UseQueryResult<ProductsArrayType, Error> = useQuery<
-    ProductsArrayType,
-    Error
-  >(['products'], getAllProducts, {
-    initialData: products.length === 0 ? undefined : products,
-  })
+  const { data, status }: UseQueryResult<ProductsArrayType, Error> =
+    useProductsList(products ? products : [])
 
   if (status === 'loading') {
     return <Loading />
@@ -52,10 +51,7 @@ const HomePage: NextPage<HomePageProps> = ({ products }) => {
         </Background>
         <HeaderWrap>
           <Link href={'/products?filter=men'}>
-            <HeaderButton>Мужчины</HeaderButton>
-          </Link>
-          <Link href={'/products?filter=women'}>
-            <HeaderButton>Женщины</HeaderButton>
+            <HeaderButton>SHOP NOW</HeaderButton>
           </Link>
         </HeaderWrap>
       </StyledParallax>
@@ -66,7 +62,7 @@ const HomePage: NextPage<HomePageProps> = ({ products }) => {
           products={data ? data : []}
         />
         <Link href={'/products/'}>
-          <AllProductsButton>Посмотреть продукты</AllProductsButton>
+          <AllProductsButton>VIEW ALL PRODUCTS</AllProductsButton>
         </Link>
       </Container>
     </>
@@ -84,38 +80,13 @@ export const getStaticProps: GetStaticProps = async () => {
   }
 }
 
-const fadeUp = keyframes`
-  0% {
-    transform: translateY(100px);
-    opacity: 0%;
-  }
-  100% {
-    transform: translateY(0);
-    opacity: 100%;
-  }
-`
-
-const HeaderButton = styled.button`
-  font-family: 'Montserra', sans-serif;
-  background-color: transparent;
-  border: 0px;
-  color: white;
-  background-color: #282828;
-  font-weight: 700;
-  letter-spacing: 2px;
-  font-size: 1.3em;
-  padding: 0.8em;
-  z-index: 2;
-  cursor: pointer;
-  &:hover {
-    background-color: #1d1c1c;
-  }
+const HeaderButton = styled(Button)`
   animation: 500ms ease ${fadeUp};
   animation-delay: 300ms;
 `
 
 const AllProductsButton = styled(HeaderButton)`
-  font-size: 1.2em;
+  font-size: 0.95em;
 `
 
 const HeaderWrap = styled.div`
@@ -164,18 +135,13 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   animation: 500ms ${unFade} ease;
+  gap: 30px;
   img {
     height: 100%;
   }
-  @media only screen and (max-width: ${devices.Laptop}px) {
-    ${HeaderButton} {
-      font-size: 1.2em;
-    }
-  }
-  @media only screen and (max-width: ${devices.Phone}px) {
-    ${HeaderButton} {
-      font-size: 1em;
-    }
+
+  @media only screen and (max-width: 415px) {
+    gap: 50px;
   }
 `
 

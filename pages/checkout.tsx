@@ -1,15 +1,15 @@
 import { Alert, Snackbar } from '@mui/material'
-import { useRouter } from 'next/router'
+import { AppDispatch, useAppSelector } from 'redux/store/store'
 import { useEffect, useState } from 'react'
-import styled from 'styled-components'
 
-import { Checkout } from '../src/components/Checkout/Checkout'
-import { Form } from '../src/components/Checkout/Form'
-import { devices } from '../src/data'
-import { setError } from '../src/redux/slices/cart'
-import { AppDispatch, useAppSelector } from '../src/redux/store/store'
-import { NextPage } from 'next'
+import { Checkout } from 'features/Checkout'
+import { Form } from 'features/Checkout/components/Form'
 import Head from 'next/head'
+import { NextPage } from 'next'
+import { devices } from 'data/MediaQueries'
+import { setError } from 'redux/slices/cart'
+import styled from 'styled-components'
+import { useRouter } from 'next/router'
 
 const CheckoutPage: NextPage = () => {
   const cart = useAppSelector((state) => state.cart)

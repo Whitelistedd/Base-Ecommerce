@@ -1,22 +1,22 @@
-import { Typography } from '@mui/material'
-import React from 'react'
-import styled from 'styled-components'
 import Image from 'next/image'
+import React from 'react'
+import { Typography } from '@mui/material'
+import styled from 'styled-components'
 
 export const Left: React.FC = () => {
   return (
     <Container>
-      <Title>О магазине</Title>
+      <Title>ABOUT THE SHOP</Title>
       <Typography
         letterSpacing={'normal'}
         fontSize={15}
-        sx={{ color: 'rgb(109, 109, 109)', mb: 1, mt: 1 }}
+        sx={{ color: '#9d9d9d', mb: 1, mt: 1 }}
       >
-        После того, как мы были разочарованы тем, что не смогли найти подходящие
-        высококачественные предметы первой необходимости по разумной цене, мы
-        решили взять дело в свои руки.
+        0. After being frustrated with being unable to find fitted high quality
+        essentials at a fair price, we decided to take matters in to our own
+        hands.
       </Typography>
-      <Typography>Подписывайтесь на нас</Typography>
+      <Typography>Follow us</Typography>
       <SocialContainer>
         <A aria-label="вконтакт" href="https://www.vk.ru/" target={'#blank'}>
           <Icon
@@ -48,7 +48,7 @@ export const Left: React.FC = () => {
 const Icon = styled(Image)``
 
 const Title = styled.div`
-  font-size: 16px;
+  font-size: 0.8em;
   font-style: normal;
   font-weight: 700;
   height: 21.4375px;
@@ -71,9 +71,12 @@ const A = styled.a`
 const Container = styled.div`
   display: flex;
   flex-direction: column;
-  flex-basis: 460px;
+  flex-basis: 400px;
   line-height: 24px;
   gap: 1em;
+  * {
+    font-family: 'FuturaLight';
+  }
   @media (max-width: 1134px) {
     flex-basis: 280px;
   }

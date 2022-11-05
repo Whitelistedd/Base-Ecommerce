@@ -1,11 +1,10 @@
-import { useUser } from '@auth0/nextjs-auth0'
+import { Failed } from 'components/Failed/Failed'
 import Image from 'next/image'
+import { Loading } from 'components/Loading/Loading'
 import React from 'react'
+import { devices } from 'data/MediaQueries'
 import styled from 'styled-components'
-import { Failed } from '../src/components/Failed/Failed'
-import { Loading } from '../src/components/Loading/Loading'
-
-import { devices } from '../src/data'
+import { useUser } from '@auth0/nextjs-auth0'
 
 const Profile = () => {
   const { user, error, isLoading } = useUser()
@@ -28,8 +27,8 @@ const Profile = () => {
           </ProfileImage>
           <h2>{user?.name}</h2>
           <p>{user?.email}</p>
-          <p>Данная страница находится в разработке</p>
-          <Button href={'/api/auth/logout'}>logout</Button>
+          <p>Current Page is under maintanance</p>
+          <Button href={'/api/auth/logout'}>Logout</Button>
         </RegisterContainer>
       )}
     </Container>

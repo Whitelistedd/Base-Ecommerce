@@ -1,16 +1,16 @@
-import { PersonOutlineOutlined } from '@mui/icons-material'
-import MenuIcon from '@mui/icons-material/Menu'
-import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined'
-import { Badge } from '@mui/material'
+import { NavbarProps, displayFixedType } from './Navbar.model'
 import React, { useEffect, useState } from 'react'
-import Link from 'next/link'
-import styled from 'styled-components'
-import Image from 'next/image'
 
+import { Badge } from '@mui/material'
+import Image from 'next/image'
+import Link from 'next/link'
+import MenuIcon from '@mui/icons-material/Menu'
+import { MenuItems } from 'data/MenuItems'
 import { NavMenu } from './NavMenu/NavMenu'
-import { displayFixedType, NavbarProps } from './Navbar.model'
-import { useAppSelector } from '../../redux/store/store'
-import { MenuItems } from '../../data'
+import { PersonOutlineOutlined } from '@mui/icons-material'
+import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined'
+import styled from 'styled-components'
+import { useAppSelector } from 'redux/store/store'
 
 export const Navbar: React.FC<NavbarProps> = ({ className, homePage }) => {
   const [open, setOpen] = useState(false)
@@ -76,13 +76,7 @@ export const Navbar: React.FC<NavbarProps> = ({ className, homePage }) => {
   )
 }
 
-const StyledMenuIcon = styled(MenuIcon)`
-  transform: rotate(0deg);
-
-  &:hover {
-    transform: rotate(720deg);
-  }
-`
+const StyledMenuIcon = styled(MenuIcon)``
 
 const Left = styled.div`
   flex: 1;
@@ -130,7 +124,7 @@ const Wrapper = styled.div<{
   align-items: center;
   border-bottom: 1px solid #dcdcdc;
   z-index: 4;
-  width: 100%;
+  min-width: 100vw;
   transition: 300ms ease;
   position: ${(props) => (props.displayFixed ? 'fixed' : '')};
   color: ${(props) =>
@@ -142,12 +136,18 @@ const Wrapper = styled.div<{
   &:hover {
     background-color: white;
     color: black;
+
+    .MuiSvgIcon-fontSizeMedium {
+      filter: none;
+    }
   }
   .MuiSvgIcon-fontSizeMedium {
     width: 30px;
     height: 30px;
     opacity: 1;
-    transition: opacity 300ms ease, transform 1s ease;
+    transition: opacity 300ms ease;
+    filter: ${(props) =>
+      props.displayFixed ? 'none' : 'drop-shadow(0px 0px 10px black)'};
     &:hover {
       opacity: 0.5;
       cursor: pointer;
@@ -162,6 +162,7 @@ const Container = styled.div<{ displayFixed: displayFixedType }>`
     width: 1920px;
     ${Wrapper} {
       width: 1920px;
+      min-width: 10vw;
     }
   }
 `

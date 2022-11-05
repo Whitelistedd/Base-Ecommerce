@@ -1,9 +1,10 @@
-import React from 'react'
-import { Close } from '@mui/icons-material'
 import { Drawer, List, ListItem, ListItemText, Typography } from '@mui/material'
-import styled from 'styled-components'
+
+import { Close } from '@mui/icons-material'
 import Link from 'next/link'
 import { NavMenuProps } from '../Navbar.model'
+import React from 'react'
+import styled from 'styled-components'
 
 const drawerWidth = '330px'
 
@@ -18,12 +19,18 @@ export const NavMenu: React.FC<NavMenuProps> = ({
       open={open}
       sx={{
         width: drawerWidth,
-        '.MuiDrawer-paper': { width: drawerWidth },
+        '.MuiDrawer-paper': {
+          width: drawerWidth,
+          backgroundColor: '#161616',
+          color: 'white',
+        },
       }}
       variant="temporary"
       anchor="left"
     >
-      <List sx={{ ml: 3, mt: 1.5, mr: 3 }}>
+      <List
+        sx={{ ml: 3, mt: 1.5, mr: 3, backgroundColor: '#161616', opacity: 0.7 }}
+      >
         <StyledCloseIcon
           onClick={() => toggleDrawer()}
           sx={{ cursor: 'pointer' }}
@@ -34,18 +41,15 @@ export const NavMenu: React.FC<NavMenuProps> = ({
               button
               sx={{
                 marginTop: 2,
-                borderBottom: '1px solid black',
+                borderBottom: '1px solid white',
                 paddingLeft: 0,
                 paddingBottom: 1.6,
                 textDecoration: 'none',
-                '&:hover': {
-                  backgroundColor: 'white',
-                },
               }}
             >
               <ListItemText>
                 <Typography
-                  sx={{ color: 'black', ml: 0.5 }}
+                  sx={{ color: 'white', ml: 0.5 }}
                   fontWeight={700}
                   fontSize={15}
                   letterSpacing={'.1rem'}

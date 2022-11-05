@@ -1,5 +1,6 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
-import { connect } from '../../../lib/connection'
+
+import { connect } from 'lib/connection'
 
 export default async function handler(
   req: NextApiRequest,

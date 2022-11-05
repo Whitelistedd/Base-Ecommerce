@@ -1,20 +1,21 @@
 import * as React from 'react'
-import Head from 'next/head'
-import { AppProps } from 'next/app'
-import { ThemeProvider } from '@mui/material/styles'
-import CssBaseline from '@mui/material/CssBaseline'
+
 import { CacheProvider, EmotionCache } from '@emotion/react'
 import { QueryClient, QueryClientProvider } from 'react-query'
+
+import { AppProps } from 'next/app'
+import CssBaseline from '@mui/material/CssBaseline'
+import GlobalStyles from 'assets/GlobalStyles'
+import Head from 'next/head'
+import { Layout } from '../Layout/Layout'
+import { Loading } from 'components/Loading/Loading'
 import Router from 'next/router'
 import Script from 'next/script'
+import { ThemeProvider } from '@mui/material/styles'
 import { UserProvider } from '@auth0/nextjs-auth0'
-
-import theme from '../src/theme'
-import { Layout } from '../Layout/Layout'
-import createEmotionCache from '../src/createEmotionCache'
-import { wrapper } from '../src/redux/store/store'
-import { Loading } from '../src/components/Loading/Loading'
-import GlobalStyles from '../src/GlobalStyles'
+import createEmotionCache from 'assets/createEmotionCache'
+import theme from 'theme'
+import { wrapper } from 'redux/store/store'
 
 // Client-side cache, shared for the whole session of the user in the browser.
 const clientSideEmotionCache = createEmotionCache()

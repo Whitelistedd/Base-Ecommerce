@@ -1,13 +1,12 @@
-import { CopyrightOutlined } from '@mui/icons-material'
-import { Typography } from '@mui/material'
-import React from 'react'
-import styled from 'styled-components'
-import Image from 'next/image'
-
-import { Left } from './Left/Left'
 import { Center } from './Center/Center'
+import { CopyrightOutlined } from '@mui/icons-material'
+import Image from 'next/image'
+import { Left } from './Left/Left'
+import React from 'react'
 import { Right } from './Right/Right'
-import { devices } from '../../data'
+import { Typography } from '@mui/material'
+import { devices } from 'data/MediaQueries'
+import styled from 'styled-components'
 
 export const Footer: React.FC = () => {
   return (
@@ -17,20 +16,20 @@ export const Footer: React.FC = () => {
         <Center />
         <Right />
       </Info>
-      <Copyright>
-        <CopyrightLeft>
+      <Bottom>
+        <Copyright>
           <CopyrightOutlined sx={{ fontSize: 15 }} />
-          <Typography sx={{ fontSize: 13 }}>Volxen</Typography>
-        </CopyrightLeft>
-        <CopyrightRight>
+          <Typography sx={{ fontSize: 15, fontWeight: 800 }}>Base</Typography>
+        </Copyright>
+        <PaymentMethods>
           <StyledImage
             width={200}
             height={100}
             alt="способы оплаты: Visa, MasterCard, МИР, СБП"
             src={'/assets/images/payments.svg'}
           />
-        </CopyrightRight>
-      </Copyright>
+        </PaymentMethods>
+      </Bottom>
     </Container>
   )
 }
@@ -40,7 +39,7 @@ const StyledImage = styled(Image)`
   height: 35px;
 `
 
-const Copyright = styled.div`
+const Bottom = styled.div`
   display: flex;
   justify-content: space-between;
   gap: 10px;
@@ -53,16 +52,17 @@ const Copyright = styled.div`
   }
 `
 
-const CopyrightRight = styled.div`
+const PaymentMethods = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
 `
 
-const CopyrightLeft = styled.div`
+const Copyright = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  gap: 2px;
 `
 
 const Info = styled.div`
@@ -83,6 +83,10 @@ const Container = styled.div`
   padding: 75px 0 42px;
   flex-direction: column;
   border: solid 1px #efefef;
+
+  * {
+    font-family: 'FuturaLight';
+  }
 
   @media only screen and (max-width: ${devices.Tablet}px) {
     ${Info} {
