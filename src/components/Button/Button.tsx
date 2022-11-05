@@ -23,4 +23,8 @@ export const StyledButton = styled(MuiButton)`
   &:hover {
     background-color: #1d1c1c;
   }
+  &:disabled {
+    color: grey;
+    cursor: not-allowed;
+  }
 `

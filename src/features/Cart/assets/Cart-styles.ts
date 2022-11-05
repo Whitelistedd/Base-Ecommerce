@@ -1,3 +1,4 @@
+import { Button } from 'components/Button/Button'
 import { devices } from 'data/MediaQueries'
 import styled from 'styled-components'
 
@@ -5,7 +6,9 @@ export const Wrapper = styled.div`
   display: flex;
   flex-direction: column;
   height: 100%;
-  width: 60%;
+  max-width: 1200px;
+  width: 100%;
+  padding: 0px 60px;
   gap: 2em;
   font-size: 16px;
 `
@@ -61,29 +64,17 @@ export const Total = styled.span`
 `
 
 export const Shipping = styled.span`
-  font-size: 1em;
+  font-size: 0.95em;
 `
 
-export const Button = styled.button`
+export const StyledButton = styled(Button)`
   font-size: 0.9em;
-  min-width: 15%;
   background-color: rgb(244, 112, 38);
-  outline: none;
   letter-spacing: 0.2em;
   font-weight: 700;
-  border: none;
-  color: white;
-  padding: 17px 20px;
-  transition: 400ms ease;
+  padding: 13px 20px;
   &:hover {
-    transition: 400ms ease;
-    cursor: pointer;
     background-color: rgb(220, 112, 38);
-  }
-  &:disabled {
-    color: grey;
-    cursor: not-allowed;
-    background-color: rgb(244, 112, 38);
   }
 `
 
@@ -92,22 +83,23 @@ export const Container = styled.div`
   justify-content: center;
   align-items: center;
   min-height: 70vh;
-  @media only screen and (max-width: ${devices.Desktop}px) {
-    ${Wrapper} {
-      width: 80%;
-    }
-  }
-  @media only screen and (max-width: ${devices.Tablet}px) {
+  color: #9d9d9d;
+  @media only screen and (max-width: 700px) {
     justify-content: center;
-    ${Wrapper} {
-      width: 91%;
-      font-size: 14px;
-    }
     ${Top} {
       display: none;
     }
     ${Shipping} {
       text-align: right;
+    }
+    ${StyledButton} {
+      width: 100%;
+    }
+  }
+
+  @media only screen and (max-width: ${devices.Phone}px) {
+    ${Wrapper} {
+      padding: 0px 20px;
     }
   }
 `

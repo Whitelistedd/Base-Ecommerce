@@ -83,6 +83,7 @@ const Container = styled.div`
   padding: 75px 0 42px;
   flex-direction: column;
   border: solid 1px #efefef;
+  height: 700px;
 
   * {
     font-family: 'FuturaLight';

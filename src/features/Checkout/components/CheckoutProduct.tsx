@@ -37,7 +37,9 @@ export const CheckoutProduct: React.FC<CheckoutProductProps> = ({ item }) => {
         </Badge>
         <ItemInfo>
           <ItemName>{item.title}</ItemName>
-          <ItemExtraInfo>{`${item.size} / ${item.color}`}</ItemExtraInfo>
+          <ItemExtraInfo>{`${
+            item.size
+          } / ${item.color.toUpperCase()}`}</ItemExtraInfo>
         </ItemInfo>
       </Item>
       <Price>₽{item.price * item.quantity}</Price>

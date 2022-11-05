@@ -22,14 +22,13 @@ export const Layout: React.FC<{ children: JSX.Element }> = ({ children }) => {
 
 const Wrap = styled.div`
   max-width: 1920px;
-  width: 100vw;
+  width: 100%;
 `
 
 const Container = styled.div`
-  max-width: 100vw;
+  max-width: 100%;
   display: flex;
   justify-content: center;
   align-items: center;
-  overflow-x: hidden;
   background: #fefeff;
 `

@@ -1,13 +1,13 @@
 import { AppDispatch, useAppSelector } from 'redux/store/store'
 import {
   Bottom,
-  Button,
   Container,
   Info,
   ProductsQauntity,
   ProductsTitle,
   ProductsTotal,
   Shipping,
+  StyledButton,
   Top,
   Total,
   Wrapper,
@@ -71,9 +71,9 @@ export const Cart = () => {
       ) : (
         <Wrapper>
           <Top>
-            <ProductsTitle>ТОВАР</ProductsTitle>
-            <ProductsQauntity>КОЛИЧЕСТВО</ProductsQauntity>
-            <ProductsTotal>ОБЩИЙ</ProductsTotal>
+            <ProductsTitle>Product</ProductsTitle>
+            <ProductsQauntity>Quantity</ProductsQauntity>
+            <ProductsTotal>Total</ProductsTotal>
           </Top>
           <Info>
             {cart.products?.map((item: CartProductType, index: number) => (
@@ -88,12 +88,10 @@ export const Cart = () => {
           </Info>
           <Bottom>
             <Total>₽{cart.total}</Total>
-            <Shipping>
-              Доставка и налоги рассчитываются при оформлении заказа
-            </Shipping>
-            <Button onClick={() => handleCheckout()}>
-              Перейти к оформлению
-            </Button>
+            <Shipping>Shipping & taxes calculated at checkout</Shipping>
+            <StyledButton onClick={() => handleCheckout()}>
+              Checkout
+            </StyledButton>
           </Bottom>
         </Wrapper>
       )}

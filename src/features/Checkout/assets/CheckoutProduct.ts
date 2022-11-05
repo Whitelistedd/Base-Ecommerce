@@ -19,40 +19,35 @@ export const ItemInfo = styled.div`
   display: flex;
   flex-direction: column;
   gap: 0.5em;
+  font-family: 'FuturaLight';
 `
 
 export const ItemName = styled.p`
   font-weight: 700;
+  font-family: 'FuturaLight';
   font-size: 14px;
+  margin: 0px;
 `
 
 export const ProductImage = styled.div`
   width: 70px;
-  min-width: 56px;
-  min-height: 76px;
+  max-width: 60px;
+  max-height: 100px;
 `
 
-export const StyledImage = styled(Image)``
+export const StyledImage = styled(Image)`
+  border-radius: 5px;
+`
 
 export const ItemExtraInfo = styled.p`
   font-size: 12px;
   color: grey;
+  font-family: 'FuturaLight';
+  margin: 0px;
 `
 
 export const Container = styled.div`
   display: flex;
   justify-content: space-between;
   align-items: center;
-
-  @media only screen and (max-width: ${devices.Laptop}px) {
-    ${StyledImage} {
-      width: 6vw;
-    }
-  }
-
-  @media only screen and (max-width: ${devices.Tablet}px) {
-    ${StyledImage} {
-      width: 8vw;
-    }
-  }
 `

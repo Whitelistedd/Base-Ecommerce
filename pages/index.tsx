@@ -11,6 +11,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Loading } from 'components/Loading/Loading'
+import { Navbar } from 'components/Navbar/Navbar'
 import { Products } from 'features/Products/components/Products'
 import { ProductsArrayType } from 'GlobalTypes/GlobalTypes.model'
 import { devices } from 'data/MediaQueries'
@@ -50,7 +51,7 @@ const HomePage: NextPage<HomePageProps> = ({ products }) => {
           </ParallaxImage>
         </Background>
         <HeaderWrap>
-          <Link href={'/products?filter=men'}>
+          <Link href={'/products'}>
             <HeaderButton>SHOP NOW</HeaderButton>
           </Link>
         </HeaderWrap>
@@ -136,6 +137,7 @@ const Container = styled.div`
   align-items: center;
   animation: 500ms ${unFade} ease;
   gap: 30px;
+  overflow-x: hidden;
   img {
     height: 100%;
   }

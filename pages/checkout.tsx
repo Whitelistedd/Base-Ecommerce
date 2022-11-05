@@ -75,7 +75,7 @@ const Left = styled.div`
   width: 100%;
   height: 100%;
   flex-direction: column;
-  flex: 1;
+  flex: 1.3;
   align-items: flex-end;
   border-right: 1px solid #e1e1e1;
 `
@@ -85,7 +85,7 @@ const Container = styled.div`
   width: 100%;
   min-height: 100vh;
   margin-bottom: -50px;
-  @media only screen and (max-width: ${devices.Tablet}px) {
+  @media only screen and (max-width: ${devices.Laptop}px) {
     flex-direction: column-reverse;
     gap: 2em;
     ${Left} {

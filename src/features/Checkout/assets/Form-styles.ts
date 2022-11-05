@@ -106,15 +106,12 @@ export const Price = styled.p`
 export const Information = styled.form`
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 80%;
   min-height: 60%;
   gap: 1em;
   padding: 0.5em;
   @media only screen and (max-width: ${devices.Laptop}px) {
     width: 90%;
-  }
-  @media only screen and (max-width: ${devices.Tablet}px) {
-    width: 80%;
     justify-content: center;
   }
 `

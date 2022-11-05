@@ -12,7 +12,7 @@ export const Left: React.FC = () => {
         fontSize={15}
         sx={{ color: '#9d9d9d', mb: 1, mt: 1 }}
       >
-        0. After being frustrated with being unable to find fitted high quality
+        After being frustrated with being unable to find fitted high quality
         essentials at a fair price, we decided to take matters in to our own
         hands.
       </Typography>

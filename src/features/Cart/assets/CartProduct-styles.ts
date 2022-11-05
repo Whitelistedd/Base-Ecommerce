@@ -4,20 +4,26 @@ import styled from 'styled-components'
 
 export const ProductWrap = styled.div`
   display: flex;
-  align-items: center;
   flex-direction: row;
+  flex-wrap: wrap;
   width: 100%;
-  flex: 2;
 `
 
 export const StyledImage = styled(Image)``
 
 export const ProductImage = styled.div`
-  width: 120px;
+  max-width: 120px;
+  width: 100%;
+  height: 100%;
+  min-width: 90px;
+  min-height: 90px;
 `
 
 export const ProductDetails = styled.div`
   display: flex;
+  padding-top: 20px;
+  align-self: flex-start;
+  justify-self: flex-start;
   gap: 1em;
   margin-left: 1em;
   flex-direction: column;
@@ -39,7 +45,7 @@ export const ProductSizeAndColor = styled.span`
 `
 
 export const ProductPrice = styled.span`
-  font-size: 0.75em;
+  font-size: 0.65em;
   font-weight: 700;
   letter-spacing: 2.4px;
   flex: 1;
@@ -48,6 +54,7 @@ export const ProductPrice = styled.span`
 export const Price = styled.span`
   flex: 1;
   text-align: right;
+  align-self: center;
   color: #9d9d9d;
 `
 
@@ -94,32 +101,41 @@ export const RemoveButton = styled.a`
 
 export const Product = styled.div`
   display: flex;
-  justify-content: center;
-  align-items: center;
   width: 100%;
 
-  @media only screen and (max-width: ${devices.Tablet}px) {
+  @media only screen and (max-width: 700px) {
     ${Amount} {
-      font-size: 20px;
+      font-size: 15px;
     }
     ${Price} {
       display: none;
     }
     ${ProductDetails} {
       gap: 0.4em;
-      align-self: flex-start;
     }
     ${ProductImage} {
       width: 70px;
     }
-  }
-  @media only screen and (max-width: ${devices.Phone}px) {
     ${QuantityContainer} {
       svg {
-        width: 40px;
-        height: 40px;
-        padding: 0.5em;
+        width: 33px;
+        height: 33px;
+        padding: 0.3em;
       }
+    }
+  }
+  @media only screen and (max-width: ${devices.Phone}px) {
+    ${ProductWrap} {
+      flex-direction: column;
+      gap: 7px;
+    }
+    ${QuantityWrap} {
+      align-self: flex-start;
+      width: 100%;
+      justify-content: space-between;
+      padding-left: 0.9em;
+      gap: 0px;
+      flex-direction: row;
     }
     ${ProductDetails} {
       font-size: 14px;

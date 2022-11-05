@@ -4,7 +4,7 @@ import styled from 'styled-components'
 export const CheckoutWrap = styled.div`
   display: flex;
   flex-direction: column;
-  width: 65%;
+  width: 85%;
   gap: 2em;
 `
 
@@ -52,18 +52,14 @@ export const CheckOut = styled.div`
   padding-top: 4em;
   padding-left: 4em;
   background: #fafafa;
+
   @media only screen and (max-width: ${devices.Laptop}px) {
-    ${CheckoutWrap} {
-      width: 90%;
-    }
-  }
-  @media only screen and (max-width: ${devices.Tablet}px) {
     padding: 4em 0em 0em 0em;
     height: 50vh;
     background-color: white;
     align-items: center;
     ${CheckoutWrap} {
-      width: 80%;
+      width: 90%;
     }
   }
 `

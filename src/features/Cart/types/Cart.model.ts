@@ -6,7 +6,7 @@ export type CartProductType = {
   _v: number
   _id: string
   categories: Array<string>
-  color: Array<AllColors>
+  color: string
   createdAt: string
   desc: string
   gender: Array<string>

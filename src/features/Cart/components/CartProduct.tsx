@@ -16,10 +16,7 @@ import {
 } from '../assets/CartProduct-styles'
 
 import { CartProductProps } from '../types/Cart.model'
-import Image from 'next/image'
 import React from 'react'
-import { devices } from 'data/MediaQueries'
-import styled from 'styled-components'
 
 export const CartProduct: React.FC<CartProductProps> = ({
   item,
@@ -27,38 +24,39 @@ export const CartProduct: React.FC<CartProductProps> = ({
   handlequantity,
   handleRemoveProduct,
 }) => {
+  console.log(item)
   return (
     <Product>
+      <ProductImage>
+        <StyledImage
+          layout="responsive"
+          width={120}
+          height={160}
+          src={`${item.img[0]}`}
+          alt={item.title}
+        />
+      </ProductImage>
       <ProductWrap>
-        <ProductImage>
-          <StyledImage
-            layout="responsive"
-            width={120}
-            height={160}
-            src={`${item.img[0]}`}
-            alt={item.title}
-          />
-        </ProductImage>
         <ProductDetails>
           <ProductName>{item.title}</ProductName>
           <ProductSizeAndColor>
-            {`${item.size} / ${item.color}`}
+            {`${item.size} / ${item.color?.toUpperCase()}`}
           </ProductSizeAndColor>
         </ProductDetails>
+        <QuantityWrap>
+          <QuantityContainer>
+            <Remove onClick={() => handlequantity(index, 'rem')} />
+            <Amount>{item.quantity}</Amount>
+            <Add onClick={() => handlequantity(index, 'add')} />
+          </QuantityContainer>
+          <RemoveProducts>
+            <RemoveButton onClick={() => handleRemoveProduct(index, item)}>
+              Remove
+            </RemoveButton>
+          </RemoveProducts>
+        </QuantityWrap>
+        <Price>₽{item.quantity * item.price}</Price>
       </ProductWrap>
-      <QuantityWrap>
-        <QuantityContainer>
-          <Remove onClick={() => handlequantity(index, 'rem')} />
-          <Amount>{item.quantity}</Amount>
-          <Add onClick={() => handlequantity(index, 'add')} />
-        </QuantityContainer>
-        <RemoveProducts>
-          <RemoveButton onClick={() => handleRemoveProduct(index, item)}>
-            Удалять
-          </RemoveButton>
-        </RemoveProducts>
-      </QuantityWrap>
-      <Price>₽{item.quantity * item.price}</Price>
     </Product>
   )
 }

@@ -126,7 +126,7 @@ const Wrapper = styled.div<{
   z-index: 4;
   min-width: 100vw;
   transition: 300ms ease;
-  position: ${(props) => (props.displayFixed ? 'fixed' : '')};
+  position: ${(props) => props.homePage && (props.displayFixed ? 'fixed' : '')};
   color: ${(props) =>
     props.homePage ? (props.displayFixed ? 'black' : 'white') : 'black'};
   background: ${(props) =>
@@ -147,7 +147,11 @@ const Wrapper = styled.div<{
     opacity: 1;
     transition: opacity 300ms ease;
     filter: ${(props) =>
-      props.displayFixed ? 'none' : 'drop-shadow(0px 0px 10px black)'};
+      props.homePage
+        ? props.displayFixed
+          ? 'none'
+          : 'drop-shadow(0px 0px 10px black)'
+        : 'none'};
     &:hover {
       opacity: 0.5;
       cursor: pointer;
