@@ -34,8 +34,6 @@ export const Products: React.FC<ProductsProps> = ({
   const TabletQuery = useMediaQuery('(max-width:869px)')
   const PhoneQuery = useMediaQuery('(max-width:685px)')
 
-  /* useMemo для фильтрации продуктов */
-
   /* если продукты все еще загружаются, тогда он покажет этот компонент загрузки */
   if (status === 'loading') {
     return <ProductsLoading />
