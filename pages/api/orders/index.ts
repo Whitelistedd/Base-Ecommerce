@@ -50,7 +50,6 @@ export default async function handler(
     ).catch((err) => console.log(err))
 
     /* функция проверки наличия всех товаров на складе из базы данных */
-    console.log(confirmedProducts)
     confirmedProducts?.forEach(
       (Info) =>
         Info.product.inStock === false &&

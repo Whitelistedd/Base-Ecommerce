@@ -21,9 +21,6 @@ export const Container = styled.div`
   &.active {
     box-shadow: 0px 0px 0px 2px black;
   }
-  @media only screen and (max-width: ${devices.Desktop}px) {
-    width: 6vw;
-  }
 
   @media only screen and (max-width: ${devices.Tablet}px) {
     height: 100%;

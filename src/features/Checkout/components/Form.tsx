@@ -37,6 +37,7 @@ export const Form: React.FC<FormProps> = ({ cart, setShipping }) => {
 
   /* отправит запрос с ключом idemp и получит URL-адрес из бэкэнда, чтобы перенаправить пользователя на страницу покупки */
   const onSubmit: SubmitHandler<InfoType> = async (Info) => {
+    console.log(Info)
     if (cart.products.length <= 0) {
       dispatch(setError('you dont have any products'))
     }
@@ -50,7 +51,10 @@ export const Form: React.FC<FormProps> = ({ cart, setShipping }) => {
   }
 
   return (
-    <Information onSubmit={handleSubmit(onSubmit)}>
+    <Information
+      onError={(info) => console.log(info)}
+      onSubmit={handleSubmit(onSubmit)}
+    >
       <Title>Contact information</Title>
       <Input
         {...register('email', {

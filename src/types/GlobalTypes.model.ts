@@ -32,10 +32,7 @@ export type ProductDataType = {
 export type ProductsArrayType = Array<ProductDataType>
 
 export type filtersType = {
-  color: string
-  size: string
-  gender: string
-  categories: string
+  [name: string]: any
 }
 
 export type itemFilterType = {

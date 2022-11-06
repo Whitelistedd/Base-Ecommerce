@@ -26,7 +26,7 @@ interface HomePageProps {
 
 const HomePage: NextPage<HomePageProps> = ({ productsData }) => {
   const { data, status }: UseQueryResult<getProductsListResult, Error> =
-    useProductsList(productsData, 1)
+    useProductsList(productsData, 1, {})
 
   if (status === 'loading') {
     return <Loading />
@@ -83,7 +83,7 @@ const HomePage: NextPage<HomePageProps> = ({ productsData }) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const productsData = await getAllProducts(1)
+  const productsData = await getAllProducts(1, {})
 
   return {
     props: {

@@ -26,37 +26,15 @@ import { useMediaQuery } from '@mui/material'
 
 export const Products: React.FC<ProductsProps> = ({
   className,
-  filters,
   HomePage,
   products,
   status,
 }) => {
-  const [filteredProducts, setFilteredProducts] = useState<
-    Array<ProductDataType>
-  >([])
-
   const LaptopQuery = useMediaQuery('(max-width:1200px)')
   const TabletQuery = useMediaQuery('(max-width:869px)')
   const PhoneQuery = useMediaQuery('(max-width:685px)')
 
   /* useMemo для фильтрации продуктов */
-  useMemo(() => {
-    if (!filters) return
-    if (!Array.isArray(products) || products.length === 0) return
-    try {
-      const filteredProducts = () => {
-        /* если фильтр соответствует категории в объекте продукта, будет показан продукт */
-        return products?.filter((item: ProductDataType) =>
-          Object.entries(filters).every(([key, value]) =>
-            value !== ''
-              ? item[key as keyof filtersType]?.includes(value as any)
-              : item[key as keyof filtersType]?.includes
-          )
-        )
-      }
-      setFilteredProducts(filteredProducts)
-    } catch (err) {}
-  }, [products, HomePage, filters])
 
   /* если продукты все еще загружаются, тогда он покажет этот компонент загрузки */
   if (status === 'loading') {
@@ -72,7 +50,7 @@ export const Products: React.FC<ProductsProps> = ({
       {/* если страница не является домашней страницей, будут показаны все продукты, если это домашняя страница, будут показаны только первые 4 */}
       {!HomePage ? (
         <Container className={className}>
-          {filteredProducts.map((item: ProductDataType) => (
+          {products.map((item: ProductDataType) => (
             <Product item={item} key={item._id} />
           ))}
         </Container>
@@ -100,7 +78,7 @@ export const Products: React.FC<ProductsProps> = ({
                 <ChevronLeft />
               </Prev>
               {!HomePage
-                ? filteredProducts.map((item: ProductDataType) => (
+                ? products.map((item: ProductDataType) => (
                     <Product item={item} key={item._id} />
                   ))
                 : products &&

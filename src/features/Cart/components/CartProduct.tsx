@@ -24,7 +24,6 @@ export const CartProduct: React.FC<CartProductProps> = ({
   handlequantity,
   handleRemoveProduct,
 }) => {
-  console.log(item)
   return (
     <Product>
       <ProductImage>

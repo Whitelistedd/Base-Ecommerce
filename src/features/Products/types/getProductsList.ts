@@ -1,4 +1,4 @@
-import { ProductsArrayType } from 'types/GlobalTypes.model'
+import { ProductsArrayType, filtersType } from 'types/GlobalTypes.model'
 
 export type getProductsListResult = {
   page: number
@@ -7,5 +7,6 @@ export type getProductsListResult = {
 }
 
 export type getProductsListType = (
-  page: number
+  page: number,
+  filters: filtersType
 ) => Promise<getProductsListResult>

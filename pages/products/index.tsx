@@ -37,12 +37,8 @@ export const ProductsListPage: NextPage<ProductsListPageProps> = ({
 
   const [currentPage, setCurrentPage] = useState(1)
 
-  const [totalPages, setTotalPages] = useState(2)
-
   const { data, status }: UseQueryResult<getProductsListResult, Error> =
-    useProductsList(productsData, currentPage)
-
-  console.log(data)
+    useProductsList(productsData, currentPage, filters)
 
   /* обрабатывать фильтры для страницы продуктов */
   const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -75,13 +71,11 @@ export const ProductsListPage: NextPage<ProductsListPageProps> = ({
 
   useEffect(() => {
     Object.keys(router.query).map((query) => {
-      console.log(query)
       setFilters((prev) => ({
         ...prev,
         [`${query}`]: router.query[`${query}`],
       }))
     })
-    console.log(filters)
   }, [router.query])
 
   return (
@@ -116,7 +110,7 @@ export const ProductsListPage: NextPage<ProductsListPageProps> = ({
               alignItems: 'center',
               justifyContent: 'center',
             }}
-            count={totalPages}
+            count={data && data.totalPages ? data.totalPages : 1}
             page={currentPage}
             onChange={handlePagination}
           />
@@ -127,7 +121,12 @@ export const ProductsListPage: NextPage<ProductsListPageProps> = ({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const productsData = await getAllProducts(1)
+  const productsData = await getAllProducts(1, {
+    color: '',
+    size: '',
+    gender: '',
+    categories: '',
+  })
 
   return {
     props: {
