@@ -12,9 +12,9 @@ import Link from 'next/link'
 import { Loading } from 'components/Loading/Loading'
 import { Products } from 'features/Products/components/Products'
 import { ProductsArrayType } from 'GlobalTypes/GlobalTypes.model'
+import { css } from '@emotion/react'
 import { devices } from 'data/MediaQueries'
 import styled from '@emotion/styled'
-import { css } from '@emotion/react'
 
 interface HomePageProps {
   products: ProductsArrayType
@@ -47,6 +47,7 @@ const HomePage: NextPage<HomePageProps> = ({ products }) => {
               width={1920}
               objectFit="cover"
               alt="background"
+              objectPosition={'top'}
               height={800}
             />
           </ParallaxImage>

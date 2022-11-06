@@ -21,48 +21,28 @@ export const HomeContainer = styled.div`
   @media only screen and (max-width: 684px) {
     padding: 0em 2em;
   }
-  /* grid-gap: 2em;
-  grid-template-rows: repeat(auto, auto); */
 `
 
 export const HomeProduct = styled(Product)`
   padding: 0px;
-
-  @media only screen and (max-width: 1467px) {
-    .ProductInfo {
-      min-width: 250px;
-      max-width: 250px;
-    }
+  flex: 1;
+  max-width: 300px;
+  min-width: 100px;
+  width: 100%;
+  height: 100%;
+  .ProductInfo {
+    max-width: 300px;
+    min-width: 100px;
+    width: 100%;
+    height: 100%;
+    flex: 1;
   }
 
-  @media only screen and (max-width: 1250px) {
+  @media only screen and (max-width: 685px) {
+    max-width: 400px;
     .ProductInfo {
-      min-width: 200px;
-      max-width: 200px;
+      max-width: 400px;
     }
-  }
-
-  @media only screen and (max-width: 995px) {
-    .ProductInfo {
-      min-width: 300px;
-      max-width: 300px;
-    }
-  }
-
-  @media only screen and (max-width: 781px) {
-    .ProductInfo {
-      min-width: 250px;
-      max-width: 250px;
-    }
-  }
-
-  @media only screen and (max-width: 684px) {
-    .ProductInfo {
-      width: 60vw;
-      max-width: 60vw;
-      height: 100%;
-    }
-    padding: 0em 2em;
   }
 `
 
@@ -77,6 +57,7 @@ export const StyledSwiper = styled(Swiper)`
     display: flex;
     justify-content: center;
     overflow: visible;
+    height: 100%;
   }
 
   .swiper-wrapper {
@@ -95,15 +76,16 @@ export const StyledSwiper = styled(Swiper)`
 
   .swiper-pagination {
     display: none;
+    position: unset;
   }
 
-  @media only screen and (max-width: 475px) {
+  @media only screen and (max-width: 685px) {
     .swiper-pagination {
       display: block;
     }
   }
 
-  @media only screen and (max-width: 415px) {
+  @media only screen and (max-width: 685px) {
     .swiper-pagination {
       display: block;
     }
@@ -140,7 +122,7 @@ export const Prev = styled.p`
     transform: scale(1.2);
   }
 
-  @media only screen and (max-width: 474px) {
+  @media only screen and (max-width: 685px) {
     display: none;
   }
 `

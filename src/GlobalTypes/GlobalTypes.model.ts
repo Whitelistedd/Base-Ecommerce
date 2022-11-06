@@ -22,7 +22,7 @@ export type ProductDataType = {
   desc: string
   gender: Array<string>
   img: Array<string>
-  inStock: boolean
+  inStock: number
   price: number
   size: Array<AllSizes>
   title: string

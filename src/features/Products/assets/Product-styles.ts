@@ -34,7 +34,7 @@ export const StyledImage = styled(Image)`
 `
 
 export const InfoContainer = styled.div<{
-  inStock: boolean
+  inStock: number
   hoveredStatus: boolean
 }>`
   min-width: 300px;

@@ -35,8 +35,9 @@ export const Products: React.FC<ProductsProps> = ({
     Array<ProductDataType>
   >([])
 
-  const TabletQuery = useMediaQuery('(max-width:995px)')
-  const PhoneQuery = useMediaQuery('(max-width:684px)')
+  const LaptopQuery = useMediaQuery('(max-width:1200px)')
+  const TabletQuery = useMediaQuery('(max-width:869px)')
+  const PhoneQuery = useMediaQuery('(max-width:685px)')
 
   /* useMemo для фильтрации продуктов */
   useMemo(() => {
@@ -80,8 +81,10 @@ export const Products: React.FC<ProductsProps> = ({
           <HomeContainer>
             <StyledSwiper
               modules={[Navigation, Pagination]}
-              spaceBetween={0}
-              slidesPerView={PhoneQuery ? 1 : TabletQuery ? 2 : 4}
+              spaceBetween={20}
+              slidesPerView={
+                PhoneQuery ? 1 : TabletQuery ? 2 : LaptopQuery ? 3 : 4
+              }
               pagination={{
                 enabled: true,
               }}

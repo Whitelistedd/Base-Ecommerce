@@ -16,7 +16,7 @@ export const fakeProduct: ProductDataType = {
   desc: '',
   gender: [''],
   img: [''],
-  inStock: false,
+  inStock: 0,
   price: 0,
   size: [
     {
