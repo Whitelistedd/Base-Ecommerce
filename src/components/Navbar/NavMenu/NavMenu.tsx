@@ -4,7 +4,7 @@ import { Close } from '@mui/icons-material'
 import Link from 'next/link'
 import { NavMenuProps } from '../Navbar.model'
 import React from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 const drawerWidth = '330px'
 

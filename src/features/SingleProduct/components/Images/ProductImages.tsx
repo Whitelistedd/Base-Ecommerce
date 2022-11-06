@@ -10,6 +10,8 @@ import {
 
 import { ProductImage } from './ProductImage'
 import React from 'react'
+import { css } from '@emotion/react'
+import { fadein } from 'data/Animations'
 import { useState } from 'react'
 
 export const ProductImages: React.FC<ProductImagesProps> = ({
@@ -40,6 +42,9 @@ export const ProductImages: React.FC<ProductImagesProps> = ({
         ))}
       </ImageGroup>
       <MainImage
+        css={css`
+          animation-name: ${fadein};
+        `}
         alt={productInfo?.title}
         src={mainImage || productInfo?.img?.[0]}
       />

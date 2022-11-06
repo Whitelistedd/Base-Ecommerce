@@ -1,7 +1,7 @@
 import { ProductImage } from 'features/SingleProduct/components/Images/ProductImage'
 import { Swiper } from 'swiper/react'
 import { devices } from 'data/MediaQueries'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 export const StyledProductImage = styled(ProductImage)`
   width: 100%;

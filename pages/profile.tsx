@@ -3,7 +3,7 @@ import Image from 'next/image'
 import { Loading } from 'components/Loading/Loading'
 import React from 'react'
 import { devices } from 'data/MediaQueries'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { useUser } from '@auth0/nextjs-auth0'
 
 const Profile = () => {

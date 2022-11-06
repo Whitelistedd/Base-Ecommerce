@@ -1,6 +1,6 @@
 import * as React from 'react'
 
-import { CacheProvider, EmotionCache } from '@emotion/react'
+import { CacheProvider, EmotionCache, Global } from '@emotion/react'
 import { QueryClient, QueryClientProvider } from 'react-query'
 
 import { AppProps } from 'next/app'
@@ -50,7 +50,7 @@ function MyApp(props: MyAppProps) {
           {/* CssBaseline kickstart an elegant, consistent, and simple baseline to build upon. */}
           <CssBaseline />
           <QueryClientProvider client={queryClient}>
-            <GlobalStyles />
+            <Global styles={GlobalStyles} />
             <Layout>
               <>
                 {loading && <Loading />}

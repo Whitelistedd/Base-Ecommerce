@@ -1,6 +1,6 @@
-import React from 'react'
-import styled from 'styled-components'
 import { ColorButtonProps } from './ColorButton.model'
+import React from 'react'
+import styled from '@emotion/styled'
 
 export const ColorRadioButton: React.FC<ColorButtonProps> = ({
   colorName,

@@ -4,7 +4,7 @@ import { Close } from '@mui/icons-material'
 import { Filters } from './Filters'
 import { MobileFilterProps } from './Filters.model'
 import { devices } from 'data/MediaQueries'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { useState } from 'react'
 
 const MobileFilter: React.FC<MobileFilterProps> = ({

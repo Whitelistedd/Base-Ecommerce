@@ -5,15 +5,15 @@ import {
   filtersType,
 } from 'GlobalTypes/GlobalTypes.model'
 import React, { useState } from 'react'
-import { UseQueryResult, useQuery } from 'react-query'
 import { getAllProducts, useProductsList } from 'features/Products'
 
 import { Filters } from 'components/Filters/Filters'
 import Head from 'next/head'
 import MobileFilter from 'components/Filters/MobileFilter'
 import { Products } from 'features/Products/components/Products'
+import { UseQueryResult } from 'react-query'
 import { devices } from 'data/MediaQueries'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { unFade } from 'data/Animations'
 import { useEffect } from 'react'
 import { useRouter } from 'next/router'
@@ -124,8 +124,9 @@ const ProductsContainer = styled.div`
 
 const StyledProducts = styled(Products)`
   width: 100%;
-  display: flex;
-  flex-wrap: wrap;
+  display: grid;
+  grid-template-rows: repeat(auto, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   .Image {
     min-width: 130px;
     width: 100%;

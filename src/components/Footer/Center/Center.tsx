@@ -1,7 +1,7 @@
 import { FooterPages } from 'data/footerPages'
 import { List } from '@mui/material'
 import React from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 export const Center: React.FC = () => {
   return (

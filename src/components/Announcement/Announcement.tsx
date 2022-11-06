@@ -1,8 +1,8 @@
-import Alert from '@mui/material/Alert'
 import React, { useState } from 'react'
-import styled from 'styled-components'
 
+import Alert from '@mui/material/Alert'
 import { displayAnnouncementType } from './Announcement.model'
+import styled from '@emotion/styled'
 
 const Container = styled.div<{ displayAnnouncement: displayAnnouncementType }>`
   display: ${(props) => (props.displayAnnouncement ? 'flex' : 'none')};

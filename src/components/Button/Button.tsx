@@ -1,5 +1,5 @@
 import MuiButton from '@mui/material/Button'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 export const Button = (props: any) => {
   return <StyledButton {...props}>{props.children}</StyledButton>

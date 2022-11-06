@@ -1,7 +1,7 @@
 import { Loading } from 'components/Loading/Loading'
 import { Product } from '../components/Product'
 import { Swiper } from 'swiper/react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 export const Container = styled.div`
   padding: 20px;
@@ -16,6 +16,7 @@ export const HomeContainer = styled.div`
   align-items: center;
   justify-content: center;
   padding: 0em 5em;
+  position: relative;
 
   @media only screen and (max-width: 684px) {
     padding: 0em 2em;
@@ -66,10 +67,11 @@ export const HomeProduct = styled(Product)`
 `
 
 export const StyledSwiper = styled(Swiper)`
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  position: static;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  flex-direction: column;
+  position: static !important;
 
   .swiper-slide {
     display: flex;
@@ -83,21 +85,8 @@ export const StyledSwiper = styled(Swiper)`
     width: 100%;
   }
 
-  .swiper-button-prev,
-  .swiper-button-next {
-    color: black !important;
-    background: white;
-    top: 40%;
-    border-radius: 50%;
-    width: 44px;
-    box-shadow: 0px 0px 10px black;
-    &::after {
-      font-size: 1em;
-    }
-  }
-
-  .swiper-button-next {
-    right: -30px;
+  .swiper-button-disabled {
+    display: none;
   }
 
   img {
@@ -111,14 +100,12 @@ export const StyledSwiper = styled(Swiper)`
   @media only screen and (max-width: 475px) {
     .swiper-pagination {
       display: block;
-      bottom: -85vw;
     }
   }
 
   @media only screen and (max-width: 415px) {
     .swiper-pagination {
       display: block;
-      bottom: -380px;
     }
   }
 `
@@ -138,14 +125,20 @@ export const Prev = styled.p`
   width: 40px;
   height: 40px;
   svg {
-    width: 30px;
-    height: 30px;
+    width: 40px;
+    height: 40px;
     color: #616060a7;
   }
   z-index: 1000;
   position: absolute;
   left: 25px;
   right: auto;
+  transition: 300ms ease;
+
+  &:hover {
+    cursor: pointer;
+    transform: scale(1.2);
+  }
 
   @media only screen and (max-width: 474px) {
     display: none;

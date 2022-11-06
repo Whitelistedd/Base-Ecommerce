@@ -5,7 +5,6 @@ import Head from 'next/head'
 import { Loading } from 'components/Loading/Loading'
 import { ProductDataType } from 'GlobalTypes/GlobalTypes.model'
 import { fakeProduct } from 'data/placeHolders'
-import { useQuery } from 'react-query'
 import { useRouter } from 'next/router'
 
 interface SingleProductProps {

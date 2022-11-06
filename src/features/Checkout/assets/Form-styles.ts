@@ -1,5 +1,5 @@
 import { devices } from 'data/MediaQueries'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 export const Title = styled.h1`
   font-size: 17px;

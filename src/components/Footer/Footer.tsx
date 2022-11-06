@@ -6,7 +6,7 @@ import React from 'react'
 import { Right } from './Right/Right'
 import { Typography } from '@mui/material'
 import { devices } from 'data/MediaQueries'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 export const Footer: React.FC = () => {
   return (

@@ -2,7 +2,7 @@ import { Announcement } from 'components/Announcement/Announcement'
 import { Footer } from 'components/Footer/Footer'
 import { Navbar } from 'components/Navbar/Navbar'
 import React from 'react'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 
 export const Layout: React.FC<{ children: JSX.Element }> = ({ children }) => {

@@ -3,7 +3,6 @@ import { GetStaticProps, NextPage } from 'next'
 import { UseQueryResult, useQuery } from 'react-query'
 import { fadeUp, unFade } from 'data/Animations'
 import { getAllProducts, useProductsList } from 'features/Products'
-import styled, { keyframes } from 'styled-components'
 
 import { Button } from 'components/Button/Button'
 import { Failed } from 'components/Failed/Failed'
@@ -11,10 +10,11 @@ import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Loading } from 'components/Loading/Loading'
-import { Navbar } from 'components/Navbar/Navbar'
 import { Products } from 'features/Products/components/Products'
 import { ProductsArrayType } from 'GlobalTypes/GlobalTypes.model'
 import { devices } from 'data/MediaQueries'
+import styled from '@emotion/styled'
+import { css } from '@emotion/react'
 
 interface HomePageProps {
   products: ProductsArrayType
@@ -45,6 +45,7 @@ const HomePage: NextPage<HomePageProps> = ({ products }) => {
               src={'/assets/images/background.webp'}
               layout="responsive"
               width={1920}
+              objectFit="cover"
               alt="background"
               height={800}
             />
@@ -52,7 +53,13 @@ const HomePage: NextPage<HomePageProps> = ({ products }) => {
         </Background>
         <HeaderWrap>
           <Link href={'/products'}>
-            <HeaderButton>SHOP NOW</HeaderButton>
+            <HeaderButton
+              css={css`
+                animation: 500ms ease ${fadeUp};
+              `}
+            >
+              SHOP NOW
+            </HeaderButton>
           </Link>
         </HeaderWrap>
       </StyledParallax>
@@ -82,7 +89,6 @@ export const getStaticProps: GetStaticProps = async () => {
 }
 
 const HeaderButton = styled(Button)`
-  animation: 500ms ease ${fadeUp};
   animation-delay: 300ms;
 `
 
@@ -121,11 +127,12 @@ const HomeProducts = styled(Products)`
 
 const ParallaxImage = styled.div`
   width: 1920px;
-  height: 800px;
+  height: 100%;
+  --aspect-ratio: 1.7333333333333334;
 `
 
 const StyledParallax = styled(Parallax)`
-  height: 800px;
+  height: 100%;
   width: 100%;
   top: -60px;
   position: relative;

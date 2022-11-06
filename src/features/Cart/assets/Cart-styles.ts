@@ -1,6 +1,6 @@
 import { Button } from 'components/Button/Button'
 import { devices } from 'data/MediaQueries'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 export const Wrapper = styled.div`
   display: flex;

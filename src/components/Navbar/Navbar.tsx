@@ -9,7 +9,7 @@ import { MenuItems } from 'data/MenuItems'
 import { NavMenu } from './NavMenu/NavMenu'
 import { PersonOutlineOutlined } from '@mui/icons-material'
 import ShoppingBagOutlinedIcon from '@mui/icons-material/ShoppingBagOutlined'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { useAppSelector } from 'redux/store/store'
 
 export const Navbar: React.FC<NavbarProps> = ({ className, homePage }) => {

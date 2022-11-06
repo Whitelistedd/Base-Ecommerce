@@ -1,5 +1,5 @@
 import { ColorRadioButton } from 'components/ColorButton/ColorButton'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 export const FilterContainer = styled.div`
   display: flex;

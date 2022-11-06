@@ -8,7 +8,7 @@ import Head from 'next/head'
 import { NextPage } from 'next'
 import { devices } from 'data/MediaQueries'
 import { setError } from 'redux/slices/cart'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 
 const CheckoutPage: NextPage = () => {

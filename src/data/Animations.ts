@@ -1,4 +1,4 @@
-import { keyframes } from 'styled-components'
+import { keyframes } from '@emotion/react'
 
 export const unFade = keyframes`
   0% {
@@ -21,4 +21,9 @@ export const fadeUp = keyframes`
     transform: translateY(0);
     opacity: 100%;
   }
+`
+
+export const fadein = keyframes`
+0% { opacity: 0; }
+25% { opacity: 1; }
 `

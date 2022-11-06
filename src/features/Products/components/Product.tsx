@@ -12,6 +12,8 @@ import {
 import React, { useState } from 'react'
 
 import { ProductProps } from '../types/Product'
+import { css } from '@emotion/react'
+import { unFade } from 'data/Animations'
 
 export const Product: React.FC<ProductProps> = ({ item, className }) => {
   const [hoveredStatus, setHoveredStatus] = useState(false)
@@ -27,7 +29,12 @@ export const Product: React.FC<ProductProps> = ({ item, className }) => {
           hoveredStatus={hoveredStatus}
           inStock={item.inStock}
         >
-          <Image1 className="ProductImage">
+          <Image1
+            css={css`
+              animation: 60ms ease ${unFade};
+            `}
+            className="ProductImage"
+          >
             {/* если пользователь наводит курсор на изображение, он покажет второе изображение продукта, а если нет, то покажет первое */}
             <StyledImage
               className="Image1"

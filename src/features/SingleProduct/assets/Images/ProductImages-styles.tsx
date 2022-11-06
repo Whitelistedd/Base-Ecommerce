@@ -1,11 +1,5 @@
-import styled, { keyframes } from 'styled-components'
-
 import { devices } from 'data/MediaQueries'
-
-export const fadein = keyframes`
-0% { opacity: 0; }
-25% { opacity: 1; }
-`
+import styled from '@emotion/styled'
 
 export const MainImage = styled.img`
   width: 430px;
@@ -13,7 +7,6 @@ export const MainImage = styled.img`
   object-fit: cover;
   padding: 5px;
   transition: 300ms;
-  animation-name: ${fadein};
   animation-duration: 8s;
 `
 

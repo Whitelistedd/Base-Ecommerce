@@ -10,7 +10,7 @@ import { ColorRadioButton } from 'components/ColorButton/ColorButton'
 import { FiltersProps } from '../../types/Filters.model'
 import React from 'react'
 import { SizeButton } from './SizeButton'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 export const SingleProductFilters: React.FC<FiltersProps> = ({
   AvailableColors,

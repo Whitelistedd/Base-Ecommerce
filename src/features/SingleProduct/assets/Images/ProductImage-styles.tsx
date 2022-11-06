@@ -1,12 +1,7 @@
-import styled, { keyframes } from 'styled-components'
-
 import Image from 'next/image'
 import { devices } from 'data/MediaQueries'
-
-export const fadein = keyframes`
-0% { opacity: 0; }
-25% { opacity: 1; }
-`
+import { fadein } from 'data/Animations'
+import styled from '@emotion/styled'
 
 export const ImageSelect = styled(Image)``
 
@@ -17,7 +12,6 @@ export const Container = styled.div`
   object-fit: contain;
   transition: 300ms ease;
   padding: 5px;
-  animation-name: ${fadein};
   animation-duration: 8s;
   animation-iteration-count: 1;
   &:hover {

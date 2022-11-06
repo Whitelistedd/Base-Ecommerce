@@ -1,4 +1,4 @@
-import styled, { keyframes } from 'styled-components'
+import styled from '@emotion/styled'
 
 import Image from 'next/image'
 import Link from 'next/link'
@@ -24,18 +24,7 @@ export const SoldOut = styled(Title)`
   color: #ff0000;
 `
 
-export const unFade = keyframes`
- 0% {
-  opacity: 0;
- }
- 100% {
-  opacity: 1;
- }
-`
-
-export const Image1 = styled.div`
-  animation: 60ms ease ${unFade};
-`
+export const Image1 = styled.div``
 
 export const Image2 = styled(Image1)`
   display: none;

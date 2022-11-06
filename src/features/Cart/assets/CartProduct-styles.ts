@@ -1,6 +1,6 @@
 import Image from 'next/image'
 import { devices } from 'data/MediaQueries'
-import styled from 'styled-components'
+import styled from '@emotion/styled'
 
 export const ProductWrap = styled.div`
   display: flex;
