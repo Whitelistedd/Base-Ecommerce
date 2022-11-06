@@ -1,5 +1,6 @@
+import { AppDispatchType } from 'redux/store/store'
 import { CartInitialState } from 'redux/slices/slice.model'
-import { CartProductType } from 'Cart/Cart.model'
+import { CartProductType } from 'features/Cart/types/Cart.model'
 
 export interface CheckoutProps {
   cart: CartInitialState
