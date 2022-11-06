@@ -1,3 +1,11 @@
+import {
+  Filter,
+  FilterContainer,
+  FilterTitle,
+  SelectedFilter,
+  StyledColorRadioButton,
+} from 'features/SingleProduct/assets/Filters/Filters-styles'
+
 import { ColorRadioButton } from 'components/ColorButton/ColorButton'
 import { FiltersProps } from '../../types/Filters.model'
 import React from 'react'
@@ -32,7 +40,6 @@ export const SingleProductFilters: React.FC<FiltersProps> = ({
           Colors : <SelectedFilter>{SelectedColor}</SelectedFilter>{' '}
         </FilterTitle>
         <Filter>
-          {console.log(AvailableColors)}
           {/* покажет все доступные цвета товара */}
           {AvailableColors?.map((color) => (
             <StyledColorRadioButton
@@ -47,34 +54,3 @@ export const SingleProductFilters: React.FC<FiltersProps> = ({
     </>
   )
 }
-
-const FilterContainer = styled.div`
-  display: flex;
-  flex-direction: column;
-  margin-top: -5px;
-  margin-bottom: -25px;
-`
-
-const Filter = styled.div`
-  display: flex;
-`
-
-const SelectedFilter = styled.span`
-  font-weight: 400;
-  font-size: 14px;
-`
-
-const FilterTitle = styled.h4`
-  font-weight: 700;
-  margin-top: 0;
-  margin-bottom: 8px;
-`
-
-const StyledColorRadioButton = styled(ColorRadioButton)`
-  width: 53px;
-  span {
-    margin: 10px;
-    max-width: 40px;
-    max-height: 40px;
-  }
-`
