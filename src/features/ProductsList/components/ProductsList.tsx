@@ -13,9 +13,9 @@ import {
 } from 'GlobalTypes/GlobalTypes.model'
 import React, { useState } from 'react'
 
-import { Filters } from 'components/ProductsList/Filters/Filters'
+import { Filters } from 'components/Filters/Filters'
 import Head from 'next/head'
-import MobileFilter from 'components/ProductsList/Filters/MobileFilter'
+import MobileFilter from 'components/Filters/MobileFilter'
 import { UseQueryResult } from 'react-query'
 import { getAllProducts } from 'features/Products'
 import { useEffect } from 'react'
