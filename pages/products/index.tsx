@@ -127,6 +127,15 @@ const StyledProducts = styled(Products)`
   display: grid;
   grid-template-rows: repeat(auto, 1fr);
   grid-template-columns: repeat(4, 1fr);
+
+  .Product {
+    padding: 0px;
+  }
+
+  .ProductInfo {
+    min-width: 100px;
+  }
+
   .Image {
     min-width: 130px;
     width: 100%;
@@ -142,35 +151,41 @@ const FilterContainer = styled.div`
 
 const Container = styled.div`
   min-height: 100vh;
+
   @media only screen and (max-width: ${devices.Desktop}px) {
     ${StyledProducts} {
-      justify-content: center;
-      .Product {
-        width: 250px;
-      }
-      .ProductInfo {
-        min-width: 250px;
-        font-size: 14px;
-      }
-      .ProductImage {
-        width: 250px;
-      }
+      grid-template-columns: repeat(3, 1fr);
     }
   }
-  @media only screen and (max-width: ${devices.Tablet}px) {
+
+  @media only screen and (max-width: ${devices.Laptop}px) {
     ${FilterContainer} {
       display: none;
     }
-    ${StyledProducts} {
-      display: flex;
-      justify-content: center;
-      .Image {
-        min-width: 100px;
-        width: 100%;
-      }
+    ${ProductsWrap} {
+      flex-direction: column;
+    }
+  }
+
+  @media only screen and (max-width: ${devices.Laptop}px) {
+    ${FilterContainer} {
+      display: none;
     }
     ${ProductsWrap} {
       flex-direction: column;
+    }
+  }
+  @media only screen and (max-width: 630px) {
+    ${StyledProducts} {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  @media only screen and (max-width: 400px) {
+    ${StyledProducts} {
+      grid-template-columns: repeat(1, 1fr);
+    }
+    ${ProductsContainer} {
+      width: 100%;
     }
   }
 `

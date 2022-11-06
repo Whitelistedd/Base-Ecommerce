@@ -1,11 +1,10 @@
-import styled from '@emotion/styled'
-
 import Image from 'next/image'
 import Link from 'next/link'
 import { devices } from 'data/MediaQueries'
+import styled from '@emotion/styled'
 
 export const Title = styled.p`
-  font-size: 0.9em;
+  font-size: 0.75em;
   font-style: normal;
   font-weight: 700;
   letter-spacing: 1px;
@@ -83,8 +82,4 @@ export const Container = styled.div`
   box-shadow: 0px 0px 0px black;
   border-radius: 10px;
   height: 100%;
-
-  @media only screen and (max-width: ${devices.Phone}px) {
-    min-width: 300px;
-  }
 `

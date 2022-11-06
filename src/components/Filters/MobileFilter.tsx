@@ -69,7 +69,7 @@ const Container = styled.div`
   justify-content: center;
   width: 100%;
 
-  @media only screen and (max-width: ${devices.Tablet}px) {
+  @media only screen and (max-width: ${devices.Laptop}px) {
     display: flex;
     ${FilterContainerMobile} {
       display: flex;
