@@ -1,4 +1,4 @@
-import { ProductsArrayType, filtersType } from 'GlobalTypes/GlobalTypes.model'
+import { ProductsArrayType, filtersType } from 'types/GlobalTypes.model'
 
 export interface ProductsProps {
   className?: string

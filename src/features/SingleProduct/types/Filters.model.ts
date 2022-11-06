@@ -1,4 +1,4 @@
-import { AllColors, AllSizes } from 'GlobalTypes/GlobalTypes.model'
+import { AllColors, AllSizes } from 'types/GlobalTypes.model'
 
 import { handleProductTypeType } from './SingleProduct.model'
 

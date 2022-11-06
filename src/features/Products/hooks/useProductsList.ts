@@ -1,9 +1,14 @@
-import { ProductsArrayType } from 'GlobalTypes/GlobalTypes.model'
+import { ProductsArrayType } from 'types/GlobalTypes.model'
 import { getAllProducts } from '../api/getProductsList'
+import { getProductsListResult } from '../types/getProductsList'
 import { useQuery } from 'react-query'
 
-export const useProductsList = (products: ProductsArrayType) => {
-  return useQuery<ProductsArrayType, Error>(['products'], getAllProducts, {
-    initialData: products && products.length === 0 ? undefined : products,
+export const useProductsList = (
+  products: getProductsListResult,
+  page: number
+) => {
+  return useQuery<getProductsListResult, Error>(['products', page], {
+    queryFn: () => getAllProducts(page),
+    initialData: products ? undefined : products,
   })
 }

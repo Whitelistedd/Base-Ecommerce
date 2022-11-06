@@ -2,12 +2,12 @@ export const MenuItems = [
   {
     id: 'bnJ5w',
     text: 'Men',
-    path: '/products?filter=men',
+    path: '/products?gender=men',
   },
   {
     id: 'znJZz',
     text: 'Women',
-    path: '/products?filter=women',
+    path: '/products?gender=women',
   },
   {
     id: 'gdJZw',

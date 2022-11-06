@@ -1,6 +1,6 @@
 import { ProductsFilterButtonProps } from './Filters.model'
 import React from 'react'
-import { filtersType } from 'GlobalTypes/GlobalTypes.model'
+import { filtersType } from 'types/GlobalTypes.model'
 import styled from '@emotion/styled'
 
 export const ProductsFilterButton: React.FC<ProductsFilterButtonProps> = ({

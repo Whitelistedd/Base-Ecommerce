@@ -1,15 +1,16 @@
 import { GetStaticProps, NextPage } from 'next'
-import {
-  ProductDataType,
-  ProductsArrayType,
-  filtersType,
-} from 'GlobalTypes/GlobalTypes.model'
+import { ProductDataType, filtersType } from 'types/GlobalTypes.model'
 import React, { useState } from 'react'
-import { getAllProducts, useProductsList } from 'features/Products'
+import {
+  getAllProducts,
+  getProductsListResult,
+  useProductsList,
+} from 'features/Products'
 
 import { Filters } from 'components/Filters/Filters'
 import Head from 'next/head'
 import MobileFilter from 'components/Filters/MobileFilter'
+import { Pagination } from '@mui/material'
 import { Products } from 'features/Products/components/Products'
 import { UseQueryResult } from 'react-query'
 import { devices } from 'data/MediaQueries'
@@ -19,13 +20,13 @@ import { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
 export interface ProductsListPageProps {
-  products: ProductDataType[]
+  productsData: getProductsListResult
 }
 
 export const ProductsListPage: NextPage<ProductsListPageProps> = ({
-  products,
+  productsData,
 }) => {
-  const { query } = useRouter()
+  const router = useRouter()
 
   const [filters, setFilters] = useState<filtersType>({
     color: '',
@@ -34,8 +35,14 @@ export const ProductsListPage: NextPage<ProductsListPageProps> = ({
     categories: '',
   })
 
-  const { data, status }: UseQueryResult<ProductsArrayType, Error> =
-    useProductsList(products ? products : [])
+  const [currentPage, setCurrentPage] = useState(1)
+
+  const [totalPages, setTotalPages] = useState(2)
+
+  const { data, status }: UseQueryResult<getProductsListResult, Error> =
+    useProductsList(productsData, currentPage)
+
+  console.log(data)
 
   /* обрабатывать фильтры для страницы продуктов */
   const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
@@ -57,15 +64,25 @@ export const ProductsListPage: NextPage<ProductsListPageProps> = ({
     })
   }
 
+  const handlePagination = (
+    event: React.ChangeEvent<unknown>,
+    value: number
+  ) => {
+    setCurrentPage(value)
+  }
+
   /* изменить фильтр, если URL-адрес имеет категории */
 
   useEffect(() => {
-    if (query.filter === 'men') {
-      setFilters((prev) => ({ ...prev, gender: 'men' }))
-    } else if (query.filter === 'women') {
-      setFilters((prev) => ({ ...prev, gender: 'women' }))
-    }
-  }, [query])
+    Object.keys(router.query).map((query) => {
+      console.log(query)
+      setFilters((prev) => ({
+        ...prev,
+        [`${query}`]: router.query[`${query}`],
+      }))
+    })
+    console.log(filters)
+  }, [router.query])
 
   return (
     <Container>
@@ -88,10 +105,20 @@ export const ProductsListPage: NextPage<ProductsListPageProps> = ({
         </FilterContainer>
         <ProductsContainer>
           <StyledProducts
-            products={data ? data : []}
+            products={data?.products ? data.products : []}
             filters={filters}
             status={status}
             HomePage={false}
+          />
+          <Pagination
+            sx={{
+              display: 'flex',
+              alignItems: 'center',
+              justifyContent: 'center',
+            }}
+            count={totalPages}
+            page={currentPage}
+            onChange={handlePagination}
           />
         </ProductsContainer>
       </ProductsWrap>
@@ -100,11 +127,11 @@ export const ProductsListPage: NextPage<ProductsListPageProps> = ({
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const products = await getAllProducts()
+  const productsData = await getAllProducts(1)
 
   return {
     props: {
-      products,
+      productsData,
     },
     revalidate: 2000,
   }
@@ -120,6 +147,8 @@ const ProductsWrap = styled.div`
 
 const ProductsContainer = styled.div`
   flex: 5.5;
+  width: 100%;
+  height: 100%;
 `
 
 const StyledProducts = styled(Products)`

@@ -2,7 +2,11 @@ import { Background, Parallax } from 'react-parallax'
 import { GetStaticProps, NextPage } from 'next'
 import { UseQueryResult, useQuery } from 'react-query'
 import { fadeUp, unFade } from 'data/Animations'
-import { getAllProducts, useProductsList } from 'features/Products'
+import {
+  getAllProducts,
+  getProductsListResult,
+  useProductsList,
+} from 'features/Products'
 
 import { Button } from 'components/Button/Button'
 import { Failed } from 'components/Failed/Failed'
@@ -11,18 +15,18 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { Loading } from 'components/Loading/Loading'
 import { Products } from 'features/Products/components/Products'
-import { ProductsArrayType } from 'GlobalTypes/GlobalTypes.model'
+import { ProductsArrayType } from 'types/GlobalTypes.model'
 import { css } from '@emotion/react'
 import { devices } from 'data/MediaQueries'
 import styled from '@emotion/styled'
 
 interface HomePageProps {
-  products: ProductsArrayType
+  productsData: getProductsListResult
 }
 
-const HomePage: NextPage<HomePageProps> = ({ products }) => {
-  const { data, status }: UseQueryResult<ProductsArrayType, Error> =
-    useProductsList(products ? products : [])
+const HomePage: NextPage<HomePageProps> = ({ productsData }) => {
+  const { data, status }: UseQueryResult<getProductsListResult, Error> =
+    useProductsList(productsData, 1)
 
   if (status === 'loading') {
     return <Loading />
@@ -68,7 +72,7 @@ const HomePage: NextPage<HomePageProps> = ({ products }) => {
         <HomeProducts
           status={status}
           HomePage={true}
-          products={data ? data : []}
+          products={data ? data.products : []}
         />
         <Link href={'/products/'}>
           <AllProductsButton>VIEW ALL PRODUCTS</AllProductsButton>
@@ -79,11 +83,11 @@ const HomePage: NextPage<HomePageProps> = ({ products }) => {
 }
 
 export const getStaticProps: GetStaticProps = async () => {
-  const products = await getAllProducts()
+  const productsData = await getAllProducts(1)
 
   return {
     props: {
-      products,
+      productsData,
     },
     revalidate: 5000,
   }

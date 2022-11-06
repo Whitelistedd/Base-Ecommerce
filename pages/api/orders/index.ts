@@ -2,7 +2,7 @@
 
 import type { NextApiRequest, NextApiResponse } from 'next'
 
-import { ProductDataType } from 'GlobalTypes/GlobalTypes.model'
+import { ProductDataType } from 'types/GlobalTypes.model'
 import axios from 'axios'
 import { connect } from 'lib/connection'
 import { orderProductType } from 'lib/models/Order'

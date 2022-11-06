@@ -1,4 +1,4 @@
-import { ProductDataType } from 'GlobalTypes/GlobalTypes.model'
+import { ProductDataType } from 'types/GlobalTypes.model'
 import { getProduct } from '../api/getProduct'
 import { useQuery } from 'react-query'
 

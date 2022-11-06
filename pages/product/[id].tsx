@@ -3,7 +3,7 @@ import { Product, getProduct, useProduct } from 'features/SingleProduct'
 
 import Head from 'next/head'
 import { Loading } from 'components/Loading/Loading'
-import { ProductDataType } from 'GlobalTypes/GlobalTypes.model'
+import { ProductDataType } from 'types/GlobalTypes.model'
 import { fakeProduct } from 'data/placeHolders'
 import { useRouter } from 'next/router'
 

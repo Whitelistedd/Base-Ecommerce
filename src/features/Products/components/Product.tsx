@@ -17,7 +17,6 @@ import { unFade } from 'data/Animations'
 
 export const Product: React.FC<ProductProps> = ({ item, className }) => {
   const [hoveredStatus, setHoveredStatus] = useState(false)
-  console.log({ item })
   return (
     <Container
       className={`Product ${className}`}

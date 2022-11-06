@@ -1,4 +1,4 @@
-import { filtersType } from 'GlobalTypes/GlobalTypes.model'
+import { filtersType } from 'types/GlobalTypes.model'
 
 type handleFilterChangeType = (
   event: React.ChangeEvent<HTMLInputElement>
