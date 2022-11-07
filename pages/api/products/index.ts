@@ -1,8 +1,17 @@
 import type { NextApiRequest, NextApiResponse } from 'next'
 
+import Joi from 'joi'
 import { connect } from 'lib/connection'
 
 const filters = ['gender', 'color', 'size', 'categories']
+
+const filterSchema = Joi.object({
+  page: Joi.number().integer().min(1).required(),
+  gender: Joi.string().min(3).valid('men', 'women'),
+  color: Joi.string().min(3),
+  size: Joi.string().min(1),
+  categories: Joi.string().min(3),
+})
 
 export default async function handler(
   req: NextApiRequest,
@@ -12,7 +21,9 @@ export default async function handler(
     return res.status(500).json({ message: 'not a GET request' })
   }
   try {
-    const reqFilters = Object.keys(req.query)
+    filterSchema.validate(req.query)
+    const values = await filterSchema.validateAsync(req.query)
+    const reqFilters = Object.keys(values)
       .map((query) => filters.includes(query) && query)
       .filter((query) => typeof query === 'string')
 
@@ -21,14 +32,12 @@ export default async function handler(
       (filter) =>
         (formattedFilters = {
           ...formattedFilters,
-          [`${filter}`]: req.query[`${filter}`],
+          [`${filter}`]: values[`${filter}`],
         })
     )
 
-    console.log(req.query)
-
     const resPerPage = 8
-    const page = Number(req.query.page || 0)
+    const page = Number(values.page || 0)
     const { ProductSchema } = await connect()
     const products = await ProductSchema.find(formattedFilters)
       .skip(resPerPage * page - resPerPage)
@@ -39,6 +48,7 @@ export default async function handler(
 
     res.status(200).json({ products, totalPages, page })
   } catch (err) {
+    console.log(err)
     res.status(500).json('Product doesnt exist')
   }
 }

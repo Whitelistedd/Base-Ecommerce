@@ -1,9 +1,8 @@
 import { filtersType } from 'types/GlobalTypes.model'
 
-type handleFilterChangeType = (
-  event: React.ChangeEvent<HTMLInputElement>
-) => void
+export type handleFilterChangeType = (name: string, value: string) => void
 
+export type handleClearType = (name?: string) => void
 export interface ProductsFilterButtonProps {
   inputValue: string
   title: string
@@ -15,7 +14,7 @@ export interface ProductsFilterButtonProps {
 export interface FiltersProps {
   filters: filtersType
   handleFilterChange: handleFilterChangeType
-  handleClear: () => void
+  handleClear: handleClearType
 }
 
 export type MobileFilterProps = FiltersProps

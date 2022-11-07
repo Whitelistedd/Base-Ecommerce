@@ -23,7 +23,21 @@ export const Filters: React.FC<FiltersProps> = ({
         <FilterTitle>Filters</FilterTitle>
         {/* по клику очистит все фильтры */}
         <Chip
-          onClick={handleClear}
+          onClick={() => handleClear()}
+          sx={{
+            MaxWidth: 50,
+            height: 18,
+            fontSize: 10,
+            '&:hover': { cursor: 'pointer' },
+          }}
+          label="Clear All"
+          variant="outlined"
+        />
+      </FilterTitleWrap>
+      <FilterTitleWrap>
+        <FilterTitle>Colors :</FilterTitle>
+        <Chip
+          onClick={() => handleClear('color')}
           sx={{
             MaxWidth: 50,
             height: 18,
@@ -33,9 +47,6 @@ export const Filters: React.FC<FiltersProps> = ({
           label="Clear"
           variant="outlined"
         />
-      </FilterTitleWrap>
-      <FilterTitleWrap>
-        <FilterTitle>Colors :</FilterTitle>
       </FilterTitleWrap>
       <Filter>
         {AllColors.map((color) => (
@@ -50,6 +61,17 @@ export const Filters: React.FC<FiltersProps> = ({
       </Filter>
       <FilterTitleWrap>
         <FilterTitle>Size :</FilterTitle>
+        <Chip
+          onClick={() => handleClear('size')}
+          sx={{
+            MaxWidth: 50,
+            height: 18,
+            fontSize: 10,
+            '&:hover': { cursor: 'pointer' },
+          }}
+          label="Clear"
+          variant="outlined"
+        />
       </FilterTitleWrap>
       <Filter>
         {AllSizes.map((size) => (
@@ -65,6 +87,17 @@ export const Filters: React.FC<FiltersProps> = ({
       </Filter>
       <FilterTitleWrap>
         <FilterTitle>Gender :</FilterTitle>
+        <Chip
+          onClick={() => handleClear('gender')}
+          sx={{
+            MaxWidth: 50,
+            height: 18,
+            fontSize: 10,
+            '&:hover': { cursor: 'pointer' },
+          }}
+          label="Clear"
+          variant="outlined"
+        />
       </FilterTitleWrap>
       <Filter>
         {AllGenders.map((gender) => (
@@ -80,6 +113,17 @@ export const Filters: React.FC<FiltersProps> = ({
       </Filter>
       <FilterTitleWrap>
         <FilterTitle>Categories :</FilterTitle>
+        <Chip
+          onClick={() => handleClear('categories')}
+          sx={{
+            MaxWidth: 50,
+            height: 18,
+            fontSize: 10,
+            '&:hover': { cursor: 'pointer' },
+          }}
+          label="Clear"
+          variant="outlined"
+        />
       </FilterTitleWrap>
       <Filter>
         {AllCategories.map((gender) => (

@@ -1,6 +1,7 @@
 import { GetStaticProps, NextPage } from 'next'
+import { Pagination, useMediaQuery } from '@mui/material'
 import { ProductDataType, filtersType } from 'types/GlobalTypes.model'
-import React, { useState } from 'react'
+import React, { useMemo, useState } from 'react'
 import {
   getAllProducts,
   getProductsListResult,
@@ -10,7 +11,6 @@ import {
 import { Filters } from 'components/Filters/Filters'
 import Head from 'next/head'
 import MobileFilter from 'components/Filters/MobileFilter'
-import { Pagination } from '@mui/material'
 import { Products } from 'features/Products/components/Products'
 import { UseQueryResult } from 'react-query'
 import { devices } from 'data/MediaQueries'
@@ -28,6 +28,8 @@ export const ProductsListPage: NextPage<ProductsListPageProps> = ({
 }) => {
   const router = useRouter()
 
+  const mobile = useMediaQuery('(max-width:1000px)')
+
   const [filters, setFilters] = useState<filtersType>({
     color: '',
     size: '',
@@ -37,13 +39,26 @@ export const ProductsListPage: NextPage<ProductsListPageProps> = ({
 
   const [currentPage, setCurrentPage] = useState(1)
 
+  /* изменить фильтр, если URL-адрес имеет категории */
+
+  useMemo(() => {
+    Object.keys(router.query).map((query) => {
+      if (query !== 'page')
+        setFilters((prev) => ({
+          ...prev,
+          [`${query}`]: router.query[`${query}`],
+        }))
+    })
+    if (router.query.page) {
+      setCurrentPage(Number(router.query.page))
+    }
+  }, [router.query])
+
   const { data, status }: UseQueryResult<getProductsListResult, Error> =
     useProductsList(productsData, currentPage, filters)
 
   /* обрабатывать фильтры для страницы продуктов */
-  const handleFilterChange = (e: React.ChangeEvent<HTMLInputElement>) => {
-    const value = e.target.value
-    const name = e.target.name
+  const handleFilterChange = (value: string, name: string) => {
     setFilters({
       ...filters,
       [name]: value,
@@ -51,13 +66,20 @@ export const ProductsListPage: NextPage<ProductsListPageProps> = ({
   }
 
   /* функция очистки всех фильтров */
-  const handleClear = () => {
-    setFilters({
-      color: '',
-      size: '',
-      gender: '',
-      categories: '',
-    })
+  const handleClear = (name?: string) => {
+    if (name) {
+      setFilters((prev) => ({
+        ...prev,
+        [name]: '',
+      }))
+    } else {
+      setFilters({
+        color: '',
+        size: '',
+        gender: '',
+        categories: '',
+      })
+    }
   }
 
   const handlePagination = (
@@ -67,17 +89,6 @@ export const ProductsListPage: NextPage<ProductsListPageProps> = ({
     setCurrentPage(value)
   }
 
-  /* изменить фильтр, если URL-адрес имеет категории */
-
-  useEffect(() => {
-    Object.keys(router.query).map((query) => {
-      setFilters((prev) => ({
-        ...prev,
-        [`${query}`]: router.query[`${query}`],
-      }))
-    })
-  }, [router.query])
-
   return (
     <Container>
       <Head>
@@ -85,11 +96,13 @@ export const ProductsListPage: NextPage<ProductsListPageProps> = ({
         <meta name="description" content="Base | Products Page" />
       </Head>
       <ProductsWrap>
-        <MobileFilter
-          handleClear={handleClear}
-          handleFilterChange={handleFilterChange}
-          filters={filters}
-        />
+        {mobile && (
+          <MobileFilter
+            handleClear={handleClear}
+            handleFilterChange={handleFilterChange}
+            filters={filters}
+          />
+        )}
         <FilterContainer>
           <Filters
             handleFilterChange={handleFilterChange}

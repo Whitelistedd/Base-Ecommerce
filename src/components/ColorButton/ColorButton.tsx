@@ -15,15 +15,14 @@ export const ColorRadioButton: React.FC<ColorButtonProps> = ({
       {filters ? (
         <StyledInput
           value={colorName}
-          onChange={(event) => handleFilterChange(event)}
+          onChange={(event) => handleFilterChange(colorName, 'color')}
           type="radio"
-          name="color"
-          checked={filters.color === colorName}
+          checked={colorName === filters.color}
         />
       ) : (
         <StyledInput
           value={colorName}
-          onChange={(event) => handleFilterChange(event)}
+          onChange={(event) => handleFilterChange(colorName, 'color')}
           type="radio"
           name="color"
         />

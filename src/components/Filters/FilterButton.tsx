@@ -14,9 +14,8 @@ export const ProductsFilterButton: React.FC<ProductsFilterButtonProps> = ({
     <SizeRadioLabel>
       <StyledInput
         value={inputValue}
-        onChange={(event) => handleFilterChange(event)}
+        onChange={() => handleFilterChange(inputValue, inputName)}
         type="radio"
-        name={inputName}
         checked={filters[inputName as keyof filtersType] === inputValue}
       />
       <SizeButton>
