@@ -163,7 +163,7 @@ const FilterWrap = styled.div`
 const Filter = styled.div`
   display: flex;
   min-width: 100%;
-  width: 200px;
+  width: 210px;
   flex-wrap: wrap;
   gap: 0.5em;
   margin-bottom: 20px;
@@ -172,7 +172,7 @@ const Filter = styled.div`
 const FilterTitle = styled.h4`
   font-weight: 700;
   margin: 0px 0px 10px 0px;
-  font-size: 20px;
+  font-size: 18px;
   font-style: normal;
   font-weight: 700;
 `
