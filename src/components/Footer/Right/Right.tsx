@@ -1,3 +1,4 @@
+import { Button } from 'components/Button/Button'
 import React from 'react'
 import { Typography } from '@mui/material'
 import styled from '@emotion/styled'
@@ -19,9 +20,16 @@ export const Right: React.FC = () => {
         Subscribe to receive updates, access to exclusive deals, and more.
       </Typography>
       <Input placeholder="Enter your email address" />
+      <StyledButton>SUBSCRIBE</StyledButton>
     </Container>
   )
 }
+
+const StyledButton = styled(Button)`
+  margin-top: 10px;
+  font-size: 0.9em;
+  width: 163px;
+`
 
 const Title = styled.div`
   font-size: 0.8em;

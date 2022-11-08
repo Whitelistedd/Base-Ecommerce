@@ -169,4 +169,10 @@ const Container = styled.div<{ displayFixed: displayFixedType }>`
       min-width: 10vw;
     }
   }
+
+  @media only screen and (max-width: 409px) {
+    ${Right} {
+      gap: 0px;
+    }
+  }
 `

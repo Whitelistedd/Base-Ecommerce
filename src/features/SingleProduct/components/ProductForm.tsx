@@ -34,9 +34,8 @@ export const ProductForm: React.FC<ProductFormProps> = ({ productInfo }) => {
   const dispatch = AppDispatch()
 
   /* функция добавления фильтров по клику пользователя */
-  const handleProductType = (e: handleProductTypeType) => {
-    const value = e.target.value
-    const name = e.target.name
+  const handleProductType: handleProductTypeType = (value, name) => {
+    console.log(name, value)
     setProductType((prev) => ({ ...prev, [name]: value }))
   }
 
@@ -46,6 +45,8 @@ export const ProductForm: React.FC<ProductFormProps> = ({ productInfo }) => {
       return type === 'add' ? prev + 1 : prev > 1 ? prev - 1 : prev
     })
   }
+
+  console.log(productType)
 
   /* если пользователь выбрал товар с цветом и размером, он будет добавлен в корзину */
   const handleCart = () => {

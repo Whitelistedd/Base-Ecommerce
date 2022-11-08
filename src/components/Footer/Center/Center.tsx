@@ -10,7 +10,6 @@ export const Center: React.FC = () => {
       <List
         sx={{
           mt: 1,
-          color: '#9d9d9d',
           display: 'flex',
           gap: 1,
           flexDirection: 'column',
@@ -27,6 +26,11 @@ export const Center: React.FC = () => {
 const ListItemText = styled.li`
   letter-spacing: 0.5px;
   font-size: 0.95em;
+  color: #9d9d9d;
+  &:hover {
+    cursor: pointer;
+    color: black;
+  }
 `
 
 const Title = styled.div`

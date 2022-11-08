@@ -18,7 +18,7 @@ export const SizeButton: React.FC<SizeButtonProps> = ({
   return (
     <SizeRadioLabel>
       <StyledInput
-        onChange={(event) => handleProductType(event)}
+        onChange={() => handleProductType(value, 'size')}
         value={value}
         type="radio"
         name="size"

@@ -7,11 +7,11 @@ export interface FiltersProps {
   AvailableSizes: Array<AllSizes>
   SelectedColor: string
   SelectedSize: string
-  handleProductType: (event: handleProductTypeType) => void
+  handleProductType: handleProductTypeType
 }
 
 export interface SizeButtonProps {
-  handleProductType: (event: handleProductTypeType) => void
+  handleProductType: handleProductTypeType
   value: string
   title: string
 }

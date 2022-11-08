@@ -14,4 +14,9 @@ export const MenuItems = [
     text: 'FAQ',
     path: '/FAQ',
   },
+  {
+    id: 'g2JZw',
+    text: 'Account',
+    path: '/profile',
+  },
 ]

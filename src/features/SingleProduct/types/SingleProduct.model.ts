@@ -2,7 +2,7 @@ import { ProductDataType } from 'types/GlobalTypes.model'
 
 export type handleQuantityType = string
 
-export type handleProductTypeType = React.ChangeEvent<HTMLInputElement>
+export type handleProductTypeType = (value: string, name: string) => void
 
 export interface ProductTypeState {
   color: string

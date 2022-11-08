@@ -9,11 +9,13 @@ import {
 } from 'features/Products'
 
 import { Button } from 'components/Button/Button'
+import { Category } from 'components/Category/Category'
 import { Failed } from 'components/Failed/Failed'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
 import { Loading } from 'components/Loading/Loading'
+import { ProductCategories } from 'data/Categories'
 import { Products } from 'features/Products/components/Products'
 import { ProductsArrayType } from 'types/GlobalTypes.model'
 import { css } from '@emotion/react'
@@ -69,6 +71,16 @@ const HomePage: NextPage<HomePageProps> = ({ productsData }) => {
         </HeaderWrap>
       </StyledParallax>
       <Container>
+        <Categories>
+          {ProductCategories.map((category) => (
+            <Category
+              id={category.id}
+              image={category.image}
+              image2={category.image2}
+              title={category.title}
+            />
+          ))}
+        </Categories>
         <HomeProducts
           status={status}
           HomePage={true}
@@ -121,6 +133,17 @@ const HeaderWrap = styled.div`
   }
 `
 
+const Categories = styled.div`
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: repeat(1, 1fr);
+  width: 100%;
+  gap: 50px;
+  height: 100%;
+  max-height: 800px;
+  padding: 0px 20px;
+`
+
 const HomeProducts = styled(Products)`
   display: flex;
   flex-direction: row;
@@ -148,10 +171,34 @@ const Container = styled.div`
   flex-direction: column;
   align-items: center;
   animation: 500ms ${unFade} ease;
-  gap: 30px;
+  gap: 70px;
   overflow-x: hidden;
   img {
     height: 100%;
+  }
+
+  @media only screen and (max-width: ${devices.Laptop}px) {
+    ${Categories} {
+      gap: 20px;
+    }
+  }
+
+  @media only screen and (max-width: ${devices.Tablet}px) {
+    ${Categories} {
+      gap: 5px;
+    }
+  }
+
+  @media only screen and (max-width: 685px) {
+    ${Categories} {
+      gap: 50px;
+      padding: 0 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      max-height: 100%;
+    }
   }
 
   @media only screen and (max-width: 415px) {
