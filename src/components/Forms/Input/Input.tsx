@@ -1,5 +1,6 @@
 import { Controller, UseFormRegister } from 'react-hook-form'
 
+import { TextField } from '@mui/material'
 import styled from '@emotion/styled'
 
 export const Input = (props: any) => {
@@ -13,7 +14,12 @@ export const Input = (props: any) => {
       }}
       render={({ field }) => (
         <Container>
-          <StyledInput {...field} error={props.error} {...props} />
+          <StyledInput
+            label={props.placeholder}
+            {...field}
+            error={props.error}
+            {...props}
+          />
           {props.error && <Error>{props.error}</Error>}
         </Container>
       )}
@@ -30,15 +36,20 @@ const Error = styled.p`
   font-family: 'Roboto';
 `
 
-const StyledInput = styled.input<{ error: string }>`
-  padding: 1em;
+const StyledInput = styled(TextField)<{ error: string }>`
   width: 100%;
   margin-bottom: 7px;
   max-width: 100%;
   border-radius: 5px;
-  border: 1px solid #d9d9d9;
-  outline: ${({ error }) => (error ? '2px solid red' : 'none')};
-  &:focus {
-    outline: 2px solid #b69f8d;
+  label {
+    color: ${({ error }) => (error ? 'red' : '#b69f8d')} !important;
+  }
+  input:focus {
+    border-radius: 5px;
+  }
+  input:hover {
+  }
+  fieldset {
+    border-color: ${({ error }) => (error ? 'red' : '#b69f8d')} !important;
   }
 `

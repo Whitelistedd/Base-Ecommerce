@@ -1,3 +1,4 @@
-export type CountriesType = {
-  [name: string]: string
-}[]
+export type CountriesType = Array<{
+  id: string
+  name: string
+}>

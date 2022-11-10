@@ -14,7 +14,7 @@ import {
 } from '../assets/Form-styles'
 import { Controller, SubmitHandler, useForm } from 'react-hook-form'
 import { FormProps, InfoType } from '../types/Checkout.model'
-import React, { useEffect } from 'react'
+import React, { useEffect, useState } from 'react'
 
 import { AppDispatch } from 'redux/store/store'
 import { Checkbox } from 'components/Forms/Checkbox/Checkbox'
@@ -49,26 +49,33 @@ export const Form: React.FC<FormProps> = ({ cart, setShipping }) => {
   const countries = useCountries()
 
   const { data, isLoading } = useProfileInfo()
+  const [submitting, setSubmitting] = useState(false)
 
   console.log(data)
 
   /* отправит запрос с ключом idemp и получит URL-адрес из бэкэнда, чтобы перенаправить пользователя на страницу покупки */
   const onSubmit: SubmitHandler<InfoType> = async (Info) => {
+    setSubmitting(true)
     console.log(Info)
     if (!Info.phoneNumber.match(/^((\+7|7|8)+([0-9]){10})$/gm)) {
       setError('phoneNumber', {
         type: 'custom',
         message: 'invalid phone number',
       })
+      setSubmitting(false)
       return
     }
 
     if (!user && Info.saveInfo) {
       dispatch(dispatchError('to saveInfo you need to be logged in'))
+      setSubmitting(false)
+      return
     }
 
     if (cart.products.length <= 0) {
       dispatch(dispatchError('you dont have any products'))
+      setSubmitting(false)
+      return
     }
 
     const products = cart.products
@@ -80,6 +87,7 @@ export const Form: React.FC<FormProps> = ({ cart, setShipping }) => {
       ...Info,
     })
     res1 !== undefined && router.push(res1 as string)
+    setSubmitting(false)
   }
 
   if (isLoading) return <Loading />
@@ -121,7 +129,7 @@ export const Form: React.FC<FormProps> = ({ cart, setShipping }) => {
       <Input
         name="address.address"
         required={'Enter an address'}
-        defaultValue={data && data?.address.address}
+        defaultValue={data && data?.address?.address}
         control={control}
         type="text"
         placeholder="Address"
@@ -146,26 +154,21 @@ export const Form: React.FC<FormProps> = ({ cart, setShipping }) => {
         error={errors?.address?.city?.message}
       />
       <GatheredInput>
-        <Controller
+        <Select
           name="address.country"
           control={control}
           defaultValue={data && data?.address.country}
-          rules={{ required: 'Select a Region/Country' }}
-          render={({ field }) => (
-            <Select
-              isClearable
-              default
-              {...field}
-              error={errors?.address?.country?.message}
-            >
-              {countries.data?.map((country) => (
-                <MenuItem key={country.id} value={country.id}>
-                  {country.name}
-                </MenuItem>
-              ))}
-            </Select>
-          )}
-        />
+          required={'Select a Region/Country'}
+          isClearable
+          sx={{ maxHeight: '56px !important' }}
+          error={errors?.address?.country?.message}
+        >
+          {countries?.data?.map((country) => (
+            <MenuItem key={country.id} value={country.id}>
+              {country.name}
+            </MenuItem>
+          ))}
+        </Select>
         <Input
           name="address.zipCode"
           required={'Enter a postal code'}
@@ -228,7 +231,7 @@ export const Form: React.FC<FormProps> = ({ cart, setShipping }) => {
             type={'checkbox'}
           />
         )}
-        <StyledButton loading={true} type="submit">
+        <StyledButton loading={submitting} type="submit">
           Checkout
         </StyledButton>
       </SubmitWrap>

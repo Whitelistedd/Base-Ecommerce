@@ -26,6 +26,10 @@ const GlobalStyles = css`
     font-style: normal;
   }
 
+  .css-10nakn3-MuiModal-root-MuiPopover-root-MuiMenu-root {
+    z-index: 5000;
+  }
+
   * {
     font-family: DIN Neuzeit, sans-serif;
     box-sizing: border-box;

@@ -2,6 +2,14 @@ import 'swiper/css'
 import 'swiper/css/navigation'
 import 'swiper/css/autoplay'
 
+import {
+  Arrows,
+  Container,
+  Desc,
+  Details,
+  ReviewsWrap,
+  StyledSwiper,
+} from '../assets/Reviews-styles'
 import { Autoplay, Navigation } from 'swiper'
 import { ChevronLeft, ChevronRight } from '@mui/icons-material'
 import { Swiper, SwiperSlide } from 'swiper/react'
@@ -65,45 +73,3 @@ export const Reviews: React.FC<ReviewsProps> = ({ reviews }) => {
     </Container>
   )
 }
-
-const Arrows = styled.span`
-  display: inline-block;
-  width: 50%;
-  padding-top: 20px;
-`
-
-const StyledSwiper = styled(Swiper)`
-  margin-top: 20px;
-  .swiper-slide {
-    height: auto;
-  }
-`
-
-const ReviewsWrap = styled.div``
-
-const Desc = styled.p`
-  font-size: 0.9em;
-  opacity: 0.7;
-  margin: 0px;
-`
-
-const Details = styled.div``
-
-const Container = styled.div`
-  width: 100%;
-  padding: 0 165px;
-
-  @media only screen and (max-width: 1400px) {
-    padding: 0 125px;
-  }
-
-  @media only screen and (max-width: ${devices.Desktop}px) {
-    padding: 0 80px;
-  }
-  @media only screen and (max-width: ${devices.Laptop}px) {
-    padding: 0 70px;
-  }
-  @media only screen and (max-width: ${devices.Tablet}px) {
-    padding: 0 30px;
-  }
-`

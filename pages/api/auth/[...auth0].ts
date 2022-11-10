@@ -15,7 +15,6 @@ const afterCallback = async (
     }
   }
 ) => {
-  console.log(session)
   if (session) {
     const { AccountSchema } = await connect()
     const exists = await AccountSchema.find({ id: session.user.sub })

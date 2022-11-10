@@ -1,5 +1,4 @@
-import LoadingButton from '@mui/lab/LoadingButton'
-import MuiButton from '@mui/material/Button'
+import { LoadingButton } from '@mui/lab'
 import styled from '@emotion/styled'
 
 export const Button = (props: any) => {
