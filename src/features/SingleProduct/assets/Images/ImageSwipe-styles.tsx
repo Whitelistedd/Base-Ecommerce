@@ -31,4 +31,7 @@ export const StyledSwiper = styled(Swiper)`
   @media only screen and (max-width: ${devices.Laptop}px) {
     display: flex;
   }
+  @media only screen and (max-width: 450px) {
+    min-height: 380px;
+  }
 `

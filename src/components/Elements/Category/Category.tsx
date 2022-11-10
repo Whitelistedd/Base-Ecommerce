@@ -19,7 +19,7 @@ export const Category: React.FC<CategoryProps> = ({
 }) => {
   return (
     <Link href={`/product/${id}`}>
-      <Container image2={image2}>
+      <Container>
         <ImageContainer>
           <StyledImage
             layout="responsive"

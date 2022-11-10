@@ -31,7 +31,7 @@ export const ProductImages: React.FC<ProductImagesProps> = ({
   return (
     <ImageContainer>
       <ImageGroup>
-        {productInfo?.img?.map((image: string, index: number) => (
+        {productInfo?.img?.slice(0, 3).map((image: string, index: number) => (
           <ProductImage
             key={image}
             img={image}
