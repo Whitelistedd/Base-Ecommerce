@@ -26,6 +26,7 @@ export const StyledSwiper = styled(Swiper)`
 
   img {
     width: 100%;
+    ${''}
   }
 
   @media only screen and (max-width: ${devices.Laptop}px) {
