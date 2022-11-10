@@ -44,9 +44,13 @@ export default async function handler(
       const { AccountSchema } = await connect()
       const newAccountData = await AccountDataSchema.validateAsync(req.body)
       const session = getSession(req, res)
-      await AccountSchema.updateOne({ id: session.user.sub }, newAccountData)
-      console.log(newAccountData)
-      res.status(200).json('success')
+      if (session) {
+        await AccountSchema.updateOne({ id: session.user.sub }, newAccountData)
+        console.log(newAccountData)
+        res.status(200).json('success')
+      } else {
+        res.status(404).json('account not found')
+      }
     } catch (err) {
       res.status(500).json(err)
     }
