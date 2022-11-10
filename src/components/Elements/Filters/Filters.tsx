@@ -6,7 +6,7 @@ import {
 } from 'data/FiltersData'
 
 import { Chip } from '@mui/material'
-import { ColorRadioButton } from 'components/ColorButton/ColorButton'
+import { ColorRadioButton } from 'components/Elements/ColorButton/ColorButton'
 import { FiltersProps } from './Filters.model'
 import { ProductsFilterButton } from './FilterButton'
 import React from 'react'

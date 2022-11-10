@@ -1,4 +1,4 @@
-import { Button } from 'components/Button/Button'
+import { Button } from 'components/Elements/Button/Button'
 import React from 'react'
 import { Typography } from '@mui/material'
 import styled from '@emotion/styled'

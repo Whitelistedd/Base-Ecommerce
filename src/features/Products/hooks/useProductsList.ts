@@ -10,6 +10,6 @@ export const useProductsList = (
 ) => {
   return useQuery<getProductsListResult, Error>(['products', page, filters], {
     queryFn: () => getAllProducts(page, filters),
-    initialData: products ? undefined : products,
+    initialData: products ? products : undefined,
   })
 }

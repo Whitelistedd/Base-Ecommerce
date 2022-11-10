@@ -1,3 +1,5 @@
+import { UserProfile } from '@auth0/nextjs-auth0'
+
 export type queryKeyType = readonly unknown[]
 
 export type AllSizes = {
@@ -37,4 +39,19 @@ export type filtersType = {
 
 export type itemFilterType = {
   [key: string]: string
+}
+
+export interface ProfileInfo extends UserProfile {
+  firstName: string
+  lastName: string
+  phoneNumber: string
+  shippingMethod: string
+  saveInfo: boolean
+  address: {
+    address: string
+    apartment: string
+    city: string
+    country: string
+    zipCode: string
+  }
 }

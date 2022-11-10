@@ -1,5 +1,6 @@
 import { Background, Parallax } from 'react-parallax'
 import { GetStaticProps, NextPage } from 'next'
+import { ReviewType, Reviews } from 'features/Reviews'
 import { UseQueryResult, useQuery } from 'react-query'
 import { fadeUp, unFade } from 'data/Animations'
 import {
@@ -8,25 +9,27 @@ import {
   useProductsList,
 } from 'features/Products'
 
-import { Button } from 'components/Button/Button'
-import { Category } from 'components/Category/Category'
-import { Failed } from 'components/Failed/Failed'
+import { Button } from 'components/Elements/Button/Button'
+import { Category } from 'components/Elements/Category/Category'
+import { Failed } from 'components/States/Failed/Failed'
 import Head from 'next/head'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Loading } from 'components/Loading/Loading'
+import { Loading } from 'components/States/Loading/Loading'
 import { ProductCategories } from 'data/Categories'
 import { Products } from 'features/Products/components/Products'
 import { ProductsArrayType } from 'types/GlobalTypes.model'
 import { css } from '@emotion/react'
 import { devices } from 'data/MediaQueries'
+import { getReviews } from 'features/Reviews/api/getReviews'
 import styled from '@emotion/styled'
 
 interface HomePageProps {
   productsData: getProductsListResult
+  reviews: ReviewType[]
 }
 
-const HomePage: NextPage<HomePageProps> = ({ productsData }) => {
+const HomePage: NextPage<HomePageProps> = ({ productsData, reviews }) => {
   const { data, status }: UseQueryResult<getProductsListResult, Error> =
     useProductsList(productsData, 1, {})
 
@@ -89,6 +92,7 @@ const HomePage: NextPage<HomePageProps> = ({ productsData }) => {
         <Link href={'/products/'}>
           <AllProductsButton>VIEW ALL PRODUCTS</AllProductsButton>
         </Link>
+        <Reviews reviews={reviews} />
       </Container>
     </>
   )
@@ -97,11 +101,14 @@ const HomePage: NextPage<HomePageProps> = ({ productsData }) => {
 export const getStaticProps: GetStaticProps = async () => {
   const productsData = await getAllProducts(1, {})
 
+  const reviews = await getReviews()
+
   return {
     props: {
       productsData,
+      reviews,
     },
-    revalidate: 5000,
+    revalidate: 20000,
   }
 }
 

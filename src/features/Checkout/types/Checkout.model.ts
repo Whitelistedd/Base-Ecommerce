@@ -1,6 +1,8 @@
 import { AppDispatchType } from 'redux/store/store'
 import { CartInitialState } from 'redux/slices/slice.model'
 import { CartProductType } from 'features/Cart/types/Cart.model'
+import { UserProfile } from '@auth0/nextjs-auth0'
+import { UserProps } from '@auth0/nextjs-auth0/dist/frontend/with-page-auth-required'
 
 export interface CheckoutProps {
   cart: CartInitialState
@@ -24,6 +26,7 @@ export type InfoType = {
     country: string
     apartment: string
   }
+  saveInfo: boolean
   firstName: string
   lastName: string
   email: string
@@ -36,6 +39,7 @@ export type onSubmitType = (Info: InfoType) => void
 export type newCheckoutType = (
   idemp: string,
   dispatch: AppDispatchType,
+  user: UserProfile | undefined,
   order: {
     products: CartProductType[]
     address: {

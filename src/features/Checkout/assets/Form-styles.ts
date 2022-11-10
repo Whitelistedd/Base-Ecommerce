@@ -1,3 +1,4 @@
+import { Button } from 'components/Elements/Button/Button'
 import { devices } from 'data/MediaQueries'
 import styled from '@emotion/styled'
 
@@ -21,22 +22,21 @@ export const InputPhone = styled(Input)`
   font-size: 12px;
 `
 
-export const Button = styled.button`
+export const StyledButton = styled(Button)<{ loading: boolean }>`
   align-self: flex-end;
-  padding: 1.3em 1em;
   color: white;
-  font-size: 14px;
-  font-weight: 700;
   border-radius: 5px;
-  background: #454545;
-  transition: 400ms ease;
-  border: none;
-  &:hover {
-    transition: 400ms ease;
-    cursor: pointer;
-    background: rgba(0, 0, 0, 0.8);
-  }
   min-width: 30%;
+`
+
+export const Checkbox = styled.input`
+  width: 20px;
+  height: 20px;
+`
+
+export const SubmitWrap = styled.div`
+  display: flex;
+  flex-direction: column;
 `
 
 export const GatheredInput = styled.div`

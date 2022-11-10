@@ -7,6 +7,6 @@ export const useProduct = (
   product?: ProductDataType
 ) => {
   return useQuery<ProductDataType, Error>(['product', productID], getProduct, {
-    initialData: !product ? undefined : product,
+    initialData: product ? product : undefined,
   })
 }

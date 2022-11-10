@@ -1,8 +1,11 @@
 //IMPORT MONGOOSE
-import mongoose from 'mongoose'
+
+import AccountSchema from './models/Account'
 import CartSchema from './models/Cart'
 import OrderSchema from './models/Order'
 import ProductSchema from './models/Product'
+import mongoose from 'mongoose'
+import reviewsSchema from './models/Reviews'
 
 // ПОДКЛЮЧЕНИЕ К MONGOOSE (получение URL-адреса базы данных из .env.local)
 const { MONGO_URLL } = process.env
@@ -13,5 +16,12 @@ export const connect = async () => {
     .connect(MONGO_URLL as string)
     .catch((err) => console.log(err))
 
-  return { conn, CartSchema, OrderSchema, ProductSchema }
+  return {
+    conn,
+    CartSchema,
+    OrderSchema,
+    ProductSchema,
+    reviewsSchema,
+    AccountSchema,
+  }
 }

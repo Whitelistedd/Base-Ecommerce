@@ -1,11 +1,16 @@
+import LoadingButton from '@mui/lab/LoadingButton'
 import MuiButton from '@mui/material/Button'
 import styled from '@emotion/styled'
 
 export const Button = (props: any) => {
-  return <StyledButton {...props}>{props.children}</StyledButton>
+  return (
+    <StyledButton loading={props.loading} {...props}>
+      {props.children}
+    </StyledButton>
+  )
 }
 
-export const StyledButton = styled(MuiButton)`
+export const StyledButton = styled(LoadingButton)<{ loading: boolean }>`
   font-family: DIN Neuzeit, sans-serif;
   font-weight: 100;
   background-color: transparent;
@@ -20,6 +25,13 @@ export const StyledButton = styled(MuiButton)`
   cursor: pointer;
   transition: 300ms ease;
   border-radius: 1.5px;
+
+  ${({ loading }) =>
+    loading &&
+    `
+  background-color: grey !important;
+  `}
+
   &:hover {
     background-color: #1d1c1c;
   }

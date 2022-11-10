@@ -6,7 +6,7 @@ import {
   StyledColorRadioButton,
 } from 'features/SingleProduct/assets/Filters/Filters-styles'
 
-import { ColorRadioButton } from 'components/ColorButton/ColorButton'
+import { ColorRadioButton } from 'components/Elements/ColorButton/ColorButton'
 import { FiltersProps } from '../../types/Filters.model'
 import React from 'react'
 import { SizeButton } from './SizeButton'

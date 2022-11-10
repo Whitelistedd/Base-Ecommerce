@@ -1,4 +1,4 @@
-import { Announcement } from 'components/Announcement/Announcement'
+import { Announcement } from 'components/Elements/Announcement/Announcement'
 import { Footer } from 'components/Footer/Footer'
 import { Navbar } from 'components/Navbar/Navbar'
 import React from 'react'

@@ -1,6 +1,6 @@
-import { Failed } from 'components/Failed/Failed'
+import { Failed } from 'components/States/Failed/Failed'
 import Image from 'next/image'
-import { Loading } from 'components/Loading/Loading'
+import { Loading } from 'components/States/Loading/Loading'
 import React from 'react'
 import { devices } from 'data/MediaQueries'
 import styled from '@emotion/styled'

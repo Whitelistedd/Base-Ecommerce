@@ -17,6 +17,7 @@
     "@emotion/server": "latest",
     "@emotion/styled": "latest",
     "@mui/icons-material": "latest",
+    "@mui/lab": "^5.0.0-alpha.107",
     "@mui/material": "latest",
     "@reduxjs/toolkit": "^1.8.3",
     "axios": "^0.27.2",

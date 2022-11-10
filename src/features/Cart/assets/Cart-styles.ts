@@ -1,4 +1,4 @@
-import { Button } from 'components/Button/Button'
+import { Button } from 'components/Elements/Button/Button'
 import { devices } from 'data/MediaQueries'
 import styled from '@emotion/styled'
 

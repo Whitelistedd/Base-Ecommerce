@@ -1,12 +1,23 @@
-import { UseFormRegister } from 'react-hook-form'
+import { Controller, UseFormRegister } from 'react-hook-form'
+
 import styled from '@emotion/styled'
 
 export const Input = (props: any) => {
   return (
-    <Container>
-      <StyledInput error={props.error} {...props} />
-      {props.error && <Error>{props.error}</Error>}
-    </Container>
+    <Controller
+      name={props.name}
+      defaultValue={props.defaultValue}
+      control={props.control}
+      rules={{
+        required: props.required,
+      }}
+      render={({ field }) => (
+        <Container>
+          <StyledInput {...field} error={props.error} {...props} />
+          {props.error && <Error>{props.error}</Error>}
+        </Container>
+      )}
+    />
   )
 }
 
@@ -28,6 +39,6 @@ const StyledInput = styled.input<{ error: string }>`
   border: 1px solid #d9d9d9;
   outline: ${({ error }) => (error ? '2px solid red' : 'none')};
   &:focus {
-    border: 2px solid #b69f8d;
+    outline: 2px solid #b69f8d;
   }
 `

@@ -8,9 +8,9 @@ import {
   useProductsList,
 } from 'features/Products'
 
-import { Filters } from 'components/Filters/Filters'
+import { Filters } from 'components/Elements/Filters/Filters'
 import Head from 'next/head'
-import MobileFilter from 'components/Filters/MobileFilter'
+import MobileFilter from 'components/Elements/Filters/MobileFilter'
 import { Products } from 'features/Products/components/Products'
 import { UseQueryResult } from 'react-query'
 import { devices } from 'data/MediaQueries'

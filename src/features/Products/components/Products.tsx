@@ -18,7 +18,7 @@ import { Navigation, Pagination } from 'swiper'
 import { ProductDataType, filtersType } from 'types/GlobalTypes.model'
 import React, { useMemo, useState } from 'react'
 
-import { Failed } from 'components/Failed/Failed'
+import { Failed } from 'components/States/Failed/Failed'
 import { Product } from './Product'
 import { ProductsProps } from '../types/Products'
 import { SwiperSlide } from 'swiper/react'

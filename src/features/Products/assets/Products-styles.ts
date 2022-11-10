@@ -1,4 +1,4 @@
-import { Loading } from 'components/Loading/Loading'
+import { Loading } from 'components/States/Loading/Loading'
 import { Product } from '../components/Product'
 import { Swiper } from 'swiper/react'
 import styled from '@emotion/styled'
