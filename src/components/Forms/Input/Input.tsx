@@ -42,7 +42,7 @@ export const Input = (props: InputProps) => {
         <Container>
           <StyledInput
             {...field}
-            formError={props.error ? `${props.error}` : ''}
+            formerror={props.error ? `${props.error}` : ''}
           />
           {props.error && <Error>{props.error}</Error>}
         </Container>
@@ -60,7 +60,7 @@ const Error = styled.p`
   font-family: 'Roboto';
 `
 
-const StyledInput = styled(TextField)<{ formError: string }>`
+const StyledInput = styled(TextField)<{ formerror: string }>`
   width: 100%;
   margin-bottom: 7px;
   max-width: 100%;

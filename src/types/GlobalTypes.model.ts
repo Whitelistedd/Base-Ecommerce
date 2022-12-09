@@ -11,7 +11,6 @@ export type AllSizes = {
 export type AllColors = {
   id: string
   colorName: string
-  RussianName: string
   HexColor: string
 }
 

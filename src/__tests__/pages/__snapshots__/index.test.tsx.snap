@@ -12,7 +12,7 @@ exports[`Index page should match snapshot 1`] = `
       onTouchStart={[Function]}
     >
       <button
-        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium sc-ksBlkl ithzKR sc-eeMvmM dIvlIq css-1vqlznj-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium sc-ksBlkl ithzKR sc-eeMvmM dIvlIq css-170ytl2-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root-HomePage"
         disabled={false}
         id=":r0:"
         onBlur={[Function]}
@@ -426,7 +426,7 @@ exports[`Index page should match snapshot 1`] = `
                 onTouchStart={[Function]}
               >
                 <div
-                  className="sc-ezOQGI ProductImage"
+                  className="sc-ezOQGI ProductImage css-ap4ak7-Product"
                 >
                   <span
                     style={
@@ -661,7 +661,7 @@ exports[`Index page should match snapshot 1`] = `
                 onTouchStart={[Function]}
               >
                 <div
-                  className="sc-ezOQGI ProductImage"
+                  className="sc-ezOQGI ProductImage css-ap4ak7-Product"
                 >
                   <span
                     style={
@@ -896,7 +896,7 @@ exports[`Index page should match snapshot 1`] = `
                 onTouchStart={[Function]}
               >
                 <div
-                  className="sc-ezOQGI ProductImage"
+                  className="sc-ezOQGI ProductImage css-ap4ak7-Product"
                 >
                   <span
                     style={

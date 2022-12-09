@@ -40,14 +40,15 @@ exports[`Profile page should match snapshot 1`] = `
           className="sc-dIfARi"
         >
           <div
-            className="MuiFormControl-root MuiTextField-root sc-dmctIk kZUnCw css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+            className="MuiFormControl-root MuiTextField-root sc-dmctIk kbzdwU css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+            formerror=""
           >
             <div
               className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
               onClick={[Function]}
             >
               <input
-                aria-invalid=""
+                aria-invalid={false}
                 autoFocus={false}
                 className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
                 disabled={false}
@@ -82,14 +83,15 @@ exports[`Profile page should match snapshot 1`] = `
           className="sc-dIfARi"
         >
           <div
-            className="MuiFormControl-root MuiTextField-root sc-dmctIk kZUnCw css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+            className="MuiFormControl-root MuiTextField-root sc-dmctIk kbzdwU css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+            formerror=""
           >
             <div
               className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
               onClick={[Function]}
             >
               <input
-                aria-invalid=""
+                aria-invalid={false}
                 autoFocus={false}
                 className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
                 disabled={false}
@@ -124,14 +126,15 @@ exports[`Profile page should match snapshot 1`] = `
           className="sc-dIfARi"
         >
           <div
-            className="MuiFormControl-root MuiTextField-root sc-dmctIk kZUnCw css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+            className="MuiFormControl-root MuiTextField-root sc-dmctIk kbzdwU css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+            formerror=""
           >
             <div
               className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
               onClick={[Function]}
             >
               <input
-                aria-invalid=""
+                aria-invalid={false}
                 autoFocus={false}
                 className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
                 disabled={false}
@@ -166,14 +169,15 @@ exports[`Profile page should match snapshot 1`] = `
           className="sc-dIfARi"
         >
           <div
-            className="MuiFormControl-root MuiTextField-root sc-dmctIk kZUnCw css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+            className="MuiFormControl-root MuiTextField-root sc-dmctIk kbzdwU css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+            formerror=""
           >
             <div
               className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
               onClick={[Function]}
             >
               <input
-                aria-invalid=""
+                aria-invalid={false}
                 autoFocus={false}
                 className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
                 disabled={false}
@@ -248,7 +252,7 @@ exports[`Profile page should match snapshot 1`] = `
                             "name": "address.country",
                           },
                           "required": "Select a Region/Country",
-                          "value": "CA",
+                          "value": "",
                         },
                       },
                       "zipCode": {
@@ -314,7 +318,7 @@ exports[`Profile page should match snapshot 1`] = `
                     "address": {
                       "address": "testAddress",
                       "city": "testCity",
-                      "country": "CA",
+                      "country": "",
                       "zipCode": "testZipCode",
                     },
                     "firstName": "test",
@@ -415,7 +419,7 @@ exports[`Profile page should match snapshot 1`] = `
                 onChange={[Function]}
                 required="Select a Region/Country"
                 tabIndex={-1}
-                value="CA"
+                value=""
               />
               <svg
                 aria-hidden={true}
@@ -448,14 +452,15 @@ exports[`Profile page should match snapshot 1`] = `
             className="sc-dIfARi"
           >
             <div
-              className="MuiFormControl-root MuiTextField-root sc-dmctIk kZUnCw css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+              className="MuiFormControl-root MuiTextField-root sc-dmctIk kbzdwU css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+              formerror=""
             >
               <div
                 className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
                 onClick={[Function]}
               >
                 <input
-                  aria-invalid=""
+                  aria-invalid={false}
                   autoFocus={false}
                   className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
                   disabled={false}
@@ -491,14 +496,15 @@ exports[`Profile page should match snapshot 1`] = `
           className="sc-dIfARi"
         >
           <div
-            className="MuiFormControl-root MuiTextField-root sc-dmctIk kZUnCw css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+            className="MuiFormControl-root MuiTextField-root sc-dmctIk kbzdwU css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+            formerror=""
           >
             <div
               className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
               onClick={[Function]}
             >
               <input
-                aria-invalid=""
+                aria-invalid={false}
                 autoFocus={false}
                 className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
                 disabled={false}
@@ -640,12 +646,6 @@ exports[`Profile page should match snapshot 1`] = `
           >
             ZIP code: 
             testZipCode
-          </p>
-          <p
-            className="sc-iAEawV"
-          >
-            Country/Region:
-             
           </p>
         </div>
         <a

@@ -8,7 +8,6 @@ export const fakeProduct: ProductDataType = {
     {
       id: '',
       colorName: '',
-      RussianName: '',
       HexColor: '',
     },
   ],

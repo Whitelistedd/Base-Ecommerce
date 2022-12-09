@@ -1,7 +1,7 @@
 import {
-	QueryCache,
-	QueryClient,
-	QueryClientProvider,
+  QueryCache,
+  QueryClient,
+  QueryClientProvider,
 } from '@tanstack/react-query'
 
 import Home from '@/pages/index'
@@ -13,74 +13,74 @@ import { useProductsList } from '@/features/Products'
 const mockedUseProductsList = useProductsList as jest.Mock
 
 jest.mock('../../features/Products', () => ({
-	useProductsList: jest.fn(),
+  useProductsList: jest.fn(),
 }))
 
 describe('Index page', () => {
-	const queryCache = new QueryCache()
-	const queryClient = new QueryClient({ queryCache })
-	const mockProductListData = {
-		products: TEST_PRODUCTS,
-		page: 1,
-		totalPages: 2,
-	}
-	it('fetches products with correct params', () => {
-		mockedUseProductsList.mockImplementation(() => ({
-			status: 'success',
-			data: mockProductListData,
-		}))
-		renderWithClient(
-			queryClient,
-			<Home productsData={mockProductListData} reviews={[]} />
-		)
+  const queryCache = new QueryCache()
+  const queryClient = new QueryClient({ queryCache })
+  const mockProductListData = {
+    products: TEST_PRODUCTS,
+    page: 1,
+    totalPages: 2,
+  }
+  it('fetches products with correct params', () => {
+    mockedUseProductsList.mockImplementation(() => ({
+      status: 'success',
+      data: mockProductListData,
+    }))
+    renderWithClient(
+      queryClient,
+      <Home productsData={mockProductListData} reviews={[]} />
+    )
 
-		expect(useProductsList).toHaveBeenCalledWith(mockProductListData, 1, {})
-	})
+    expect(useProductsList).toHaveBeenCalledWith(mockProductListData, 1, {})
+  })
 
-	describe('while loading', () => {
-		it('renders a loader', () => {
-			mockedUseProductsList.mockImplementation(() => ({
-				status: 'loading',
-				data: mockProductListData,
-			}))
+  describe('while loading', () => {
+    it('renders a loader', () => {
+      mockedUseProductsList.mockImplementation(() => ({
+        status: 'loading',
+        data: mockProductListData,
+      }))
 
-			const { getByAltText } = renderWithClient(
-				queryClient,
-				<Home productsData={mockProductListData} reviews={[]} />
-			)
+      const { getByAltText } = renderWithClient(
+        queryClient,
+        <Home productsData={mockProductListData} reviews={[]} />
+      )
 
-			expect(getByAltText(/loading.../)).toBeInTheDocument()
-		})
-	})
+      expect(getByAltText(/loading.../)).toBeInTheDocument()
+    })
+  })
 
-	describe('with an error', () => {
-		it('renders a error', () => {
-			mockedUseProductsList.mockImplementation(() => ({
-				status: 'error',
-				data: mockProductListData,
-			}))
+  describe('with an error', () => {
+    it('renders a error', () => {
+      mockedUseProductsList.mockImplementation(() => ({
+        status: 'error',
+        data: mockProductListData,
+      }))
 
-			const { getByAltText } = renderWithClient(
-				queryClient,
-				<Home productsData={mockProductListData} reviews={[]} />
-			)
+      const { getByAltText } = renderWithClient(
+        queryClient,
+        <Home productsData={mockProductListData} reviews={[]} />
+      )
 
-			expect(getByAltText(/Failed/)).toBeInTheDocument()
-		})
-	})
+      expect(getByAltText(/Failed/)).toBeInTheDocument()
+    })
+  })
 
-	it('should match snapshot', () => {
-		mockedUseProductsList.mockImplementation(() => ({
-			status: 'success',
-			data: mockProductListData,
-		}))
-		const tree = renderer
-			.create(
-				<QueryClientProvider client={queryClient}>
-					<Home productsData={mockProductListData} reviews={[]} />
-				</QueryClientProvider>
-			)
-			.toJSON()
-		expect(tree).toMatchSnapshot()
-	})
+  it('should match snapshot', () => {
+    mockedUseProductsList.mockImplementation(() => ({
+      status: 'success',
+      data: mockProductListData,
+    }))
+    const tree = renderer
+      .create(
+        <QueryClientProvider client={queryClient}>
+          <Home productsData={mockProductListData} reviews={[]} />
+        </QueryClientProvider>
+      )
+      .toJSON()
+    expect(tree).toMatchSnapshot()
+  })
 })
