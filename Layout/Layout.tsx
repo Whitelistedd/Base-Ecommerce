@@ -1,7 +1,6 @@
-import { Announcement } from 'components/Elements/Announcement/Announcement'
-import { Footer } from 'components/Footer/Footer'
-import { Navbar } from 'components/Navbar/Navbar'
-import React from 'react'
+import { Announcement } from '@/components/Elements/Announcement/Announcement'
+import { Footer } from '@/components/Footer/Footer'
+import { Navbar } from '@/components/Navbar/Navbar'
 import styled from '@emotion/styled'
 import { useRouter } from 'next/router'
 

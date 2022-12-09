@@ -34,7 +34,7 @@ export type ProductDataType = {
 export type ProductsArrayType = Array<ProductDataType>
 
 export type filtersType = {
-  [name: string]: any
+  [name: string]: string
 }
 
 export type itemFilterType = {

@@ -1,0 +1,661 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Profile page should match snapshot 1`] = `
+<div
+  className="sc-cUEOzv gNupge"
+>
+  <div
+    className="sc-eDvSVe jJHXRC"
+  >
+    <div
+      className="sc-hLBbgP kKONFn"
+    >
+      <svg
+        aria-hidden={true}
+        className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-19w203a-MuiSvgIcon-root"
+        data-testid="CloseIcon"
+        focusable="false"
+        onClick={[Function]}
+        viewBox="0 0 24 24"
+      >
+        <path
+          d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"
+        />
+      </svg>
+      <h1
+        className="sc-dkrFOg fnODQk"
+      >
+        EDIT AN ADDRESS
+      </h1>
+      <p
+        className="sc-gswNZR isRRLm"
+      >
+        Please fill in the information below:
+      </p>
+      <form
+        className="sc-bcXHqe bJlXOu"
+        onSubmit={[Function]}
+      >
+        <div
+          className="sc-dIfARi"
+        >
+          <div
+            className="MuiFormControl-root MuiTextField-root sc-dmctIk kZUnCw css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+          >
+            <div
+              className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
+              onClick={[Function]}
+            >
+              <input
+                aria-invalid=""
+                autoFocus={false}
+                className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                disabled={false}
+                id=":r0:"
+                name="firstName"
+                onAnimationStart={[Function]}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                required={false}
+                type="text"
+                value="test"
+              />
+              <fieldset
+                aria-hidden={true}
+                className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              >
+                <legend
+                  className="css-ihdtdm"
+                >
+                  <span
+                    className="notranslate"
+                  >
+                    ​
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-dIfARi"
+        >
+          <div
+            className="MuiFormControl-root MuiTextField-root sc-dmctIk kZUnCw css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+          >
+            <div
+              className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
+              onClick={[Function]}
+            >
+              <input
+                aria-invalid=""
+                autoFocus={false}
+                className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                disabled={false}
+                id=":r1:"
+                name="lastName"
+                onAnimationStart={[Function]}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                required={false}
+                type="text"
+                value="test"
+              />
+              <fieldset
+                aria-hidden={true}
+                className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              >
+                <legend
+                  className="css-ihdtdm"
+                >
+                  <span
+                    className="notranslate"
+                  >
+                    ​
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-dIfARi"
+        >
+          <div
+            className="MuiFormControl-root MuiTextField-root sc-dmctIk kZUnCw css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+          >
+            <div
+              className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
+              onClick={[Function]}
+            >
+              <input
+                aria-invalid=""
+                autoFocus={false}
+                className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                disabled={false}
+                id=":r2:"
+                name="address.address"
+                onAnimationStart={[Function]}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                required={false}
+                type="text"
+                value="testAddress"
+              />
+              <fieldset
+                aria-hidden={true}
+                className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              >
+                <legend
+                  className="css-ihdtdm"
+                >
+                  <span
+                    className="notranslate"
+                  >
+                    ​
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-dIfARi"
+        >
+          <div
+            className="MuiFormControl-root MuiTextField-root sc-dmctIk kZUnCw css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+          >
+            <div
+              className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
+              onClick={[Function]}
+            >
+              <input
+                aria-invalid=""
+                autoFocus={false}
+                className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                disabled={false}
+                id=":r3:"
+                name="address.city"
+                onAnimationStart={[Function]}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                required={false}
+                type="text"
+                value="testCity"
+              />
+              <fieldset
+                aria-hidden={true}
+                className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              >
+                <legend
+                  className="css-ihdtdm"
+                >
+                  <span
+                    className="notranslate"
+                  >
+                    ​
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-ipEyDJ eCisCl"
+        >
+          <div
+            className="sc-kgTSHT CYuA-D"
+          >
+            <div
+              className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary sc-bBABsx eYeKFR css-1fsbs06-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+              control={
+                {
+                  "_defaultValues": {},
+                  "_executeSchema": [Function],
+                  "_fields": {
+                    "address": {
+                      "address": {
+                        "_f": {
+                          "mount": true,
+                          "name": "address.address",
+                          "ref": {
+                            "name": "address.address",
+                          },
+                          "required": "Enter an address",
+                          "value": "testAddress",
+                        },
+                      },
+                      "city": {
+                        "_f": {
+                          "mount": true,
+                          "name": "address.city",
+                          "ref": {
+                            "name": "address.city",
+                          },
+                          "required": "Enter a City",
+                          "value": "testCity",
+                        },
+                      },
+                      "country": {
+                        "_f": {
+                          "mount": true,
+                          "name": "address.country",
+                          "ref": {
+                            "name": "address.country",
+                          },
+                          "required": "Select a Region/Country",
+                          "value": "CA",
+                        },
+                      },
+                      "zipCode": {
+                        "_f": {
+                          "mount": true,
+                          "name": "address.zipCode",
+                          "ref": {
+                            "name": "address.zipCode",
+                          },
+                          "required": "Enter a postal code",
+                          "value": "testZipCode",
+                        },
+                      },
+                    },
+                    "firstName": {
+                      "_f": {
+                        "mount": true,
+                        "name": "firstName",
+                        "ref": {
+                          "name": "firstName",
+                        },
+                        "required": "Enter a First name",
+                        "value": "test",
+                      },
+                    },
+                    "lastName": {
+                      "_f": {
+                        "mount": true,
+                        "name": "lastName",
+                        "ref": {
+                          "name": "lastName",
+                        },
+                        "required": "Enter a Last name",
+                        "value": "test",
+                      },
+                    },
+                    "phoneNumber": {
+                      "_f": {
+                        "mount": true,
+                        "name": "phoneNumber",
+                        "ref": {
+                          "name": "phoneNumber",
+                        },
+                        "required": "Enter a phone number",
+                        "value": undefined,
+                      },
+                    },
+                  },
+                  "_focusError": [Function],
+                  "_formState": {
+                    "dirtyFields": {},
+                    "errors": {},
+                    "isDirty": false,
+                    "isSubmitSuccessful": false,
+                    "isSubmitted": false,
+                    "isSubmitting": false,
+                    "isValid": false,
+                    "isValidating": false,
+                    "submitCount": 0,
+                    "touchedFields": {},
+                  },
+                  "_formValues": {
+                    "address": {
+                      "address": "testAddress",
+                      "city": "testCity",
+                      "country": "CA",
+                      "zipCode": "testZipCode",
+                    },
+                    "firstName": "test",
+                    "lastName": "test",
+                    "phoneNumber": undefined,
+                  },
+                  "_getDirty": [Function],
+                  "_getFieldArray": [Function],
+                  "_getWatch": [Function],
+                  "_names": {
+                    "array": Set {},
+                    "mount": Set {
+                      "firstName",
+                      "lastName",
+                      "address.address",
+                      "address.city",
+                      "address.country",
+                      "address.zipCode",
+                      "phoneNumber",
+                    },
+                    "unMount": Set {},
+                    "watch": Set {},
+                  },
+                  "_options": {
+                    "mode": "onSubmit",
+                    "reValidateMode": "onChange",
+                    "shouldFocusError": true,
+                  },
+                  "_proxyFormState": {
+                    "dirtyFields": false,
+                    "errors": "all",
+                    "isDirty": false,
+                    "isValid": false,
+                    "isValidating": false,
+                    "touchedFields": false,
+                  },
+                  "_removeUnmounted": [Function],
+                  "_stateFlags": {
+                    "action": false,
+                    "mount": false,
+                    "watch": false,
+                  },
+                  "_subjects": {
+                    "array": {
+                      "next": [Function],
+                      "observers": [],
+                      "subscribe": [Function],
+                      "unsubscribe": [Function],
+                    },
+                    "state": {
+                      "next": [Function],
+                      "observers": [],
+                      "subscribe": [Function],
+                      "unsubscribe": [Function],
+                    },
+                    "watch": {
+                      "next": [Function],
+                      "observers": [],
+                      "subscribe": [Function],
+                      "unsubscribe": [Function],
+                    },
+                  },
+                  "_updateFieldArray": [Function],
+                  "_updateValid": [Function],
+                  "getFieldState": [Function],
+                  "register": [Function],
+                  "unregister": [Function],
+                }
+              }
+              isClearable={true}
+              onClick={[Function]}
+              required="Select a Region/Country"
+            >
+              <div
+                aria-expanded="false"
+                aria-haspopup="listbox"
+                aria-labelledby="mui-component-select-address.country"
+                className="MuiSelect-select MuiSelect-outlined MuiInputBase-input MuiOutlinedInput-input css-11u53oe-MuiSelect-select-MuiInputBase-input-MuiOutlinedInput-input"
+                id="mui-component-select-address.country"
+                onBlur={[Function]}
+                onFocus={[Function]}
+                onKeyDown={[Function]}
+                onMouseDown={[Function]}
+                role="button"
+                tabIndex={0}
+              >
+                <span
+                  className="notranslate"
+                >
+                  ​
+                </span>
+              </div>
+              <input
+                aria-hidden={true}
+                className="MuiSelect-nativeInput css-yf8vq0-MuiSelect-nativeInput"
+                name="address.country"
+                onAnimationStart={[Function]}
+                onChange={[Function]}
+                required="Select a Region/Country"
+                tabIndex={-1}
+                value="CA"
+              />
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium MuiSelect-icon MuiSelect-iconOutlined css-hfutr2-MuiSvgIcon-root-MuiSelect-icon"
+                data-testid="ArrowDropDownIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M7 10l5 5 5-5z"
+                />
+              </svg>
+              <fieldset
+                aria-hidden={true}
+                className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              >
+                <legend
+                  className="css-ihdtdm"
+                >
+                  <span
+                    className="notranslate"
+                  >
+                    ​
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+          <div
+            className="sc-dIfARi"
+          >
+            <div
+              className="MuiFormControl-root MuiTextField-root sc-dmctIk kZUnCw css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+            >
+              <div
+                className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
+                onClick={[Function]}
+              >
+                <input
+                  aria-invalid=""
+                  autoFocus={false}
+                  className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                  disabled={false}
+                  id=":r4:"
+                  name="address.zipCode"
+                  onAnimationStart={[Function]}
+                  onBlur={[Function]}
+                  onChange={[Function]}
+                  onFocus={[Function]}
+                  required={false}
+                  type="text"
+                  value="testZipCode"
+                />
+                <fieldset
+                  aria-hidden={true}
+                  className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+                >
+                  <legend
+                    className="css-ihdtdm"
+                  >
+                    <span
+                      className="notranslate"
+                    >
+                      ​
+                    </span>
+                  </legend>
+                </fieldset>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div
+          className="sc-dIfARi"
+        >
+          <div
+            className="MuiFormControl-root MuiTextField-root sc-dmctIk kZUnCw css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+          >
+            <div
+              className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary MuiInputBase-formControl css-9ddj71-MuiInputBase-root-MuiOutlinedInput-root"
+              onClick={[Function]}
+            >
+              <input
+                aria-invalid=""
+                autoFocus={false}
+                className="MuiInputBase-input MuiOutlinedInput-input css-1t8l2tu-MuiInputBase-input-MuiOutlinedInput-input"
+                disabled={false}
+                id=":r5:"
+                name="phoneNumber"
+                onAnimationStart={[Function]}
+                onBlur={[Function]}
+                onChange={[Function]}
+                onFocus={[Function]}
+                required={false}
+                type="text"
+              />
+              <fieldset
+                aria-hidden={true}
+                className="MuiOutlinedInput-notchedOutline css-1d3z3hw-MuiOutlinedInput-notchedOutline"
+              >
+                <legend
+                  className="css-ihdtdm"
+                >
+                  <span
+                    className="notranslate"
+                  >
+                    ​
+                  </span>
+                </legend>
+              </fieldset>
+            </div>
+          </div>
+        </div>
+        <button
+          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium sc-jSUZER dKasrh css-1wv28lq-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          disabled={false}
+          id=":r6:"
+          onBlur={[Function]}
+          onContextMenu={[Function]}
+          onDragLeave={[Function]}
+          onFocus={[Function]}
+          onKeyDown={[Function]}
+          onKeyUp={[Function]}
+          onMouseDown={[Function]}
+          onMouseLeave={[Function]}
+          onMouseUp={[Function]}
+          onTouchEnd={[Function]}
+          onTouchMove={[Function]}
+          onTouchStart={[Function]}
+          tabIndex={0}
+          type="submit"
+        >
+          EDIT AN ADDRESS
+        </button>
+      </form>
+    </div>
+  </div>
+  <div
+    className="sc-gYbzsP gPMSFt"
+  >
+    <div
+      className="sc-bYMpWt"
+    >
+      <a
+        href="/profile"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
+      >
+        <p
+          className="sc-ezOQGI ioOpXg"
+        >
+          GO BACK TO PROFILE
+        </p>
+      </a>
+    </div>
+    <p
+      className="sc-iAEawV"
+    >
+      Welcome back, 
+      user
+    </p>
+    <div
+      className="sc-cabOPr hJnNAU"
+    >
+      <div
+        className="sc-cCjUiG gusuVH"
+      >
+        <p
+          className="sc-iTFTee fXdgcV"
+        >
+          MY ORDERS
+        </p>
+        <p
+          className="sc-iAEawV"
+        >
+          You havent placed any orders yet
+        </p>
+      </div>
+      <div
+        className="sc-cjibBx cpRqrm"
+      >
+        <p
+          className="sc-iTFTee fXdgcV"
+        >
+          PRIMARY ADDRESS
+        </p>
+        <div
+          className="sc-jcMfQk ckVsEq"
+        >
+          <p
+            className="sc-iAEawV"
+          >
+            First name: 
+            test
+          </p>
+          <p
+            className="sc-iAEawV"
+          >
+            Last name: 
+            test
+          </p>
+          <p
+            className="sc-iAEawV"
+          >
+            Address 1: 
+            testAddress
+          </p>
+          <p
+            className="sc-iAEawV"
+          >
+            City: 
+            testCity
+          </p>
+          <p
+            className="sc-iAEawV"
+          >
+            Apartment: 
+            testApartment
+          </p>
+          <p
+            className="sc-iAEawV"
+          >
+            ZIP code: 
+            testZipCode
+          </p>
+          <p
+            className="sc-iAEawV"
+          >
+            Country/Region:
+             
+          </p>
+        </div>
+        <a
+          className="sc-eeMvmM blHzSg"
+          onClick={[Function]}
+        >
+          EDIT ADDRESSES
+        </a>
+      </div>
+    </div>
+  </div>
+</div>
+`;

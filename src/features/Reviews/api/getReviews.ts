@@ -1,5 +1,5 @@
 import { getReviewsType } from '../types/getReviews'
-import { publicRequest } from 'requests'
+import { publicRequest } from '@/requests'
 
 /* для получения всех продуктов */
 export const getReviews: getReviewsType = async () => {

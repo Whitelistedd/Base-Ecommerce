@@ -1,6 +1,4 @@
-import 'swiper/css'
-import 'swiper/css/effect-fade'
-import 'swiper/css/navigation'
+import "swiper/swiper-bundle.css"
 
 import { EffectFade, Navigation } from 'swiper'
 import {
@@ -18,7 +16,7 @@ export const ImageSwipe: React.FC<ImageSwipeProps> = ({ productInfo }) => {
   return (
     <StyledSwiper
       modules={[Navigation, EffectFade]}
-      navigation
+      navigation={true}
       speed={800}
       slidesPerView={1}
       loop

@@ -1,0 +1,1333 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Index page should match snapshot 1`] = `
+[
+  <div
+    className="sc-jOiSOi cqrpCy"
+  >
+    <a
+      href="/products"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
+    >
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium sc-ksBlkl ithzKR sc-eeMvmM dIvlIq css-1vqlznj-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        disabled={false}
+        id=":r0:"
+        onBlur={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        SHOP NOW
+      </button>
+    </a>
+  </div>,
+  <div
+    className="sc-cOxWqc cYcdnE"
+  >
+    <div
+      className="sc-dPWrhe coVEqf"
+    >
+      <a
+        href="/product/6368e3394b3d8da6f8dc9b81"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
+      >
+        <div
+          className="sc-hBxehG gkuKaW"
+        >
+          <div
+            className="sc-fnGiBr ljLwrd"
+          >
+            <span
+              style={
+                {
+                  "background": "none",
+                  "border": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": "initial",
+                  "margin": 0,
+                  "opacity": 1,
+                  "overflow": "hidden",
+                  "padding": 0,
+                  "position": "relative",
+                  "width": "initial",
+                }
+              }
+            >
+              <span
+                style={
+                  {
+                    "background": "none",
+                    "border": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": "initial",
+                    "margin": 0,
+                    "opacity": 1,
+                    "padding": 0,
+                    "paddingTop": "129.03225806451613%",
+                    "width": "initial",
+                  }
+                }
+              />
+              <img
+                alt="categoryImage"
+                className="sc-fEXmlR"
+                data-nimg="responsive"
+                decoding="async"
+                onError={[Function]}
+                onLoad={[Function]}
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style={
+                  {
+                    "border": "none",
+                    "bottom": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": 0,
+                    "left": 0,
+                    "margin": "auto",
+                    "maxHeight": "100%",
+                    "maxWidth": "100%",
+                    "minHeight": "100%",
+                    "minWidth": "100%",
+                    "objectFit": undefined,
+                    "objectPosition": undefined,
+                    "padding": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": 0,
+                  }
+                }
+              />
+              <noscript>
+                <img
+                  alt="categoryImage"
+                  className="sc-fEXmlR"
+                  data-nimg="responsive"
+                  decoding="async"
+                  loading="lazy"
+                  sizes="100vw"
+                  src="/_next/image?url=https%3A%2F%2Fi.ibb.co%2Fz88226L%2FUntitled-design-2022-10-21-T094624-760-620x.webp&w=3840&q=75"
+                  srcSet="/_next/image?url=https%3A%2F%2Fi.ibb.co%2Fz88226L%2FUntitled-design-2022-10-21-T094624-760-620x.webp&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2Fz88226L%2FUntitled-design-2022-10-21-T094624-760-620x.webp&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2Fz88226L%2FUntitled-design-2022-10-21-T094624-760-620x.webp&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2Fz88226L%2FUntitled-design-2022-10-21-T094624-760-620x.webp&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2Fz88226L%2FUntitled-design-2022-10-21-T094624-760-620x.webp&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2Fz88226L%2FUntitled-design-2022-10-21-T094624-760-620x.webp&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2Fz88226L%2FUntitled-design-2022-10-21-T094624-760-620x.webp&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2Fz88226L%2FUntitled-design-2022-10-21-T094624-760-620x.webp&w=3840&q=75 3840w"
+                  style={
+                    {
+                      "border": "none",
+                      "bottom": 0,
+                      "boxSizing": "border-box",
+                      "display": "block",
+                      "height": 0,
+                      "left": 0,
+                      "margin": "auto",
+                      "maxHeight": "100%",
+                      "maxWidth": "100%",
+                      "minHeight": "100%",
+                      "minWidth": "100%",
+                      "objectFit": undefined,
+                      "objectPosition": undefined,
+                      "padding": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "width": 0,
+                    }
+                  }
+                />
+              </noscript>
+            </span>
+          </div>
+          <h1
+            className="sc-bjfHbI jEgZNu"
+          >
+            Knitted Sweaters
+          </h1>
+        </div>
+      </a>
+      <a
+        href="/product/6368eb024b3d8da6f8dc9b82"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
+      >
+        <div
+          className="sc-hBxehG gkuKaW"
+        >
+          <div
+            className="sc-fnGiBr ljLwrd"
+          >
+            <span
+              style={
+                {
+                  "background": "none",
+                  "border": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": "initial",
+                  "margin": 0,
+                  "opacity": 1,
+                  "overflow": "hidden",
+                  "padding": 0,
+                  "position": "relative",
+                  "width": "initial",
+                }
+              }
+            >
+              <span
+                style={
+                  {
+                    "background": "none",
+                    "border": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": "initial",
+                    "margin": 0,
+                    "opacity": 1,
+                    "padding": 0,
+                    "paddingTop": "129.03225806451613%",
+                    "width": "initial",
+                  }
+                }
+              />
+              <img
+                alt="categoryImage"
+                className="sc-fEXmlR"
+                data-nimg="responsive"
+                decoding="async"
+                onError={[Function]}
+                onLoad={[Function]}
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style={
+                  {
+                    "border": "none",
+                    "bottom": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": 0,
+                    "left": 0,
+                    "margin": "auto",
+                    "maxHeight": "100%",
+                    "maxWidth": "100%",
+                    "minHeight": "100%",
+                    "minWidth": "100%",
+                    "objectFit": undefined,
+                    "objectPosition": undefined,
+                    "padding": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": 0,
+                  }
+                }
+              />
+              <noscript>
+                <img
+                  alt="categoryImage"
+                  className="sc-fEXmlR"
+                  data-nimg="responsive"
+                  decoding="async"
+                  loading="lazy"
+                  sizes="100vw"
+                  src="/_next/image?url=https%3A%2F%2Fi.ibb.co%2FxYJk27k%2FUntitled-design-2022-10-21-T094516-848-620x.webp&w=3840&q=75"
+                  srcSet="/_next/image?url=https%3A%2F%2Fi.ibb.co%2FxYJk27k%2FUntitled-design-2022-10-21-T094516-848-620x.webp&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FxYJk27k%2FUntitled-design-2022-10-21-T094516-848-620x.webp&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FxYJk27k%2FUntitled-design-2022-10-21-T094516-848-620x.webp&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FxYJk27k%2FUntitled-design-2022-10-21-T094516-848-620x.webp&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FxYJk27k%2FUntitled-design-2022-10-21-T094516-848-620x.webp&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FxYJk27k%2FUntitled-design-2022-10-21-T094516-848-620x.webp&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FxYJk27k%2FUntitled-design-2022-10-21-T094516-848-620x.webp&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FxYJk27k%2FUntitled-design-2022-10-21-T094516-848-620x.webp&w=3840&q=75 3840w"
+                  style={
+                    {
+                      "border": "none",
+                      "bottom": 0,
+                      "boxSizing": "border-box",
+                      "display": "block",
+                      "height": 0,
+                      "left": 0,
+                      "margin": "auto",
+                      "maxHeight": "100%",
+                      "maxWidth": "100%",
+                      "minHeight": "100%",
+                      "minWidth": "100%",
+                      "objectFit": undefined,
+                      "objectPosition": undefined,
+                      "padding": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "width": 0,
+                    }
+                  }
+                />
+              </noscript>
+            </span>
+          </div>
+          <h1
+            className="sc-bjfHbI jEgZNu"
+          >
+            Cargo Pants
+          </h1>
+        </div>
+      </a>
+      <a
+        href="/product/6368ec874b3d8da6f8dc9b83"
+        onClick={[Function]}
+        onMouseEnter={[Function]}
+        onTouchStart={[Function]}
+      >
+        <div
+          className="sc-hBxehG gkuKaW"
+        >
+          <div
+            className="sc-fnGiBr ljLwrd"
+          >
+            <span
+              style={
+                {
+                  "background": "none",
+                  "border": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": "initial",
+                  "margin": 0,
+                  "opacity": 1,
+                  "overflow": "hidden",
+                  "padding": 0,
+                  "position": "relative",
+                  "width": "initial",
+                }
+              }
+            >
+              <span
+                style={
+                  {
+                    "background": "none",
+                    "border": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": "initial",
+                    "margin": 0,
+                    "opacity": 1,
+                    "padding": 0,
+                    "paddingTop": "129.03225806451613%",
+                    "width": "initial",
+                  }
+                }
+              />
+              <img
+                alt="categoryImage"
+                className="sc-fEXmlR"
+                data-nimg="responsive"
+                decoding="async"
+                onError={[Function]}
+                onLoad={[Function]}
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style={
+                  {
+                    "border": "none",
+                    "bottom": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": 0,
+                    "left": 0,
+                    "margin": "auto",
+                    "maxHeight": "100%",
+                    "maxWidth": "100%",
+                    "minHeight": "100%",
+                    "minWidth": "100%",
+                    "objectFit": undefined,
+                    "objectPosition": undefined,
+                    "padding": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": 0,
+                  }
+                }
+              />
+              <noscript>
+                <img
+                  alt="categoryImage"
+                  className="sc-fEXmlR"
+                  data-nimg="responsive"
+                  decoding="async"
+                  loading="lazy"
+                  sizes="100vw"
+                  src="/_next/image?url=https%3A%2F%2Fi.ibb.co%2FHC9GgtQ%2FUntitled-design-2022-10-21-T094820-573-620x.webp&w=3840&q=75"
+                  srcSet="/_next/image?url=https%3A%2F%2Fi.ibb.co%2FHC9GgtQ%2FUntitled-design-2022-10-21-T094820-573-620x.webp&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FHC9GgtQ%2FUntitled-design-2022-10-21-T094820-573-620x.webp&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FHC9GgtQ%2FUntitled-design-2022-10-21-T094820-573-620x.webp&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FHC9GgtQ%2FUntitled-design-2022-10-21-T094820-573-620x.webp&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FHC9GgtQ%2FUntitled-design-2022-10-21-T094820-573-620x.webp&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FHC9GgtQ%2FUntitled-design-2022-10-21-T094820-573-620x.webp&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FHC9GgtQ%2FUntitled-design-2022-10-21-T094820-573-620x.webp&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2FHC9GgtQ%2FUntitled-design-2022-10-21-T094820-573-620x.webp&w=3840&q=75 3840w"
+                  style={
+                    {
+                      "border": "none",
+                      "bottom": 0,
+                      "boxSizing": "border-box",
+                      "display": "block",
+                      "height": 0,
+                      "left": 0,
+                      "margin": "auto",
+                      "maxHeight": "100%",
+                      "maxWidth": "100%",
+                      "minHeight": "100%",
+                      "minWidth": "100%",
+                      "objectFit": undefined,
+                      "objectPosition": undefined,
+                      "padding": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "width": 0,
+                    }
+                  }
+                />
+              </noscript>
+            </span>
+          </div>
+          <h1
+            className="sc-bjfHbI jEgZNu"
+          >
+            Training Shorts
+          </h1>
+        </div>
+      </a>
+    </div>
+    <div
+      className="sc-cCjUiG laiEK"
+    >
+      <div
+        className="swiper-container sc-jcMfQk kSLqVh"
+      >
+        <div
+          className="swiper-pagination"
+        />
+        <div
+          className="swiper-wrapper"
+        >
+          <div
+            className="swiper-slide"
+            tabIndex={9}
+          >
+            <div
+              className="sc-hhOBVt ufzGn Product sc-cjibBx zWgfP"
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <div
+                className="sc-ilhmMj iDDen ProductInfo"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  className="sc-ezOQGI ProductImage"
+                >
+                  <span
+                    style={
+                      {
+                        "background": "none",
+                        "border": 0,
+                        "boxSizing": "border-box",
+                        "display": "block",
+                        "height": "initial",
+                        "margin": 0,
+                        "opacity": 1,
+                        "overflow": "hidden",
+                        "padding": 0,
+                        "position": "relative",
+                        "width": "initial",
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        {
+                          "background": "none",
+                          "border": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": "initial",
+                          "margin": 0,
+                          "opacity": 1,
+                          "padding": 0,
+                          "paddingTop": "133.33333333333331%",
+                          "width": "initial",
+                        }
+                      }
+                    />
+                    <img
+                      alt="MEN'S QUARTER ZIP HOODIE"
+                      className="sc-kMjNwy fnauqY Image1"
+                      data-nimg="responsive"
+                      decoding="async"
+                      onError={[Function]}
+                      onLoad={[Function]}
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style={
+                        {
+                          "border": "none",
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": 0,
+                          "left": 0,
+                          "margin": "auto",
+                          "maxHeight": "100%",
+                          "maxWidth": "100%",
+                          "minHeight": "100%",
+                          "minWidth": "100%",
+                          "objectFit": undefined,
+                          "objectPosition": undefined,
+                          "padding": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                          "width": 0,
+                        }
+                      }
+                    />
+                    <noscript>
+                      <img
+                        alt="MEN'S QUARTER ZIP HOODIE"
+                        className="sc-kMjNwy fnauqY Image1"
+                        data-nimg="responsive"
+                        decoding="async"
+                        loading="lazy"
+                        sizes="100vw"
+                        src="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75"
+                        srcSet="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75 3840w"
+                        style={
+                          {
+                            "border": "none",
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": 0,
+                            "left": 0,
+                            "margin": "auto",
+                            "maxHeight": "100%",
+                            "maxWidth": "100%",
+                            "minHeight": "100%",
+                            "minWidth": "100%",
+                            "objectFit": undefined,
+                            "objectPosition": undefined,
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": 0,
+                          }
+                        }
+                      />
+                    </noscript>
+                  </span>
+                </div>
+                <div
+                  className="sc-ezOQGI sc-bYMpWt  bdysET ProductImage"
+                >
+                  <span
+                    style={
+                      {
+                        "background": "none",
+                        "border": 0,
+                        "boxSizing": "border-box",
+                        "display": "block",
+                        "height": "initial",
+                        "margin": 0,
+                        "opacity": 1,
+                        "overflow": "hidden",
+                        "padding": 0,
+                        "position": "relative",
+                        "width": "initial",
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        {
+                          "background": "none",
+                          "border": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": "initial",
+                          "margin": 0,
+                          "opacity": 1,
+                          "padding": 0,
+                          "paddingTop": "133.33333333333331%",
+                          "width": "initial",
+                        }
+                      }
+                    />
+                    <img
+                      alt="product-image"
+                      className="sc-kMjNwy fnauqY Image2"
+                      data-nimg="responsive"
+                      decoding="async"
+                      onError={[Function]}
+                      onLoad={[Function]}
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style={
+                        {
+                          "border": "none",
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": 0,
+                          "left": 0,
+                          "margin": "auto",
+                          "maxHeight": "100%",
+                          "maxWidth": "100%",
+                          "minHeight": "100%",
+                          "minWidth": "100%",
+                          "objectFit": undefined,
+                          "objectPosition": undefined,
+                          "padding": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                          "width": 0,
+                        }
+                      }
+                    />
+                    <noscript>
+                      <img
+                        alt="product-image"
+                        className="sc-kMjNwy fnauqY Image2"
+                        data-nimg="responsive"
+                        decoding="async"
+                        loading="lazy"
+                        sizes="100vw"
+                        src="/_next/image?url=%2Fimage&w=3840&q=75"
+                        srcSet="/_next/image?url=%2Fimage&w=640&q=75 640w, /_next/image?url=%2Fimage&w=750&q=75 750w, /_next/image?url=%2Fimage&w=828&q=75 828w, /_next/image?url=%2Fimage&w=1080&q=75 1080w, /_next/image?url=%2Fimage&w=1200&q=75 1200w, /_next/image?url=%2Fimage&w=1920&q=75 1920w, /_next/image?url=%2Fimage&w=2048&q=75 2048w, /_next/image?url=%2Fimage&w=3840&q=75 3840w"
+                        style={
+                          {
+                            "border": "none",
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": 0,
+                            "left": 0,
+                            "margin": "auto",
+                            "maxHeight": "100%",
+                            "maxWidth": "100%",
+                            "minHeight": "100%",
+                            "minWidth": "100%",
+                            "objectFit": undefined,
+                            "objectPosition": undefined,
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": 0,
+                          }
+                        }
+                      />
+                    </noscript>
+                  </span>
+                </div>
+                <p
+                  className="sc-lllmON hUInRL"
+                >
+                  MEN'S QUARTER ZIP HOODIE
+                </p>
+                <p
+                  className="sc-lllmON sc-iJnaPW hUInRL idDrkC"
+                >
+                  ₽
+                  3000
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            className="swiper-slide"
+            tabIndex={10}
+          >
+            <div
+              className="sc-hhOBVt ufzGn Product sc-cjibBx zWgfP"
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <div
+                className="sc-ilhmMj iDDen ProductInfo"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  className="sc-ezOQGI ProductImage"
+                >
+                  <span
+                    style={
+                      {
+                        "background": "none",
+                        "border": 0,
+                        "boxSizing": "border-box",
+                        "display": "block",
+                        "height": "initial",
+                        "margin": 0,
+                        "opacity": 1,
+                        "overflow": "hidden",
+                        "padding": 0,
+                        "position": "relative",
+                        "width": "initial",
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        {
+                          "background": "none",
+                          "border": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": "initial",
+                          "margin": 0,
+                          "opacity": 1,
+                          "padding": 0,
+                          "paddingTop": "133.33333333333331%",
+                          "width": "initial",
+                        }
+                      }
+                    />
+                    <img
+                      alt="MEN'S QUARTER ZIP HOODIE"
+                      className="sc-kMjNwy fnauqY Image1"
+                      data-nimg="responsive"
+                      decoding="async"
+                      onError={[Function]}
+                      onLoad={[Function]}
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style={
+                        {
+                          "border": "none",
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": 0,
+                          "left": 0,
+                          "margin": "auto",
+                          "maxHeight": "100%",
+                          "maxWidth": "100%",
+                          "minHeight": "100%",
+                          "minWidth": "100%",
+                          "objectFit": undefined,
+                          "objectPosition": undefined,
+                          "padding": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                          "width": 0,
+                        }
+                      }
+                    />
+                    <noscript>
+                      <img
+                        alt="MEN'S QUARTER ZIP HOODIE"
+                        className="sc-kMjNwy fnauqY Image1"
+                        data-nimg="responsive"
+                        decoding="async"
+                        loading="lazy"
+                        sizes="100vw"
+                        src="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75"
+                        srcSet="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75 3840w"
+                        style={
+                          {
+                            "border": "none",
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": 0,
+                            "left": 0,
+                            "margin": "auto",
+                            "maxHeight": "100%",
+                            "maxWidth": "100%",
+                            "minHeight": "100%",
+                            "minWidth": "100%",
+                            "objectFit": undefined,
+                            "objectPosition": undefined,
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": 0,
+                          }
+                        }
+                      />
+                    </noscript>
+                  </span>
+                </div>
+                <div
+                  className="sc-ezOQGI sc-bYMpWt  bdysET ProductImage"
+                >
+                  <span
+                    style={
+                      {
+                        "background": "none",
+                        "border": 0,
+                        "boxSizing": "border-box",
+                        "display": "block",
+                        "height": "initial",
+                        "margin": 0,
+                        "opacity": 1,
+                        "overflow": "hidden",
+                        "padding": 0,
+                        "position": "relative",
+                        "width": "initial",
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        {
+                          "background": "none",
+                          "border": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": "initial",
+                          "margin": 0,
+                          "opacity": 1,
+                          "padding": 0,
+                          "paddingTop": "133.33333333333331%",
+                          "width": "initial",
+                        }
+                      }
+                    />
+                    <img
+                      alt="product-image"
+                      className="sc-kMjNwy fnauqY Image2"
+                      data-nimg="responsive"
+                      decoding="async"
+                      onError={[Function]}
+                      onLoad={[Function]}
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style={
+                        {
+                          "border": "none",
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": 0,
+                          "left": 0,
+                          "margin": "auto",
+                          "maxHeight": "100%",
+                          "maxWidth": "100%",
+                          "minHeight": "100%",
+                          "minWidth": "100%",
+                          "objectFit": undefined,
+                          "objectPosition": undefined,
+                          "padding": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                          "width": 0,
+                        }
+                      }
+                    />
+                    <noscript>
+                      <img
+                        alt="product-image"
+                        className="sc-kMjNwy fnauqY Image2"
+                        data-nimg="responsive"
+                        decoding="async"
+                        loading="lazy"
+                        sizes="100vw"
+                        src="/_next/image?url=%2Fimage&w=3840&q=75"
+                        srcSet="/_next/image?url=%2Fimage&w=640&q=75 640w, /_next/image?url=%2Fimage&w=750&q=75 750w, /_next/image?url=%2Fimage&w=828&q=75 828w, /_next/image?url=%2Fimage&w=1080&q=75 1080w, /_next/image?url=%2Fimage&w=1200&q=75 1200w, /_next/image?url=%2Fimage&w=1920&q=75 1920w, /_next/image?url=%2Fimage&w=2048&q=75 2048w, /_next/image?url=%2Fimage&w=3840&q=75 3840w"
+                        style={
+                          {
+                            "border": "none",
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": 0,
+                            "left": 0,
+                            "margin": "auto",
+                            "maxHeight": "100%",
+                            "maxWidth": "100%",
+                            "minHeight": "100%",
+                            "minWidth": "100%",
+                            "objectFit": undefined,
+                            "objectPosition": undefined,
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": 0,
+                          }
+                        }
+                      />
+                    </noscript>
+                  </span>
+                </div>
+                <p
+                  className="sc-lllmON hUInRL"
+                >
+                  MEN'S QUARTER ZIP HOODIE
+                </p>
+                <p
+                  className="sc-lllmON sc-iJnaPW hUInRL idDrkC"
+                >
+                  ₽
+                  3000
+                </p>
+              </div>
+            </div>
+          </div>
+          <div
+            className="swiper-slide"
+            tabIndex={11}
+          >
+            <div
+              className="sc-hhOBVt ufzGn Product sc-cjibBx zWgfP"
+              onMouseEnter={[Function]}
+              onMouseLeave={[Function]}
+            >
+              <div
+                className="sc-ilhmMj iDDen ProductInfo"
+                onClick={[Function]}
+                onMouseEnter={[Function]}
+                onTouchStart={[Function]}
+              >
+                <div
+                  className="sc-ezOQGI ProductImage"
+                >
+                  <span
+                    style={
+                      {
+                        "background": "none",
+                        "border": 0,
+                        "boxSizing": "border-box",
+                        "display": "block",
+                        "height": "initial",
+                        "margin": 0,
+                        "opacity": 1,
+                        "overflow": "hidden",
+                        "padding": 0,
+                        "position": "relative",
+                        "width": "initial",
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        {
+                          "background": "none",
+                          "border": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": "initial",
+                          "margin": 0,
+                          "opacity": 1,
+                          "padding": 0,
+                          "paddingTop": "133.33333333333331%",
+                          "width": "initial",
+                        }
+                      }
+                    />
+                    <img
+                      alt="MEN'S QUARTER ZIP HOODIE"
+                      className="sc-kMjNwy fnauqY Image1"
+                      data-nimg="responsive"
+                      decoding="async"
+                      onError={[Function]}
+                      onLoad={[Function]}
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style={
+                        {
+                          "border": "none",
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": 0,
+                          "left": 0,
+                          "margin": "auto",
+                          "maxHeight": "100%",
+                          "maxWidth": "100%",
+                          "minHeight": "100%",
+                          "minWidth": "100%",
+                          "objectFit": undefined,
+                          "objectPosition": undefined,
+                          "padding": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                          "width": 0,
+                        }
+                      }
+                    />
+                    <noscript>
+                      <img
+                        alt="MEN'S QUARTER ZIP HOODIE"
+                        className="sc-kMjNwy fnauqY Image1"
+                        data-nimg="responsive"
+                        decoding="async"
+                        loading="lazy"
+                        sizes="100vw"
+                        src="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75"
+                        srcSet="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75 3840w"
+                        style={
+                          {
+                            "border": "none",
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": 0,
+                            "left": 0,
+                            "margin": "auto",
+                            "maxHeight": "100%",
+                            "maxWidth": "100%",
+                            "minHeight": "100%",
+                            "minWidth": "100%",
+                            "objectFit": undefined,
+                            "objectPosition": undefined,
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": 0,
+                          }
+                        }
+                      />
+                    </noscript>
+                  </span>
+                </div>
+                <div
+                  className="sc-ezOQGI sc-bYMpWt  bdysET ProductImage"
+                >
+                  <span
+                    style={
+                      {
+                        "background": "none",
+                        "border": 0,
+                        "boxSizing": "border-box",
+                        "display": "block",
+                        "height": "initial",
+                        "margin": 0,
+                        "opacity": 1,
+                        "overflow": "hidden",
+                        "padding": 0,
+                        "position": "relative",
+                        "width": "initial",
+                      }
+                    }
+                  >
+                    <span
+                      style={
+                        {
+                          "background": "none",
+                          "border": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": "initial",
+                          "margin": 0,
+                          "opacity": 1,
+                          "padding": 0,
+                          "paddingTop": "133.33333333333331%",
+                          "width": "initial",
+                        }
+                      }
+                    />
+                    <img
+                      alt="product-image"
+                      className="sc-kMjNwy fnauqY Image2"
+                      data-nimg="responsive"
+                      decoding="async"
+                      onError={[Function]}
+                      onLoad={[Function]}
+                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                      style={
+                        {
+                          "border": "none",
+                          "bottom": 0,
+                          "boxSizing": "border-box",
+                          "display": "block",
+                          "height": 0,
+                          "left": 0,
+                          "margin": "auto",
+                          "maxHeight": "100%",
+                          "maxWidth": "100%",
+                          "minHeight": "100%",
+                          "minWidth": "100%",
+                          "objectFit": undefined,
+                          "objectPosition": undefined,
+                          "padding": 0,
+                          "position": "absolute",
+                          "right": 0,
+                          "top": 0,
+                          "width": 0,
+                        }
+                      }
+                    />
+                    <noscript>
+                      <img
+                        alt="product-image"
+                        className="sc-kMjNwy fnauqY Image2"
+                        data-nimg="responsive"
+                        decoding="async"
+                        loading="lazy"
+                        sizes="100vw"
+                        src="/_next/image?url=%2Fimage&w=3840&q=75"
+                        srcSet="/_next/image?url=%2Fimage&w=640&q=75 640w, /_next/image?url=%2Fimage&w=750&q=75 750w, /_next/image?url=%2Fimage&w=828&q=75 828w, /_next/image?url=%2Fimage&w=1080&q=75 1080w, /_next/image?url=%2Fimage&w=1200&q=75 1200w, /_next/image?url=%2Fimage&w=1920&q=75 1920w, /_next/image?url=%2Fimage&w=2048&q=75 2048w, /_next/image?url=%2Fimage&w=3840&q=75 3840w"
+                        style={
+                          {
+                            "border": "none",
+                            "bottom": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": 0,
+                            "left": 0,
+                            "margin": "auto",
+                            "maxHeight": "100%",
+                            "maxWidth": "100%",
+                            "minHeight": "100%",
+                            "minWidth": "100%",
+                            "objectFit": undefined,
+                            "objectPosition": undefined,
+                            "padding": 0,
+                            "position": "absolute",
+                            "right": 0,
+                            "top": 0,
+                            "width": 0,
+                          }
+                        }
+                      />
+                    </noscript>
+                  </span>
+                </div>
+                <p
+                  className="sc-lllmON hUInRL"
+                >
+                  MEN'S QUARTER ZIP HOODIE
+                </p>
+                <p
+                  className="sc-lllmON sc-iJnaPW hUInRL idDrkC"
+                >
+                  ₽
+                  3000
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
+        <p
+          className="sc-iTFTee bYCTD prev"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="ChevronLeftIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+            />
+          </svg>
+        </p>
+        <p
+          className="sc-iTFTee sc-iAEawV bYCTD haaRYS next"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="ChevronRightIcon"
+            focusable="false"
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+            />
+          </svg>
+        </p>
+      </div>
+    </div>
+    <a
+      href="/products"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
+    >
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium sc-ksBlkl ithzKR sc-eeMvmM sc-cUEOzv dIvlIq gSUyGH css-1vqlznj-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        disabled={false}
+        id=":r1:"
+        onBlur={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        VIEW ALL PRODUCTS
+      </button>
+    </a>
+    <div
+      className="sc-jSUZER dfVtOU"
+    >
+      <div
+        className="sc-eDvSVe"
+      >
+        <p
+          className="sc-hLBbgP gqDyNv"
+        >
+          Let customers speak for us
+        </p>
+        <span
+          aria-label="5 Stars"
+          className="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly sc-bqWxrE flbxzn css-ryrseu-MuiRating-root"
+          onMouseLeave={[Function]}
+          onMouseMove={[Function]}
+          role="img"
+        >
+          <span>
+            <span
+              className="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            >
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit sc-eDWCr iRdqER css-1vooibu-MuiSvgIcon-root"
+                data-testid="StarsIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"
+                />
+              </svg>
+            </span>
+          </span>
+          <span>
+            <span
+              className="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            >
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit sc-eDWCr iRdqER css-1vooibu-MuiSvgIcon-root"
+                data-testid="StarsIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"
+                />
+              </svg>
+            </span>
+          </span>
+          <span>
+            <span
+              className="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            >
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit sc-eDWCr iRdqER css-1vooibu-MuiSvgIcon-root"
+                data-testid="StarsIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"
+                />
+              </svg>
+            </span>
+          </span>
+          <span>
+            <span
+              className="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            >
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit sc-eDWCr iRdqER css-1vooibu-MuiSvgIcon-root"
+                data-testid="StarsIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"
+                />
+              </svg>
+            </span>
+          </span>
+          <span>
+            <span
+              className="MuiRating-icon MuiRating-iconFilled css-7qmtgc-MuiRating-icon"
+            >
+              <svg
+                aria-hidden={true}
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit sc-eDWCr iRdqER css-1vooibu-MuiSvgIcon-root"
+                data-testid="StarsIcon"
+                focusable="false"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M11.99 2C6.47 2 2 6.48 2 12s4.47 10 9.99 10C17.52 22 22 17.52 22 12S17.52 2 11.99 2zm4.24 16L12 15.45 7.77 18l1.12-4.81-3.73-3.23 4.92-.42L12 5l1.92 4.53 4.92.42-3.73 3.23L16.23 18z"
+                />
+              </svg>
+            </span>
+          </span>
+        </span>
+        <p
+          className="sc-hLBbgP gqDyNv"
+        >
+          They all love it!
+        </p>
+      </div>
+      <div
+        className="sc-dkrFOg"
+      >
+        <div
+          className="swiper-container sc-gswNZR gybHgC"
+        >
+          <div
+            className="swiper-wrapper"
+          />
+          <div
+            className="sc-bcXHqe ifRcYn prev"
+          >
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-16px6dp-MuiSvgIcon-root"
+              data-testid="ChevronLeftIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M15.41 7.41 14 6l-6 6 6 6 1.41-1.41L10.83 12z"
+              />
+            </svg>
+          </div>
+          <div
+            className="sc-bcXHqe ifRcYn next"
+          >
+            <svg
+              aria-hidden={true}
+              className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-dqscbn-MuiSvgIcon-root"
+              data-testid="ChevronRightIcon"
+              focusable="false"
+              viewBox="0 0 24 24"
+            >
+              <path
+                d="M10 6 8.59 7.41 13.17 12l-4.58 4.59L10 18l6-6z"
+              />
+            </svg>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>,
+]
+`;

@@ -20,9 +20,9 @@ import {
 import React, { useState } from 'react'
 
 import { Alert } from '@mui/material'
-import { AppDispatch } from 'redux/store/store'
+import { AppDispatch } from '@/redux/store/store'
 import { SingleProductFilters } from './Filters/Filters'
-import { addProduct } from 'redux/slices/cart'
+import { addProduct } from '@/redux/slices/cart'
 
 export const ProductForm: React.FC<ProductFormProps> = ({ productInfo }) => {
   const [productType, setProductType] = useState<ProductTypeState>({
@@ -35,7 +35,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({ productInfo }) => {
 
   /* функция добавления фильтров по клику пользователя */
   const handleProductType: handleProductTypeType = (value, name) => {
-    console.log(name, value)
+    (name, value)
     setProductType((prev) => ({ ...prev, [name]: value }))
   }
 
@@ -46,7 +46,7 @@ export const ProductForm: React.FC<ProductFormProps> = ({ productInfo }) => {
     })
   }
 
-  console.log(productType)
+  (productType)
 
   /* если пользователь выбрал товар с цветом и размером, он будет добавлен в корзину */
   const handleCart = () => {
