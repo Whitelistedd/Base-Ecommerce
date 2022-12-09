@@ -9,6 +9,7 @@ import {
   TotalTitle,
 } from '../assets/Checkout-styles'
 
+import { CartProductType } from '@/features/Cart/types/Cart.model'
 import { CheckoutProduct } from './CheckoutProduct'
 import { CheckoutProps } from '../types/Checkout.model'
 import React from 'react'
@@ -18,7 +19,7 @@ export const Checkout: React.FC<CheckoutProps> = ({ cart, shipping }) => {
     <CheckOut>
       <CheckoutWrap>
         {/* покажет все товары, которые выбрал пользователь */}
-        {cart.products.map((item, index) => (
+        {cart.products.map((item: CartProductType, index: number) => (
           <CheckoutProduct key={index} item={item} />
         ))}
         <CostWrap>

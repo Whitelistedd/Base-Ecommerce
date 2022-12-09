@@ -1,4 +1,4 @@
-import { ProductDataType } from 'types/GlobalTypes.model'
+import { ProductDataType } from '@/types/GlobalTypes.model'
 
 export const fakeProduct: ProductDataType = {
   _v: 1,
@@ -8,7 +8,6 @@ export const fakeProduct: ProductDataType = {
     {
       id: '',
       colorName: '',
-      RussianName: '',
       HexColor: '',
     },
   ],

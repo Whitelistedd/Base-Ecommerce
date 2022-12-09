@@ -11,7 +11,6 @@ export type AllSizes = {
 export type AllColors = {
   id: string
   colorName: string
-  RussianName: string
   HexColor: string
 }
 
@@ -34,7 +33,7 @@ export type ProductDataType = {
 export type ProductsArrayType = Array<ProductDataType>
 
 export type filtersType = {
-  [name: string]: any
+  [name: string]: string
 }
 
 export type itemFilterType = {

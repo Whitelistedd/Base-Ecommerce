@@ -2,8 +2,8 @@
 
 import { CartProductType, UpdateProductsType } from '../types/Cart.model'
 
-import { UpdateProduct } from 'redux/slices/cart'
-import { publicRequest } from 'requests'
+import { UpdateProduct } from '@/redux/slices/cart'
+import { publicRequest } from '@/requests'
 
 export const UpdateProducts: UpdateProductsType = async (
   products,

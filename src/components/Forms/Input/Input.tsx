@@ -1,9 +1,35 @@
-import { Controller, UseFormRegister } from 'react-hook-form'
+import { Control, Controller } from 'react-hook-form'
+import { TextField, TextFieldProps } from '@mui/material'
 
-import { TextField } from '@mui/material'
-import styled from '@emotion/styled'
+import { InfoType } from '@/features/Checkout'
+import styled from 'styled-components'
 
-export const Input = (props: any) => {
+interface InputProps {
+  name:
+    | 'address'
+    | 'saveInfo'
+    | 'firstName'
+    | 'lastName'
+    | 'email'
+    | 'phoneNumber'
+    | 'shippingMethod'
+    | 'address.address'
+    | 'address.city'
+    | 'address.country'
+    | 'address.zipCode'
+    | 'address.apartment'
+  label?: React.ReactNode
+  control?: Control<InfoType>
+  type: string
+  defaultValue?: string
+  required?: boolean | string
+  placeholder: string
+  valueAsNumber?: boolean
+  inputProps?: TextFieldProps
+  error?: string
+}
+
+export const Input = (props: InputProps) => {
   return (
     <Controller
       name={props.name}
@@ -15,10 +41,8 @@ export const Input = (props: any) => {
       render={({ field }) => (
         <Container>
           <StyledInput
-            label={props.placeholder}
             {...field}
-            error={props.error}
-            {...props}
+            formerror={props.error ? `${props.error}` : ''}
           />
           {props.error && <Error>{props.error}</Error>}
         </Container>
@@ -36,7 +60,7 @@ const Error = styled.p`
   font-family: 'Roboto';
 `
 
-const StyledInput = styled(TextField)<{ error: string }>`
+const StyledInput = styled(TextField)<{ formerror: string }>`
   width: 100%;
   margin-bottom: 7px;
   max-width: 100%;

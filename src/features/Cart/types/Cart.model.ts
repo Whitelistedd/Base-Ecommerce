@@ -1,6 +1,6 @@
-import { AllColors, AllSizes } from 'types/GlobalTypes.model'
+import { AllColors, AllSizes } from '@/types/GlobalTypes.model'
 
-import { AppDispatchType } from 'redux/store/store'
+import { AppDispatchType } from '@/redux/store/store'
 
 export type CartProductType = {
   _v: number

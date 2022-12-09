@@ -1,7 +1,7 @@
-import { AllColors, AllSizes } from 'data/FiltersData'
+import { AllColors, AllSizes } from '@/data/FiltersData'
 
-import { publicRequest } from 'requests'
-import { queryKeyType } from 'types/GlobalTypes.model'
+import { publicRequest } from '@/requests'
+import { queryKeyType } from '@/types/GlobalTypes.model'
 
 /* функция, чтобы получить выбранный продукт и получить все доступные размеры и цвета */
 export const getProduct = async ({ queryKey }: { queryKey?: queryKeyType }) => {

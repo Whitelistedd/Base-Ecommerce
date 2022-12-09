@@ -1,22 +1,22 @@
 import { Container, HeaderButton } from '../assets/Header-styles'
 
 import Link from 'next/link'
-import { useRouter } from 'next/router'
+import { usePathname } from 'next/navigation'
 
 export const Header = () => {
-  const router = useRouter()
+	const pathname = usePathname()
 
-  return (
-    <Container>
-      {router.asPath === '/profile' ? (
-        <Link href="/api/auth/logout">
-          <HeaderButton>LOGOUT</HeaderButton>
-        </Link>
-      ) : (
-        <Link href="/profile">
-          <HeaderButton>GO BACK TO PROFILE</HeaderButton>
-        </Link>
-      )}
-    </Container>
-  )
+	return (
+		<Container>
+			{pathname?.includes('/profile') ? (
+				<Link href="/api/auth/logout">
+					<HeaderButton>LOGOUT</HeaderButton>
+				</Link>
+			) : (
+				<Link href="/profile">
+					<HeaderButton>GO BACK TO PROFILE</HeaderButton>
+				</Link>
+			)}
+		</Container>
+	)
 }

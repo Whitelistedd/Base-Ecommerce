@@ -1,6 +1,6 @@
-import { AppDispatchType } from 'redux/store/store'
-import { CartInitialState } from 'redux/slices/slice.model'
-import { CartProductType } from 'features/Cart/types/Cart.model'
+import { AppDispatchType } from '@/redux/store/store'
+import { CartInitialState } from '@/redux/slices/slice.model'
+import { CartProductType } from '@/features/Cart/types/Cart.model'
 import { UserProfile } from '@auth0/nextjs-auth0'
 import { UserProps } from '@auth0/nextjs-auth0/dist/frontend/with-page-auth-required'
 

@@ -1,12 +1,12 @@
 /* функция для оформления заказа и получения URL-адреса покупки */
 
-import { BASE_URL, publicRequest } from 'requests'
+import { BASE_URL, publicRequest } from '@/requests'
 
 import { AxiosResponse } from 'axios'
 import axios from 'axios'
 import axiosRetry from 'axios-retry'
 import { newCheckoutType } from '../types/Checkout.model'
-import { setError } from 'redux/slices/cart'
+import { setError } from '@/redux/slices/cart'
 import { v4 as uuidv4 } from 'uuid'
 
 export const newCheckout: newCheckoutType = async (
@@ -17,7 +17,6 @@ export const newCheckout: newCheckoutType = async (
 ) => {
   try {
     const request = { info: { key: idemp, ...order }, user }
-    console.log(request, 'w')
     const client = axios.create({
       baseURL: BASE_URL,
     })

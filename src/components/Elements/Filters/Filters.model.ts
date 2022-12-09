@@ -1,4 +1,4 @@
-import { filtersType } from 'types/GlobalTypes.model'
+import { filtersType } from '@/types/GlobalTypes.model'
 
 export type handleFilterChangeType = (name: string, value: string) => void
 

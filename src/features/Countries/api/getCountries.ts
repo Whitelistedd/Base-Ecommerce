@@ -1,4 +1,4 @@
-import { publicRequest } from 'requests'
+import { publicRequest } from '@/requests'
 
 /* для получения всех продуктов */
 export const getCountries = async () => {

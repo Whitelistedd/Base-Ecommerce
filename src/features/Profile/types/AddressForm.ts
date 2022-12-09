@@ -1,5 +1,5 @@
-import { CountriesType } from 'features/Countries'
-import { ProfileInfo } from 'types/GlobalTypes.model'
+import { CountriesType } from '@/features/Countries'
+import { ProfileInfo } from '@/types/GlobalTypes.model'
 
 export interface AddressFormProps {
   data: ProfileInfo | undefined
