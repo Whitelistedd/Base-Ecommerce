@@ -17,7 +17,6 @@ export const newCheckout: newCheckoutType = async (
 ) => {
   try {
     const request = { info: { key: idemp, ...order }, user }
-    (request, 'w')
     const client = axios.create({
       baseURL: BASE_URL,
     })
