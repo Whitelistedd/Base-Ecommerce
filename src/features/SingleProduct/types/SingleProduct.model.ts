@@ -1,4 +1,4 @@
-import { ProductDataType } from 'types/GlobalTypes.model'
+import { ProductDataType } from '@/types/GlobalTypes.model'
 
 export type handleQuantityType = string
 

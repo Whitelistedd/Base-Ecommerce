@@ -1,4 +1,4 @@
-import { ProductsArrayType, filtersType } from 'types/GlobalTypes.model'
+import { ProductsArrayType, filtersType } from '@/types/GlobalTypes.model'
 
 export type getProductsListResult = {
   page: number

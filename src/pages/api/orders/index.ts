@@ -120,7 +120,7 @@ export default async function handler(
         }
       )
       .then((res) => {
-        (res)
+        res
         newOrder.status = 'success'
         return res
       })
@@ -129,7 +129,6 @@ export default async function handler(
         newOrder.status = 'failed'
         return err
       })
-    ('200')
     const ConfirmedOrder = await newOrder.save()
     return res.status(200).json(response.data.confirmation.confirmation_url)
   } catch (error) {

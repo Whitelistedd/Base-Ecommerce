@@ -28,7 +28,7 @@ export default async function handler(
       if (session) {
         const profile = await AccountSchema.findOne({ id: session.user.sub })
 
-        if (session.user.sub === profile.id) {
+        if (profile && session.user.sub === profile.id) {
           res.status(200).json(profile)
         } else {
           res.status(404).json({ message: 'wrong account' })
@@ -46,7 +46,6 @@ export default async function handler(
       const session = getSession(req, res)
       if (session) {
         await AccountSchema.updateOne({ id: session.user.sub }, newAccountData)
-        (newAccountData)
         res.status(200).json('success')
       } else {
         res.status(404).json('account not found')
