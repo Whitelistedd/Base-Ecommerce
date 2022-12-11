@@ -24,7 +24,6 @@ const clientSideEmotionCache = createEmotionCache()
 const MyApp: React.FC<AppProps> = ({ Component, ...rest }) => {
   const { store, props } = wrapper.useWrappedStore(rest)
   const { emotionCache = clientSideEmotionCache, pageProps } = props
-  console.log(rest)
   const [queryClient] = React.useState(() => new QueryClient())
 
   const [loading, setLoading] = React.useState(false)

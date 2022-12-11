@@ -8,14 +8,17 @@ export const Layout: React.FC<{ children: JSX.Element }> = ({ children }) => {
   const router = useRouter()
 
   return (
-    <Container>
-      <Wrap>
-        <Announcement />
-        <Navbar homePage={router.pathname === '/' ? true : false} />
-        {children}
-        <Footer />
-      </Wrap>
-    </Container>
+    <html lang="en">
+      <Container>
+        <Wrap>
+          <Announcement />
+          <Navbar homePage={router.pathname === '/' ? true : false} />
+          <head />
+          <body>{children}</body>
+          <Footer />
+        </Wrap>
+      </Container>
+    </html>
   )
 }
 

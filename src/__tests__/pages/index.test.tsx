@@ -1,12 +1,8 @@
-import {
-  QueryCache,
-  QueryClient,
-  QueryClientProvider,
-} from '@tanstack/react-query'
+import { QueryCache, QueryClient } from '@tanstack/react-query'
+import { renderWithClient, wrapWithClient } from '../../__mocks__/utils'
 
 import Home from '@/pages/index'
 import TEST_PRODUCTS from '../../__mocks__/Products'
-import { renderWithClient } from '../../__mocks__/utils'
 import renderer from 'react-test-renderer'
 import { useProductsList } from '@/features/Products'
 
@@ -76,9 +72,7 @@ describe('Index page', () => {
     }))
     const tree = renderer
       .create(
-        <QueryClientProvider client={queryClient}>
-          <Home productsData={mockProductListData} reviews={[]} />
-        </QueryClientProvider>
+        wrapWithClient(<Home productsData={mockProductListData} reviews={[]} />)
       )
       .toJSON()
     expect(tree).toMatchSnapshot()

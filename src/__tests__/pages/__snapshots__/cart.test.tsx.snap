@@ -1,0 +1,45 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Cart page should match snapshot 1`] = `
+<div
+  className="sc-kDvujY jROdFV"
+>
+  <div
+    className="sc-bBABsx ldziiQ"
+  >
+    <p
+      className="MuiTypography-root MuiTypography-body1 css-1ydvvti-MuiTypography-root"
+    >
+      YOUR CART IS EMPTY
+    </p>
+    <a
+      href="/products"
+      onClick={[Function]}
+      onMouseEnter={[Function]}
+      onTouchStart={[Function]}
+    >
+      <button
+        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium sc-bcXHqe gqtAtJ sc-fLcnxK iQMbui css-1vqlznj-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        disabled={false}
+        id=":r0:"
+        onBlur={[Function]}
+        onContextMenu={[Function]}
+        onDragLeave={[Function]}
+        onFocus={[Function]}
+        onKeyDown={[Function]}
+        onKeyUp={[Function]}
+        onMouseDown={[Function]}
+        onMouseLeave={[Function]}
+        onMouseUp={[Function]}
+        onTouchEnd={[Function]}
+        onTouchMove={[Function]}
+        onTouchStart={[Function]}
+        tabIndex={0}
+        type="button"
+      >
+        SHOP OUR PRODUCTS
+      </button>
+    </a>
+  </div>
+</div>
+`;
