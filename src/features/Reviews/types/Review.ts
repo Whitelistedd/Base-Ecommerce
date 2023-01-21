@@ -12,4 +12,5 @@ export type ReviewType = {
   stars: number
   date: string
   product: string
+  _id: string
 }

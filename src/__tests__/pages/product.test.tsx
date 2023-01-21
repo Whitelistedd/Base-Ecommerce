@@ -4,48 +4,47 @@ import {
   wrapWithClient,
 } from '../../__mocks__/utils/reactQuery'
 
-import Home from '@/pages/index'
-import TEST_PRODUCTS from '@/__mocks__/Products'
+import SingleProductPage from '../../pages/product/[id]'
+import { TEST_PRODUCT1 } from '@/__mocks__/Product'
 import renderer from 'react-test-renderer'
-import { useProductsList } from '@/features/Products'
+import { useProduct } from '@/features/SingleProduct'
+import { wrapWithAll } from '@/__mocks__/utils'
 
-const mockedUseProductsList = useProductsList as jest.Mock
+jest.mock('next/router', () => require('next-router-mock'))
 
-jest.mock('@/features/Products', () => ({
-  useProductsList: jest.fn(),
+const mockedUseProduct = useProduct as jest.Mock
+
+jest.mock('@/features/SingleProduct', () => ({
+  useProduct: jest.fn(),
 }))
 
 describe('Index page', () => {
   const queryCache = new QueryCache()
   const queryClient = new QueryClient({ queryCache })
-  const mockProductListData = {
-    products: TEST_PRODUCTS,
-    page: 1,
-    totalPages: 2,
-  }
+  const mockProductData = TEST_PRODUCT1
   it('fetches products with correct params', () => {
-    mockedUseProductsList.mockImplementation(() => ({
+    mockedUseProduct.mockImplementation(() => ({
       status: 'success',
-      data: mockProductListData,
+      data: mockProductData,
     }))
     renderWithClient(
       queryClient,
-      <Home productsData={mockProductListData} reviews={[]} />
+      wrapWithAll(<SingleProductPage product={mockProductData} />)
     )
 
-    expect(useProductsList).toHaveBeenCalledWith(mockProductListData, 1, {})
+    expect(useProduct).toHaveBeenCalledWith('0', mockProductData)
   })
 
   describe('while loading', () => {
     it('renders a loader', () => {
-      mockedUseProductsList.mockImplementation(() => ({
+      mockedUseProduct.mockImplementation(() => ({
         status: 'loading',
-        data: mockProductListData,
+        data: mockProductData,
       }))
 
       const { getByAltText } = renderWithClient(
         queryClient,
-        <Home productsData={mockProductListData} reviews={[]} />
+        wrapWithAll(<SingleProductPage product={mockProductData} />)
       )
 
       expect(getByAltText(/loading.../)).toBeInTheDocument()
@@ -54,14 +53,14 @@ describe('Index page', () => {
 
   describe('with an error', () => {
     it('renders a error', () => {
-      mockedUseProductsList.mockImplementation(() => ({
+      mockedUseProduct.mockImplementation(() => ({
         status: 'error',
-        data: mockProductListData,
+        data: mockProductData,
       }))
 
       const { getByAltText } = renderWithClient(
         queryClient,
-        <Home productsData={mockProductListData} reviews={[]} />
+        wrapWithAll(<SingleProductPage product={mockProductData} />)
       )
 
       expect(getByAltText(/Failed/)).toBeInTheDocument()
@@ -69,14 +68,12 @@ describe('Index page', () => {
   })
 
   it('should match snapshot', () => {
-    mockedUseProductsList.mockImplementation(() => ({
+    mockedUseProduct.mockImplementation(() => ({
       status: 'success',
-      data: mockProductListData,
+      data: mockProductData,
     }))
     const tree = renderer
-      .create(
-        wrapWithClient(<Home productsData={mockProductListData} reviews={[]} />)
-      )
+      .create(wrapWithAll(<SingleProductPage product={mockProductData} />))
       .toJSON()
     expect(tree).toMatchSnapshot()
   })

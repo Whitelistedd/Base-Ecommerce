@@ -4,10 +4,13 @@ import {
   wrapWithClient,
 } from '../../__mocks__/utils/reactQuery'
 
-import Home from '@/pages/index'
+import ProductsListPage from '@/pages/products'
 import TEST_PRODUCTS from '@/__mocks__/Products'
 import renderer from 'react-test-renderer'
 import { useProductsList } from '@/features/Products'
+import { wrapWithAll } from '@/__mocks__/utils'
+
+jest.mock('next/router', () => require('next-router-mock'))
 
 const mockedUseProductsList = useProductsList as jest.Mock
 
@@ -23,6 +26,12 @@ describe('Index page', () => {
     page: 1,
     totalPages: 2,
   }
+  const filters = {
+    color: '',
+    size: '',
+    gender: '',
+    categories: '',
+  }
   it('fetches products with correct params', () => {
     mockedUseProductsList.mockImplementation(() => ({
       status: 'success',
@@ -30,10 +39,14 @@ describe('Index page', () => {
     }))
     renderWithClient(
       queryClient,
-      <Home productsData={mockProductListData} reviews={[]} />
+      wrapWithAll(<ProductsListPage productsData={mockProductListData} />)
     )
 
-    expect(useProductsList).toHaveBeenCalledWith(mockProductListData, 1, {})
+    expect(useProductsList).toHaveBeenCalledWith(
+      mockProductListData,
+      1,
+      filters
+    )
   })
 
   describe('while loading', () => {
@@ -45,7 +58,7 @@ describe('Index page', () => {
 
       const { getByAltText } = renderWithClient(
         queryClient,
-        <Home productsData={mockProductListData} reviews={[]} />
+        wrapWithAll(<ProductsListPage productsData={mockProductListData} />)
       )
 
       expect(getByAltText(/loading.../)).toBeInTheDocument()
@@ -61,7 +74,7 @@ describe('Index page', () => {
 
       const { getByAltText } = renderWithClient(
         queryClient,
-        <Home productsData={mockProductListData} reviews={[]} />
+        wrapWithAll(<ProductsListPage productsData={mockProductListData} />)
       )
 
       expect(getByAltText(/Failed/)).toBeInTheDocument()
@@ -75,7 +88,7 @@ describe('Index page', () => {
     }))
     const tree = renderer
       .create(
-        wrapWithClient(<Home productsData={mockProductListData} reviews={[]} />)
+        wrapWithAll(<ProductsListPage productsData={mockProductListData} />)
       )
       .toJSON()
     expect(tree).toMatchSnapshot()

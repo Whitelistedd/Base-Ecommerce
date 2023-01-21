@@ -6,7 +6,7 @@ import { ProductImages } from './Images/ProductImages'
 import { ProductProps } from '../types/SingleProduct.model'
 import React from 'react'
 
-export const Product: React.FC<ProductProps> = ({ product }) => {
+const Product: React.FC<ProductProps> = ({ product }) => {
   return (
     <Container>
       <ProductsWrap>
@@ -17,3 +17,5 @@ export const Product: React.FC<ProductProps> = ({ product }) => {
     </Container>
   )
 }
+
+export default Product

@@ -2,13 +2,13 @@
 
 exports[`Profile page should match snapshot 1`] = `
 <div
-  className="sc-cUEOzv gNupge"
+  className="sc-4173a692-8 iSLfYC"
 >
   <div
-    className="sc-eDvSVe jJHXRC"
+    className="sc-2772eec5-4 chSZwi"
   >
     <div
-      className="sc-hLBbgP kKONFn"
+      className="sc-2772eec5-3 deXkCI"
     >
       <svg
         aria-hidden={true}
@@ -23,24 +23,24 @@ exports[`Profile page should match snapshot 1`] = `
         />
       </svg>
       <h1
-        className="sc-dkrFOg fnODQk"
+        className="sc-2772eec5-2 dALrwq"
       >
         EDIT AN ADDRESS
       </h1>
       <p
-        className="sc-gswNZR isRRLm"
+        className="sc-2772eec5-1 jwYcOp"
       >
         Please fill in the information below:
       </p>
       <form
-        className="sc-bcXHqe bJlXOu"
+        className="sc-2772eec5-0 kVSGdo"
         onSubmit={[Function]}
       >
         <div
-          className="sc-dIfARi"
+          className="sc-9417a80c-0"
         >
           <div
-            className="MuiFormControl-root MuiTextField-root sc-dmctIk kbzdwU css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+            className="MuiFormControl-root MuiTextField-root sc-9417a80c-2 cEDZcC css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
             formerror=""
           >
             <div
@@ -80,10 +80,10 @@ exports[`Profile page should match snapshot 1`] = `
           </div>
         </div>
         <div
-          className="sc-dIfARi"
+          className="sc-9417a80c-0"
         >
           <div
-            className="MuiFormControl-root MuiTextField-root sc-dmctIk kbzdwU css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+            className="MuiFormControl-root MuiTextField-root sc-9417a80c-2 cEDZcC css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
             formerror=""
           >
             <div
@@ -123,10 +123,10 @@ exports[`Profile page should match snapshot 1`] = `
           </div>
         </div>
         <div
-          className="sc-dIfARi"
+          className="sc-9417a80c-0"
         >
           <div
-            className="MuiFormControl-root MuiTextField-root sc-dmctIk kbzdwU css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+            className="MuiFormControl-root MuiTextField-root sc-9417a80c-2 cEDZcC css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
             formerror=""
           >
             <div
@@ -166,10 +166,10 @@ exports[`Profile page should match snapshot 1`] = `
           </div>
         </div>
         <div
-          className="sc-dIfARi"
+          className="sc-9417a80c-0"
         >
           <div
-            className="MuiFormControl-root MuiTextField-root sc-dmctIk kbzdwU css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+            className="MuiFormControl-root MuiTextField-root sc-9417a80c-2 cEDZcC css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
             formerror=""
           >
             <div
@@ -209,13 +209,13 @@ exports[`Profile page should match snapshot 1`] = `
           </div>
         </div>
         <div
-          className="sc-ipEyDJ eCisCl"
+          className="sc-4c80024d-6 jyHSlt"
         >
           <div
-            className="sc-kgTSHT CYuA-D"
+            className="sc-ce6427f1-0 hiAETv"
           >
             <div
-              className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary sc-bBABsx eYeKFR css-1fsbs06-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
+              className="MuiInputBase-root MuiOutlinedInput-root MuiInputBase-colorPrimary sc-ce6427f1-2 jWJUfY css-1fsbs06-MuiInputBase-root-MuiOutlinedInput-root-MuiSelect-root"
               control={
                 {
                   "_defaultValues": {},
@@ -449,10 +449,10 @@ exports[`Profile page should match snapshot 1`] = `
             </div>
           </div>
           <div
-            className="sc-dIfARi"
+            className="sc-9417a80c-0"
           >
             <div
-              className="MuiFormControl-root MuiTextField-root sc-dmctIk kbzdwU css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+              className="MuiFormControl-root MuiTextField-root sc-9417a80c-2 cEDZcC css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
               formerror=""
             >
               <div
@@ -493,10 +493,10 @@ exports[`Profile page should match snapshot 1`] = `
           </div>
         </div>
         <div
-          className="sc-dIfARi"
+          className="sc-9417a80c-0"
         >
           <div
-            className="MuiFormControl-root MuiTextField-root sc-dmctIk kbzdwU css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
+            className="MuiFormControl-root MuiTextField-root sc-9417a80c-2 cEDZcC css-1u3bzj6-MuiFormControl-root-MuiTextField-root"
             formerror=""
           >
             <div
@@ -535,7 +535,8 @@ exports[`Profile page should match snapshot 1`] = `
           </div>
         </div>
         <button
-          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium sc-jSUZER dKasrh css-1wv28lq-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium sc-d4e95e10-0 cscvRh css-1wv28lq-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+          data-testid="Button"
           disabled={false}
           id=":r6:"
           onBlur={[Function]}
@@ -559,10 +560,10 @@ exports[`Profile page should match snapshot 1`] = `
     </div>
   </div>
   <div
-    className="sc-gYbzsP gPMSFt"
+    className="sc-4173a692-0 cOvppE"
   >
     <div
-      className="sc-bYMpWt"
+      className="sc-6e310889-1"
     >
       <a
         href="/profile"
@@ -571,85 +572,85 @@ exports[`Profile page should match snapshot 1`] = `
         onTouchStart={[Function]}
       >
         <p
-          className="sc-ezOQGI ioOpXg"
+          className="sc-6e310889-0 hzQdTS"
         >
           GO BACK TO PROFILE
         </p>
       </a>
     </div>
     <p
-      className="sc-iAEawV"
+      className="sc-4173a692-6"
     >
       Welcome back, 
       user
     </p>
     <div
-      className="sc-cabOPr hJnNAU"
+      className="sc-4173a692-4 hWpjpZ"
     >
       <div
-        className="sc-cCjUiG gusuVH"
+        className="sc-4173a692-1 bzJlkL"
       >
         <p
-          className="sc-iTFTee fXdgcV"
+          className="sc-4173a692-5 fvNEVX"
         >
           MY ORDERS
         </p>
         <p
-          className="sc-iAEawV"
+          className="sc-4173a692-6"
         >
           You havent placed any orders yet
         </p>
       </div>
       <div
-        className="sc-cjibBx cpRqrm"
+        className="sc-4173a692-2 iEqouk"
       >
         <p
-          className="sc-iTFTee fXdgcV"
+          className="sc-4173a692-5 fvNEVX"
         >
           PRIMARY ADDRESS
         </p>
         <div
-          className="sc-jcMfQk ckVsEq"
+          className="sc-4173a692-3 bRsCQl"
         >
           <p
-            className="sc-iAEawV"
+            className="sc-4173a692-6"
           >
             First name: 
             test
           </p>
           <p
-            className="sc-iAEawV"
+            className="sc-4173a692-6"
           >
             Last name: 
             test
           </p>
           <p
-            className="sc-iAEawV"
+            className="sc-4173a692-6"
           >
             Address 1: 
             testAddress
           </p>
           <p
-            className="sc-iAEawV"
+            className="sc-4173a692-6"
           >
             City: 
             testCity
           </p>
           <p
-            className="sc-iAEawV"
+            className="sc-4173a692-6"
           >
             Apartment: 
             testApartment
           </p>
           <p
-            className="sc-iAEawV"
+            className="sc-4173a692-6"
           >
             ZIP code: 
             testZipCode
           </p>
         </div>
         <a
-          className="sc-eeMvmM blHzSg"
+          className="sc-4173a692-7 kBBofw"
           onClick={[Function]}
         >
           EDIT ADDRESSES

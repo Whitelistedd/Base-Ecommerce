@@ -2,19 +2,19 @@
 
 exports[`Checkout  page should match snapshot 1`] = `
 <div
-  className="sc-AHaJN eFLzxB"
+  className="sc-283eddd0-1 gkkIUt"
 >
   <div
-    className="sc-cOxWqc boSykC"
+    className="sc-283eddd0-0 dZUPki"
   >
     <div
-      className="sc-eeMvmM jVyklX"
+      className="sc-92718e0b-2 hhAWhF"
     >
       <div
-        className="sc-iAEawV eZDfSv"
+        className="sc-92718e0b-1 iDnurs"
       >
         <div
-          className="sc-iTFTee djIIdZ"
+          className="sc-92718e0b-0 hbQEh"
         >
           <span
             style={
@@ -51,7 +51,7 @@ exports[`Checkout  page should match snapshot 1`] = `
             />
             <img
               alt="loading..."
-              className="sc-cUEOzv"
+              className="sc-92718e0b-3"
               data-nimg="responsive"
               decoding="async"
               onError={[Function]}
@@ -83,7 +83,7 @@ exports[`Checkout  page should match snapshot 1`] = `
             <noscript>
               <img
                 alt="loading..."
-                className="sc-cUEOzv"
+                className="sc-92718e0b-3"
                 data-nimg="responsive"
                 decoding="async"
                 loading="lazy"
@@ -120,39 +120,39 @@ exports[`Checkout  page should match snapshot 1`] = `
     </div>
   </div>
   <div
-    className="sc-iBYQkv gqxYmT"
+    className="sc-c244e443-7 ijryVv"
   >
     <div
-      className="sc-bcXHqe izOCAP"
+      className="sc-c244e443-0 hENCiU"
     >
       <div
-        className="sc-gswNZR bUmuCI"
+        className="sc-c244e443-1 cBLjNq"
       >
         <div
-          className="sc-dkrFOg dhxzHb"
+          className="sc-c244e443-2 fugwvk"
         >
           <p
-            className="sc-hLBbgP fivAmJ"
+            className="sc-c244e443-3 dTgOXL"
           >
             Subtotal
           </p>
           <p
-            className="sc-eDvSVe fwRfwk"
+            className="sc-c244e443-4 cMlBYJ"
           >
             ₽
             0
           </p>
         </div>
         <div
-          className="sc-dkrFOg dhxzHb"
+          className="sc-c244e443-2 fugwvk"
         >
           <p
-            className="sc-hLBbgP fivAmJ"
+            className="sc-c244e443-3 dTgOXL"
           >
             Shipping
           </p>
           <p
-            className="sc-eDvSVe fwRfwk"
+            className="sc-c244e443-4 cMlBYJ"
           >
             ₽
             500
@@ -160,15 +160,15 @@ exports[`Checkout  page should match snapshot 1`] = `
         </div>
       </div>
       <div
-        className="sc-dkrFOg dhxzHb"
+        className="sc-c244e443-2 fugwvk"
       >
         <p
-          className="sc-jSUZER hjDGxj"
+          className="sc-c244e443-5 cDJHPh"
         >
           Total
         </p>
         <p
-          className="sc-gKPRtg kcjjT"
+          className="sc-c244e443-6 kHUEiq"
         >
           ₽
           500

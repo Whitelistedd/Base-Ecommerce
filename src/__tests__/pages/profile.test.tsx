@@ -3,7 +3,10 @@ import {
   QueryClient,
   QueryClientProvider,
 } from '@tanstack/react-query'
-import { renderWithClient, wrapWithClient } from '../../__mocks__/utils'
+import {
+  renderWithClient,
+  wrapWithClient,
+} from '../../__mocks__/utils/reactQuery'
 
 import Profile from '@/pages/profile'
 import profileInfo from '@/__mocks__/profileInfo'

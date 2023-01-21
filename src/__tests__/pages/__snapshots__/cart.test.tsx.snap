@@ -2,10 +2,10 @@
 
 exports[`Cart page should match snapshot 1`] = `
 <div
-  className="sc-kDvujY jROdFV"
+  className="sc-f2b7308a-10 eHvoGd"
 >
   <div
-    className="sc-bBABsx ldziiQ"
+    className="sc-1a8f94cc-1 bgHcty"
   >
     <p
       className="MuiTypography-root MuiTypography-body1 css-1ydvvti-MuiTypography-root"
@@ -19,7 +19,8 @@ exports[`Cart page should match snapshot 1`] = `
       onTouchStart={[Function]}
     >
       <button
-        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium sc-bcXHqe gqtAtJ sc-fLcnxK iQMbui css-1vqlznj-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium sc-d4e95e10-0 cscvRh sc-1a8f94cc-0 mnunh css-1vqlznj-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        data-testid="Button"
         disabled={false}
         id=":r0:"
         onBlur={[Function]}

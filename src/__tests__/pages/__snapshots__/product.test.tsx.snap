@@ -1,0 +1,699 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Index page should match snapshot 1`] = `
+<div
+  className="sc-122fb789-1 kmREFj"
+>
+  <div
+    className="sc-122fb789-0 dsWDdN"
+  >
+    <div
+      className="swiper-container sc-8e5a2b4-1 jiheNC"
+      modules={
+        [
+          {
+            "create": [Function],
+            "name": "navigation",
+            "on": {
+              "click": [Function],
+              "destroy": [Function],
+              "enable disable": [Function],
+              "fromEdge": [Function],
+              "init": [Function],
+              "toEdge": [Function],
+            },
+            "params": {
+              "navigation": {
+                "disabledClass": "swiper-button-disabled",
+                "hiddenClass": "swiper-button-hidden",
+                "hideOnClick": false,
+                "lockClass": "swiper-button-lock",
+                "nextEl": null,
+                "prevEl": null,
+              },
+            },
+          },
+          {
+            "create": [Function],
+            "name": "effect-fade",
+            "on": {
+              "beforeInit": [Function],
+              "setTransition": [Function],
+              "setTranslate": [Function],
+            },
+            "params": {
+              "fadeEffect": {
+                "crossFade": false,
+              },
+            },
+          },
+        ]
+      }
+    >
+      <div
+        className="swiper-button-prev"
+      />
+      <div
+        className="swiper-button-next"
+      />
+      <div
+        className="swiper-wrapper"
+      >
+        <div
+          className="swiper-slide swiper-slide-duplicate"
+          data-swiper-slide-index={0}
+        >
+          <div
+            className="sc-4c7a1ac9-1 sc-b302848f-0 fcXFCP bwMZUN  sc-8e5a2b4-0 gfdRvo"
+            onClick={[Function]}
+          >
+            <span
+              style={
+                {
+                  "background": "none",
+                  "border": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": "initial",
+                  "margin": 0,
+                  "opacity": 1,
+                  "overflow": "hidden",
+                  "padding": 0,
+                  "position": "relative",
+                  "width": "initial",
+                }
+              }
+            >
+              <span
+                style={
+                  {
+                    "background": "none",
+                    "border": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": "initial",
+                    "margin": 0,
+                    "opacity": 1,
+                    "padding": 0,
+                    "paddingTop": "132.6086956521739%",
+                    "width": "initial",
+                  }
+                }
+              />
+              <img
+                alt="ProductImage "
+                className="sc-4c7a1ac9-0"
+                data-nimg="responsive"
+                decoding="async"
+                onError={[Function]}
+                onLoad={[Function]}
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style={
+                  {
+                    "border": "none",
+                    "bottom": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": 0,
+                    "left": 0,
+                    "margin": "auto",
+                    "maxHeight": "100%",
+                    "maxWidth": "100%",
+                    "minHeight": "100%",
+                    "minWidth": "100%",
+                    "objectFit": undefined,
+                    "objectPosition": undefined,
+                    "padding": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": 0,
+                  }
+                }
+              />
+              <noscript>
+                <img
+                  alt="ProductImage "
+                  className="sc-4c7a1ac9-0"
+                  data-nimg="responsive"
+                  decoding="async"
+                  loading="lazy"
+                  sizes="100vw"
+                  src="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75"
+                  srcSet="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75 3840w"
+                  style={
+                    {
+                      "border": "none",
+                      "bottom": 0,
+                      "boxSizing": "border-box",
+                      "display": "block",
+                      "height": 0,
+                      "left": 0,
+                      "margin": "auto",
+                      "maxHeight": "100%",
+                      "maxWidth": "100%",
+                      "minHeight": "100%",
+                      "minWidth": "100%",
+                      "objectFit": undefined,
+                      "objectPosition": undefined,
+                      "padding": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "width": 0,
+                    }
+                  }
+                />
+              </noscript>
+            </span>
+          </div>
+        </div>
+        <div
+          className="swiper-slide"
+          data-swiper-slide-index={0}
+        >
+          <div
+            className="sc-4c7a1ac9-1 sc-b302848f-0 fcXFCP bwMZUN  sc-8e5a2b4-0 gfdRvo"
+            onClick={[Function]}
+          >
+            <span
+              style={
+                {
+                  "background": "none",
+                  "border": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": "initial",
+                  "margin": 0,
+                  "opacity": 1,
+                  "overflow": "hidden",
+                  "padding": 0,
+                  "position": "relative",
+                  "width": "initial",
+                }
+              }
+            >
+              <span
+                style={
+                  {
+                    "background": "none",
+                    "border": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": "initial",
+                    "margin": 0,
+                    "opacity": 1,
+                    "padding": 0,
+                    "paddingTop": "132.6086956521739%",
+                    "width": "initial",
+                  }
+                }
+              />
+              <img
+                alt="ProductImage "
+                className="sc-4c7a1ac9-0"
+                data-nimg="responsive"
+                decoding="async"
+                onError={[Function]}
+                onLoad={[Function]}
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style={
+                  {
+                    "border": "none",
+                    "bottom": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": 0,
+                    "left": 0,
+                    "margin": "auto",
+                    "maxHeight": "100%",
+                    "maxWidth": "100%",
+                    "minHeight": "100%",
+                    "minWidth": "100%",
+                    "objectFit": undefined,
+                    "objectPosition": undefined,
+                    "padding": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": 0,
+                  }
+                }
+              />
+              <noscript>
+                <img
+                  alt="ProductImage "
+                  className="sc-4c7a1ac9-0"
+                  data-nimg="responsive"
+                  decoding="async"
+                  loading="lazy"
+                  sizes="100vw"
+                  src="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75"
+                  srcSet="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75 3840w"
+                  style={
+                    {
+                      "border": "none",
+                      "bottom": 0,
+                      "boxSizing": "border-box",
+                      "display": "block",
+                      "height": 0,
+                      "left": 0,
+                      "margin": "auto",
+                      "maxHeight": "100%",
+                      "maxWidth": "100%",
+                      "minHeight": "100%",
+                      "minWidth": "100%",
+                      "objectFit": undefined,
+                      "objectPosition": undefined,
+                      "padding": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "width": 0,
+                    }
+                  }
+                />
+              </noscript>
+            </span>
+          </div>
+        </div>
+        <div
+          className="swiper-slide swiper-slide-duplicate"
+          data-swiper-slide-index={0}
+        >
+          <div
+            className="sc-4c7a1ac9-1 sc-b302848f-0 fcXFCP bwMZUN  sc-8e5a2b4-0 gfdRvo"
+            onClick={[Function]}
+          >
+            <span
+              style={
+                {
+                  "background": "none",
+                  "border": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": "initial",
+                  "margin": 0,
+                  "opacity": 1,
+                  "overflow": "hidden",
+                  "padding": 0,
+                  "position": "relative",
+                  "width": "initial",
+                }
+              }
+            >
+              <span
+                style={
+                  {
+                    "background": "none",
+                    "border": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": "initial",
+                    "margin": 0,
+                    "opacity": 1,
+                    "padding": 0,
+                    "paddingTop": "132.6086956521739%",
+                    "width": "initial",
+                  }
+                }
+              />
+              <img
+                alt="ProductImage "
+                className="sc-4c7a1ac9-0"
+                data-nimg="responsive"
+                decoding="async"
+                onError={[Function]}
+                onLoad={[Function]}
+                src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+                style={
+                  {
+                    "border": "none",
+                    "bottom": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": 0,
+                    "left": 0,
+                    "margin": "auto",
+                    "maxHeight": "100%",
+                    "maxWidth": "100%",
+                    "minHeight": "100%",
+                    "minWidth": "100%",
+                    "objectFit": undefined,
+                    "objectPosition": undefined,
+                    "padding": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": 0,
+                  }
+                }
+              />
+              <noscript>
+                <img
+                  alt="ProductImage "
+                  className="sc-4c7a1ac9-0"
+                  data-nimg="responsive"
+                  decoding="async"
+                  loading="lazy"
+                  sizes="100vw"
+                  src="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75"
+                  srcSet="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75 3840w"
+                  style={
+                    {
+                      "border": "none",
+                      "bottom": 0,
+                      "boxSizing": "border-box",
+                      "display": "block",
+                      "height": 0,
+                      "left": 0,
+                      "margin": "auto",
+                      "maxHeight": "100%",
+                      "maxWidth": "100%",
+                      "minHeight": "100%",
+                      "minWidth": "100%",
+                      "objectFit": undefined,
+                      "objectPosition": undefined,
+                      "padding": 0,
+                      "position": "absolute",
+                      "right": 0,
+                      "top": 0,
+                      "width": 0,
+                    }
+                  }
+                />
+              </noscript>
+            </span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div
+      className="sc-21e3326b-2 bznTfU"
+    >
+      <div
+        className="sc-21e3326b-1 kHOUgV"
+      >
+        <div
+          className="sc-4c7a1ac9-1 sc-b302848f-0 fcXFCP bwMZUN active "
+          onClick={[Function]}
+        >
+          <span
+            style={
+              {
+                "background": "none",
+                "border": 0,
+                "boxSizing": "border-box",
+                "display": "block",
+                "height": "initial",
+                "margin": 0,
+                "opacity": 1,
+                "overflow": "hidden",
+                "padding": 0,
+                "position": "relative",
+                "width": "initial",
+              }
+            }
+          >
+            <span
+              style={
+                {
+                  "background": "none",
+                  "border": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": "initial",
+                  "margin": 0,
+                  "opacity": 1,
+                  "padding": 0,
+                  "paddingTop": "132.6086956521739%",
+                  "width": "initial",
+                }
+              }
+            />
+            <img
+              alt="ProductImage "
+              className="sc-4c7a1ac9-0"
+              data-nimg="responsive"
+              decoding="async"
+              onError={[Function]}
+              onLoad={[Function]}
+              src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
+              style={
+                {
+                  "border": "none",
+                  "bottom": 0,
+                  "boxSizing": "border-box",
+                  "display": "block",
+                  "height": 0,
+                  "left": 0,
+                  "margin": "auto",
+                  "maxHeight": "100%",
+                  "maxWidth": "100%",
+                  "minHeight": "100%",
+                  "minWidth": "100%",
+                  "objectFit": undefined,
+                  "objectPosition": undefined,
+                  "padding": 0,
+                  "position": "absolute",
+                  "right": 0,
+                  "top": 0,
+                  "width": 0,
+                }
+              }
+            />
+            <noscript>
+              <img
+                alt="ProductImage "
+                className="sc-4c7a1ac9-0"
+                data-nimg="responsive"
+                decoding="async"
+                loading="lazy"
+                sizes="100vw"
+                src="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75"
+                srcSet="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75 3840w"
+                style={
+                  {
+                    "border": "none",
+                    "bottom": 0,
+                    "boxSizing": "border-box",
+                    "display": "block",
+                    "height": 0,
+                    "left": 0,
+                    "margin": "auto",
+                    "maxHeight": "100%",
+                    "maxWidth": "100%",
+                    "minHeight": "100%",
+                    "minWidth": "100%",
+                    "objectFit": undefined,
+                    "objectPosition": undefined,
+                    "padding": 0,
+                    "position": "absolute",
+                    "right": 0,
+                    "top": 0,
+                    "width": 0,
+                  }
+                }
+              />
+            </noscript>
+          </span>
+        </div>
+      </div>
+      <img
+        alt="MEN'S QUARTER ZIP HOODIE"
+        className="sc-21e3326b-0 sc-3877b992-0 bZCIJJ dLeqKL"
+        src="https://i.ibb.co/93ksW04/Untitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp"
+      />
+    </div>
+    <div
+      className="sc-7fdd42f4-11 iEufdy"
+    >
+      <h1
+        className="sc-7fdd42f4-0 czuFGP"
+      >
+        MEN'S QUARTER ZIP HOODIE
+      </h1>
+      <span
+        className="sc-7fdd42f4-1 fnalvN"
+      >
+        ₽
+        3000
+      </span>
+      <div
+        className="sc-8c48ebb0-0 jlXspZ"
+      >
+        <h4
+          className="sc-8c48ebb0-3 jMuDkq"
+        >
+          Size :
+        </h4>
+        <div
+          className="sc-8c48ebb0-1 juRuoY"
+        >
+          <label
+            className="sc-d46022de-4 kNiYOK"
+          >
+            <input
+              className="sc-d46022de-1"
+              name="size"
+              onChange={[Function]}
+              type="radio"
+              value="XL"
+            />
+            <span
+              className="sc-d46022de-3 vihxs"
+            >
+              <div
+                className="sc-d46022de-0"
+              >
+                <h3
+                  className="sc-d46022de-2"
+                >
+                  XL
+                </h3>
+              </div>
+            </span>
+          </label>
+          <label
+            className="sc-d46022de-4 kNiYOK"
+          >
+            <input
+              className="sc-d46022de-1"
+              name="size"
+              onChange={[Function]}
+              type="radio"
+              value="L"
+            />
+            <span
+              className="sc-d46022de-3 vihxs"
+            >
+              <div
+                className="sc-d46022de-0"
+              >
+                <h3
+                  className="sc-d46022de-2"
+                >
+                  L
+                </h3>
+              </div>
+            </span>
+          </label>
+          <label
+            className="sc-d46022de-4 kNiYOK"
+          >
+            <input
+              className="sc-d46022de-1"
+              name="size"
+              onChange={[Function]}
+              type="radio"
+              value="M"
+            />
+            <span
+              className="sc-d46022de-3 vihxs"
+            >
+              <div
+                className="sc-d46022de-0"
+              >
+                <h3
+                  className="sc-d46022de-2"
+                >
+                  M
+                </h3>
+              </div>
+            </span>
+          </label>
+        </div>
+      </div>
+      <div
+        className="sc-8c48ebb0-0 jlXspZ"
+      >
+        <h4
+          className="sc-8c48ebb0-3 jMuDkq"
+        >
+          Colors : 
+          <span
+            className="sc-8c48ebb0-2 fNvPJh"
+          />
+           
+        </h4>
+        <div
+          className="sc-8c48ebb0-1 juRuoY"
+        >
+          <label
+            className="sc-5fc067ee-4 bNICJU sc-8c48ebb0-4 gDScID"
+          >
+            <input
+              className="sc-5fc067ee-1"
+              name="color"
+              onChange={[Function]}
+              type="radio"
+              value="black"
+            />
+            <span
+              className="sc-5fc067ee-3 gsVWtG"
+            >
+              <div
+                className="sc-5fc067ee-0"
+              >
+                <h3
+                  className="sc-5fc067ee-2 jlZsxx"
+                />
+              </div>
+            </span>
+          </label>
+        </div>
+      </div>
+      <div
+        className="sc-7fdd42f4-8 iMpeaW"
+      >
+        <div
+          className="sc-7fdd42f4-9 dPKUer"
+        >
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="RemoveIcon"
+            focusable="false"
+            onClick={[Function]}
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 13H5v-2h14v2z"
+            />
+          </svg>
+          <span
+            className="sc-7fdd42f4-10 cYgmPW"
+          >
+            1
+          </span>
+          <svg
+            aria-hidden={true}
+            className="MuiSvgIcon-root MuiSvgIcon-fontSizeMedium css-i4bv87-MuiSvgIcon-root"
+            data-testid="AddIcon"
+            focusable="false"
+            onClick={[Function]}
+            viewBox="0 0 24 24"
+          >
+            <path
+              d="M19 13h-6v6h-2v-6H5v-2h6V5h2v6h6v2z"
+            />
+          </svg>
+        </div>
+        <button
+          className="sc-7fdd42f4-6 jLGeHu"
+          onClick={[Function]}
+        >
+          ADD TO CART
+        </button>
+      </div>
+      <div
+        className="sc-7fdd42f4-2 iliLAj"
+      >
+        <div
+          className="sc-7fdd42f4-3 kna-dXG"
+        />
+      </div>
+    </div>
+  </div>
+</div>
+`;

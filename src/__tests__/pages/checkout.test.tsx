@@ -6,7 +6,7 @@ import { UserProvider } from '@auth0/nextjs-auth0'
 import cartSlice from '@/redux/slices/cart'
 import renderer from 'react-test-renderer'
 import userSlice from '@/redux/slices/user'
-import { wrapWithClient } from '@/__mocks__/utils'
+import { wrapWithClient } from '@/__mocks__/utils/reactQuery'
 
 jest.mock('next/router', () => require('next-router-mock'))
 

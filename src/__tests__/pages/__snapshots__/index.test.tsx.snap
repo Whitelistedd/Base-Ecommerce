@@ -3,7 +3,7 @@
 exports[`Index page should match snapshot 1`] = `
 [
   <div
-    className="sc-jOiSOi cqrpCy"
+    className="sc-3953f2d2-3 chdoW"
   >
     <a
       href="/products"
@@ -12,7 +12,8 @@ exports[`Index page should match snapshot 1`] = `
       onTouchStart={[Function]}
     >
       <button
-        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium sc-ksBlkl ithzKR sc-eeMvmM dIvlIq css-170ytl2-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root-HomePage"
+        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium sc-d4e95e10-0 cscvRh sc-3953f2d2-0 sc-3953f2d2-1 bbxMCz fhQVue css-1vqlznj-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        data-testid="Button"
         disabled={false}
         id=":r0:"
         onBlur={[Function]}
@@ -35,10 +36,10 @@ exports[`Index page should match snapshot 1`] = `
     </a>
   </div>,
   <div
-    className="sc-cOxWqc cYcdnE"
+    className="sc-3953f2d2-6 jRjNye"
   >
     <div
-      className="sc-dPWrhe coVEqf"
+      className="sc-3953f2d2-4 cvCetY"
     >
       <a
         href="/product/6368e3394b3d8da6f8dc9b81"
@@ -47,10 +48,10 @@ exports[`Index page should match snapshot 1`] = `
         onTouchStart={[Function]}
       >
         <div
-          className="sc-hBxehG gkuKaW"
+          className="sc-a2b9fdee-0 dPiZkh"
         >
           <div
-            className="sc-fnGiBr ljLwrd"
+            className="sc-a2b9fdee-1 bmODmx"
           >
             <span
               style={
@@ -87,7 +88,7 @@ exports[`Index page should match snapshot 1`] = `
               />
               <img
                 alt="categoryImage"
-                className="sc-fEXmlR"
+                className="sc-a2b9fdee-2"
                 data-nimg="responsive"
                 decoding="async"
                 onError={[Function]}
@@ -119,7 +120,7 @@ exports[`Index page should match snapshot 1`] = `
               <noscript>
                 <img
                   alt="categoryImage"
-                  className="sc-fEXmlR"
+                  className="sc-a2b9fdee-2"
                   data-nimg="responsive"
                   decoding="async"
                   loading="lazy"
@@ -153,7 +154,7 @@ exports[`Index page should match snapshot 1`] = `
             </span>
           </div>
           <h1
-            className="sc-bjfHbI jEgZNu"
+            className="sc-a2b9fdee-3 fgNZeP"
           >
             Knitted Sweaters
           </h1>
@@ -166,10 +167,10 @@ exports[`Index page should match snapshot 1`] = `
         onTouchStart={[Function]}
       >
         <div
-          className="sc-hBxehG gkuKaW"
+          className="sc-a2b9fdee-0 dPiZkh"
         >
           <div
-            className="sc-fnGiBr ljLwrd"
+            className="sc-a2b9fdee-1 bmODmx"
           >
             <span
               style={
@@ -206,7 +207,7 @@ exports[`Index page should match snapshot 1`] = `
               />
               <img
                 alt="categoryImage"
-                className="sc-fEXmlR"
+                className="sc-a2b9fdee-2"
                 data-nimg="responsive"
                 decoding="async"
                 onError={[Function]}
@@ -238,7 +239,7 @@ exports[`Index page should match snapshot 1`] = `
               <noscript>
                 <img
                   alt="categoryImage"
-                  className="sc-fEXmlR"
+                  className="sc-a2b9fdee-2"
                   data-nimg="responsive"
                   decoding="async"
                   loading="lazy"
@@ -272,7 +273,7 @@ exports[`Index page should match snapshot 1`] = `
             </span>
           </div>
           <h1
-            className="sc-bjfHbI jEgZNu"
+            className="sc-a2b9fdee-3 fgNZeP"
           >
             Cargo Pants
           </h1>
@@ -285,10 +286,10 @@ exports[`Index page should match snapshot 1`] = `
         onTouchStart={[Function]}
       >
         <div
-          className="sc-hBxehG gkuKaW"
+          className="sc-a2b9fdee-0 dPiZkh"
         >
           <div
-            className="sc-fnGiBr ljLwrd"
+            className="sc-a2b9fdee-1 bmODmx"
           >
             <span
               style={
@@ -325,7 +326,7 @@ exports[`Index page should match snapshot 1`] = `
               />
               <img
                 alt="categoryImage"
-                className="sc-fEXmlR"
+                className="sc-a2b9fdee-2"
                 data-nimg="responsive"
                 decoding="async"
                 onError={[Function]}
@@ -357,7 +358,7 @@ exports[`Index page should match snapshot 1`] = `
               <noscript>
                 <img
                   alt="categoryImage"
-                  className="sc-fEXmlR"
+                  className="sc-a2b9fdee-2"
                   data-nimg="responsive"
                   decoding="async"
                   loading="lazy"
@@ -391,7 +392,7 @@ exports[`Index page should match snapshot 1`] = `
             </span>
           </div>
           <h1
-            className="sc-bjfHbI jEgZNu"
+            className="sc-a2b9fdee-3 fgNZeP"
           >
             Training Shorts
           </h1>
@@ -399,10 +400,10 @@ exports[`Index page should match snapshot 1`] = `
       </a>
     </div>
     <div
-      className="sc-cCjUiG laiEK"
+      className="sc-3378797b-1 jJmkFz"
     >
       <div
-        className="swiper-container sc-jcMfQk kSLqVh"
+        className="swiper-container sc-3378797b-3 hFIIdL"
       >
         <div
           className="swiper-pagination"
@@ -415,35 +416,29 @@ exports[`Index page should match snapshot 1`] = `
             tabIndex={9}
           >
             <div
-              className="sc-hhOBVt ufzGn Product sc-cjibBx zWgfP"
+              className="sc-8e684352-8 kLZLIB Product sc-3378797b-2 cypIuU"
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
             >
               <div
-                className="sc-ilhmMj iDDen ProductInfo"
-                onClick={[Function]}
+                className="hover-3d"
                 onMouseEnter={[Function]}
-                onTouchStart={[Function]}
+                onMouseLeave={[Function]}
+                onMouseMove={[Function]}
+                style={
+                  {
+                    "transformStyle": "preserve-3d",
+                  }
+                }
               >
                 <div
-                  className="sc-ezOQGI ProductImage css-ap4ak7-Product"
+                  className="sc-8e684352-6 iEprRw ProductInfo"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onTouchStart={[Function]}
                 >
-                  <span
-                    style={
-                      {
-                        "background": "none",
-                        "border": 0,
-                        "boxSizing": "border-box",
-                        "display": "block",
-                        "height": "initial",
-                        "margin": 0,
-                        "opacity": 1,
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "relative",
-                        "width": "initial",
-                      }
-                    }
+                  <div
+                    className="sc-8e684352-3 sc-cfb95821-0  kVICBL ProductImage"
                   >
                     <span
                       style={
@@ -455,53 +450,37 @@ exports[`Index page should match snapshot 1`] = `
                           "height": "initial",
                           "margin": 0,
                           "opacity": 1,
+                          "overflow": "hidden",
                           "padding": 0,
-                          "paddingTop": "133.33333333333331%",
+                          "position": "relative",
                           "width": "initial",
                         }
                       }
-                    />
-                    <img
-                      alt="MEN'S QUARTER ZIP HOODIE"
-                      className="sc-kMjNwy fnauqY Image1"
-                      data-nimg="responsive"
-                      decoding="async"
-                      onError={[Function]}
-                      onLoad={[Function]}
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                      style={
-                        {
-                          "border": "none",
-                          "bottom": 0,
-                          "boxSizing": "border-box",
-                          "display": "block",
-                          "height": 0,
-                          "left": 0,
-                          "margin": "auto",
-                          "maxHeight": "100%",
-                          "maxWidth": "100%",
-                          "minHeight": "100%",
-                          "minWidth": "100%",
-                          "objectFit": undefined,
-                          "objectPosition": undefined,
-                          "padding": 0,
-                          "position": "absolute",
-                          "right": 0,
-                          "top": 0,
-                          "width": 0,
+                    >
+                      <span
+                        style={
+                          {
+                            "background": "none",
+                            "border": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": "initial",
+                            "margin": 0,
+                            "opacity": 1,
+                            "padding": 0,
+                            "paddingTop": "133.33333333333331%",
+                            "width": "initial",
+                          }
                         }
-                      }
-                    />
-                    <noscript>
+                      />
                       <img
                         alt="MEN'S QUARTER ZIP HOODIE"
-                        className="sc-kMjNwy fnauqY Image1"
+                        className="sc-8e684352-5 iWMXke Image1"
                         data-nimg="responsive"
                         decoding="async"
-                        loading="lazy"
-                        sizes="100vw"
-                        src="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75"
-                        srcSet="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75 3840w"
+                        onError={[Function]}
+                        onLoad={[Function]}
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                         style={
                           {
                             "border": "none",
@@ -525,28 +504,44 @@ exports[`Index page should match snapshot 1`] = `
                           }
                         }
                       />
-                    </noscript>
-                  </span>
-                </div>
-                <div
-                  className="sc-ezOQGI sc-bYMpWt  bdysET ProductImage"
-                >
-                  <span
-                    style={
-                      {
-                        "background": "none",
-                        "border": 0,
-                        "boxSizing": "border-box",
-                        "display": "block",
-                        "height": "initial",
-                        "margin": 0,
-                        "opacity": 1,
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "relative",
-                        "width": "initial",
-                      }
-                    }
+                      <noscript>
+                        <img
+                          alt="MEN'S QUARTER ZIP HOODIE"
+                          className="sc-8e684352-5 iWMXke Image1"
+                          data-nimg="responsive"
+                          decoding="async"
+                          loading="lazy"
+                          sizes="100vw"
+                          src="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75"
+                          srcSet="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75 3840w"
+                          style={
+                            {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                      </noscript>
+                    </span>
+                  </div>
+                  <div
+                    className="sc-8e684352-3 sc-8e684352-4  enuqtN ProductImage"
                   >
                     <span
                       style={
@@ -558,53 +553,37 @@ exports[`Index page should match snapshot 1`] = `
                           "height": "initial",
                           "margin": 0,
                           "opacity": 1,
+                          "overflow": "hidden",
                           "padding": 0,
-                          "paddingTop": "133.33333333333331%",
+                          "position": "relative",
                           "width": "initial",
                         }
                       }
-                    />
-                    <img
-                      alt="product-image"
-                      className="sc-kMjNwy fnauqY Image2"
-                      data-nimg="responsive"
-                      decoding="async"
-                      onError={[Function]}
-                      onLoad={[Function]}
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                      style={
-                        {
-                          "border": "none",
-                          "bottom": 0,
-                          "boxSizing": "border-box",
-                          "display": "block",
-                          "height": 0,
-                          "left": 0,
-                          "margin": "auto",
-                          "maxHeight": "100%",
-                          "maxWidth": "100%",
-                          "minHeight": "100%",
-                          "minWidth": "100%",
-                          "objectFit": undefined,
-                          "objectPosition": undefined,
-                          "padding": 0,
-                          "position": "absolute",
-                          "right": 0,
-                          "top": 0,
-                          "width": 0,
+                    >
+                      <span
+                        style={
+                          {
+                            "background": "none",
+                            "border": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": "initial",
+                            "margin": 0,
+                            "opacity": 1,
+                            "padding": 0,
+                            "paddingTop": "133.33333333333331%",
+                            "width": "initial",
+                          }
                         }
-                      }
-                    />
-                    <noscript>
+                      />
                       <img
                         alt="product-image"
-                        className="sc-kMjNwy fnauqY Image2"
+                        className="sc-8e684352-5 iWMXke Image2"
                         data-nimg="responsive"
                         decoding="async"
-                        loading="lazy"
-                        sizes="100vw"
-                        src="/_next/image?url=%2Fimage&w=3840&q=75"
-                        srcSet="/_next/image?url=%2Fimage&w=640&q=75 640w, /_next/image?url=%2Fimage&w=750&q=75 750w, /_next/image?url=%2Fimage&w=828&q=75 828w, /_next/image?url=%2Fimage&w=1080&q=75 1080w, /_next/image?url=%2Fimage&w=1200&q=75 1200w, /_next/image?url=%2Fimage&w=1920&q=75 1920w, /_next/image?url=%2Fimage&w=2048&q=75 2048w, /_next/image?url=%2Fimage&w=3840&q=75 3840w"
+                        onError={[Function]}
+                        onLoad={[Function]}
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                         style={
                           {
                             "border": "none",
@@ -628,20 +607,54 @@ exports[`Index page should match snapshot 1`] = `
                           }
                         }
                       />
-                    </noscript>
-                  </span>
+                      <noscript>
+                        <img
+                          alt="product-image"
+                          className="sc-8e684352-5 iWMXke Image2"
+                          data-nimg="responsive"
+                          decoding="async"
+                          loading="lazy"
+                          sizes="100vw"
+                          src="/_next/image?url=%2Fimage&w=3840&q=75"
+                          srcSet="/_next/image?url=%2Fimage&w=640&q=75 640w, /_next/image?url=%2Fimage&w=750&q=75 750w, /_next/image?url=%2Fimage&w=828&q=75 828w, /_next/image?url=%2Fimage&w=1080&q=75 1080w, /_next/image?url=%2Fimage&w=1200&q=75 1200w, /_next/image?url=%2Fimage&w=1920&q=75 1920w, /_next/image?url=%2Fimage&w=2048&q=75 2048w, /_next/image?url=%2Fimage&w=3840&q=75 3840w"
+                          style={
+                            {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                      </noscript>
+                    </span>
+                  </div>
+                  <p
+                    className="sc-8e684352-0 jLbrkN"
+                  >
+                    MEN'S QUARTER ZIP HOODIE
+                  </p>
+                  <p
+                    className="sc-8e684352-0 sc-8e684352-1 jLbrkN cIojHS"
+                  >
+                    ₽
+                    3000
+                  </p>
                 </div>
-                <p
-                  className="sc-lllmON hUInRL"
-                >
-                  MEN'S QUARTER ZIP HOODIE
-                </p>
-                <p
-                  className="sc-lllmON sc-iJnaPW hUInRL idDrkC"
-                >
-                  ₽
-                  3000
-                </p>
               </div>
             </div>
           </div>
@@ -650,35 +663,29 @@ exports[`Index page should match snapshot 1`] = `
             tabIndex={10}
           >
             <div
-              className="sc-hhOBVt ufzGn Product sc-cjibBx zWgfP"
+              className="sc-8e684352-8 kLZLIB Product sc-3378797b-2 cypIuU"
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
             >
               <div
-                className="sc-ilhmMj iDDen ProductInfo"
-                onClick={[Function]}
+                className="hover-3d"
                 onMouseEnter={[Function]}
-                onTouchStart={[Function]}
+                onMouseLeave={[Function]}
+                onMouseMove={[Function]}
+                style={
+                  {
+                    "transformStyle": "preserve-3d",
+                  }
+                }
               >
                 <div
-                  className="sc-ezOQGI ProductImage css-ap4ak7-Product"
+                  className="sc-8e684352-6 iEprRw ProductInfo"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onTouchStart={[Function]}
                 >
-                  <span
-                    style={
-                      {
-                        "background": "none",
-                        "border": 0,
-                        "boxSizing": "border-box",
-                        "display": "block",
-                        "height": "initial",
-                        "margin": 0,
-                        "opacity": 1,
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "relative",
-                        "width": "initial",
-                      }
-                    }
+                  <div
+                    className="sc-8e684352-3 sc-cfb95821-0  kVICBL ProductImage"
                   >
                     <span
                       style={
@@ -690,53 +697,37 @@ exports[`Index page should match snapshot 1`] = `
                           "height": "initial",
                           "margin": 0,
                           "opacity": 1,
+                          "overflow": "hidden",
                           "padding": 0,
-                          "paddingTop": "133.33333333333331%",
+                          "position": "relative",
                           "width": "initial",
                         }
                       }
-                    />
-                    <img
-                      alt="MEN'S QUARTER ZIP HOODIE"
-                      className="sc-kMjNwy fnauqY Image1"
-                      data-nimg="responsive"
-                      decoding="async"
-                      onError={[Function]}
-                      onLoad={[Function]}
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                      style={
-                        {
-                          "border": "none",
-                          "bottom": 0,
-                          "boxSizing": "border-box",
-                          "display": "block",
-                          "height": 0,
-                          "left": 0,
-                          "margin": "auto",
-                          "maxHeight": "100%",
-                          "maxWidth": "100%",
-                          "minHeight": "100%",
-                          "minWidth": "100%",
-                          "objectFit": undefined,
-                          "objectPosition": undefined,
-                          "padding": 0,
-                          "position": "absolute",
-                          "right": 0,
-                          "top": 0,
-                          "width": 0,
+                    >
+                      <span
+                        style={
+                          {
+                            "background": "none",
+                            "border": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": "initial",
+                            "margin": 0,
+                            "opacity": 1,
+                            "padding": 0,
+                            "paddingTop": "133.33333333333331%",
+                            "width": "initial",
+                          }
                         }
-                      }
-                    />
-                    <noscript>
+                      />
                       <img
                         alt="MEN'S QUARTER ZIP HOODIE"
-                        className="sc-kMjNwy fnauqY Image1"
+                        className="sc-8e684352-5 iWMXke Image1"
                         data-nimg="responsive"
                         decoding="async"
-                        loading="lazy"
-                        sizes="100vw"
-                        src="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75"
-                        srcSet="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75 3840w"
+                        onError={[Function]}
+                        onLoad={[Function]}
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                         style={
                           {
                             "border": "none",
@@ -760,28 +751,44 @@ exports[`Index page should match snapshot 1`] = `
                           }
                         }
                       />
-                    </noscript>
-                  </span>
-                </div>
-                <div
-                  className="sc-ezOQGI sc-bYMpWt  bdysET ProductImage"
-                >
-                  <span
-                    style={
-                      {
-                        "background": "none",
-                        "border": 0,
-                        "boxSizing": "border-box",
-                        "display": "block",
-                        "height": "initial",
-                        "margin": 0,
-                        "opacity": 1,
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "relative",
-                        "width": "initial",
-                      }
-                    }
+                      <noscript>
+                        <img
+                          alt="MEN'S QUARTER ZIP HOODIE"
+                          className="sc-8e684352-5 iWMXke Image1"
+                          data-nimg="responsive"
+                          decoding="async"
+                          loading="lazy"
+                          sizes="100vw"
+                          src="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75"
+                          srcSet="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75 3840w"
+                          style={
+                            {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                      </noscript>
+                    </span>
+                  </div>
+                  <div
+                    className="sc-8e684352-3 sc-8e684352-4  enuqtN ProductImage"
                   >
                     <span
                       style={
@@ -793,53 +800,37 @@ exports[`Index page should match snapshot 1`] = `
                           "height": "initial",
                           "margin": 0,
                           "opacity": 1,
+                          "overflow": "hidden",
                           "padding": 0,
-                          "paddingTop": "133.33333333333331%",
+                          "position": "relative",
                           "width": "initial",
                         }
                       }
-                    />
-                    <img
-                      alt="product-image"
-                      className="sc-kMjNwy fnauqY Image2"
-                      data-nimg="responsive"
-                      decoding="async"
-                      onError={[Function]}
-                      onLoad={[Function]}
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                      style={
-                        {
-                          "border": "none",
-                          "bottom": 0,
-                          "boxSizing": "border-box",
-                          "display": "block",
-                          "height": 0,
-                          "left": 0,
-                          "margin": "auto",
-                          "maxHeight": "100%",
-                          "maxWidth": "100%",
-                          "minHeight": "100%",
-                          "minWidth": "100%",
-                          "objectFit": undefined,
-                          "objectPosition": undefined,
-                          "padding": 0,
-                          "position": "absolute",
-                          "right": 0,
-                          "top": 0,
-                          "width": 0,
+                    >
+                      <span
+                        style={
+                          {
+                            "background": "none",
+                            "border": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": "initial",
+                            "margin": 0,
+                            "opacity": 1,
+                            "padding": 0,
+                            "paddingTop": "133.33333333333331%",
+                            "width": "initial",
+                          }
                         }
-                      }
-                    />
-                    <noscript>
+                      />
                       <img
                         alt="product-image"
-                        className="sc-kMjNwy fnauqY Image2"
+                        className="sc-8e684352-5 iWMXke Image2"
                         data-nimg="responsive"
                         decoding="async"
-                        loading="lazy"
-                        sizes="100vw"
-                        src="/_next/image?url=%2Fimage&w=3840&q=75"
-                        srcSet="/_next/image?url=%2Fimage&w=640&q=75 640w, /_next/image?url=%2Fimage&w=750&q=75 750w, /_next/image?url=%2Fimage&w=828&q=75 828w, /_next/image?url=%2Fimage&w=1080&q=75 1080w, /_next/image?url=%2Fimage&w=1200&q=75 1200w, /_next/image?url=%2Fimage&w=1920&q=75 1920w, /_next/image?url=%2Fimage&w=2048&q=75 2048w, /_next/image?url=%2Fimage&w=3840&q=75 3840w"
+                        onError={[Function]}
+                        onLoad={[Function]}
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                         style={
                           {
                             "border": "none",
@@ -863,20 +854,54 @@ exports[`Index page should match snapshot 1`] = `
                           }
                         }
                       />
-                    </noscript>
-                  </span>
+                      <noscript>
+                        <img
+                          alt="product-image"
+                          className="sc-8e684352-5 iWMXke Image2"
+                          data-nimg="responsive"
+                          decoding="async"
+                          loading="lazy"
+                          sizes="100vw"
+                          src="/_next/image?url=%2Fimage&w=3840&q=75"
+                          srcSet="/_next/image?url=%2Fimage&w=640&q=75 640w, /_next/image?url=%2Fimage&w=750&q=75 750w, /_next/image?url=%2Fimage&w=828&q=75 828w, /_next/image?url=%2Fimage&w=1080&q=75 1080w, /_next/image?url=%2Fimage&w=1200&q=75 1200w, /_next/image?url=%2Fimage&w=1920&q=75 1920w, /_next/image?url=%2Fimage&w=2048&q=75 2048w, /_next/image?url=%2Fimage&w=3840&q=75 3840w"
+                          style={
+                            {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                      </noscript>
+                    </span>
+                  </div>
+                  <p
+                    className="sc-8e684352-0 jLbrkN"
+                  >
+                    MEN'S QUARTER ZIP HOODIE
+                  </p>
+                  <p
+                    className="sc-8e684352-0 sc-8e684352-1 jLbrkN cIojHS"
+                  >
+                    ₽
+                    3000
+                  </p>
                 </div>
-                <p
-                  className="sc-lllmON hUInRL"
-                >
-                  MEN'S QUARTER ZIP HOODIE
-                </p>
-                <p
-                  className="sc-lllmON sc-iJnaPW hUInRL idDrkC"
-                >
-                  ₽
-                  3000
-                </p>
               </div>
             </div>
           </div>
@@ -885,35 +910,29 @@ exports[`Index page should match snapshot 1`] = `
             tabIndex={11}
           >
             <div
-              className="sc-hhOBVt ufzGn Product sc-cjibBx zWgfP"
+              className="sc-8e684352-8 kLZLIB Product sc-3378797b-2 cypIuU"
               onMouseEnter={[Function]}
               onMouseLeave={[Function]}
             >
               <div
-                className="sc-ilhmMj iDDen ProductInfo"
-                onClick={[Function]}
+                className="hover-3d"
                 onMouseEnter={[Function]}
-                onTouchStart={[Function]}
+                onMouseLeave={[Function]}
+                onMouseMove={[Function]}
+                style={
+                  {
+                    "transformStyle": "preserve-3d",
+                  }
+                }
               >
                 <div
-                  className="sc-ezOQGI ProductImage css-ap4ak7-Product"
+                  className="sc-8e684352-6 iEprRw ProductInfo"
+                  onClick={[Function]}
+                  onMouseEnter={[Function]}
+                  onTouchStart={[Function]}
                 >
-                  <span
-                    style={
-                      {
-                        "background": "none",
-                        "border": 0,
-                        "boxSizing": "border-box",
-                        "display": "block",
-                        "height": "initial",
-                        "margin": 0,
-                        "opacity": 1,
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "relative",
-                        "width": "initial",
-                      }
-                    }
+                  <div
+                    className="sc-8e684352-3 sc-cfb95821-0  kVICBL ProductImage"
                   >
                     <span
                       style={
@@ -925,53 +944,37 @@ exports[`Index page should match snapshot 1`] = `
                           "height": "initial",
                           "margin": 0,
                           "opacity": 1,
+                          "overflow": "hidden",
                           "padding": 0,
-                          "paddingTop": "133.33333333333331%",
+                          "position": "relative",
                           "width": "initial",
                         }
                       }
-                    />
-                    <img
-                      alt="MEN'S QUARTER ZIP HOODIE"
-                      className="sc-kMjNwy fnauqY Image1"
-                      data-nimg="responsive"
-                      decoding="async"
-                      onError={[Function]}
-                      onLoad={[Function]}
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                      style={
-                        {
-                          "border": "none",
-                          "bottom": 0,
-                          "boxSizing": "border-box",
-                          "display": "block",
-                          "height": 0,
-                          "left": 0,
-                          "margin": "auto",
-                          "maxHeight": "100%",
-                          "maxWidth": "100%",
-                          "minHeight": "100%",
-                          "minWidth": "100%",
-                          "objectFit": undefined,
-                          "objectPosition": undefined,
-                          "padding": 0,
-                          "position": "absolute",
-                          "right": 0,
-                          "top": 0,
-                          "width": 0,
+                    >
+                      <span
+                        style={
+                          {
+                            "background": "none",
+                            "border": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": "initial",
+                            "margin": 0,
+                            "opacity": 1,
+                            "padding": 0,
+                            "paddingTop": "133.33333333333331%",
+                            "width": "initial",
+                          }
                         }
-                      }
-                    />
-                    <noscript>
+                      />
                       <img
                         alt="MEN'S QUARTER ZIP HOODIE"
-                        className="sc-kMjNwy fnauqY Image1"
+                        className="sc-8e684352-5 iWMXke Image1"
                         data-nimg="responsive"
                         decoding="async"
-                        loading="lazy"
-                        sizes="100vw"
-                        src="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75"
-                        srcSet="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75 3840w"
+                        onError={[Function]}
+                        onLoad={[Function]}
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                         style={
                           {
                             "border": "none",
@@ -995,28 +998,44 @@ exports[`Index page should match snapshot 1`] = `
                           }
                         }
                       />
-                    </noscript>
-                  </span>
-                </div>
-                <div
-                  className="sc-ezOQGI sc-bYMpWt  bdysET ProductImage"
-                >
-                  <span
-                    style={
-                      {
-                        "background": "none",
-                        "border": 0,
-                        "boxSizing": "border-box",
-                        "display": "block",
-                        "height": "initial",
-                        "margin": 0,
-                        "opacity": 1,
-                        "overflow": "hidden",
-                        "padding": 0,
-                        "position": "relative",
-                        "width": "initial",
-                      }
-                    }
+                      <noscript>
+                        <img
+                          alt="MEN'S QUARTER ZIP HOODIE"
+                          className="sc-8e684352-5 iWMXke Image1"
+                          data-nimg="responsive"
+                          decoding="async"
+                          loading="lazy"
+                          sizes="100vw"
+                          src="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75"
+                          srcSet="/_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=640&q=75 640w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=750&q=75 750w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=828&q=75 828w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1080&q=75 1080w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1200&q=75 1200w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=1920&q=75 1920w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=2048&q=75 2048w, /_next/image?url=https%3A%2F%2Fi.ibb.co%2F93ksW04%2FUntitleddesign-d3cc44e5-2d2b-4c6b-a576-1aaa9fa2855f-600x.webp&w=3840&q=75 3840w"
+                          style={
+                            {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                      </noscript>
+                    </span>
+                  </div>
+                  <div
+                    className="sc-8e684352-3 sc-8e684352-4  enuqtN ProductImage"
                   >
                     <span
                       style={
@@ -1028,53 +1047,37 @@ exports[`Index page should match snapshot 1`] = `
                           "height": "initial",
                           "margin": 0,
                           "opacity": 1,
+                          "overflow": "hidden",
                           "padding": 0,
-                          "paddingTop": "133.33333333333331%",
+                          "position": "relative",
                           "width": "initial",
                         }
                       }
-                    />
-                    <img
-                      alt="product-image"
-                      className="sc-kMjNwy fnauqY Image2"
-                      data-nimg="responsive"
-                      decoding="async"
-                      onError={[Function]}
-                      onLoad={[Function]}
-                      src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
-                      style={
-                        {
-                          "border": "none",
-                          "bottom": 0,
-                          "boxSizing": "border-box",
-                          "display": "block",
-                          "height": 0,
-                          "left": 0,
-                          "margin": "auto",
-                          "maxHeight": "100%",
-                          "maxWidth": "100%",
-                          "minHeight": "100%",
-                          "minWidth": "100%",
-                          "objectFit": undefined,
-                          "objectPosition": undefined,
-                          "padding": 0,
-                          "position": "absolute",
-                          "right": 0,
-                          "top": 0,
-                          "width": 0,
+                    >
+                      <span
+                        style={
+                          {
+                            "background": "none",
+                            "border": 0,
+                            "boxSizing": "border-box",
+                            "display": "block",
+                            "height": "initial",
+                            "margin": 0,
+                            "opacity": 1,
+                            "padding": 0,
+                            "paddingTop": "133.33333333333331%",
+                            "width": "initial",
+                          }
                         }
-                      }
-                    />
-                    <noscript>
+                      />
                       <img
                         alt="product-image"
-                        className="sc-kMjNwy fnauqY Image2"
+                        className="sc-8e684352-5 iWMXke Image2"
                         data-nimg="responsive"
                         decoding="async"
-                        loading="lazy"
-                        sizes="100vw"
-                        src="/_next/image?url=%2Fimage&w=3840&q=75"
-                        srcSet="/_next/image?url=%2Fimage&w=640&q=75 640w, /_next/image?url=%2Fimage&w=750&q=75 750w, /_next/image?url=%2Fimage&w=828&q=75 828w, /_next/image?url=%2Fimage&w=1080&q=75 1080w, /_next/image?url=%2Fimage&w=1200&q=75 1200w, /_next/image?url=%2Fimage&w=1920&q=75 1920w, /_next/image?url=%2Fimage&w=2048&q=75 2048w, /_next/image?url=%2Fimage&w=3840&q=75 3840w"
+                        onError={[Function]}
+                        onLoad={[Function]}
+                        src="data:image/gif;base64,R0lGODlhAQABAIAAAAAAAP///yH5BAEAAAAALAAAAAABAAEAAAIBRAA7"
                         style={
                           {
                             "border": "none",
@@ -1098,26 +1101,60 @@ exports[`Index page should match snapshot 1`] = `
                           }
                         }
                       />
-                    </noscript>
-                  </span>
+                      <noscript>
+                        <img
+                          alt="product-image"
+                          className="sc-8e684352-5 iWMXke Image2"
+                          data-nimg="responsive"
+                          decoding="async"
+                          loading="lazy"
+                          sizes="100vw"
+                          src="/_next/image?url=%2Fimage&w=3840&q=75"
+                          srcSet="/_next/image?url=%2Fimage&w=640&q=75 640w, /_next/image?url=%2Fimage&w=750&q=75 750w, /_next/image?url=%2Fimage&w=828&q=75 828w, /_next/image?url=%2Fimage&w=1080&q=75 1080w, /_next/image?url=%2Fimage&w=1200&q=75 1200w, /_next/image?url=%2Fimage&w=1920&q=75 1920w, /_next/image?url=%2Fimage&w=2048&q=75 2048w, /_next/image?url=%2Fimage&w=3840&q=75 3840w"
+                          style={
+                            {
+                              "border": "none",
+                              "bottom": 0,
+                              "boxSizing": "border-box",
+                              "display": "block",
+                              "height": 0,
+                              "left": 0,
+                              "margin": "auto",
+                              "maxHeight": "100%",
+                              "maxWidth": "100%",
+                              "minHeight": "100%",
+                              "minWidth": "100%",
+                              "objectFit": undefined,
+                              "objectPosition": undefined,
+                              "padding": 0,
+                              "position": "absolute",
+                              "right": 0,
+                              "top": 0,
+                              "width": 0,
+                            }
+                          }
+                        />
+                      </noscript>
+                    </span>
+                  </div>
+                  <p
+                    className="sc-8e684352-0 jLbrkN"
+                  >
+                    MEN'S QUARTER ZIP HOODIE
+                  </p>
+                  <p
+                    className="sc-8e684352-0 sc-8e684352-1 jLbrkN cIojHS"
+                  >
+                    ₽
+                    3000
+                  </p>
                 </div>
-                <p
-                  className="sc-lllmON hUInRL"
-                >
-                  MEN'S QUARTER ZIP HOODIE
-                </p>
-                <p
-                  className="sc-lllmON sc-iJnaPW hUInRL idDrkC"
-                >
-                  ₽
-                  3000
-                </p>
               </div>
             </div>
           </div>
         </div>
         <p
-          className="sc-iTFTee bYCTD prev"
+          className="sc-3378797b-5 cGHdOs prev"
         >
           <svg
             aria-hidden={true}
@@ -1132,7 +1169,7 @@ exports[`Index page should match snapshot 1`] = `
           </svg>
         </p>
         <p
-          className="sc-iTFTee sc-iAEawV bYCTD haaRYS next"
+          className="sc-3378797b-5 sc-3378797b-6 cGHdOs kVtsrs next"
         >
           <svg
             aria-hidden={true}
@@ -1155,7 +1192,8 @@ exports[`Index page should match snapshot 1`] = `
       onTouchStart={[Function]}
     >
       <button
-        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium sc-ksBlkl ithzKR sc-eeMvmM sc-cUEOzv dIvlIq gSUyGH css-1vqlznj-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        className="MuiButtonBase-root MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium MuiButton-root MuiLoadingButton-root MuiButton-text MuiButton-textPrimary MuiButton-sizeMedium MuiButton-textSizeMedium sc-d4e95e10-0 cscvRh sc-3953f2d2-0 sc-3953f2d2-2 bbxMCz ijpwtT css-1vqlznj-MuiButtonBase-root-MuiButton-root-MuiLoadingButton-root"
+        data-testid="Button"
         disabled={false}
         id=":r1:"
         onBlur={[Function]}
@@ -1177,19 +1215,19 @@ exports[`Index page should match snapshot 1`] = `
       </button>
     </a>
     <div
-      className="sc-jSUZER dfVtOU"
+      className="sc-42a8b492-5 hGmGWf"
     >
       <div
-        className="sc-eDvSVe"
+        className="sc-42a8b492-4"
       >
         <p
-          className="sc-hLBbgP gqDyNv"
+          className="sc-42a8b492-3 ferfCU"
         >
           Let customers speak for us
         </p>
         <span
           aria-label="5 Stars"
-          className="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly sc-bqWxrE flbxzn css-ryrseu-MuiRating-root"
+          className="MuiRating-root MuiRating-sizeMedium MuiRating-readyOnly sc-a3d9f4ef-1 jqYKOy css-ryrseu-MuiRating-root"
           onMouseLeave={[Function]}
           onMouseMove={[Function]}
           role="img"
@@ -1200,7 +1238,7 @@ exports[`Index page should match snapshot 1`] = `
             >
               <svg
                 aria-hidden={true}
-                className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit sc-eDWCr iRdqER css-1vooibu-MuiSvgIcon-root"
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit sc-a3d9f4ef-0 hJBIaN css-1vooibu-MuiSvgIcon-root"
                 data-testid="StarsIcon"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -1217,7 +1255,7 @@ exports[`Index page should match snapshot 1`] = `
             >
               <svg
                 aria-hidden={true}
-                className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit sc-eDWCr iRdqER css-1vooibu-MuiSvgIcon-root"
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit sc-a3d9f4ef-0 hJBIaN css-1vooibu-MuiSvgIcon-root"
                 data-testid="StarsIcon"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -1234,7 +1272,7 @@ exports[`Index page should match snapshot 1`] = `
             >
               <svg
                 aria-hidden={true}
-                className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit sc-eDWCr iRdqER css-1vooibu-MuiSvgIcon-root"
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit sc-a3d9f4ef-0 hJBIaN css-1vooibu-MuiSvgIcon-root"
                 data-testid="StarsIcon"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -1251,7 +1289,7 @@ exports[`Index page should match snapshot 1`] = `
             >
               <svg
                 aria-hidden={true}
-                className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit sc-eDWCr iRdqER css-1vooibu-MuiSvgIcon-root"
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit sc-a3d9f4ef-0 hJBIaN css-1vooibu-MuiSvgIcon-root"
                 data-testid="StarsIcon"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -1268,7 +1306,7 @@ exports[`Index page should match snapshot 1`] = `
             >
               <svg
                 aria-hidden={true}
-                className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit sc-eDWCr iRdqER css-1vooibu-MuiSvgIcon-root"
+                className="MuiSvgIcon-root MuiSvgIcon-fontSizeInherit sc-a3d9f4ef-0 hJBIaN css-1vooibu-MuiSvgIcon-root"
                 data-testid="StarsIcon"
                 focusable="false"
                 viewBox="0 0 24 24"
@@ -1281,22 +1319,22 @@ exports[`Index page should match snapshot 1`] = `
           </span>
         </span>
         <p
-          className="sc-hLBbgP gqDyNv"
+          className="sc-42a8b492-3 ferfCU"
         >
           They all love it!
         </p>
       </div>
       <div
-        className="sc-dkrFOg"
+        className="sc-42a8b492-2"
       >
         <div
-          className="swiper-container sc-gswNZR gybHgC"
+          className="swiper-container sc-42a8b492-1 ceLalJ"
         >
           <div
             className="swiper-wrapper"
           />
           <div
-            className="sc-bcXHqe ifRcYn prev"
+            className="sc-42a8b492-0 fRBgOp prev"
           >
             <svg
               aria-hidden={true}
@@ -1311,7 +1349,7 @@ exports[`Index page should match snapshot 1`] = `
             </svg>
           </div>
           <div
-            className="sc-bcXHqe ifRcYn next"
+            className="sc-42a8b492-0 fRBgOp next"
           >
             <svg
               aria-hidden={true}
