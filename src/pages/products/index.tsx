@@ -1,22 +1,21 @@
-import { GetStaticProps, NextPage } from 'next'
-import { Pagination, useMediaQuery } from '@mui/material'
-import React, { useMemo, useState } from 'react'
+import { Filters } from '@/components/Elements/Filters/Filters'
+import MobileFilter from '@/components/Elements/Filters/MobileFilter'
+import { unFade } from '@/data/Animations'
+import { devices } from '@/data/MediaQueries'
 import {
   getAllProducts,
   getProductsListResult,
   useProductsList,
 } from '@/features/Products'
-
-import { Filters } from '@/components/Elements/Filters/Filters'
-import Head from 'next/head'
-import MobileFilter from '@/components/Elements/Filters/MobileFilter'
 import { Products } from '@/features/Products/components/Products'
-import { UseQueryResult } from '@tanstack/react-query'
-import { devices } from '@/data/MediaQueries'
 import { filtersType } from '@/types/GlobalTypes.model'
-import styled from 'styled-components'
-import { unFade } from '@/data/Animations'
+import { Pagination, useMediaQuery } from '@mui/material'
+import { UseQueryResult } from '@tanstack/react-query'
+import { GetStaticProps, NextPage } from 'next'
+import Head from 'next/head'
 import { useRouter } from 'next/router'
+import React, { useMemo, useState } from 'react'
+import styled from 'styled-components'
 
 export interface ProductsListPageProps {
   productsData: getProductsListResult
@@ -58,6 +57,7 @@ export const ProductsListPage: NextPage<ProductsListPageProps> = ({
 
   /* обрабатывать фильтры для страницы продуктов */
   const handleFilterChange = (value: string, name: string) => {
+    console.log(value, name, 'WWW')
     setFilters({
       ...filters,
       [name]: value,
