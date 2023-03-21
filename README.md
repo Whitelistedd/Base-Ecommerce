@@ -1,6 +1,6 @@
 # Base E-Commerce NextJS
 
-# https://base-ecommerce.vercel.app/
+# https://base-ecom.vercel.app/
 
 В этом проекте я создал веб-сайт NextJS, который использует
 Yandex Kassa для приема платежей (тестовые платежи), Redux Toolkit,
