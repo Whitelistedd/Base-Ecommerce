@@ -87,7 +87,7 @@ export const getStaticProps: GetStaticProps = async () => {
 
   return {
     props: {
-      productsData,
+      productsData: productsData.products.length > 0 ? productsData : undefined,
       reviews,
     },
   }
