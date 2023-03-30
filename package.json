@@ -34,7 +34,6 @@
     "next": "^13.0.6",
     "next-redux-wrapper": "^8.0.0",
     "react": "latest",
-    "react-3d-hover": "^1.1.1",
     "react-dom": "latest",
     "react-hook-form": "^7.39.7",
     "react-id-swiper": "^4.0.0",
