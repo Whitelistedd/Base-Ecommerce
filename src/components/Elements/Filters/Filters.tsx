@@ -1,16 +1,16 @@
+import { ColorRadioButton } from '@/components/Elements/ColorButton'
 import {
   AllCategories,
   AllColors,
   AllGenders,
   AllSizes,
 } from '@/data/FiltersData'
-
 import { Chip } from '@mui/material'
-import { ColorRadioButton } from '@/components/Elements/ColorButton'
-import { FiltersProps } from './Filters.model'
-import { ProductsFilterButton } from './FilterButton'
 import React from 'react'
 import styled from 'styled-components'
+
+import { ProductsFilterButton } from './FilterButton'
+import { FiltersProps } from './Filters.model'
 
 export const Filters: React.FC<FiltersProps> = ({
   filters,
@@ -77,16 +77,18 @@ export const Filters: React.FC<FiltersProps> = ({
         />
       </FilterTitleWrap>
       <Filter>
-        {AllSizes.map((size) => (
-          <ProductsFilterButton
-            key={size.id}
-            title={size.title}
-            inputValue={size.title}
-            inputName={'size'}
-            filters={filters}
-            handleFilterChange={handleFilterChange}
-          />
-        ))}
+        {AllSizes.map((size) => {
+          return (
+            <ProductsFilterButton
+              key={size.id}
+              title={size.title}
+              inputValue={size.title}
+              inputName={'size'}
+              filters={filters}
+              handleFilterChange={handleFilterChange}
+            />
+          )
+        })}
       </Filter>
       <FilterTitleWrap>
         <FilterTitle>Gender :</FilterTitle>

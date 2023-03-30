@@ -1,3 +1,19 @@
+import { Checkbox } from '@/components/Forms/Checkbox/Checkbox'
+import { Input } from '@/components/Forms/Input/Input'
+import { Select } from '@/components/Forms/Select/Select'
+import { Loading } from '@/components/States/Loading/Loading'
+import { handleShipping } from '@/features/Checkout/utils/handleShippingCost'
+import { useCountries } from '@/features/Countries'
+import { useProfileInfo } from '@/hooks/useProfileInfo'
+import { setError as dispatchError } from '@/redux/slices/cart'
+import { AppDispatch } from '@/redux/store/store'
+import { useUser } from '@auth0/nextjs-auth0'
+import { MenuItem } from '@mui/material'
+import { useRouter } from 'next/router'
+import React, { useId, useState } from 'react'
+import { SubmitHandler, useForm } from 'react-hook-form'
+
+import { newCheckout } from '../api/newCheckout'
 import {
   Container,
   GatheredInput,
@@ -13,23 +29,6 @@ import {
   Title,
 } from '../assets/Form-styles'
 import { FormProps, InfoType } from '../types/Checkout.model'
-import React, { useId, useState } from 'react'
-import { SubmitHandler, useForm } from 'react-hook-form'
-
-import { AppDispatch } from '@/redux/store/store'
-import { Checkbox } from '@/components/Forms/Checkbox/Checkbox'
-import { Failed } from '@/components/States/Failed/Failed'
-import { Input } from '@/components/Forms/Input/Input'
-import { Loading } from '@/components/States/Loading/Loading'
-import { MenuItem } from '@mui/material'
-import { Select } from '@/components/Forms/Select/Select'
-import { setError as dispatchError } from '@/redux/slices/cart'
-import { handleShipping } from '@/features/Checkout/utils/handleShippingCost'
-import { newCheckout } from '../api/newCheckout'
-import { useCountries } from '@/features/Countries'
-import { useProfileInfo } from '@/hooks/useProfileInfo'
-import { useRouter } from 'next/router'
-import { useUser } from '@auth0/nextjs-auth0'
 
 export const Form: React.FC<FormProps> = ({ cart, setShipping }) => {
   const { user, error } = useUser()
@@ -87,7 +86,6 @@ export const Form: React.FC<FormProps> = ({ cart, setShipping }) => {
   }
 
   if (isLoading) return <Loading />
-  if (error) return <Failed />
 
   return (
     <Information onSubmit={handleSubmit(onSubmit)}>
@@ -134,7 +132,7 @@ export const Form: React.FC<FormProps> = ({ cart, setShipping }) => {
       <Input
         name="address.apartment"
         required={false}
-        defaultValue={data && data?.address.apartment}
+        defaultValue={data && data?.address?.apartment}
         type="text"
         control={control}
         placeholder="Appartment, suite, etc. (optional)"
@@ -143,7 +141,7 @@ export const Form: React.FC<FormProps> = ({ cart, setShipping }) => {
       <Input
         name="address.city"
         required={'Enter a City'}
-        defaultValue={data && data?.address.city}
+        defaultValue={data && data?.address?.city}
         control={control}
         type="text"
         placeholder="City"
@@ -153,7 +151,7 @@ export const Form: React.FC<FormProps> = ({ cart, setShipping }) => {
         <Select
           name="address.country"
           control={control}
-          defaultValue={data && data?.address.country}
+          defaultValue={data && data?.address?.country}
           required={'Select a Region/Country'}
           isClearable
           sx={{ maxHeight: '56px !important' }}
@@ -168,7 +166,7 @@ export const Form: React.FC<FormProps> = ({ cart, setShipping }) => {
         <Input
           name="address.zipCode"
           required={'Enter a postal code'}
-          defaultValue={data && data?.address.zipCode}
+          defaultValue={data && data?.address?.zipCode}
           control={control}
           type="text"
           placeholder="Postal code"

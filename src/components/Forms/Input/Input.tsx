@@ -1,7 +1,6 @@
-import { Control, Controller } from 'react-hook-form'
-import { TextField, TextFieldProps } from '@mui/material'
-
 import { InfoType } from '@/features/Checkout'
+import { TextField, TextFieldProps } from '@mui/material'
+import { Control, Controller } from 'react-hook-form'
 import styled from 'styled-components'
 
 interface InputProps {
@@ -41,6 +40,7 @@ export const Input = (props: InputProps) => {
       render={({ field }) => (
         <Container>
           <StyledInput
+            inputProps={{ placeholder: props.placeholder }}
             {...field}
             formerror={props.error ? `${props.error}` : ''}
           />
