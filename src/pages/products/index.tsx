@@ -11,7 +11,7 @@ import { Products } from '@/features/Products/components/Products'
 import { filtersType } from '@/types/GlobalTypes.model'
 import { Pagination, useMediaQuery } from '@mui/material'
 import { UseQueryResult } from '@tanstack/react-query'
-import { GetStaticProps, NextPage } from 'next'
+import { GetServerSideProps, GetStaticProps, NextPage } from 'next'
 import Head from 'next/head'
 import { useRouter } from 'next/router'
 import React, { useMemo, useState } from 'react'
@@ -132,7 +132,7 @@ export const ProductsListPage: NextPage<ProductsListPageProps> = ({
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSidedProps: GetServerSideProps = async () => {
   const productsData = await getAllProducts(1, {
     color: '',
     size: '',
