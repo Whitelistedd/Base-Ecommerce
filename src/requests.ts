@@ -2,7 +2,7 @@ import axios from 'axios'
 
 const baseURL =
   process.env.NEXT_PUBLIC_ENVIRONMENT === 'local'
-    ? process.env.NEXT_PUBLIC_APP_BASEURL
+    ? `https://${process.env.NEXT_PUBLIC_APP_BASEURL?.split('/')[3]}`
     : process.env.NEXT_PUBLIC_VERCEL_URL
 
 export const BASE_URL = baseURL
