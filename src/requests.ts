@@ -1,6 +1,9 @@
 import axios from 'axios'
 
-const baseURL = process.env.NEXT_PUBLIC_APP_BASEURL
+const baseURL =
+  process.env.NEXT_PUBLIC_VERCEL_URL === 'local'
+    ? process.env.NEXT_PUBLIC_APP_BASEURL
+    : process.env.NEXT_PUBLIC_VERCEL_URL
 
 export const BASE_URL = baseURL
 

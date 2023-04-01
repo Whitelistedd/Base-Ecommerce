@@ -1,4 +1,4 @@
-import { GetStaticProps, NextPage } from 'next'
+import { GetServerSideProps, GetStaticProps, NextPage } from 'next'
 import { ReviewType, Reviews } from '@/features/Reviews'
 import { fadeUp, unFade } from '@/data/Animations'
 import { getProductsListResult, useProductsList } from '@/features/Products'
@@ -77,7 +77,7 @@ const HomePage: NextPage<HomePageProps> = ({ productsData, reviews }) => {
   )
 }
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSidedProps: GetServerSideProps = async () => {
   const productsData = await fetch(`${BASE_URL}products`)
     .then((response) => response.json())
     .then((response) => response)
