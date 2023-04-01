@@ -5,7 +5,7 @@ const baseURL =
     ? process.env.NEXT_PUBLIC_APP_BASEURL
     : process.env.NEXT_PUBLIC_VERCEL_URL
 
-export const BASE_URL = baseURL
+export const BASE_URL = `https://${baseURL?.split('/')[3]}`
 
 /* создаст запрос с URL-адресом из env */
 export const publicRequest = axios.create({
