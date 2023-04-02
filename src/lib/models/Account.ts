@@ -1,6 +1,6 @@
 import mongoose from 'mongoose'
-
-const account = new mongoose.Schema(
+import { Schema, model, models, Model } from 'mongoose'
+const account = new Schema(
   {
     id: { type: String, required: true },
     email: { type: String, required: true },
@@ -21,7 +21,6 @@ const account = new mongoose.Schema(
 )
 
 const AccountSchema =
-  (mongoose.models.account as mongoose.Model<{ id: string }>) ||
-  mongoose.model('account', account)
+  (models?.account as Model<{ id: string }>) || model('account', account)
 
 export default AccountSchema

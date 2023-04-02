@@ -16,6 +16,7 @@ import { UseQueryResult } from '@tanstack/react-query'
 import { css } from '@emotion/react'
 import { devices } from '@/data/MediaQueries'
 import styled from 'styled-components'
+import { connect } from '@/lib/connection'
 
 interface HomePageProps {
   productsData: getProductsListResult
@@ -77,17 +78,17 @@ const HomePage: NextPage<HomePageProps> = ({ productsData, reviews }) => {
   )
 }
 
-export const getServerSidedProps: GetServerSideProps = async () => {
-  const productsData = await fetch(`${BASE_URL}products`)
-    .then((response) => response.json())
-    .then((response) => response)
-  const reviews = await fetch(`${BASE_URL}reviews`)
-    .then((response) => response.json())
-    .then((response) => response)
-
+export const getStaticProps: GetStaticProps = async () => {
+  const { ProductSchema, reviewsSchema } = await connect()
+  const productsData = await ProductSchema.find()
+    .limit(8)
+    .then((response) => JSON.parse(JSON.stringify(response)))
+  const reviews = await reviewsSchema
+    .find()
+    .then((response) => JSON.parse(JSON.stringify(response)))
   return {
     props: {
-      productsData: productsData.products.length > 0 ? productsData : undefined,
+      productsData: productsData.length > 0 ? productsData : undefined,
       reviews,
     },
   }

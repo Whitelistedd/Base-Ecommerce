@@ -9,5 +9,5 @@ export const BASE_URL = baseURL
 
 /* создаст запрос с URL-адресом из env */
 export const publicRequest = axios.create({
-  baseURL: `https://${BASE_URL?.split('/')[3]}`,
+  baseURL: BASE_URL,
 })

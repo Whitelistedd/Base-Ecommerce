@@ -84,6 +84,6 @@ export interface orderType {
   updatedAt: string
 }
 
-const OrderSchema = mongoose.models.Order || mongoose.model('Order', order)
+const OrderSchema = mongoose.models?.Order || mongoose.model('Order', order)
 
 export default OrderSchema
