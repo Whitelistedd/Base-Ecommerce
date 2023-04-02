@@ -82,9 +82,11 @@ export const getStaticProps: GetStaticProps = async () => {
   const { ProductSchema, reviewsSchema } = await connect()
   const productsData = await ProductSchema.find()
     .limit(8)
+    .lean()
     .then((response) => JSON.parse(JSON.stringify(response)))
   const reviews = await reviewsSchema
     .find()
+    .lean()
     .then((response) => JSON.parse(JSON.stringify(response)))
   return {
     props: {
