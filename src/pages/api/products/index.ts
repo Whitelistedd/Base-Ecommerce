@@ -38,7 +38,6 @@ export default async function handler(
 
     const resPerPage = 8
     const page = Number(values.page || 1)
-    console.time('proiducts')
     const { ProductSchema } = await connect()
     const products = await ProductSchema.find(formattedFilters)
       .skip(resPerPage * page - resPerPage)
@@ -48,11 +47,9 @@ export default async function handler(
     const productCount = 13
     const totalPages = Math.ceil(productCount / resPerPage)
     if (products.length > 0) {
-      res.status(200).json({ products, totalPages, page })
-      console.timeLog('proiducts')
-      return
+      return res.status(200).json({ products, totalPages, page })
     }
-    res.status(200).json({ message: 'products corrupted' })
+    return res.status(200).json({ message: 'products corrupted' })
   } catch (err) {
     console.log(err)
     res.status(500).json('Product doesnt exist')
