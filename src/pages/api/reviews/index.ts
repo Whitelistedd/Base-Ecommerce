@@ -12,7 +12,7 @@ export default async function handler(
 
   try {
     const { reviewsSchema } = await connect()
-    const reviews = await reviewsSchema.find()
+    const reviews = await reviewsSchema.find().lean()
 
     res.status(200).json(reviews)
   } catch (err) {

@@ -9,15 +9,18 @@ import reviewsSchema from './models/Reviews'
 
 // ПОДКЛЮЧЕНИЕ К MONGOOSE (получение URL-адреса базы данных из .env.local)
 const { MONGO_URLL } = process.env
-
+let cachedConnection: void | typeof mongoose | null = null
 // функция соединения
 export const connect = async () => {
-  const conn = await mongoose
-    .connect(MONGO_URLL as string)
-    .catch((err) => console.log(err))
+  if (!cachedConnection) {
+    const connection = await mongoose
+      .connect(MONGO_URLL as string)
+      .catch((err) => console.log(err))
+    cachedConnection = connection
+  }
 
   return {
-    conn,
+    cachedConnection,
     CartSchema,
     OrderSchema,
     ProductSchema,
