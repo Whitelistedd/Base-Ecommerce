@@ -8,13 +8,13 @@ import mongoose from 'mongoose'
 import reviewsSchema from './models/Reviews'
 
 // ПОДКЛЮЧЕНИЕ К MONGOOSE (получение URL-адреса базы данных из .env.local)
-const { MONGO_URLL } = process.env
+const { MONGODB_URI } = process.env
 let cachedConnection: void | typeof mongoose | null = null
 // функция соединения
 export const connect = async () => {
   if (!cachedConnection) {
     const connection = await mongoose
-      .connect(MONGO_URLL as string)
+      .connect(MONGODB_URI as string, { maxPoolSize: 4 })
       .catch((err) => console.log(err))
     cachedConnection = connection
   }
