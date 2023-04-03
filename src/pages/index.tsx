@@ -90,7 +90,7 @@ export const getStaticProps: GetStaticProps = async () => {
     .then((response) => JSON.parse(JSON.stringify(response)))
   return {
     props: {
-      productsData: productsData.length > 0 ? productsData : undefined,
+      productsData: productsData.length > 0 ? productsData : [],
       reviews,
     },
   }
