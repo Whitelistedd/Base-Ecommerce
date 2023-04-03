@@ -52,6 +52,6 @@ export default async function handler(
     return res.status(200).json({ message: 'products corrupted' })
   } catch (err) {
     console.log(err)
-    res.status(500).json('Product doesnt exist')
+    return res.status(500).json('Product doesnt exist')
   }
 }
