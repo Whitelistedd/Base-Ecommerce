@@ -38,11 +38,13 @@ export default async function handler(
 
     const resPerPage = 8
     const page = Number(values.page || 1)
+    console.time('products')
     const { ProductSchema } = await connect()
     const products = await ProductSchema.find(formattedFilters)
       .skip(resPerPage * page - resPerPage)
       .limit(resPerPage)
       .lean()
+    console.timeLog('products')
 
     const productCount = 13
     const totalPages = Math.ceil(productCount / resPerPage)

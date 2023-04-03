@@ -8,7 +8,7 @@ import {
 
 import { AddressFormProps } from '../types/AddressForm'
 import { Button } from '@/components/Elements/Button'
-import { Close } from '@mui/icons-material'
+import Close from '@mui/icons-material/Close'
 import { CountryType } from '@/features/Countries'
 import { GatheredInput } from '@/features/Checkout/assets/Form-styles'
 import { InfoType } from '@/features/Checkout'

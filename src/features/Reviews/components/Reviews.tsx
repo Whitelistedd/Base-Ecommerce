@@ -8,7 +8,8 @@ import {
   ReviewsWrap,
   StyledSwiper,
 } from '../assets/Reviews-styles'
-import { ChevronLeft, ChevronRight } from '@mui/icons-material'
+import ChevronLeft from '@mui/icons-material/ChevronLeft'
+import ChevronRight from '@mui/icons-material/ChevronRight'
 import SwiperCore, { Navigation, Pagination } from 'swiper'
 
 import { Review } from './Review'

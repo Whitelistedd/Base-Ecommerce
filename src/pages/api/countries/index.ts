@@ -20,6 +20,7 @@ export default async function handler(
   }
 
   try {
+    console.log(Object.keys(allCountrynames).length)
     res.status(200).json(formattedCountries)
   } catch (err) {
     res.status(500).json(err)
